@@ -10,13 +10,17 @@ Saat ini, hanya ada satu branch main. Untuk mengecek branch, jalankan perintah g
 Untuk melakukan commit, disarankan menggunakan standar commit-lint untuk memperjelas maksud dan pesan dari commit yang dilakukan
 
 Beberapa contohnya yaitu:
-1. feat: Add user authentication
+### 1. feat: Add user authentication
 commit-message yang mengindikasikan penambahan fitur, diawali dengan 'feat:'
-2. fix: Update database query logic
+
+### 2. fix: Update database query logic
 commit-message yang mengindikasikan perbaikan fitur/bug, diawali dengan 'fix:'
-3. docs: Update README with installation instructions
+
+### 3. docs: Update README with installation instructions
 commit-message yang mengindikasikan hal yang berkaitan dengan dokumen seperti README, diawali dengan 'docs:'
-4. chore: Remove unused dependencies
+
+### 4. chore: Remove unused dependencies
 commit-message yang digunakan untuk maintenance work, diawali dengan 'chore:'
-5. style: Format code according to style guide
+
+### 5. style: Format code according to style guide
 commit-message yang berkaitan dengan format code, diawali dengan 'style:'
