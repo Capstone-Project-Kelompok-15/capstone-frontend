@@ -1,9 +1,11 @@
 import React from 'react';
+import Manage_Thread from './pages/manage_thread';
+
 
 function App() {
   return (
     <div>
-      Test
+      <Manage_Thread/>
     </div>
   );
 }
