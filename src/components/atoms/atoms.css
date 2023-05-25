@@ -1,0 +1,19 @@
+.search-container {
+  background-color: #0122691a;
+  border-radius: 12px;
+}
+.search-input {
+  flex: 1;
+}
+.look-button {
+  justify-items: center;
+  margin: 0px 12px;
+}
+.approve-button {
+  justify-items: center;
+  margin: 0px 12px;
+}
+.deny-button {
+  justify-items: center;
+  margin: 0px 12px;
+}

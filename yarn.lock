@@ -896,6 +896,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"autoprefixer@npm:^10.4.14":
+  version: 10.4.14
+  resolution: "autoprefixer@npm:10.4.14"
+  dependencies:
+    browserslist: ^4.21.5
+    caniuse-lite: ^1.0.30001464
+    fraction.js: ^4.2.0
+    normalize-range: ^0.1.2
+    picocolors: ^1.0.0
+    postcss-value-parser: ^4.2.0
+  peerDependencies:
+    postcss: ^8.1.0
+  bin:
+    autoprefixer: bin/autoprefixer
+  checksum: e9f18e664a4e4a54a8f4ec5f6b49ed228ec45afaa76efcae361c93721795dc5ab644f36d2fdfc0dea446b02a8067b9372f91542ea431994399e972781ed46d95
+  languageName: node
+  linkType: hard
+
 "available-typed-arrays@npm:^1.0.5":
   version: 1.0.5
   resolution: "available-typed-arrays@npm:1.0.5"
@@ -961,7 +979,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"browserslist@npm:^4.21.3":
+"browserslist@npm:^4.21.3, browserslist@npm:^4.21.5":
   version: 4.21.5
   resolution: "browserslist@npm:4.21.5"
   dependencies:
@@ -1032,6 +1050,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"caniuse-lite@npm:^1.0.30001464":
+  version: 1.0.30001489
+  resolution: "caniuse-lite@npm:1.0.30001489"
+  checksum: 94585a351fd7661b855c83eace474db0ee5a617159b46f2eff1f6fe4b85d7a205418471fdec8cf5cd647a7f79958706d5e664c0bbf3c7c09118b35db9bb95a1b
+  languageName: node
+  linkType: hard
+
 "capstone-frontend@workspace:.":
   version: 0.0.0-use.local
   resolution: "capstone-frontend@workspace:."
@@ -1039,6 +1064,7 @@ __metadata:
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@vitejs/plugin-react": ^4.0.0
+    autoprefixer: ^10.4.14
     eslint: ^7.32.0 || ^8.2.0
     eslint-config-airbnb: latest
     eslint-config-prettier: ^8.8.0
@@ -1048,7 +1074,6 @@ __metadata:
     eslint-plugin-react-hooks: ^4.3.0
     formik: ^2.2.9
     postcss: ^8.4.23
-    prefixer: ^0.0.3
     react: ^18.2.0
     react-dom: ^18.2.0
     react-router-dom: ^6.11.1
@@ -1113,15 +1138,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"coa@npm:0.3.x":
-  version: 0.3.9
-  resolution: "coa@npm:0.3.9"
-  dependencies:
-    q: ~0.8.10
-  checksum: 11390b2df37e14d7a57abd554beaedead0bd2e571d426ffa95852195d9785cb4eb10c08082d35835cd3cdd9fa054d6ffed37fa0e38d501a283d298449ab2b944
-  languageName: node
-  linkType: hard
-
 "color-convert@npm:^1.9.0":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
@@ -1170,13 +1186,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:~2.1.0":
-  version: 2.1.0
-  resolution: "commander@npm:2.1.0"
-  checksum: 147dab340ff5fbdb85d749dffebb49c95e2d6998fd01791ea92132b87af1ea09c69dd2edd1916fab6c9f6634653b5af39cb9b006e7c775b6804eead425478bdf
-  languageName: node
-  linkType: hard
-
 "concat-map@npm:0.0.1":
   version: 0.0.1
   resolution: "concat-map@npm:0.0.1"
@@ -1216,33 +1225,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-prefix@npm:0.0.2":
-  version: 0.0.2
-  resolution: "css-prefix@npm:0.0.2"
-  dependencies:
-    cssp: ~1.0.5
-    traverse: ~0.6.1
-  checksum: c13282f0084962ceb1b9e721aea988795e74e13a237050b3e1288431cfd983786ca4c0f20488f68c0ff349719698a6b14e1563d20ebb21586c0d0b5cabc93aea
-  languageName: node
-  linkType: hard
-
 "cssesc@npm:^3.0.0":
   version: 3.0.0
   resolution: "cssesc@npm:3.0.0"
   bin:
     cssesc: bin/cssesc
   checksum: f8c4ababffbc5e2ddf2fa9957dda1ee4af6048e22aeda1869d0d00843223c1b13ad3f5d88b51caa46c994225eacb636b764eb807a8883e2fb6f99b4f4e8c48b2
-  languageName: node
-  linkType: hard
-
-"cssp@npm:~1.0.5":
-  version: 1.0.6
-  resolution: "cssp@npm:1.0.6"
-  dependencies:
-    ometajs: ~ 3.1.x
-  bin:
-    cssp: ./bin/cssp
-  checksum: d1ad70e87a83b6fffb260cd85aa7eb1d27aefecf1791dae0f7b9420477492d6524a6e275bd30f41be90d5417fef1bfaf11d2834e90a1d52808c0905aa12d0066
   languageName: node
   linkType: hard
 
@@ -1981,6 +1969,13 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
   checksum: f07f80eee8423b4c5560546c48c4093c47530dae7d931a4e0d947d68ae1aab94291b1bf2e99ecaa5854ee50593b415fb5724c624c787338f0577f066009e8812
+  languageName: node
+  linkType: hard
+
+"fraction.js@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "fraction.js@npm:4.2.0"
+  checksum: 8c76a6e21dedea87109d6171a0ac77afa14205794a565d71cb10d2925f629a3922da61bf45ea52dbc30bce4d8636dc0a27213a88cbd600eab047d82f9a3a94c5
   languageName: node
   linkType: hard
 
@@ -3079,6 +3074,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"normalize-range@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "normalize-range@npm:0.1.2"
+  checksum: 9b2f14f093593f367a7a0834267c24f3cb3e887a2d9809c77d8a7e5fd08738bcd15af46f0ab01cc3a3d660386f015816b5c922cea8bf2ee79777f40874063184
+  languageName: node
+  linkType: hard
+
 "npmlog@npm:^6.0.0":
   version: 6.0.2
   resolution: "npmlog@npm:6.0.2"
@@ -3181,19 +3183,6 @@ __metadata:
     define-properties: ^1.1.4
     es-abstract: ^1.20.4
   checksum: f6fff9fd817c24cfd8107f50fb33061d81cd11bacc4e3dbb3852e9ff7692fde4dbce823d4333ea27cd9637ef1b6690df5fbb61f1ed314fa2959598dc3ae23d8e
-  languageName: node
-  linkType: hard
-
-"ometajs@npm:~ 3.1.x":
-  version: 3.1.19
-  resolution: "ometajs@npm:3.1.19"
-  dependencies:
-    coa: 0.3.x
-    q: 0.8.x
-    uglify-js: 1.3.x
-  bin:
-    ometajs2js: ./bin/ometajs2js
-  checksum: 223b10bd782708ac3aa56ccc62f97f9757803f1808d7ae11b69c6496a1a2703827186d3c08203e4d0a51a65ee51c5cf9c379d862c0525ef0f010c288d6db6a71
   languageName: node
   linkType: hard
 
@@ -3393,18 +3382,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prefixer@npm:^0.0.3":
-  version: 0.0.3
-  resolution: "prefixer@npm:0.0.3"
-  dependencies:
-    commander: ~2.1.0
-    css-prefix: 0.0.2
-  bin:
-    prefixer: ./index.js
-  checksum: 6d4fae4ea8bd052700839a594836cb2a8d26ed110691887919e6cea55f26168cfa0f51e7b64b4ae377fe2925e45679bef4025b87cf635f7d552964e7a610d810
-  languageName: node
-  linkType: hard
-
 "prelude-ls@npm:^1.2.1":
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
@@ -3451,13 +3428,6 @@ __metadata:
   version: 2.3.0
   resolution: "punycode@npm:2.3.0"
   checksum: 39f760e09a2a3bbfe8f5287cf733ecdad69d6af2fe6f97ca95f24b8921858b91e9ea3c9eeec6e08cede96181b3bb33f95c6ffd8c77e63986508aa2e8159fa200
-  languageName: node
-  linkType: hard
-
-"q@npm:0.8.x, q@npm:~0.8.10":
-  version: 0.8.12
-  resolution: "q@npm:0.8.12"
-  checksum: b15ee52d917d9e8b0675f113d6ee52ec8088a22e982121c0bfa720258f405931887a4fd21bd8f60ddc042c37107278328b1df6eb6ba1e7b5719a0a0594f13357
   languageName: node
   linkType: hard
 
@@ -4081,13 +4051,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"traverse@npm:~0.6.1":
-  version: 0.6.7
-  resolution: "traverse@npm:0.6.7"
-  checksum: 21018085ab72f717991597e12e2b52446962ed59df591502e4d7e1a709bc0a989f7c3d451aa7d882666ad0634f1546d696c5edecda1f2fc228777df7bb529a1e
-  languageName: node
-  linkType: hard
-
 "ts-interface-checker@npm:^0.1.9":
   version: 0.1.13
   resolution: "ts-interface-checker@npm:0.1.13"
@@ -4145,15 +4108,6 @@ __metadata:
     for-each: ^0.3.3
     is-typed-array: ^1.1.9
   checksum: 2228febc93c7feff142b8c96a58d4a0d7623ecde6c7a24b2b98eb3170e99f7c7eff8c114f9b283085cd59dcd2bd43aadf20e25bba4b034a53c5bb292f71f8956
-  languageName: node
-  linkType: hard
-
-"uglify-js@npm:1.3.x":
-  version: 1.3.5
-  resolution: "uglify-js@npm:1.3.5"
-  bin:
-    uglifyjs: ./bin/uglifyjs
-  checksum: 09fbdca3f34bbea22db90b25b584884f69653e1df57ae9cb531d1bcca34a44b896d623807bc1d60f90d5eb15057a0cf6dd1b76f3eb12ac528ab94e104def47fb
   languageName: node
   linkType: hard
 
