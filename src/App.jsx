@@ -1,9 +1,10 @@
 import React from 'react';
+import RootRouter from './RootRouter';
 
 function App() {
   return (
     <div>
-      Test
+      <RootRouter />
     </div>
   );
 }

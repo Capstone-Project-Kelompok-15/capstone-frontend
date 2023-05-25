@@ -17,6 +17,11 @@ module.exports = {
   plugins: [
     'react',
   ],
+
+  ignorePatterns: ["tailwind.config.js"],
+
   rules: {
+    'import/prefer-default-export': 'off',
+    'react/prop-types': 'off',
   },
 };
