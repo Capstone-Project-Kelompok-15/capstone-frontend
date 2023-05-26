@@ -1,0 +1,1 @@
+export { default as ManageUserLayout } from './ManageUser/ManageUser.layout'

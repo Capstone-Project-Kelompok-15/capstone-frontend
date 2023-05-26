@@ -1,12 +1,11 @@
-import React from "react";
-import { Home } from "./views";
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import RootRouter from './RootRouter';
 
 function App() {
-	return (
-		<div>
-			<Home />
-		</div>
-	);
+  return (
+    <RouterProvider router={RootRouter} />
+  );
 }
 
 export default App;
