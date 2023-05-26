@@ -4,11 +4,11 @@ import xvector from '../../../assets/xVector.svg'
 
 function SearchBar() {
   return (
-    <div className=' w-96 rounded-md flex justify-between items-center h-8 w-[1210px] mt-3 bg-[#0122691a]'
+    <div className=' w-full justify-between flex rounded-md items-center h-8   bg-[#0122691a]'
            id='cari_thread'>
             <div className='flex'>
-          <img src={search} alt="" className='mr-3'/>
-          <input type="search" name="" id="searchbtn"  placeholder='Cari "Thread"' className='bg-transparent w-[1115px]'/>
+          <img src={search} alt="" className=''/>
+          <input type="search" name="" id="searchbtn"  placeholder='Cari "Thread"' className='bg-transparent'/>
           </div>
           <img src={xvector} alt="" />
           </div>

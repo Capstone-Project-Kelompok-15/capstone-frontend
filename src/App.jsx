@@ -1,7 +1,5 @@
 import React from 'react';
-import { DeleteButton, ReturnButton, ViewButton } from './components/atoms';
-
-import { ManageThread } from './pages';
+import { ManageThread } from './components/pages/index';
 
 function App() {
   return (
