@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
+import { Home } from "./views";
 
 function App() {
-  return (
-    <div>
-      Test
-    </div>
-  );
+	return (
+		<div>
+			<Home />
+		</div>
+	);
 }
 
 export default App;
