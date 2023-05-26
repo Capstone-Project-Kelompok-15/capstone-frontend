@@ -1,11 +1,12 @@
 import React from 'react';
-import Manage_Thread from './pages/manage_thread';
+import { DeleteButton, ReturnButton, ViewButton } from './components/atoms';
 
+import { ManageThread } from './pages';
 
 function App() {
   return (
     <div>
-      <Manage_Thread/>
+      <ManageThread/>
     </div>
   );
 }

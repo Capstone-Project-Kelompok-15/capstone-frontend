@@ -1,0 +1,1 @@
+export {default as ManageThread} from './ManageThread/ManageThread.page'
