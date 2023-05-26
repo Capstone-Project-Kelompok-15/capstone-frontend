@@ -1,15 +1,27 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { ManageUser } from './views'
+import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+} from 'react-router-dom'
+import { ManageUserLayout } from './layout'
+import {
+    BlockedUserView,
+    MutedUserView,
+    OnlineUserView,
+    TotalUserView
+} from './views'
 
-function RootRouter() {
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path='manageUser' element={<ManageUser />} />
-            </Routes>
-        </BrowserRouter>
+const rootRouter = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path='/manageUser' element={<ManageUserLayout />}>
+            <Route path='online' element={<OnlineUserView />} />
+            <Route path='total' element={<TotalUserView />} />
+            <Route path='muted' element={<MutedUserView />} />
+            <Route path='blocked' element={<BlockedUserView />} />
+        </Route>
+
     )
-}
+)
 
-export default RootRouter
+export default rootRouter

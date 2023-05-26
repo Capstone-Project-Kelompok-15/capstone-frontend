@@ -1,6 +1,12 @@
-import { create } from "zustand";
-import { createClickSlice } from "./Click/ClickSlice";
+import { create } from 'zustand'
+import { BlockUserSlice } from './BlockUser/BlockUserSlice'
+import { MuteUserSlice } from './MuteUser/MuteUserSlice'
+import { SearchSlice } from './Search/SearchSlice'
+import { BlockModalSlice } from './BlockModal/BlockModalSlice'
 
-export const useBoundStore = create((...a) => ({
-    ...createClickSlice(...a)
+export const useStore = create((...a) => ({
+    ...BlockUserSlice(...a),
+    ...MuteUserSlice(...a),
+    ...SearchSlice(...a),
+    ...BlockModalSlice(...a)
 }))

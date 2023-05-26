@@ -1,5 +1,5 @@
 import React from 'react'
-import { SearchButton } from '../../atoms'
+import { DeleteSearchHistoryButton, SearchButton } from '../../atoms'
 
 function SearchBar() {
     return (
@@ -10,6 +10,7 @@ function SearchBar() {
                     <div className='w-[1113.62px] mt-[8px] mb-[8px]'>
                         <p className='font-source-sans font-normal text-[#000000CC] text-[14px]'>Cari &quot;Pengguna&quot;</p>
                     </div>
+                    <DeleteSearchHistoryButton />
                 </div>
             </div>
 
