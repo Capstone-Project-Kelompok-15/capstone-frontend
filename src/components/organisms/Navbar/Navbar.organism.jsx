@@ -1,8 +1,8 @@
 import React from "react";
-import logo from "../../assets/logo.png";
-import pp from "../../assets/blank-pp.jpg";
-import line from "../../assets/line.png";
-import logout from "../../assets/logout.png";
+import logo from "../../../assets/logo.png";
+import pp from "../../../assets/blank-pp.jpg";
+import line from "../../../assets/line.png";
+import logout from "../../../assets/logout.png";
 import ButtonMasuk from "../../atoms/MasukButton/ButtonMasuk.atom";
 
 function Navbar({ textLogo }) {
