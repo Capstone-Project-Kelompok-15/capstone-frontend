@@ -1,15 +1,9 @@
-import React, { useState } from "react";
-import { Chart, Sidebar } from "../../components/organisms/";
+import React from "react";
+import { Chart } from "../../components/organisms";
 
 function Home() {
-	const [expand, setExpand] = useState(false);
-	const handleExpand = () => {
-		setExpand((prev) => !prev);
-	};
-
 	return (
 		<div className="bg-[#F8F8F8] min-h-screen">
-			<Sidebar expand={expand} handleExpand={handleExpand} />
 			<div className="w-full ">
 				<div className="container mx-auto px-20">
 					<div className="grid grid-cols-12 gap-1 pt-[10px]">
