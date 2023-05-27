@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/molecules/Footer.molecule";
 import FormLogin from "../../components/molecules/LoginPage/FormLogin.molecule";
-import Navbar from "../../components/organisms/Navbar.organism";
+import Navbar from "../../components/organisms/Navbar/Navbar.organism";
 
 function Login() {
 	return (

@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../components/molecules/Footer.molecule";
 import Hero from "../../components/molecules/LandingPage/Hero.molecule";
-import Navbar from "../../components/organisms/Navbar.organism";
+import Navbar from "../../components/organisms/Navbar/Navbar.organism";
 
 function LandingPage() {
 	return (

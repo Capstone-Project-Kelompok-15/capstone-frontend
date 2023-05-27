@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonMasuk from "../../atoms/ButtonMasuk.atom";
+import ButtonMasuk from "../../atoms/MasukButton/ButtonMasuk.atom";
 
 function FormLogin() {
 	return (
