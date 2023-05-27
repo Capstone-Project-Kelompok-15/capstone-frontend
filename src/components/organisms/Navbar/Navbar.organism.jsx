@@ -3,7 +3,6 @@ import logo from "../../../assets/logo.png";
 import pp from "../../../assets/blank-pp.jpg";
 import line from "../../../assets/line.png";
 import logout from "../../../assets/logout.png";
-import ButtonMasuk from "../../atoms/MasukButton/ButtonMasuk.atom";
 
 function Navbar({ textLogo }) {
 	return (
@@ -13,9 +12,8 @@ function Navbar({ textLogo }) {
 					<img src={logo} alt="" className="w-14" />
 					{/* <h3 className="text-2xl font-bold text-white">Squad Space</h3> */}
 					<h3
-						className={`${
-							textLogo == "black" ? "text-black" : "text-white"
-						} text-2xl font-bold`}>
+						className={`${textLogo === "black" ? "text-black" : "text-white"
+							} text-2xl font-bold`}>
 						Squad Space
 					</h3>
 				</div>
@@ -32,7 +30,7 @@ function Navbar({ textLogo }) {
 						</h3>
 						<img src={line} alt="" className="h-6" />
 					</div>
-					<button className="flex items-center gap-2">
+					<button className="flex items-center gap-2" type="button">
 						<img src={logout} alt="" />
 						<h3 className="text-xl font-bold text-[#DA0000CC] opacity-80">Keluar</h3>
 					</button>

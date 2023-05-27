@@ -1,11 +1,10 @@
 import React from "react";
-import { Footer, Hero } from "../../components/molecules/";
-import { Navbar } from "../../components/organisms/";
+import { Footer, Hero } from "../../components/molecules";
+import { Navbar } from "../../components/organisms";
 
-function LandingPage() {
+function LandingPageView() {
 	return (
-		<div className="">
-			{/* <div> */}
+		<div>
 			<div className="bg-[url('../src/assets/hero.jpg')] bg-cover bg-center">
 				<Navbar />
 				<Hero />
@@ -15,4 +14,4 @@ function LandingPage() {
 	);
 }
 
-export default LandingPage;
+export default LandingPageView;

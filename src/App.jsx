@@ -1,14 +1,11 @@
-import React from "react";
-import { LandingPage } from "./views";
-import Login from "./views/Login/Login.view";
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import RootRouter from './RootRouter';
 
 function App() {
 	return (
-		<div className="">
-			<LandingPage />
-			{/* <Login /> */}
-		</div>
-	);
+		<RouterProvider router={RootRouter} />
+	)
 }
 
 export default App;

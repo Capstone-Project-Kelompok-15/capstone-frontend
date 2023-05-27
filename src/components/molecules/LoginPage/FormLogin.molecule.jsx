@@ -1,6 +1,9 @@
 import React from "react";
 import ButtonMasuk from "../../atoms/MasukButton/ButtonMasuk.atom";
 
+/**
+ * Tambahin formik
+ */
 function FormLogin() {
 	return (
 		<div className="pt-14">
@@ -17,7 +20,7 @@ function FormLogin() {
 			<div className="grid pt-[72px] place-content-center">
 				<form>
 					<div>
-						<label className="text-xl font-normal text-[#2C2C2C] ">
+						<label className="text-xl font-normal text-[#2C2C2C]">
 							Alamat Email
 						</label>
 						<div className="pt-3">
