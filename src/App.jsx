@@ -1,10 +1,10 @@
 import React from "react";
-import { LaporanThread } from "../src/components/pages";
+import { ThreadReport } from "./pages";
 
 function App() {
   return (
     <div>
-      <LaporanThread />
+      <ThreadReport />
     </div>
   );
 }

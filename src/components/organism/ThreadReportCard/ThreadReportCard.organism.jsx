@@ -1,11 +1,10 @@
 import React from "react";
-import { ApproveButton } from "../../atoms";
+import { AcceptButton } from "../../atoms";
 import { DenyButton } from "../../atoms";
-import { LookButton } from "../../atoms";
-import AvatarImage from "../../../assets/Avatar.svg";
-import "../organism.css";
+import AvatarImage from "../../../assets/avatar.svg";
+import "../../../styles/global.css";
 
-const CardLaporan = () => {
+const ThreadReportCard = () => {
   return (
     <div>
       <section className="thread-card mt-4 flex h-16 items-center">
@@ -19,9 +18,8 @@ const CardLaporan = () => {
             kan??
           </p>
         </div>
-        <div className="card-button flex">
-          <LookButton />
-          <ApproveButton />
+        <div className="flex">
+          <AcceptButton />
           <DenyButton />
         </div>
       </section>
@@ -29,4 +27,4 @@ const CardLaporan = () => {
   );
 };
 
-export default CardLaporan;
+export default ThreadReportCard;

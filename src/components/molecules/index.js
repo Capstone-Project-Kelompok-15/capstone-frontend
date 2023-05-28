@@ -1,1 +1,1 @@
-export { default as CounterLaporan } from "../molecules/CounterLaporan/CounterLaporan.molecules";
+export { default as CounterThreadReport } from "../molecules/CounterThreadReport/CounterThreadReport.molecules";

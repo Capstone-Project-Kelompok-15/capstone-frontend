@@ -1,2 +1,2 @@
-export { default as CardLaporan } from "../organism/CardLaporan/CardLaporan.organism";
-export { default as LaporanContent } from "../organism/LaporanContent/LaporanContent.organism";
+export { default as ThreadReportCard } from "./ThreadReportCard/ThreadReportCard.organism";
+export { default as ThreadReportContent } from "./ThreadReportContent/ThreadReportContent.organism.jsx";
