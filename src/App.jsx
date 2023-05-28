@@ -1,12 +1,11 @@
 import React from 'react';
-import { ManageThread } from './components/pages/index';
+import { RouterProvider } from 'react-router-dom';
+import RootRouter from './RootRouter';
 
 function App() {
   return (
-    <div>
-      <ManageThread/>
-    </div>
-  );
+    <RouterProvider router={RootRouter} />
+  )
 }
 
 export default App;
