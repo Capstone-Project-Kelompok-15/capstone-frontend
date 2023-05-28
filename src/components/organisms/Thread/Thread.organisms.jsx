@@ -1,7 +1,6 @@
 import React from 'react'
 import Information from '../../../assets/Information.svg'
-import { LaporanThread, SearchBar } from '../../molecules'
-import ThreadProfile from '../../molecules'
+import { LaporanThread, SearchBar, ThreadProfile } from '../../molecules'
 
 function TableThread() {
   return (
@@ -26,10 +25,7 @@ function TableThread() {
                         </div>
                     </div>
                 </div>
-            </div>
-
-      
-   
+            </div>   
     </div>
   )
 }
