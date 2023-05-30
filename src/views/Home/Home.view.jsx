@@ -1,5 +1,5 @@
-import React from "react";
-import { Chart } from "../../components/organisms";
+import React, { useState } from "react";
+import { Chart, HomeStats, Sidebar } from "../../components/organisms/";
 
 function Home() {
 	return (
@@ -14,6 +14,9 @@ function Home() {
 							</div>
 							<div className="text-2xl font-semibold py-[33px]">
 								Hal Yang Perlu Di perhatikan
+							</div>
+							<div>
+								<HomeStats />
 							</div>
 						</div>
 					</div>
