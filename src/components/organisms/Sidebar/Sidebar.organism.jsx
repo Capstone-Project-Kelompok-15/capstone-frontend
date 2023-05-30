@@ -1,5 +1,4 @@
 import React from "react";
-
 function Sidebar({ expand, handleExpand }) {
 	return (
 		<div
