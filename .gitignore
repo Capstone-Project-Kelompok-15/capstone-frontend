@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .yarn
+yarn.lock
+.pnp.cjs
+.pnp.loader.mjs
