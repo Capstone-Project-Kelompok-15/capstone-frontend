@@ -7,5 +7,4 @@ export { default as Sidebar} from './Sidebar/Sidebar.organism'
 export { default as ThreadStats } from './ThreadStats/ThreadStats.organisms'
 export { default as TableThread } from './TableThread/TableThread.organisms'
 export { default as Navbar } from './Navbar/Navbar.organism'
-export { default as ThreadList } from './ThreadList/ThreadList.organisms'
 
