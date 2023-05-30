@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Chart, Sidebar } from "../../components/organisms/";
+import { Chart, HomeStats, Sidebar } from "../../components/organisms/";
 
 function Home() {
 	const [expand, setExpand] = useState(false);
@@ -20,6 +20,9 @@ function Home() {
 							</div>
 							<div className="text-2xl font-semibold py-[33px]">
 								Hal Yang Perlu Di perhatikan
+							</div>
+							<div>
+								<HomeStats />
 							</div>
 						</div>
 					</div>
