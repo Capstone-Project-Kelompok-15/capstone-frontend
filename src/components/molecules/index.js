@@ -1,3 +1,4 @@
+export { default as CounterThreadReport } from "../molecules/CounterThreadReport/CounterThreadReport.molecules";
 export { default as Hero } from "./LandingPage/Hero.molecule";
 export { default as Footer } from "./Footer/Footer.molecule";
 export { default as SearchBar } from "./SearchBar/SearchBar.molecule";
