@@ -1,6 +1,5 @@
 import React from "react";
 import { ButtonMasuk } from "../../components/atoms";
-import { Logo } from "../../components/atoms";
 import { Footer } from "../../components/molecules/";
 import { Navbar } from "../../components/organisms";
 import LoginViewModel from "./Login.viewModel";
@@ -38,7 +37,20 @@ function Login() {
 									name="email"
 									onChange={loginViewModel.formik.handleChange}
 									value={loginViewModel.formik.values.email}
+									onBlur={loginViewModel.formik.handleBlur}
+									placeholder="e.g., lesliealexander@gmail.com"
 								/>
+								<div>
+									<small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
+										<span className="text-[#AA1512]">
+											{loginViewModel.formik.touched.email &&
+											loginViewModel.formik.errors.email
+												? "Tolong masukkan email"
+												: ""}
+											{loginViewModel.errorLogin && "Email yang anda masukkan salah"}
+										</span>
+									</small>
+								</div>
 							</div>
 						</div>
 						<div className="pt-8">
@@ -51,7 +63,19 @@ function Login() {
 									name="password"
 									onChange={loginViewModel.formik.handleChange}
 									value={loginViewModel.formik.values.password}
+									onBlur={loginViewModel.formik.handleBlur}
 								/>
+								<div>
+									<small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
+										<span className="text-[#AA1512]">
+											{loginViewModel.formik.touched.password &&
+											loginViewModel.formik.errors.password
+												? "Tolong masukkan kata sandi"
+												: ""}
+											{loginViewModel.errorLogin && "Kata sandi yang anda masukkan salah"}
+										</span>
+									</small>
+								</div>
 							</div>
 						</div>
 						<div className="text-center pt-[46px] ">

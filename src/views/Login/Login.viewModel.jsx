@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Navigate, useNavigate } from "react-router-dom";
@@ -8,6 +8,8 @@ const LoginViewModel = () => {
 	const navigate = useNavigate();
 	const isLogin = useStore((state) => state.isLogin);
 	const setLogin = useStore((state) => state.setLogin);
+
+	const [errorLogin, setErrorLogin] = useState(false);
 
 	const email = "admin@yahoo.com";
 	const password = "admin";
@@ -26,7 +28,15 @@ const LoginViewModel = () => {
 			if (values.email === email && values.password === password) {
 				setLogin(true);
 				navigate("/manageuser");
-			} else alert("Email atau Password SALAH!!!");
+				setErrorLogin(false);
+			} else {
+				setErrorLogin(true);
+				// toast.error("Email atau kata sandi yang anda masukkan salah")
+				// setTimeout(() => {
+				// 	setErrorLogin(false);
+				// }, 1500);
+			}
+
 			formik.resetForm();
 		},
 	});
@@ -38,6 +48,7 @@ const LoginViewModel = () => {
 		navigate,
 		isLogin,
 		setLogin,
+		errorLogin,
 	};
 };
 export default LoginViewModel;
