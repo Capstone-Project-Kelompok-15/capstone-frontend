@@ -5,7 +5,6 @@ import { DummySidebar } from "../../atoms";
 import { DummySearchbar } from "../../atoms";
 import { CounterThreadReport } from "../../molecules";
 import { ThreadReportCard } from "..";
-import "../../../styles/global.css";
 
 const ThreadReportContent = () => {
   return (
@@ -17,7 +16,7 @@ const ThreadReportContent = () => {
         <div className="sidebar-container">
           <DummySidebar />
         </div>
-        <div className="content-container ">
+        <div className="content-container w-[1210px] mx-20">
           <section>
             <div>
               <div className="flex">

@@ -2,7 +2,6 @@ import React from "react";
 import { AcceptButton } from "../../atoms";
 import { DenyButton } from "../../atoms";
 import AvatarImage from "../../../assets/avatar.svg";
-import "../../../styles/global.css";
 
 const ThreadReportCard = () => {
   return (
@@ -11,7 +10,7 @@ const ThreadReportCard = () => {
         <div>
           <img src={AvatarImage} alt="" />
         </div>
-        <div className="card-detail">
+        <div className="card-detail mx-3.5 flex-1">
           <h6>UU Tenaga Kerja</h6>
           <p>
             Saya mau ikut-ikutan menjawab, walaupun sudah telat, masih boleh
