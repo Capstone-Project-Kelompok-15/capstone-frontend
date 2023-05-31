@@ -1,19 +1,20 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import { Sidebar } from '../../components/organisms'
-import { useStore } from '../../config/zustand/store'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { Navbar, Sidebar } from "../../components/organisms";
+import { useStore } from "../../config/zustand/store";
 
 function RootLayout() {
-    const isExpand = useStore(state => state.isExpand)
-    const handleExpand = useStore(state => state.setIsExpand)
-    return (
-        <div>
+	const isExpand = useStore((state) => state.isExpand);
+	const handleExpand = useStore((state) => state.setIsExpand);
+	return (
+		<div>
+			<Navbar bgNavbar="bgIsLoggedIn" loginNavbar="isLoggedIn" />
 
-            <Sidebar expand={isExpand} handleExpand={handleExpand} />
+			<Sidebar expand={isExpand} handleExpand={handleExpand} />
 
-            <Outlet />
-        </div>
-    )
+			<Outlet />
+		</div>
+	);
 }
 
-export default RootLayout
+export default RootLayout;
