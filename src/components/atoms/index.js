@@ -12,3 +12,4 @@ export { default as ReturnButton } from "./ReturnButton/ReturnButton.atom";
 export { default as KeluarButton } from "./KeluarButton/KeluarButton.atom";
 export { default as Logo } from "./Logo/Logo.atom";
 export { default as ProfileButton } from "./ProfileButton/ProfileButtton.atom";
+export { default as ThreadPicture } from "./ThreadPicture/ThreadPicture.atom"
