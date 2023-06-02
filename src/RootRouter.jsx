@@ -13,10 +13,9 @@ import {
 	ManageThreadView,
 	Login,
 	LandingPageView,
+	ThreadReport
 } from "./views";
 import { RootLayout, ThreadLayout, ManageUserLayout } from "./layout";
-import ThreadReport from "./views/ThreadReport/ThreadReport.view";
-
 const rootRouter = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
