@@ -9,7 +9,7 @@ function Navbar({ bgNavbar, loginNavbar }) {
 			className={`${
 				bgNavbar === "bgIsLoggedIn" ? "bg-[#F8F8F8]" : "bg-transparent"
 			} flex min-w-screen py-[17px] pl-[80px] pr-[20px] justify-between items-center`}>
-			<Logo textLogo={"black"} />
+			<Logo textLogo="black" />
 			{loginNavbar === "isLoggedIn" ? <NavHome /> : <div />}
 		</div>
 	);

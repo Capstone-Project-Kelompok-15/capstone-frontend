@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonMasuk } from "../../components/atoms";
-import { Footer } from "../../components/molecules/";
+import { Footer } from "../../components/molecules";
 import { Navbar } from "../../components/organisms";
 import LoginViewModel from "./Login.viewModel";
 

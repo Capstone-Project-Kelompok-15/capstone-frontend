@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { ButtonMasuk, Logo } from "../../components/atoms";
 import { Footer, Hero } from "../../components/molecules";
-import { Navbar } from "../../components/organisms";
-import Login from "../Login/Login.view";
 
 function LandingPageView() {
 	return (

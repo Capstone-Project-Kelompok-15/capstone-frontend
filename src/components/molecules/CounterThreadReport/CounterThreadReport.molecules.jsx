@@ -1,6 +1,6 @@
 import React from "react";
 
-const CounterThreadReport = () => {
+function CounterThreadReport() {
   return (
     <div>
       <div className="rounded-md mt-3 flex justify-center items-center h-24 w-[1210px] bg-white shadow-md my-4">
@@ -11,6 +11,6 @@ const CounterThreadReport = () => {
       </div>
     </div>
   );
-};
+}
 
 export default CounterThreadReport;
