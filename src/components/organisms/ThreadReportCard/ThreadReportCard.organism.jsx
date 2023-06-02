@@ -1,9 +1,8 @@
 import React from "react";
-import { AcceptButton } from "../../atoms";
-import { DenyButton } from "../../atoms";
+import { AcceptButton, DenyButton } from "../../atoms";
 import AvatarImage from "../../../assets/avatar.svg";
 
-const ThreadReportCard = () => {
+function ThreadReportCard() {
   return (
     <div>
       <section className="thread-card mt-4 flex h-16 items-center">
@@ -24,6 +23,6 @@ const ThreadReportCard = () => {
       </section>
     </div>
   );
-};
+}
 
 export default ThreadReportCard;

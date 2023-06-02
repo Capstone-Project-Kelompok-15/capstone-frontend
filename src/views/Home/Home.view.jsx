@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Chart, HomeStats, Sidebar } from "../../components/organisms/";
+import React from "react";
+import { Chart, HomeStats } from "../../components/organisms";
 
 function Home() {
 	return (

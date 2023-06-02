@@ -1,1 +1,1 @@
-export { default as ThreadReport } from "../pages/ThreadReport/ThreadReport.pages";
+export { default as ThreadReport } from "./ThreadReport/ThreadReport.pages";
