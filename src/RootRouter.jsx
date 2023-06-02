@@ -20,9 +20,8 @@ const rootRouter = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
 			<Route index element={<HomeView />} />
-
-			{/* <Route index element={<LandingPageView />} /> */}
-			<Route path="/login" element={<Login />} />
+			<Route path="login" element={<Login />} />
+			<Route path="landing" element={<LandingPageView />} />
 
 			<Route path="/manageUser" element={<ManageUserLayout />}>
 				<Route path="online" element={<OnlineUserView />} />
