@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Chart, HomeStats, Sidebar } from "../../components/organisms/";
+import { TooltipButton } from "../../components/atoms";
 
 function Home() {
 	return (
@@ -8,7 +9,10 @@ function Home() {
 				<div className="container mx-auto px-20">
 					<div className="grid grid-cols-12 gap-1 pt-[10px]">
 						<div className="col-end-13 col-span-11">
-							<div className="text-xl font-semibold pb-[33px]">Statistik 2023</div>
+							<div className="flex gap-2 items-center mb-[33px]">
+								<div className="text-xl font-semibold">Statistik 2023</div>
+								<TooltipButton />
+							</div>
 							<div className="bg-white rounded-2xl p-10 shadow-lg">
 								<Chart />
 							</div>
