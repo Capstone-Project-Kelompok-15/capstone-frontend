@@ -1,19 +1,31 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import { Sidebar } from '../../components/organisms'
-import { useStore } from '../../config/zustand/store'
+import React from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import { Navbar, Sidebar } from "../../components/organisms";
+import { useStore } from "../../config/zustand/store";
 
 function RootLayout() {
-    const isExpand = useStore(state => state.isExpand)
-    const handleExpand = useStore(state => state.setIsExpand)
-    return (
-        <div>
+	const isExpand = useStore((state) => state.isExpand);
+	const handleExpand = useStore((state) => state.setIsExpand);
+	const location = useLocation();
 
-            <Sidebar expand={isExpand} handleExpand={handleExpand} />
+	const excludedPaths = ['/login', '/landing']
+	const isExcluded = excludedPaths.includes(location.pathname)
 
-            <Outlet />
-        </div>
-    )
+	return (
+		<div>
+			{
+				!isExcluded &&
+				<>
+					<Navbar bgNavbar="bgIsLoggedIn" loginNavbar="isLoggedIn" />
+
+					<Sidebar expand={isExpand} handleExpand={handleExpand} />
+				</>
+
+			}
+			<Outlet />
+
+		</div>
+	);
 }
 
-export default RootLayout
+export default RootLayout;
