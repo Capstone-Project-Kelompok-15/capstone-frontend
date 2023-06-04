@@ -1,5 +1,5 @@
 import React from 'react'
-import Information from '../../../assets/Information.svg'
+import Information from '../../../assets/information.svg'
 import { LaporanThread } from '../../molecules'
 
 function ThreadStats() {

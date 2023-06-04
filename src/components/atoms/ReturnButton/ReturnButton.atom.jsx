@@ -4,10 +4,10 @@ import Trash from '../../../assets/Trash1.svg'
 function ReturnButton() {
   return (
     <div>
-        <a href="#" className="btn" id='buttonhapus'>
-                <img src={Trash} alt="Trash Logo" id='TrashLogo'/>
+      <button id='buttonreturn' className='btn' type='button'>
+      <img src={Trash} alt="Trash Logo" id='TrashLogo'/> 
+      </button>
                 <p> Kembalikan <br /> Thread </p>
-                </a>
     </div>
   )
 }
