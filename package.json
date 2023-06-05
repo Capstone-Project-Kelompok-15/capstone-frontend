@@ -8,7 +8,6 @@
         "build": "vite build",
         "preview": "vite preview",
         "lint": "eslint . --ext .jsx,.js"
-
     },
     "dependencies": {
         "chart.js": "^4.3.0",
