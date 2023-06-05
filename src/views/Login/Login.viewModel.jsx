@@ -20,8 +20,8 @@ const LoginViewModel = () => {
 			password: "",
 		},
 		validationSchema: Yup.object().shape({
-			email: Yup.string().required(),
-			password: Yup.string().required(),
+			email: Yup.string().required("Tolong masukkan email"),
+			password: Yup.string().required("Tolong masukkan kata sandi"),
 		}),
 		onSubmit: (values) => {
 			console.log(values);
@@ -30,14 +30,17 @@ const LoginViewModel = () => {
 				navigate("/manageuser");
 				setErrorLogin(false);
 			} else {
-				setErrorLogin(true);
+				// setErrorLogin(true);
+				formik.setFieldError("email", "Email yang anda masukkan salah");
+				formik.setFieldError("password", "Kata sandi yang anda masukkan salah");
 				// toast.error("Email atau kata sandi yang anda masukkan salah")
 				// setTimeout(() => {
 				// 	setErrorLogin(false);
 				// }, 1500);
+				console.log("error");
 			}
 
-			formik.resetForm();
+			// formik.resetForm();
 		},
 	});
 	if (isLogin) {
