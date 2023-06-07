@@ -10,11 +10,6 @@ function ThreadList() {
                     <div className="grid grid-cols-12 gap-1 pt-[10px]">
                         <div className="col-end-13 col-span-11">
                           <ThreadProfile/>
-                          <ThreadProfile/>
-                          <ThreadProfile/>
-                          <ThreadProfile/>
-                          <ThreadProfile/>
-                          <ThreadProfile/>
                         </div>
                     </div>
                 </div>
