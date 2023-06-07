@@ -17,7 +17,6 @@ import {
 	ThreadReport
 } from "./views";
 import { RootLayout, ThreadLayout, ManageUserLayout } from "./layout";
-import ThreadReport from "./views/ThreadReport/ThreadReport.view";
 
 const rootRouter = createBrowserRouter(
 	createRoutesFromElements(
