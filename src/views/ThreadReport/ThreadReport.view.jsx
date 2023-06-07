@@ -1,13 +1,12 @@
-import React from "react";
+import React from "react"
 import { ThreadReportContent } from "../../components/organisms"
-import "./pages.css"
 
 function ThreadReport() {
-  return (
-    <div>
-      <ThreadReportContent />
-    </div>
-  );
+    return (
+        <div className="bg-[#f8f8f8]">
+            <ThreadReportContent />
+        </div>
+    )
 }
 
-export default ThreadReport;
+export default ThreadReport

@@ -1,5 +1,5 @@
-import React from 'react'
-import Trash from '../../../assets/Trash1.svg'
+import React from "react"
+import Trash from "../../../assets/Trash1.svg"
 
 function DeleteButton() {
   return (

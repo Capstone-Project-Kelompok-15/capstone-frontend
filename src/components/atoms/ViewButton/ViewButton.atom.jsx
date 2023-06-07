@@ -1,5 +1,5 @@
-import React from 'react'
-import Eye from '../../../assets/Eye.svg'
+import React from "react"
+import Eye from "../../../assets/Eye.svg"
 
 function ViewButton() {
   return (

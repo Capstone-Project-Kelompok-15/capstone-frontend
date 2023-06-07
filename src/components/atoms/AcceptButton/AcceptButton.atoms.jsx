@@ -1,13 +1,21 @@
-import React from "react";
-import AcceptVector from "../../../assets/accept.svg";
+import React from "react"
+import AcceptVector from "../../../assets/accept.svg"
 
 function AcceptButton() {
-  return (
-    <div className="accept-button grid w-12 justify-items-center mx-3">
-      <img src={AcceptVector} alt="" />
-      <button type="button">Setujui Laporan</button>
-    </div>
-  );
+    return (
+        <div>
+            <button
+                type="button"
+                className="accept-btn grid w-12 justify-items-center mx-3"
+                id="buttonterima">
+                <img src={AcceptVector} alt="Accept Logo" id="AcceptLogo" />
+                <p className="text-center">
+                    {" "}
+                    Setujui <br /> Laporan{" "}
+                </p>
+            </button>
+        </div>
+    )
 }
 
-export default AcceptButton;
+export default AcceptButton
