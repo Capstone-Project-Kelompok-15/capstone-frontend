@@ -4,8 +4,8 @@ import AcceptVector from "../../../assets/accept.svg"
 function AcceptButton() {
     return (
         <div>
-            <a
-                href=""
+            <button
+                type="button"
                 className="accept-btn grid w-12 justify-items-center mx-3"
                 id="buttonterima">
                 <img src={AcceptVector} alt="Accept Logo" id="AcceptLogo" />
@@ -13,7 +13,7 @@ function AcceptButton() {
                     {" "}
                     Setujui <br /> Laporan{" "}
                 </p>
-            </a>
+            </button>
         </div>
     )
 }

@@ -4,8 +4,8 @@ import DenyVector from "../../../assets/deny.svg"
 function DenyButton() {
     return (
         <div>
-            <a
-                href=""
+            <button
+                type="button"
                 className="deny-btn grid w-12 justify-items-center mx-3"
                 id="buttontolak">
                 <img src={DenyVector} alt="Deny Logo" id="DenyLogo" />
@@ -13,7 +13,7 @@ function DenyButton() {
                     {" "}
                     Tolak <br /> Laporan{" "}
                 </p>
-            </a>
+            </button>
         </div>
     )
 }
