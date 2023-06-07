@@ -1,6 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Navbar, UserStats } from "../../components/organisms";
+import { UserStats } from "../../components/organisms";
 import { SearchBar } from "../../components/molecules";
 
 function ManageUser() {

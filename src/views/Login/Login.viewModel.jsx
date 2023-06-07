@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useStore } from "../../config/zustand/store";
 
-const LoginViewModel = () => {
+function LoginViewModel() {
 	const navigate = useNavigate();
 	const isLogin = useStore((state) => state.isLogin);
 	const setLogin = useStore((state) => state.setLogin);
@@ -24,7 +24,7 @@ const LoginViewModel = () => {
 			password: Yup.string().required("Tolong masukkan kata sandi"),
 		}),
 		onSubmit: (values) => {
-			console.log(values);
+			// console.log(values);
 			if (values.email === email && values.password === password) {
 				setLogin(true);
 				navigate("/manageuser");
@@ -37,7 +37,7 @@ const LoginViewModel = () => {
 				// setTimeout(() => {
 				// 	setErrorLogin(false);
 				// }, 1500);
-				console.log("error");
+				// console.log("error");
 			}
 
 			// formik.resetForm();
@@ -53,5 +53,5 @@ const LoginViewModel = () => {
 		setLogin,
 		errorLogin,
 	};
-};
+}
 export default LoginViewModel;

@@ -7,3 +7,5 @@ export { default as MutedUserView } from "./MutedUser/MutedUser.view";
 export { default as BlockedUserView } from "./BlockedUser/BlockedUser.view";
 export { default as HomeView } from "./Home/Home.view";
 export { default as ManageThreadView } from "./ManageThread/ManageThread.view";
+
+export { default as UbahProfile } from "./UbahProfile/UbahProfile.view";

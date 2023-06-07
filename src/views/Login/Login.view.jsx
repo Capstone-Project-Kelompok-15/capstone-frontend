@@ -1,6 +1,6 @@
 import React from "react";
 import { ButtonMasuk } from "../../components/atoms";
-import { Footer } from "../../components/molecules/";
+import { Footer } from "../../components/molecules";
 import { Navbar } from "../../components/organisms";
 import LoginViewModel from "./Login.viewModel";
 
@@ -8,7 +8,7 @@ function Login() {
 	const loginViewModel = LoginViewModel();
 
 	return (
-		<div>
+		<div id="loginViewModel">
 			<Navbar />
 
 			{/* FormLogin */}
@@ -26,58 +26,60 @@ function Login() {
 				<div className="grid pt-[72px] place-content-center">
 					<form id="loginForm" onSubmit={loginViewModel.formik.handleSubmit}>
 						<div>
-							<label className="text-xl font-normal text-[#2C2C2C]">
+							<label className="text-xl font-normal text-[#2C2C2C]" htmlFor="email">
 								Alamat Email
-							</label>
-							<div className="pt-3">
-								<input
-									type="email"
-									className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
-									id="email"
-									name="email"
-									onChange={loginViewModel.formik.handleChange}
-									value={loginViewModel.formik.values.email}
-									onBlur={loginViewModel.formik.handleBlur}
-									placeholder="e.g., lesliealexander@gmail.com"
-								/>
-								<div>
-									<small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
-										<span className="text-[#AA1512]">
-											{loginViewModel.formik.touched.email &&
-												loginViewModel.formik.errors.email}
-											{/* ? "Tolong masukkan email"
+								<div className="pt-3">
+									<input
+										type="email"
+										className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
+										id="email"
+										name="email"
+										onChange={loginViewModel.formik.handleChange}
+										value={loginViewModel.formik.values.email}
+										onBlur={loginViewModel.formik.handleBlur}
+										placeholder="e.g., lesliealexander@gmail.com"
+									/>
+									<div>
+										<small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
+											<span className="text-[#AA1512]">
+												{loginViewModel.formik.touched.email &&
+													loginViewModel.formik.errors.email}
+												{/* ? "Tolong masukkan email"
 												: ""} */}
-											{/* {loginViewModel.errorLogin && "Email yang anda masukkan salah"}
+												{/* {loginViewModel.errorLogin && "Email yang anda masukkan salah"}
 											{console.log(loginViewModel.formik.errors)} */}
-										</span>
-									</small>
+											</span>
+										</small>
+									</div>
 								</div>
-							</div>
+							</label>
 						</div>
 						<div className="pt-8">
-							<label className="text-xl font-normal text-[#2C2C2C]">Kata Sandi</label>
-							<div className="pt-3">
-								<input
-									type="password"
-									className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
-									id="password"
-									name="password"
-									onChange={loginViewModel.formik.handleChange}
-									value={loginViewModel.formik.values.password}
-									onBlur={loginViewModel.formik.handleBlur}
-								/>
-								<div>
-									<small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
-										<span className="text-[#AA1512]">
-											{loginViewModel.formik.touched.password &&
-												loginViewModel.formik.errors.password}
-											{/* ? "Tolong masukkan kata sandi"
+							<label className="text-xl font-normal text-[#2C2C2C]" htmlFor="password">
+								Kata Sandi
+								<div className="pt-3">
+									<input
+										type="password"
+										className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
+										id="password"
+										name="password"
+										onChange={loginViewModel.formik.handleChange}
+										value={loginViewModel.formik.values.password}
+										onBlur={loginViewModel.formik.handleBlur}
+									/>
+									<div>
+										<small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
+											<span className="text-[#AA1512]">
+												{loginViewModel.formik.touched.password &&
+													loginViewModel.formik.errors.password}
+												{/* ? "Tolong masukkan kata sandi"
 												: ""}
 											{loginViewModel.errorLogin && "Kata sandi yang anda masukkan salah"} */}
-										</span>
-									</small>
+											</span>
+										</small>
+									</div>
 								</div>
-							</div>
+							</label>
 						</div>
 						<div className="text-center pt-[46px] ">
 							<ButtonMasuk />
