@@ -1,5 +1,7 @@
 import React from "react"
 import DenyVector from "../../../assets/deny.svg"
+import React from "react";
+import DenyVector from "../../../assets/deny.svg";
 
 function DenyButton() {
     return (
