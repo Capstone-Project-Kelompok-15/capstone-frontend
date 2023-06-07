@@ -3,7 +3,7 @@ import logo from "../../../assets/logo.png";
 
 function Logo({ textLogo }) {
 	return (
-		<div className="flex items-center gap-[32px] pt-[1px] pl-[3px]">
+		<div className="flex items-center gap-[32px] pt-[1px] pl-[3px]" id="logo">
 			<img src={logo} alt="" className="w-14" />
 			{/* <h3 className="text-2xl font-bold text-white">Squad Space</h3> */}
 			<h3
