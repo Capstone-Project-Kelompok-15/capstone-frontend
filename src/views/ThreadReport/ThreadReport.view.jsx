@@ -1,6 +1,6 @@
 import React from "react";
-import { ThreadReportContent } from "../../components/organism";
-import "../pages.css";
+import { ThreadReportContent } from "../../components/organisms"
+import "./pages.css"
 
 function ThreadReport() {
   return (

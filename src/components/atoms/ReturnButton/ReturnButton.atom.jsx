@@ -6,8 +6,8 @@ function ReturnButton() {
     <div>
       <button id='buttonreturn' className='btn' type='button'>
       <img src={Trash} alt="Trash Logo" id='TrashLogo'/> 
-      </button>
-                <p> Kembalikan <br /> Thread </p>
+           <p> Kembalikan <br /> Thread </p>
+       </button>
     </div>
   )
 }

@@ -1,8 +1,7 @@
 import React from "react";
 import Information from "../../../assets/information.svg";
-import { DummyNavbar, DummySidebar, DummySearchbar } from "../../atoms";
 import { CounterThreadReport } from "../../molecules";
-import { ThreadReportCard } from "..";
+import { ThreadReportCard } from "../../organisms";
 
 function ThreadReportContent() {
   return (
