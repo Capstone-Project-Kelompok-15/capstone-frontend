@@ -1,22 +1,27 @@
-import React from 'react'
-import { DeleteButton, ThreadPicture, ViewButton } from '../../atoms'
+import React from 'react';
+import { DeleteButton, ThreadPicture, ViewButton } from '../../atoms';
+import threads from '../../../dummyData/threadList';
 
 function ThreadProfile() {
   return (
-    <div className='flex justify-between mt-4'>
-      <div className='flex'>
-        <ThreadPicture />
-        <div>
-          <h1>10 Universitas Terbaik Di Indonesia</h1>
-          <p>Lorem Ipsum</p>
+    <div>
+      {threads.map(thread => (
+        <div className='flex justify-between mt-4' key={thread.id}>
+          <div className='flex'>
+            <ThreadPicture />
+            <div>
+              <h1>{thread.name}</h1>
+              <p>{thread.desc}</p>
+            </div>
+          </div>
+          <div className='flex'>
+            <ViewButton />
+            <DeleteButton />
+          </div>
         </div>
-      </div>
-      <div className='flex'>
-        <ViewButton />
-        <DeleteButton />
-      </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default ThreadProfile
+export default ThreadProfile;

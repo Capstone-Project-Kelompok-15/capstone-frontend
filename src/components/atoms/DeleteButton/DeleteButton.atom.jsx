@@ -4,10 +4,10 @@ import Trash from '../../../assets/Trash1.svg'
 function DeleteButton() {
   return (
     <div>
-      <a href="#" className="btn" id='buttonhapus'>
-        <img src={Trash} alt="Trash Logo" id='TrashLogo' />
+      <button id='buttonhapus' className='btn' type='button'>
+      <img src={Trash} alt="Trash Logo" id='TrashLogo' />
+      </button>
         <p> Hapus <br /> Thread </p>
-      </a>
     </div>
   )
 }
