@@ -1,5 +1,6 @@
 import React from "react";
 import LightTooltip from "../../../assets/LightTooltip.svg";
+
 function TooltipButton() {
 	return (
 		<div className="group">
