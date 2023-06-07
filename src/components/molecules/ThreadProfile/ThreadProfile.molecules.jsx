@@ -1,6 +1,6 @@
 import React from 'react';
 import { DeleteButton, ThreadPicture, ViewButton } from '../../atoms';
-import threads from '../../../dummyData/threadList';
+import threads from '../../../dummyData/ThreadList';
 
 function ThreadProfile() {
   return (
