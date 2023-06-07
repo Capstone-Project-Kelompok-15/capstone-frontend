@@ -1,3 +1,5 @@
+export { default as AcceptButton } from "./AcceptButton/AcceptButton.atoms";
+export { default as DenyButton } from "./DenyButton/DenyButton.atoms";
 export { default as ButtonMasuk } from "./MasukButton/ButtonMasuk.atom";
 export { default as BlokirButton } from "./BlockButton/BlokirButton.atom";
 export { default as DeleteSearchHistoryButton } from "./DeleteSearchHistoryButton/DeleteSearchHistoryButton.atom";
@@ -12,5 +14,5 @@ export { default as ReturnButton } from "./ReturnButton/ReturnButton.atom";
 export { default as KeluarButton } from "./KeluarButton/KeluarButton.atom";
 export { default as Logo } from "./Logo/Logo.atom";
 export { default as ProfileButton } from "./ProfileButton/ProfileButtton.atom";
-
 export { default as BackButton } from "./BackButton/BackButton.atom";
+export { default as ThreadPicture } from "./ThreadPicture/ThreadPicture.atom"
