@@ -1,39 +1,20 @@
-import React from "react";
-import { DeleteButton, ViewButton } from "../../atoms";
-import Avatar from "../../../assets/Avatar.svg";
-import { LaporanThread, SearchBar } from "../../molecules";
+import React from "react"
+import { ThreadProfile } from "../../molecules"
 
 function ThreadList() {
-	return (
-		<div>
-			<div className="flex">
-				<h3>Manage Thread</h3>
-			</div>
-			<LaporanThread />
-			<SearchBar />
-			<div className="flex justify-center mt-3">
-				<table>
-					<tbody>
-						<tr>
-							<td className="pr-[15px]">
-								<img src={Avatar} alt="Avatar Kampus" id="Avatar Kampus" />
-							</td>
-							<td className="pr-[810px]">
-								<h4>10 Universitas Terbaik Di Indonesia</h4>
-								<h5>Lorem Ipsum</h5>
-							</td>
-							<td className="pr-[20px]">
-								<ViewButton />
-							</td>
-							<td className="pr-[20px]">
-								<DeleteButton />
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	);
+    return (
+        <div>
+            <div className="w-full ">
+                <div className="container mx-auto px-20">
+                    <div className="grid grid-cols-12 gap-1 pt-[10px]">
+                        <div className="col-end-13 col-span-11">
+                          <ThreadProfile/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
 
-export default ThreadList;
+export default ThreadList

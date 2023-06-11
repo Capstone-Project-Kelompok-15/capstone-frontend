@@ -1,14 +1,12 @@
-
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function CardStats({ statsNumber, statsTitle, Link, hover }) {
+function CardStats({ statsNumber, statsTitle, Link, hover, id }) {
 	return (
-		<div className="w-[280px] bg-[#FFFFFF] shadow-lg rounded-[10px]">
+		<div className="w-[280px] bg-[#FFFFFF] shadow-lg rounded-[10px]" id={id}>
 			<div
-				className={`flex justify-center items-center p-[22px]  ${
-					hover && "hover:py-[28px] transition-all duration-300"
-				}`}>
+				className={`flex justify-center items-center p-[22px]  ${hover && "hover:py-[28px] transition-all duration-300"
+					}`}>
 				<div>
 					<NavLink
 						to={Link}
