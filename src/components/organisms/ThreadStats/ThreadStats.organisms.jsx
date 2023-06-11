@@ -1,6 +1,6 @@
-import React from 'react'
-import Information from '../../../assets/information.svg'
-import { LaporanThread } from '../../molecules'
+import React from "react"
+import { LaporanThread } from "../../molecules"
+import { TooltipButton } from "../../atoms"
 
 function ThreadStats() {
     return (
@@ -9,9 +9,9 @@ function ThreadStats() {
                 <div className="container mx-auto px-20">
                     <div className="grid grid-cols-12 gap-1 pt-[10px]">
                         <div className="col-end-13 col-span-11">
-                            <div className='flex'>
+                            <div className="flex gap-2 items-center">
                                 <h3>Manage Thread</h3>
-                                <img src={Information} alt="" className='' />
+                                <TooltipButton />
                             </div>
                             <LaporanThread />
                         </div>
