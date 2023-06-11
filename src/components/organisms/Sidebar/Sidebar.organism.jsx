@@ -3,8 +3,9 @@ import React from "react";
 function Sidebar({ expand, handleExpand }) {
 	return (
 		<div
-			className={`absolute top-[89px] ${expand ? "w-[231px] z-10" : "w-[83px]"
-				} h-[80vh] bg-white rounded-tr-[20px] shadow-md drop-shadow-xl rounded-br-[20px] pt-[20px] px-[5px] flex flex-col gap-[10px] border-[1px] transition-all duration-100`}>
+			className={`absolute top-[89px] ${
+				expand ? "w-[231px] z-10" : "w-[83px]"
+			} h-[80vh] bg-white rounded-tr-[20px] shadow-md drop-shadow-xl rounded-br-[20px] pt-[20px] px-[5px] flex flex-col gap-[10px] border-[1px] transition-all duration-100`}>
 			<div
 				className="py-1 px-6 flex justify-center items-center w-full h-[52px] rounded-2xl cursor-pointer hover:border-[1px] hover:border-[#195FAA] group transition"
 				onClick={handleExpand}>
