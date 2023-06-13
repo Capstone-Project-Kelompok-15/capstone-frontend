@@ -1,7 +1,7 @@
 import React from 'react'
-import { ProfilePicture, BlokirButton, MuteButton } from '../../atoms'
+import { ProfilePicture, Button } from '../../atoms'
 
-function UserProfile({ Name, Status, isUserBlocked, isUserMuted }) {
+function UserProfile({ Name, Status, isUserBlocked, isUserMuted, handleMuteClick, handleBlockClick }) {
     const statusCondition = {
         "Aman": 'font-source-sans font-semibold text-[12px] text-[#30B221]',
         "Muted": 'font-source-sans font-semibold text-[12px] text-[#D18102]',
@@ -17,8 +17,65 @@ function UserProfile({ Name, Status, isUserBlocked, isUserMuted }) {
                 <p className={statusCondition[Status]}>{Status}</p>
             </div>
 
-            <MuteButton />
-            <BlokirButton />
+            {
+                isUserBlocked && (
+                    <>
+                        <Button
+                            handleClick={handleMuteClick}
+                            buttonDesc="Mute Pengguna"
+                            img="mute"
+                            altImg="mute user" />
+
+                        <Button
+                            handleClick={handleBlockClick}
+                            buttonDesc="Buka Blokir"
+                            img="unblock"
+                            altImg="unblock user" />
+                    </>
+
+
+                )
+            }
+
+            {
+                isUserMuted && (
+                    <>
+                        <Button
+                            handleClick={handleMuteClick}
+                            buttonDesc="Buka Mute"
+                            img="unmute"
+                            altImg="unmute user" />
+
+                        <Button
+                            handleClick={handleBlockClick}
+                            buttonDesc="Blokir User"
+                            img="block"
+                            altImg="block user" />
+                    </>
+                )
+            }
+
+            {
+                !isUserBlocked && !isUserMuted && (
+                    <>
+                        <Button
+                            handleClick={handleMuteClick}
+                            buttonDesc="Mute Pengguna"
+                            img="mute"
+                            altImg="mute user" />
+
+                        <Button
+                            handleClick={handleBlockClick}
+                            buttonDesc="Blokir User"
+                            img="block"
+                            altImg="block user"
+                        />
+                    </>
+                )
+            }
+
+
+
         </div>
     )
 }

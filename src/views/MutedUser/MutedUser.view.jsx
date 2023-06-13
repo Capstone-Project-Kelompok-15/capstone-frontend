@@ -1,19 +1,50 @@
 import React from 'react'
-import { UserList } from '../../components/organisms'
+import { UserList, Modal } from '../../components/organisms'
 import MutedUserViewModel from './MutedUser.viewModel'
 
 function MutedUser() {
   const viewModel = MutedUserViewModel()
 
+  console.log({
+    blockState: viewModel.blockModalState,
+    muteState: viewModel.muteModalState
+  });
+
+
   return (
     <div>
+      <UserList
+        Name='John Doe'
+        Status='Muted'
+        isUserBlocked={false}
+        isUserMuted
+        handleBlockClick={viewModel.handleBlock}
+        handleMuteClick={viewModel.handleMute}
+      />
       {
-        viewModel.mutedUsers.map(user => (
-          <UserList key={user.id} Name={user.name} Status="Muted" isUserBlocked={user.block_status} isUserMuted={user.mute_status} />
-        ))
+        viewModel.muteModalState && (
+          <Modal
+            Message="Buka Mute User?"
+            confirmationMessage="Apakah Kamu Yakin Akan Membuka Mute User Ini?"
+            proceedMessage="Buka Mute"
+            cancelMessage="Batal"
+            handleCancel={viewModel.handleMute}
+          />
+        )
+      }
+
+      {
+        viewModel.blockModalState && (
+          <Modal
+            Message="Blokir User?"
+            confirmationMessage="Apakah Kamu Yakin Akan Memblokir User Ini?"
+            proceedMessage="Blokir"
+            cancelMessage="Batal"
+            handleCancel={viewModel.handleBlock}
+          />
+        )
       }
     </div>
   )
 }
-
 export default MutedUser
