@@ -8,7 +8,6 @@ function ThreadStats() {
             <div className='flex'>
            <h1 className='font-source-sans font-normal text-[20px] '>Manage Thread</h1>
            <TooltipButton/>
-            <img src={Information} alt="" className='ml-[15px]'/> 
             </div>
             <LaporanThread/>
             </div>
