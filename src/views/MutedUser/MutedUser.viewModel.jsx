@@ -1,7 +1,6 @@
-import { useFormik } from "formik";
 import { useStore } from "../../config/zustand/store";
 
-const OnlineUserViewModel = () => {
+const MutedUserViewModel = () => {
     const blockModalState = useStore(state =>
         state.isBlockModalClicked)
     const handleBlock = useStore(state => state.setIsBlockModalClicked)
@@ -9,25 +8,14 @@ const OnlineUserViewModel = () => {
 
     const muteModalState = useStore(state => state.isMuteModalClicked)
     const handleMute = useStore(state => state.setIsMuteModalClicked)
-    
-    const formik = useFormik({
-        initialValues: {
-            mute_duration: ''
-        },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        }
-    })
-
 
     return {
         blockModalState,
         handleBlock,
         muteModalState,
-        handleMute,
-        formik
+        handleMute
     }
 
 }
 
-export default OnlineUserViewModel;
+export default MutedUserViewModel;

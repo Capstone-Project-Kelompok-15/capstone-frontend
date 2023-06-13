@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import { useStore } from "../../config/zustand/store";
 
-const OnlineUserViewModel = () => {
+const BlockUserViewModel = () => {
     const blockModalState = useStore(state =>
         state.isBlockModalClicked)
     const handleBlock = useStore(state => state.setIsBlockModalClicked)
@@ -30,4 +30,4 @@ const OnlineUserViewModel = () => {
 
 }
 
-export default OnlineUserViewModel;
+export default BlockUserViewModel;
