@@ -1,13 +1,21 @@
-import React from "react";
-import DenyVector from "../../../assets/deny.svg";
+import React from "react"
+import DenyVector from "../../../assets/deny.svg"
 
 function DenyButton() {
-  return (
-    <div className="deny-button grid w-12 justify-items-center mx-3">
-      <img src={DenyVector} alt="" />
-      <button type="button">Tolak Laporan</button>
-    </div>
-  );
+    return (
+        <div>
+            <button
+                type="button"
+                className="deny-btn grid w-12 justify-items-center mx-3"
+                id="buttontolak">
+                <img src={DenyVector} alt="Deny Logo" id="DenyLogo" />
+                <p className="text-center">
+                    {" "}
+                    Tolak <br /> Laporan{" "}
+                </p>
+            </button>
+        </div>
+    )
 }
 
-export default DenyButton;
+export default DenyButton

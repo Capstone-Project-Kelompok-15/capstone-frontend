@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer({ textColor }) {
 	return (
-		<div>
+		<div id="footer">
 			<div
 				className={`${
 					textColor === "black" ? "text-black" : "text-white"
