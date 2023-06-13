@@ -10,8 +10,8 @@ function ThreadStats() {
                             <div className="grid grid-cols-12 gap-1 pt-[10px]">
                                 <div className="col-end-13 col-span-11">
                                 <div className='flex'>
-                                 <h3>Manage Thread</h3>
-                                 <img src={Information} alt="" className=''/>
+                                 <h1 className='font-source-sans font-normal text-[20px] '>Manage Thread</h1>
+                                 <img src={Information} alt="" className='ml-[15px]'/>
                                  </div>
                                   <LaporanThread/>
                                 </div>
