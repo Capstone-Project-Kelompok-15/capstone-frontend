@@ -5,21 +5,13 @@ import { LaporanThread } from '../../molecules'
 function ThreadStats() {
     return (
         <div>
-        <div className="w-full ">
-                        <div className="container mx-auto px-20">
-                            <div className="grid grid-cols-12 gap-1 pt-[10px]">
-                                <div className="col-end-13 col-span-11">
-                                <div className='flex'>
-                                 <h1 className='font-source-sans font-normal text-[20px] '>Manage Thread</h1>
-                                 <img src={Information} alt="" className='ml-[15px]'/>
-                                 </div>
-                                  <LaporanThread/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>   
+            <div className='flex'>
+           <h1 className='font-source-sans font-normal text-[20px] '>Manage Thread</h1>
+            <img src={Information} alt="" className='ml-[15px]'/> 
+            </div>
+            <LaporanThread/>
             </div>
     )
 }
 
-export default ThreadStats
+export default ThreadStats;
