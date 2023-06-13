@@ -1,5 +1,5 @@
-import React from 'react'
-import { ThreadList } from '../../components/organisms'
+import React from "react"
+import { ThreadList } from "../../components/organisms"
 
 function ManageThread() {
     return (

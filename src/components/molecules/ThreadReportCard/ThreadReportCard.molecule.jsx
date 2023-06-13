@@ -1,27 +1,28 @@
 import React from "react"
-import { AcceptButton, DenyButton, ViewButton } from "../../atoms"
-import AvatarImage from "../../../assets/avatar.svg"
+import {
+    AcceptButton,
+    DenyButton,
+    ViewButton,
+    ThreadPicture,
+} from "../../atoms"
 
 function ThreadReportCard() {
     return (
         <div>
-            <section className="thread-card mt-4 flex h-16 items-center">
+            <div className="thread-card mt-4 flex h-16 items-center w-[1210px]">
                 <div>
-                    <img src={AvatarImage} alt="" />
+                    <ThreadPicture />
                 </div>
-                <div className="card-detail mx-3.5 flex-1">
+                <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
                     <h6>UU Tenaga Kerja</h6>
-                    <p>
-                        Saya mau ikut-ikutan menjawab, walaupun sudah telat,
-                        masih boleh kan??
-                    </p>
+                    <p className="text-[#AA1512]">#kekerasan</p>
                 </div>
-                <div className="flex">
+                <div className="flex ">
                     <ViewButton />
                     <AcceptButton />
                     <DenyButton />
                 </div>
-            </section>
+            </div>
         </div>
     )
 }
