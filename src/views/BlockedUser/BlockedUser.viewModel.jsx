@@ -1,10 +1,33 @@
-import users from "../../dummyData/userList"
+import { useFormik } from "formik";
+import { useStore } from "../../config/zustand/store";
 
-const BlockedUserViewModel = () => {
-    const blockedUsers = users.filter(user => user.block_status)
+const BlockUserViewModel = () => {
+    const blockModalState = useStore(state =>
+        state.isBlockModalClicked)
+    const handleBlock = useStore(state => state.setIsBlockModalClicked)
+
+
+    const muteModalState = useStore(state => state.isMuteModalClicked)
+    const handleMute = useStore(state => state.setIsMuteModalClicked)
+    
+    const formik = useFormik({
+        initialValues: {
+            mute_duration: ''
+        },
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        }
+    })
+
+
     return {
-        blockedUsers
+        blockModalState,
+        handleBlock,
+        muteModalState,
+        handleMute,
+        formik
     }
+
 }
 
-export default BlockedUserViewModel
+export default BlockUserViewModel;

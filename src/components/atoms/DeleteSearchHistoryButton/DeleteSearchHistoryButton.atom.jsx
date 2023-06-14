@@ -1,10 +1,13 @@
-import React from "react"
-import x from "../../../assets/x-cross.svg"
+import React from 'react'
+import x from '../../../assets/x-cross.svg'
 
-function DeleteSearchHistoryButton() {
+function DeleteSearchHistoryButton({ handleDeleteSearchHistory }) {
     return (
-        <button type="button" className="mr-[16px]">
-            <img src={x} alt="delete history" className="bg-transparent" />
+        <button
+            type='button'
+            className='mr-[16px] ml-[930px]'
+            onClick={handleDeleteSearchHistory}>
+            <img src={x} alt='delete history' />
         </button>
     )
 }
