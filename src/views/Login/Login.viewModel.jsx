@@ -11,8 +11,27 @@ function LoginViewModel() {
 
 	const [errorLogin, setErrorLogin] = useState(false);
 
-	const email = "admin@yahoo.com";
-	const password = "admin";
+	// const email = "admin@yahoo.com";
+	// const password = "admin";
+
+	const Login = async (email, password) => {
+		try {
+			const response = await fetch("https://54.206.29.131:8000/login/admin", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					email: email,
+					password: password,
+				}),
+			});
+			const data = response.json();
+			console.log(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	const formik = useFormik({
 		initialValues: {
@@ -24,7 +43,6 @@ function LoginViewModel() {
 			password: Yup.string().required("Tolong masukkan kata sandi"),
 		}),
 		onSubmit: (values) => {
-			// console.log(values);
 			if (values.email === email && values.password === password) {
 				setLogin(true);
 				navigate("/manageuser");

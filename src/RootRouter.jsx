@@ -16,7 +16,6 @@ import {
 	ThreadReport,
 	UbahProfile,
 	ShowThread
-
 } from "./views";
 import { RootLayout, ThreadLayout, ManageUserLayout } from "./layout";
 
@@ -29,6 +28,7 @@ const rootRouter = createBrowserRouter(
 			<Route path="ubahprofil" element={<UbahProfile />} />
 			<Route path="show" element={<ShowThread/>}/>
        
+
 			<Route path="/manageUser" element={<ManageUserLayout />}>
 				<Route path="online" element={<OnlineUserView />} />
 				<Route path="total" element={<TotalUserView />} />
