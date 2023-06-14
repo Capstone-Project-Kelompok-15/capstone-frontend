@@ -20,7 +20,7 @@ function Sidebar({ expand, handleExpand }) {
                             <svg
                                 width="13"
                                 height="22"
-                                viewBox="0 0 13 22"
+                                viewBox="0 0 13 21"
                                 fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
