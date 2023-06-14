@@ -5,11 +5,13 @@ import OnlineUserViewModel from './OnlineUser.viewModel'
 function OnlineUser() {
     const viewModel = OnlineUserViewModel()
 
-    console.log({block: viewModel.blockModalState, mute: viewModel.muteModalState});
-
     return (
         <div>
-            <UserList Name="John Doe" Status="Aman" isUserBlocked={false} isUserMuted={false}  />
+            {
+                viewModel.onlineUsers.map(user => (
+                    <UserList key={user.id} Name={user.name} Status="Aman" isUserBlocked={user.block_status} isUserMuted={user.mute_status} />
+                ))
+            }
         </div>
     )
 }
