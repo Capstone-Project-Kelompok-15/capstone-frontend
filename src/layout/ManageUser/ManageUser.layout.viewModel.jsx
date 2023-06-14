@@ -14,10 +14,19 @@ const ManageUserViewModel = () => {
         }
     })
 
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault()
+            formik.handleSubmit()
+        }
+
+    }
+
     return {
         handleSearch,
         searchState,
-        formik
+        formik,
+        handleKeyPress
     }
 }
 

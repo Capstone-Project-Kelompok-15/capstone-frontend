@@ -1,7 +1,7 @@
 import React from 'react'
 import { DeleteSearchHistoryButton, SearchButton } from '../../atoms'
 
-function SearchBar({ heading, isSearch, handleSearch }) {
+function SearchBar({ heading, isSearch, handleSearch, handleKeyPress, formik }) {
     return (
         <div className='flex justify-center mt-[16px]'>
             {
@@ -9,8 +9,8 @@ function SearchBar({ heading, isSearch, handleSearch }) {
                     <div className='w-[1210px] h-[72px] rounded-[12px] bg-[#FFFFFF] border border-[#012269]'>
                         <div className='flex gap-[12px]'>
                             <SearchButton handleSearch={handleSearch} />
-                            <form className='mt-[9px] mb-[9px]'>
-                                <input type='text' className='focus:outline-none' />
+                            <form className='mt-[9px] mb-[9px]' onKeyPress={handleKeyPress}>
+                                <input type='text' name="searchValue" className='focus:outline-none' value={formik.searchValue} onChange={formik.handleChange} />
                             </form>
                             <DeleteSearchHistoryButton />
                         </div>

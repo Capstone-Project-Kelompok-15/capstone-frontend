@@ -16,6 +16,8 @@ function ManageUser() {
                 heading="Cari &quot;Pengguna&quot;"
                 isSearch={viewModel.searchState}
                 handleSearch={viewModel.handleSearch}
+                handleKeyPress={viewModel.handleKeyPress}
+                formik={viewModel.formik}
             />
 
             <Outlet />
