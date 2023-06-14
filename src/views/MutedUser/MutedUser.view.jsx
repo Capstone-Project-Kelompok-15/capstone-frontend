@@ -29,6 +29,8 @@ function MutedUser() {
             proceedMessage="Buka Mute"
             cancelMessage="Batal"
             handleCancel={viewModel.handleMute}
+            idProceedButton="unmute-user"
+            idCancelButton="batal"
           />
         )
       }
@@ -41,6 +43,8 @@ function MutedUser() {
             proceedMessage="Blokir"
             cancelMessage="Batal"
             handleCancel={viewModel.handleBlock}
+            idProceedButton="block-user"
+            idCancelButton="batal"
           />
         )
       }
