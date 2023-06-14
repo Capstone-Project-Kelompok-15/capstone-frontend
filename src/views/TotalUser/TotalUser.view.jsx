@@ -20,6 +20,9 @@ function TotalUser() {
                         cancelMessage="Batal"
                         muteModal={false}
                         handleCancel={viewModel.handleBlock}
+
+                        idProceedButton="block-user"
+                        idCancelButton="batal"
                     />
                 )
             }
@@ -52,6 +55,9 @@ function TotalUser() {
                         proceedMessage="Mute"
                         cancelMessage="Batal"
                         handleCancel={viewModel.handleMute}
+
+                        idProceedButton="mute-user"
+                        idCancelButton="batal"
 
                     />
                 )

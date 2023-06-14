@@ -29,7 +29,9 @@ function BlockedUser() {
                         proceedMessage="Buka Blokir"
                         cancelMessage="Batal"
                         muteModal={false}
-                        handleCancel={viewModel.handleBlock} />
+                        handleCancel={viewModel.handleBlock}
+                        idProceedButton="buka-blokir"
+                        idCancelButton="batal" />
                 )
             }
 
@@ -61,6 +63,9 @@ function BlockedUser() {
                         proceedMessage="Mute"
                         cancelMessage="Batal"
                         handleCancel={viewModel.handleMute}
+
+                        idProceedButton="mute-user"
+                        idCancelButton="batal"
 
                     />
                 )

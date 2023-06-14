@@ -24,13 +24,15 @@ function UserProfile({ Name, Status, isUserBlocked, isUserMuted, handleMuteClick
                             handleClick={handleMuteClick}
                             buttonDesc="Mute Pengguna"
                             img="mute"
-                            altImg="mute user" />
+                            altImg="mute user"
+                            id="mute-user" />
 
                         <Button
                             handleClick={handleBlockClick}
                             buttonDesc="Buka Blokir"
                             img="unblock"
-                            altImg="unblock user" />
+                            altImg="unblock user"
+                            id="unblock-user" />
                     </>
 
 
@@ -44,13 +46,15 @@ function UserProfile({ Name, Status, isUserBlocked, isUserMuted, handleMuteClick
                             handleClick={handleMuteClick}
                             buttonDesc="Buka Mute"
                             img="unmute"
-                            altImg="unmute user" />
+                            altImg="unmute user"
+                            id="unmute-user" />
 
                         <Button
                             handleClick={handleBlockClick}
                             buttonDesc="Blokir User"
                             img="block"
-                            altImg="block user" />
+                            altImg="block user"
+                            id="block-user" />
                     </>
                 )
             }
@@ -62,13 +66,15 @@ function UserProfile({ Name, Status, isUserBlocked, isUserMuted, handleMuteClick
                             handleClick={handleMuteClick}
                             buttonDesc="Mute Pengguna"
                             img="mute"
-                            altImg="mute user" />
+                            altImg="mute user"
+                            id="mute-user" />
 
                         <Button
                             handleClick={handleBlockClick}
                             buttonDesc="Blokir User"
                             img="block"
                             altImg="block user"
+                            id="block-user"
                         />
                     </>
                 )
