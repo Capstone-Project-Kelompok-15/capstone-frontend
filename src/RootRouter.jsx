@@ -13,10 +13,12 @@ import {
 	ManageThreadView,
 	Login,
 	LandingPageView,
+	ThreadReport,
 	UbahProfile,
-	ThreadReport
+	ShowThread
 } from "./views";
 import { RootLayout, ThreadLayout, ManageUserLayout } from "./layout";
+
 const rootRouter = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<RootLayout />}>
@@ -24,7 +26,9 @@ const rootRouter = createBrowserRouter(
 			<Route path="login" element={<Login />} />
 			<Route path="landing" element={<LandingPageView />} />
 			<Route path="ubahprofil" element={<UbahProfile />} />
-        
+			<Route path="show" element={<ShowThread/>}/>
+       
+
 			<Route path="/manageUser" element={<ManageUserLayout />}>
 				<Route path="online" element={<OnlineUserView />} />
 				<Route path="total" element={<TotalUserView />} />

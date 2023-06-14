@@ -1,11 +1,21 @@
-import users from "../../dummyData/userList";
+import { useStore } from "../../config/zustand/store";
 
 const MutedUserViewModel = () => {
-    const mutedUsers = users.filter(user => user.mute_status)
+    const blockModalState = useStore(state =>
+        state.isBlockModalClicked)
+    const handleBlock = useStore(state => state.setIsBlockModalClicked)
+
+
+    const muteModalState = useStore(state => state.isMuteModalClicked)
+    const handleMute = useStore(state => state.setIsMuteModalClicked)
 
     return {
-        mutedUsers,
+        blockModalState,
+        handleBlock,
+        muteModalState,
+        handleMute
     }
+
 }
 
 export default MutedUserViewModel;

@@ -43,23 +43,22 @@ function LoginViewModel() {
 			password: Yup.string().required("Tolong masukkan kata sandi"),
 		}),
 		onSubmit: (values) => {
-			// console.log(values);
-			// if (values.email === email && values.password === password) {
-			// 	setLogin(true);
-			// 	navigate("/manageuser");
-			// 	setErrorLogin(false);
-			// } else {
-			// 	// setErrorLogin(true);
-			// 	formik.setFieldError("email", "Email yang anda masukkan salah");
-			// 	formik.setFieldError("password", "Kata sandi yang anda masukkan salah");
-			// 	// toast.error("Email atau kata sandi yang anda masukkan salah")
-			// 	// setTimeout(() => {
-			// 	// 	setErrorLogin(false);
-			// 	// }, 1500);
-			// 	// console.log("error");
-			// }
+			if (values.email === email && values.password === password) {
+				setLogin(true);
+				navigate("/manageuser");
+				setErrorLogin(false);
+			} else {
+				// setErrorLogin(true);
+				formik.setFieldError("email", "Email yang anda masukkan salah");
+				formik.setFieldError("password", "Kata sandi yang anda masukkan salah");
+				// toast.error("Email atau kata sandi yang anda masukkan salah")
+				// setTimeout(() => {
+				// 	setErrorLogin(false);
+				// }, 1500);
+				// console.log("error");
+			}
+
 			// formik.resetForm();
-			Login(values.email, values.password);
 		},
 	});
 	if (isLogin) {
