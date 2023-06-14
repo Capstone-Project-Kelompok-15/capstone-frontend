@@ -320,5 +320,4 @@ function Sidebar({ expand, handleExpand }) {
         </div>
     )
 }
-
 export default Sidebar

@@ -7,4 +7,5 @@ export { default as UserStats } from "./UserStats/UserStats.organism"
 export { default as UserList } from "./UserList/UserList.organism"
 export { default as ThreadStats } from "./ThreadStats/ThreadStats.organisms"
 export { default as ThreadReportContent } from "./ThreadReportContent/ThreadReportContent.organism"
-
+export { default as ViewThread } from "./LihatThread/LihatThread.organism";
+export { default as Modal } from './Modal/Modal.organism'
