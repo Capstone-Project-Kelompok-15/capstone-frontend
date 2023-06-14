@@ -41,7 +41,7 @@ function Login() {
 									/>
 									<div>
 										<small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
-											<span className="text-[#AA1512]">
+											<span className="text-[#AA1512]" id="errorEmail">
 												{loginViewModel.formik.touched.email &&
 													loginViewModel.formik.errors.email}
 												{/* ? "Tolong masukkan email"
@@ -69,7 +69,7 @@ function Login() {
 									/>
 									<div>
 										<small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
-											<span className="text-[#AA1512]">
+											<span className="text-[#AA1512]" id="errorPassword">
 												{loginViewModel.formik.touched.password &&
 													loginViewModel.formik.errors.password}
 												{/* ? "Tolong masukkan kata sandi"

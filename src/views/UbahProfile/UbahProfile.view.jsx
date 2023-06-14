@@ -25,7 +25,7 @@ function UbahProfile() {
 									<input
 										className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] h-11 py-2 px-4 "
 										type="text"
-										name="username-baru"
+										name="usernameBaru"
 										id="usernameBaru"
 									/>
 								</div>
@@ -37,7 +37,7 @@ function UbahProfile() {
 									<input
 										className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] h-11 py-2 px-4 "
 										type="email"
-										name="email-baru"
+										name="emailBaru"
 										id="emailBaru"
 									/>
 								</div>
@@ -49,7 +49,7 @@ function UbahProfile() {
 									<input
 										className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] h-11 py-2 px-4 "
 										type="password"
-										name="password-baru"
+										name="passwordBaru"
 										id="passwordBaru"
 									/>
 								</div>
@@ -61,7 +61,7 @@ function UbahProfile() {
 									<input
 										className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] h-11 py-2 px-4 "
 										type="password"
-										name="password-konfirmasi-baru"
+										name="passwordKonfirmasi"
 										id="passwordKonfirmasi"
 									/>
 								</div>
