@@ -22,7 +22,9 @@ function Modal(
         radioMessage1,
         radioMessage2,
         radioMessage3,
-        radioMessage4
+        radioMessage4,
+        idProceedButton,
+        idCancelButton,
     }) {
     return (
         <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50'>
@@ -85,12 +87,12 @@ function Modal(
 
                                 <p className='font-source-sans font-normal text-[17px] text-[#808080] mt-[18px]'>{confirmationMessage}</p>
                                 <div>
-                                    <button type='submit' onClick={handleProceed}>
+                                    <button type='submit' onClick={handleProceed} id={idProceedButton}>
                                         <p className='font-source-sans font-bold text-[24px] text-[#AA1512] mt-[18px]'>{proceedMessage}</p>
                                     </button>
                                 </div>
                                 <div>
-                                    <button type='button' onClick={handleCancel}>
+                                    <button type='button' onClick={handleCancel} id={idProceedButton}>
                                         <p className='font-source sans font-bold text-[24px] mt-[18px] text-[#2C2C2C]'>{cancelMessage}</p>
                                     </button>
                                 </div>
@@ -104,12 +106,12 @@ function Modal(
                             <p className='font-source-sans font-normal text-[17px] text-[#808080] mt-[18px]'>{confirmationMessage}</p>
                             <div>
                                 <div>
-                                    <button type='button' onClick={handleProceed}>
+                                    <button type='button' onClick={handleProceed} id={idProceedButton}>
                                         <p className='font-source-sans font-bold text-[24px] text-[#AA1512] mt-[18px]'>{proceedMessage}</p>
                                     </button>
                                 </div>
                                 <div>
-                                    <button type='button' onClick={handleCancel}>
+                                    <button type='button' onClick={handleCancel} id={idCancelButton}>
                                         <p className='font-source sans font-bold text-[24px] mt-[18px] text-[#2C2C2C]'>{cancelMessage}</p>
                                     </button>
                                 </div>

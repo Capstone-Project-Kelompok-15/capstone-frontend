@@ -4,7 +4,7 @@ import BlockUser from '../../../assets/block-user.svg'
 import UnmuteUser from '../../../assets/unmute.svg'
 import UnblockUser from '../../../assets/unblock-user.svg'
 
-function Button({ img, altImg, buttonDesc, handleClick }) {
+function Button({ img, altImg, buttonDesc, handleClick, id }) {
     const imgCondition = {
         "mute": MuteUser,
         "block": BlockUser,
@@ -14,9 +14,12 @@ function Button({ img, altImg, buttonDesc, handleClick }) {
 
     return (
         <div className='w-[60px] h-[69px]'>
-            <button type='button'   onClick={
-                handleClick
-            }>
+            <button
+                type='button'
+                onClick={
+                    handleClick
+                }
+                id={id}>
                 <img src={
                     imgCondition[img]
                 } alt={
