@@ -1,13 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { UserList, Modal } from '../../components/organisms'
 import TotalUserViewModel from './TotalUser.viewModel'
 
 function TotalUser() {
     const viewModel = TotalUserViewModel()
-
-    useEffect(() => {
-        viewModel.fetchUsers()
-    }, [])
 
     return (
         <div>
