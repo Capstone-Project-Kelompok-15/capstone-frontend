@@ -1,4 +1,3 @@
-import React from "react"
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -72,7 +71,7 @@ const HomeViewModel = () => {
     ]
     const Months = []
     threads.forEach((thread) => {
-        const [month, _, year] = thread.date.split("/")
+        const [month, , year] = thread.date.split("/")
         if (Number(year) === 2023) {
             Months[Number(month)] = (Months[Number(month)] || 0) + 1
         }
@@ -94,7 +93,6 @@ const HomeViewModel = () => {
     const chartExpand = useStore((state) => state.chartExpand)
     const toggleChart = useStore((state) => state.setChartExpand)
 
-    console.log(Months)
     return {
         options,
         data,
