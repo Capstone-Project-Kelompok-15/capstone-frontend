@@ -6,6 +6,8 @@ import LoginViewModel from "./Login.viewModel"
 
 function Login() {
     const loginViewModel = LoginViewModel()
+
+    console.log(loginViewModel.isAuthenticated);
     
     return (
         <div id="loginView">
