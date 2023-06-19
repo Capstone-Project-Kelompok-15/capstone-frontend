@@ -25,5 +25,7 @@ module.exports = {
     'react/prop-types': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'react/no-array-index-key': 'off'
   },
 };

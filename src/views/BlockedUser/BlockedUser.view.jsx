@@ -5,38 +5,36 @@ import BlockUserViewModel from './BlockedUser.viewModel'
 function BlockedUser() {
     const viewModel = BlockUserViewModel()
 
-    console.log({
-        blockState: viewModel.blockModalState,
-        muteState: viewModel.muteModalState
-    });
-
     return (
         <div>
-            <UserList
-                Name='John Doe'
-                Status='Terblokir'
-                isUserBlocked
-                isUserMuted={false}
-                handleBlockClick={viewModel.handleBlock}
-                handleMuteClick={viewModel.handleMute}
-            />
-
             {
-                viewModel.blockModalState && (
+                viewModel.blockedUsers.map(user => (
+                    <UserList
+                        Name={user.name}
+                        handleBlockClick={viewModel.handleBlockModal}
+                        handleMuteClick={viewModel.handleMuteModal}
+                        isExpand={viewModel.isExpand}
+                        Status="Terblokir"
+                        isUserBlocked={user.block_status}
+                        key={user.id} />
+                ))
+            }
+            {
+                viewModel.isBlockModalClicked && (
                     <Modal
                         Message="Buka Blokir User?"
                         confirmationMessage="Apakah Kamu Yakin Akan Membuka Blokir User Ini?"
                         proceedMessage="Buka Blokir"
                         cancelMessage="Batal"
                         muteModal={false}
-                        handleCancel={viewModel.handleBlock}
+                        handleCancel={viewModel.handleBlockModal}
                         idProceedButton="buka-blokir"
                         idCancelButton="batal" />
                 )
             }
 
             {
-                viewModel.muteModalState && (
+                viewModel.isMuteModalClicked && (
                     <Modal
                         formik={viewModel.formik}
                         muteModal
@@ -62,7 +60,7 @@ function BlockedUser() {
                         confirmationMessage="Apakah Kamu Yakin Akan Mute User Ini?"
                         proceedMessage="Mute"
                         cancelMessage="Batal"
-                        handleCancel={viewModel.handleMute}
+                        handleCancel={viewModel.handleMuteModal}
 
                         idProceedButton="mute-user"
                         idCancelButton="batal"

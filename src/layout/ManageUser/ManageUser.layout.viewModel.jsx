@@ -2,15 +2,23 @@ import { useFormik } from "formik";
 import { useStore } from "../../config/zustand/store";
 
 const ManageUserViewModel = () => {
-    const handleSearch = useStore(state => state.setIsSearch)
-    const searchState = useStore(state => state.isSearch)
+    const {
+        users,
+        setSearchHistory,
+        isExpand,
+        searchHistory,
+        isSearch,
+        handleSearch,
+        deleteSearchHistory
+    } = useStore(state => state)
+
 
     const formik = useFormik({
         initialValues: {
             searchValue: ''
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            setSearchHistory(values.searchValue)
         }
     })
 
@@ -22,11 +30,40 @@ const ManageUserViewModel = () => {
 
     }
 
+    const handleDelete = () => {
+        deleteSearchHistory()
+    }
+
+    const blockedUsers = users.filter(
+        user => user.block_status
+    ).length
+
+    const mutedUsers = users.filter(
+        user => user.mute_status && !user.block_status && !user.online_status
+    ).length
+
+    const onlineUsers = users.filter(
+        user => user.online_status && !user.block_status && !user.mute_status
+    ).length
+
+    const totalUsers = users.filter(
+        user => !user.block_status && !user.mute_status
+    ).length
+
+
+
     return {
         handleSearch,
-        searchState,
+        isSearch,
         formik,
-        handleKeyPress
+        isExpand,
+        handleKeyPress,
+        blockedUsers,
+        mutedUsers,
+        onlineUsers,
+        totalUsers,
+        searchHistory,
+        handleDelete
     }
 }
 
