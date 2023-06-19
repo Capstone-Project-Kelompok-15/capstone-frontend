@@ -1,9 +1,9 @@
 import React from 'react'
 import { UserProfile } from '../../molecules'
 
-function UserList({ Name, Status, isUserBlocked, isUserMuted, handleMuteClick, handleBlockClick }) {
+function UserList({ Name, Status, isUserBlocked, isUserMuted, handleMuteClick, handleBlockClick, isExpand }) {
     return (
-        <div className='flex justify-center'>
+        <div className={isExpand ? 'flex ml-[300px]' : 'flex justify-center'}>
             <div className='grid gap-[27.5px]'>
                 <UserProfile
                     Name={Name}
@@ -11,6 +11,7 @@ function UserList({ Name, Status, isUserBlocked, isUserMuted, handleMuteClick, h
                     isUserBlocked={isUserBlocked} isUserMuted={isUserMuted}
                     handleBlockClick={handleBlockClick}
                     handleMuteClick={handleMuteClick}
+                    isExpand={isExpand}
                 />
             </div>
 

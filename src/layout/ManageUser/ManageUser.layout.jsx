@@ -7,15 +7,24 @@ import ManageUserViewModel from './ManageUser.layout.viewModel'
 function ManageUser() {
     const viewModel = ManageUserViewModel()
 
-    console.log(viewModel.searchState);
-
     return (
         <div>
-            <UserStats />
+            <UserStats
+                isExpand={viewModel.isExpand}
+                heading="Manage User"
+                mutedUsersCount={viewModel.mutedUsers}
+                usersCount={viewModel.totalUsers}
+                blockedUsersCount={viewModel.blockedUsers}
+                onlineUsersCount={viewModel.totalUsers} />
             <SearchBar
                 heading="Cari &quot;Pengguna&quot;"
-                isSearch={viewModel.searchState}
+                isSearch={viewModel.isSearch}
                 handleSearch={viewModel.handleSearch}
+                isExpand={viewModel.isExpand}
+                formik={viewModel.formik}
+                handleKeyPress={viewModel.handleKeyPress}
+                searchHistories={viewModel.searchHistory}
+                handleDeleteSearchHistory={viewModel.handleDelete}
             />
 
             <Outlet />

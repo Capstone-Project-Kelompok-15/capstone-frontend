@@ -2,14 +2,15 @@ import { useFormik } from "formik";
 import { useStore } from "../../config/zustand/store";
 
 const OnlineUserViewModel = () => {
-    const blockModalState = useStore(state =>
-        state.isBlockModalClicked)
-    const handleBlock = useStore(state => state.setIsBlockModalClicked)
+    const {
+        users,
+        isExpand,
+        handleBlockModal,
+        isBlockModalClicked,
+        isMuteModalClicked,
+        handleMuteModal
+    } = useStore(state => state)
 
-
-    const muteModalState = useStore(state => state.isMuteModalClicked)
-    const handleMute = useStore(state => state.setIsMuteModalClicked)
-    
     const formik = useFormik({
         initialValues: {
             mute_duration: ''
@@ -19,13 +20,19 @@ const OnlineUserViewModel = () => {
         }
     })
 
+    const onlineUsers = users.filter(
+        user => user.online_status && !user.block_status && !user.mute_status   
+    )
+
 
     return {
-        blockModalState,
-        handleBlock,
-        muteModalState,
-        handleMute,
-        formik
+        handleBlockModal,
+        isBlockModalClicked,
+        isMuteModalClicked,
+        handleMuteModal,
+        formik,
+        isExpand,
+        onlineUsers
     }
 
 }

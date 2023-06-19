@@ -7,19 +7,29 @@ function TotalUser() {
 
     return (
         <div>
-            <UserList Name="John Doe" Status="Aman" isUserBlocked={false} isUserMuted={false}
-                handleBlockClick={viewModel.handleBlock}
-                handleMuteClick={viewModel.handleMute} />
 
             {
-                viewModel.blockModalState && (
+                viewModel.totalUsers.map(user => (
+                    <UserList
+                        Name={user.name}
+                        handleBlockClick={viewModel.handleBlockModal}
+                        handleMuteClick={viewModel.handleMuteModal}
+                        isExpand={viewModel.isExpand}
+                        Status="Aman"
+                        key={user.id} />
+                ))
+            }
+
+            {
+                viewModel.isBlockModalClicked && (
                     <Modal
                         Message="Blokir User?"
                         confirmationMessage="Apakah Kamu Yakin Akan Memblokir User Ini?"
                         proceedMessage="Blokir"
                         cancelMessage="Batal"
                         muteModal={false}
-                        handleCancel={viewModel.handleBlock}
+                        handleCancel={viewModel.handleBlockModal}
+                        handleProceed={viewModel.handleBlock}
 
                         idProceedButton="block-user"
                         idCancelButton="batal"
@@ -28,7 +38,7 @@ function TotalUser() {
             }
 
             {
-                viewModel.muteModalState && (
+                viewModel.isMuteModalClicked && (
                     <Modal
                         formik={viewModel.formik}
                         muteModal
@@ -54,7 +64,8 @@ function TotalUser() {
                         confirmationMessage="Apakah Kamu Yakin Akan Mute User Ini?"
                         proceedMessage="Mute"
                         cancelMessage="Batal"
-                        handleCancel={viewModel.handleMute}
+                        handleCancel={viewModel.handleMuteModal}
+                        handleProceed={viewModel.handleMute}
 
                         idProceedButton="mute-user"
                         idCancelButton="batal"
