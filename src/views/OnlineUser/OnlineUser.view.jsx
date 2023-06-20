@@ -5,23 +5,30 @@ import OnlineUserViewModel from './OnlineUser.viewModel'
 function OnlineUser() {
     const viewModel = OnlineUserViewModel()
 
-    console.log({ block: viewModel.blockModalState, mute: viewModel.muteModalState });
-
     return (
         <div>
-            <UserList Name="John Doe" Status="Aman" isUserBlocked={false} isUserMuted={false}
-                handleBlockClick={viewModel.handleBlock}
-                handleMuteClick={viewModel.handleMute} />
+            {/* {
+                viewModel.onlineUsers.map(user => (
+                    <UserList 
+                        Name={user.name}
+                        handleBlockClick={viewModel.handleBlockModal}
+                        handleMuteClick={viewModel.handleMuteModal}
+                        isExpand={viewModel.isExpand}
+                        Status="Aman"
+                        key={user.id}
+                    />
+                ))
+            } */}
 
             {
-                viewModel.blockModalState && (
+                viewModel.isBlockModalClicked && (
                     <Modal
                         Message="Blokir User?"
                         confirmationMessage="Apakah Kamu Yakin Akan Memblokir User Ini?"
                         proceedMessage="Blokir"
                         cancelMessage="Batal"
                         muteModal={false}
-                        handleCancel={viewModel.handleBlock}
+                        handleCancel={viewModel.handleBlockModal}
                         idProceedButton="block-user"
                         idCancelButton="batal"
                     />
@@ -29,7 +36,7 @@ function OnlineUser() {
             }
 
             {
-                viewModel.muteModalState && (
+                viewModel.isMuteModalClicked && (
                     <Modal
                         formik={viewModel.formik}
                         muteModal
@@ -55,7 +62,7 @@ function OnlineUser() {
                         confirmationMessage="Apakah Kamu Yakin Akan Mute User Ini?"
                         proceedMessage="Mute"
                         cancelMessage="Batal"
-                        handleCancel={viewModel.handleMute}
+                        handleCancel={viewModel.handleMuteModal}
 
                         idProceedButton="mute-user"
                         idCancelButton="batal"

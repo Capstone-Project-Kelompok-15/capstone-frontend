@@ -5,30 +5,29 @@ import MutedUserViewModel from './MutedUser.viewModel'
 function MutedUser() {
   const viewModel = MutedUserViewModel()
 
-  console.log({
-    blockState: viewModel.blockModalState,
-    muteState: viewModel.muteModalState
-  });
-
-
   return (
     <div>
-      <UserList
-        Name='John Doe'
-        Status='Muted'
-        isUserBlocked={false}
-        isUserMuted
-        handleBlockClick={viewModel.handleBlock}
-        handleMuteClick={viewModel.handleMute}
-      />
+      {/* {
+        viewModel.mutedUsers.map(user => (
+          <UserList 
+            Name={user.name}
+            handleBlockClick={viewModel.handleBlockModal}
+            handleMuteClick={viewModel.handleMuteModal}
+            isExpand={viewModel.isExpand}
+            isUserMuted={user.mute_status}
+            Status="Muted"
+            key={user.id}
+            />
+        ))
+      } */}
       {
-        viewModel.muteModalState && (
+        viewModel.isMuteModalClicked && (
           <Modal
             Message="Buka Mute User?"
             confirmationMessage="Apakah Kamu Yakin Akan Membuka Mute User Ini?"
             proceedMessage="Buka Mute"
             cancelMessage="Batal"
-            handleCancel={viewModel.handleMute}
+            handleCancel={viewModel.handleMuteModal}
             idProceedButton="unmute-user"
             idCancelButton="batal"
           />
@@ -36,13 +35,13 @@ function MutedUser() {
       }
 
       {
-        viewModel.blockModalState && (
+        viewModel.isBlockModalClicked && (
           <Modal
             Message="Blokir User?"
             confirmationMessage="Apakah Kamu Yakin Akan Memblokir User Ini?"
             proceedMessage="Blokir"
             cancelMessage="Batal"
-            handleCancel={viewModel.handleBlock}
+            handleCancel={viewModel.handleBlockModal}
             idProceedButton="block-user"
             idCancelButton="batal"
           />

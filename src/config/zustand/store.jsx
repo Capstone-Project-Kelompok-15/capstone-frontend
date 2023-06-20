@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools } from 'zustand/middleware'
 import { BlockUserSlice } from "./BlockUser/BlockUserSlice";
 import { MuteUserSlice } from "./MuteUser/MuteUserSlice";
 import { SearchSlice } from "./Search/SearchSlice";
@@ -8,6 +8,7 @@ import { MuteModalSlice } from "./MuteModal/MuteModalSlice";
 import { SidebarSlice } from "./Sidebar/SidebarSlice";
 import { AdminLogin } from "./Login/AdminLogin";
 import { UsersSlice } from "./Users/UsersSlice";
+import { SearchHistorySlice } from './SearchHistory/SearchHistorySlice'
 
 export const useStore = create(devtools((...a) => ({
 	...BlockUserSlice(...a),
@@ -17,5 +18,6 @@ export const useStore = create(devtools((...a) => ({
 	...MuteModalSlice(...a),
 	...SidebarSlice(...a),
 	...AdminLogin(...a),
-	...UsersSlice(...a)
+	...UsersSlice(...a),
+    ...SearchHistorySlice(...a)
 })));

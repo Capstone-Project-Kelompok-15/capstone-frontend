@@ -2,22 +2,45 @@ import { useFormik } from "formik";
 import { useStore } from "../../config/zustand/store";
 
 const ManageUserViewModel = () => {
-    const handleSearch = useStore(state => state.setIsSearch)
-    const searchState = useStore(state => state.isSearch)
+    const {
+        setSearchHistory,
+        isExpand,
+        searchHistory,
+        isSearch,
+        handleSearch,
+        deleteSearchHistory
+    } = useStore(state => state)
+
 
     const formik = useFormik({
         initialValues: {
             searchValue: ''
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            setSearchHistory(values.searchValue)
         }
     })
 
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault()
+            formik.handleSubmit()
+        }
+
+    }
+
+    const handleDelete = () => {
+        deleteSearchHistory()
+    }
+
     return {
         handleSearch,
-        searchState,
-        formik
+        isSearch,
+        formik,
+        isExpand,
+        handleKeyPress,
+        searchHistory,
+        handleDelete
     }
 }
 

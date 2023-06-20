@@ -1,19 +1,26 @@
 import { useStore } from "../../config/zustand/store";
 
 const MutedUserViewModel = () => {
-    const blockModalState = useStore(state =>
-        state.isBlockModalClicked)
-    const handleBlock = useStore(state => state.setIsBlockModalClicked)
+    const {
+        userList,
+        isExpand,
+        handleBlockModal,
+        isBlockModalClicked,
+        isMuteModalClicked,
+        handleMuteModal
+    } = useStore(state => state)
 
-
-    const muteModalState = useStore(state => state.isMuteModalClicked)
-    const handleMute = useStore(state => state.setIsMuteModalClicked)
+    // const mutedUsers = users.filter(
+    //     user => user.mute_status && !user.block_status && !user.online_status
+    // )
 
     return {
-        blockModalState,
-        handleBlock,
-        muteModalState,
-        handleMute
+        handleBlockModal,
+        isBlockModalClicked,
+        isMuteModalClicked,
+        handleMuteModal,
+        isExpand,
+        // mutedUsers,
     }
 
 }
