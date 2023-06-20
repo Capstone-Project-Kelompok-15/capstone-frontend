@@ -49,12 +49,18 @@ function LoginViewModel() {
     if (isLogin) {
         return <Navigate to="/" />
     }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        formik.handleSubmit()
+    }
     return {
         formik,
         navigate,
         isLogin,
         setLogin,
         errorLogin,
+        handleSubmit
     }
 }
 export default LoginViewModel

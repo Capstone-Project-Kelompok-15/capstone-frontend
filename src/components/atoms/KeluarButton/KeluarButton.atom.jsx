@@ -1,6 +1,5 @@
 import React from "react"
 import logout from "../../../assets/logout.png"
-import { Modal } from "../../organisms"
 
 function KeluarButton() {
     return (

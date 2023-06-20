@@ -1,8 +1,6 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { KeluarButton } from "../../components/atoms"
 import { Modal } from "../../components/organisms"
-import { Navigate, useNavigate } from "react-router-dom"
 import KeluarButtonModel from "./KeluarButton.viewModel"
 
 function KeluarButtonView() {
@@ -21,9 +19,9 @@ function KeluarButtonView() {
                         proceedMessage="Keluar"
                         cancelMessage="Batal"
                         handleCancel={keluarButtonModel.handleKeluar}
-                        // handleProceed={keluarButtonModel.keluarProceed(
-                        //     "/landing"
-                        // )}
+                        handleProceed={keluarButtonModel.keluarProceed(
+                            "/landing"
+                        )}
                         idProceedButton="keluar"
                         idCancelButton="batal"
                     />

@@ -1,7 +1,6 @@
 import React from "react"
 import { ButtonMasuk, Logo } from "../../components/atoms"
 import { Footer } from "../../components/molecules"
-import { Navbar } from "../../components/organisms"
 import LoginViewModel from "./Login.viewModel"
 
 function Login() {
@@ -27,7 +26,7 @@ function Login() {
                 <div className="grid pt-[72px] place-content-center">
                     <form
                         id="loginForm"
-                        onSubmit={loginViewModel.formik.handleSubmit}>
+                        onSubmit={loginViewModel.handleSubmit}>
                         <div>
                             <label
                                 className="text-xl font-normal text-[#2C2C2C]"

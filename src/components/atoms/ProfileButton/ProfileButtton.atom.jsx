@@ -1,10 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import pp from "../../../assets/blank-pp.jpg"
-import UbahProfileViewModel from "../../../views/UbahProfile/UbahProfile.viewModel"
 
 function ProfileButtton() {
-    const ubahProfileViewModel = UbahProfileViewModel()
     return (
         <Link to="/ubahprofil">
             <button
