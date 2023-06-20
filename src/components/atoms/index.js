@@ -13,5 +13,3 @@ export { default as Logo } from "./Logo/Logo.atom";
 export { default as ProfileButton } from "./ProfileButton/ProfileButtton.atom";
 export { default as BackButton } from "./BackButton/BackButton.atom";
 export { default as ThreadPicture } from "./ThreadPicture/ThreadPicture.atom"
-export { default as TooltipButton } from "./TooltipButton/TooltipButton.atom";
-export { default as Button } from "./Button/Button.atom";
