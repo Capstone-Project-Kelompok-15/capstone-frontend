@@ -1,5 +1,5 @@
 import React from "react"
-import { ButtonMasuk } from "../../components/atoms"
+import { ButtonMasuk, Logo } from "../../components/atoms"
 import { Footer } from "../../components/molecules"
 import { Navbar } from "../../components/organisms"
 import LoginViewModel from "./Login.viewModel"
@@ -7,12 +7,11 @@ import LoginViewModel from "./Login.viewModel"
 function Login() {
     const loginViewModel = LoginViewModel()
 
-    console.log(loginViewModel.isAuthenticated);
-    
     return (
         <div id="loginView">
-            <Navbar />
-
+            <div className="flex py-[17px] px-[80px] justify-between items-center">
+                <Logo textLogo="black" />
+            </div>
             {/* FormLogin */}
             <div className="pt-14">
                 {/* Selamat Datang */}

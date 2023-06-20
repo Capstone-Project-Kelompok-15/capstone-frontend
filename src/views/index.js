@@ -10,3 +10,4 @@ export { default as ManageThreadView } from './ManageThread/ManageThread.view'
 export { default as UbahProfile } from "./UbahProfile/UbahProfile.view";
 export { default as ShowThread } from './ShowThread/ShowThread.view';
 export { default as ThreadReport } from './ThreadReport/ThreadReport.view'
+export { default as KeluarButtonView } from "./KeluarButtonView/KeluarButton.view"

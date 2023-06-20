@@ -1,15 +1,29 @@
 import React from "react"
-import { BackButton, ButtonMasuk } from "../../components/atoms"
+import { BackButton, ButtonMasuk, TooltipButton } from "../../components/atoms"
 import pp from "../../assets/blank-pp.jpg"
 import UbahProfileViewModel from "./UbahProfile.viewModel"
+import { Navbar, Sidebar } from "../../components/organisms"
+import { useStore } from "../../config/zustand/store"
 
 function UbahProfile() {
     const ubahProfileViewModel = UbahProfileViewModel()
+    const isExpand = useStore((state) => state.isExpand)
+    const handleExpand = useStore((state) => state.setIsExpand)
 
     return (
         <div className="bg-[#F8F8F8]" id="ubahProfileView">
-            <BackButton />
-            <div className="pt-[11.59px] ml-[153px]">
+            <Navbar ubahNavbar="ubahProfil" />
+            <Sidebar expand={isExpand} handleExpand={handleExpand} />
+            <div
+                className={` transition-all duration-300 ${
+                    ubahProfileViewModel.isExpand ? "ml-[150px]" : ""
+                }`}>
+                <BackButton />
+            </div>
+            <div
+                className={`pt-[11.59px] transition-all duration-300 ${
+                    ubahProfileViewModel.isExpand ? "ml-[300px]" : "ml-[150px]"
+                }`}>
                 <div>
                     <form
                         id="ubahProfileForm"
@@ -36,15 +50,16 @@ function UbahProfile() {
                                     <input
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] h-11 py-2 px-4 "
                                         type="text"
-                                        name="usernameBaru"
-                                        id="usernameBaru"
+                                        name="username"
+                                        id="username"
+                                        placeholder="e.g., admin1"
                                         onChange={
                                             ubahProfileViewModel.formik
                                                 .handleChange
                                         }
                                         value={
                                             ubahProfileViewModel.formik.values
-                                                .usernameBaru
+                                                .username
                                         }
                                         onBlur={
                                             ubahProfileViewModel.formik
@@ -60,15 +75,16 @@ function UbahProfile() {
                                     <input
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] h-11 py-2 px-4 "
                                         type="email"
-                                        name="emailBaru"
-                                        id="emailBaru"
+                                        name="email"
+                                        id="email"
+                                        placeholder="e.g., leslialexander@gmail.com"
                                         onChange={
                                             ubahProfileViewModel.formik
                                                 .handleChange
                                         }
                                         value={
                                             ubahProfileViewModel.formik.values
-                                                .emailBaru
+                                                .email
                                         }
                                         onBlur={
                                             ubahProfileViewModel.formik
@@ -84,15 +100,15 @@ function UbahProfile() {
                                     <input
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] h-11 py-2 px-4 "
                                         type="password"
-                                        name="passwordBaru"
-                                        id="passwordBaru"
+                                        name="password"
+                                        id="password"
                                         onChange={
                                             ubahProfileViewModel.formik
                                                 .handleChange
                                         }
                                         value={
                                             ubahProfileViewModel.formik.values
-                                                .passwordBaru
+                                                .password
                                         }
                                         onBlur={
                                             ubahProfileViewModel.formik
@@ -139,4 +155,3 @@ function UbahProfile() {
 }
 
 export default UbahProfile
-
