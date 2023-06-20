@@ -6,7 +6,7 @@ function TotalUser() {
     const viewModel = TotalUserViewModel()
 
     useEffect(() => {
-        viewModel.fetchUsers()
+        viewModel.fetchUsers(viewModel.accessToken)
     }, [])
 
     return (

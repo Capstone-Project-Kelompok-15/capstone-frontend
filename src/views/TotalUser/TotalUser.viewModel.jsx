@@ -18,7 +18,7 @@ const TotalUserViewModel = () => {
         }
     })
 
-    const { fetchUsers } = useStore(state => state)
+    const { fetchUsers, accessToken } = useStore(state => state)
 
     return {
         blockModalState,
@@ -26,7 +26,8 @@ const TotalUserViewModel = () => {
         muteModalState,
         handleMute,
         formik,
-        fetchUsers
+        fetchUsers,
+        accessToken
 
     }
 

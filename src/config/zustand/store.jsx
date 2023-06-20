@@ -7,7 +7,6 @@ import { BlockModalSlice } from "./BlockModal/BlockModalSlice";
 import { MuteModalSlice } from "./MuteModal/MuteModalSlice";
 import { SidebarSlice } from "./Sidebar/SidebarSlice";
 import { AdminLogin } from "./Login/AdminLogin";
-import { CardStatsSlice } from "./CardStats/CardStatsSlice";
 import { UsersSlice } from "./Users/UsersSlice";
 
 export const useStore = create(devtools((...a) => ({
@@ -18,6 +17,5 @@ export const useStore = create(devtools((...a) => ({
 	...MuteModalSlice(...a),
 	...SidebarSlice(...a),
 	...AdminLogin(...a),
-	...CardStatsSlice(...a),
 	...UsersSlice(...a)
 })));
