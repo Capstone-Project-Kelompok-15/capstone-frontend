@@ -8,7 +8,7 @@ export { default as ThreadProfile } from './ThreadProfile/ThreadProfile.molecule
 export { default as NavHome } from "./NavHome/NavHome.molecule";
 export { default as LihatThread } from "./LihatThread/LihatThread.molecule";
 export { default as LihatThreadProfile } from "./LihatThreadProfile/LihatThreadProfile.molecule";
-export { default as ThreadReportCard } from "./ThreadReportCard/ThreadReportCard.molecule"
-export { default as SearchBar } from './SearchBar/SearchBar.molecule'
-export { default as CardStats } from './CardStats/CardStats.molecule'
-export { default as SearchHistory } from './SearchHistory/SearchHistory.molecule'
+export { default as ThreadReportCard } from "./ThreadReportCard/ThreadReportCard.molecule";
+export { default as SearchBar } from './SearchBar/SearchBar.molecule';
+export { default as CardStats } from './CardStats/CardStats.molecule';
+export { default as SearchHistory } from './SearchHistory/SearchHistory.molecule';

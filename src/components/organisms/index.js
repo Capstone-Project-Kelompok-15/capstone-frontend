@@ -9,5 +9,3 @@ export { default as ThreadStats } from "./ThreadStats/ThreadStats.organisms"
 export { default as ThreadReportContent } from "./ThreadReportContent/ThreadReportContent.organism"
 export { default as ViewThread } from "./LihatThread/LihatThread.organism";
 export { default as Modal } from './Modal/Modal.organism'
-// export { default as ThreadReportCard } from "./ThreadReportCard/ThreadReportCard.organism";
-
