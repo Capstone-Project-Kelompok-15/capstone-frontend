@@ -8,7 +8,7 @@ function ManageUser() {
     const viewModel = ManageUserViewModel()
 
     return (
-        <div>
+        <div className='bg-[#f8f8f8]'>
             <UserStats
                 isExpand={viewModel.isExpand}
                 heading="Manage User"
