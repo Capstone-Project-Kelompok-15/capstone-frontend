@@ -1,6 +1,6 @@
 import React from "react"
-import Eye from "../../../assets/Eye.svg"
 import { Link } from "react-router-dom"
+import Eye from "../../../assets/Eye.svg"
 
 function ViewButton() {
   return (
