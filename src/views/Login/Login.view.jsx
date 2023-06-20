@@ -6,11 +6,10 @@ import LoginViewModel from "./Login.viewModel"
 
 function Login() {
     const loginViewModel = LoginViewModel()
-    
+
     return (
         <div id="loginView">
             <Navbar />
-
             {/* FormLogin */}
             <div className="pt-14">
                 {/* Selamat Datang */}
