@@ -1,23 +1,34 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import { KeluarButton } from "../../components/atoms"
+import { Modal } from "../../components/organisms"
+import { Navigate, useNavigate } from "react-router-dom"
 import KeluarButtonModel from "./KeluarButton.viewModel"
 
 function KeluarButtonView() {
     const keluarButtonModel = KeluarButtonModel()
+    // const keluar = useNavigate("/landing")
     return (
         <div>
-            <KeluarButton />
-            {keluarButtonModel.keluarModalState && (
-                <Modal
-                    Message="Blokir User?"
-                    confirmationMessage="Apakah Kamu Yakin Akan Memblokir User Ini?"
-                    proceedMessage="Blokir"
-                    cancelMessage="Batal"
-                    handleCancel={keluarButtonModel.handleKeluar}
-                    idProceedButton="block-user"
-                    idCancelButton="batal"
-                />
-            )}
+            <div onClick={keluarButtonModel.handleKeluar}>
+                <KeluarButton />
+            </div>
+            <div>
+                {keluarButtonModel.keluarModalState && (
+                    <Modal
+                        Message="Keluar?"
+                        confirmationMessage="Apakah Kamu Yakin Akan Keluar?"
+                        proceedMessage="Keluar"
+                        cancelMessage="Batal"
+                        handleCancel={keluarButtonModel.handleKeluar}
+                        // handleProceed={keluarButtonModel.keluarProceed(
+                        //     "/landing"
+                        // )}
+                        idProceedButton="keluar"
+                        idCancelButton="batal"
+                    />
+                )}
+            </div>
         </div>
     )
 }
