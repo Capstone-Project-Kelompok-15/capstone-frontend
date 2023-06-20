@@ -11,7 +11,7 @@ import { SearchHistorySlice } from "./SearchHistory/SearchHistorySlice";
 import { UsersSlice } from "./Users/UsersSlice";
 import { DeleteModalSlice } from "./DeleteModal/DeleteModalSlice";
 import { DeleteThreadSlice } from "./DeleteThread/DeleteThreadSlice";
-
+import { ChartSlice } from "./Chart/ChartSlice";
 
 export const useStore = create(devtools((...a) => ({
 	...BlockUserSlice(...a),
@@ -25,5 +25,5 @@ export const useStore = create(devtools((...a) => ({
 	...UsersSlice(...a),
 	...DeleteModalSlice(...a),
 	...DeleteThreadSlice(...a),
-
+	...ChartSlice(...a),
 })));

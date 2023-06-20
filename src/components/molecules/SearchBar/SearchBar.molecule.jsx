@@ -17,8 +17,8 @@ function SearchBar(
         <div className={isExpand ? 'flex mt-[16px] ml-[300px]' : 'flex justify-center mt-[16px]'}>
             {
                 isSearch ? (
-                    <div className='w-[1210px] rounded-[12px] bg-[#FFFFFF] border border-[#012269]'>
-                        <div className='flex gap-[12px]'>
+                    <div className={isExpand ? 'w-[1180px] rounded-[12px] bg-[#FFFFFF] border border-[#012269]' : 'w-[1210px] rounded-[12px] bg-[#FFFFFF] border border-[#012269]'}>
+                        <div className={isExpand ? 'flex' : 'flex gap-[12px]'}>
                             <SearchButton handleSearch={handleSearch} />
                             <form className='mt-[9px] mb-[9px]' onKeyPress={handleKeyPress}>
                                 <input type='text' name="searchValue" className='focus:outline-none' value={formik.searchValue} onChange={formik.handleChange} />
@@ -36,7 +36,7 @@ function SearchBar(
                         }
                     </div>
                 ) : (
-                    <div className={isExpand ? 'w-[1065px] h-[36px] rounded-[12px] bg-[#0122691a]' : 'w-[1210px] h-[36px] rounded-[12px] bg-[#0122691a]'}>
+                    <div className={isExpand ? 'w-[1180px] h-[36px] rounded-[12px] bg-[#0122691a]' : 'w-[1210px] h-[36px] rounded-[12px] bg-[#0122691a]'}>
                         <div className='flex gap-[12px]'>
                             <SearchButton handleSearch={handleSearch} />
                             <div className='w-[1113.62px] mt-[8px] mb-[8px]'>
