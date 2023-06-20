@@ -1,5 +1,5 @@
 import React from "react"
-import KeluarButtonView from "../../../views/KeluarButtonView/KeluarButton.view"
+import { KeluarButtonView } from "../../../views"
 import Logo from "../../atoms/Logo/Logo.atom"
 
 import { NavHome } from "../../molecules"

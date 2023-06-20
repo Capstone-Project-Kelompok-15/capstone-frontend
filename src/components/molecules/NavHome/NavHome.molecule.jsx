@@ -1,7 +1,7 @@
 import React from "react"
 import ProfileButtton from "../../atoms/ProfileButton/ProfileButtton.atom"
 import line from "../../../assets/line.png"
-import KeluarButtonView from "../../../views/KeluarButtonView/KeluarButton.view"
+import { KeluarButtonView } from "../../../views"
 
 function NavHome() {
     return (
