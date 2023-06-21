@@ -1,9 +1,12 @@
 import React from "react"
 import { ThreadProfile } from "../../molecules"
 
-function ThreadList() {
+function ThreadList(
+  {
+    isExpand,
+  }) {
   return (
-    <div className='gap-[15px]'>
+    <div className={isExpand ? 'gap-[15px] ml-[300px]': 'gap-[15px] ml-[150px]'}>
       <ThreadProfile/>
     </div>
   )
