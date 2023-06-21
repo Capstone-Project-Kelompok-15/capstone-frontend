@@ -149,7 +149,7 @@ function Sidebar({ expand, handleExpand }) {
                     )}
                 </div>
             </Link>
-            <Link to="/thread" id="sidebar-thread">
+            <Link to="/thread/manage" id="sidebar-thread">
                 <div className="py-1 px-6 flex justify-start items-center w-full h-[52px] rounded-2xl cursor-pointer hover:border-[1px] hover:border-[#195FAA] group transition">
                     {expand ? (
                         <div className="flex items-center gap-2 transition">
