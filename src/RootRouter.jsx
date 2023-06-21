@@ -17,16 +17,69 @@ import {
     UbahProfile,
     ShowThread,
 } from "./views"
-import { RootLayout, ThreadLayout, ManageUserLayout } from "./layout"
+import {
+    RootLayout,
+    ThreadLayout,
+    ManageUserLayout,
+    ProtectedRoute,
+} from "./layout"
 
 const rootRouter = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/" element={<RootLayout />}>
-            <Route index element={<HomeView />} />
+            <Route
+                index
+                element={
+                    <ProtectedRoute>
+                        <HomeView />
+                    </ProtectedRoute>
+                }
+            />
             <Route path="login" element={<Login />} />
             <Route path="landing" element={<LandingPageView />} />
             <Route path="ubahprofil" element={<UbahProfile />} />
             <Route path="show" element={<ShowThread />} />
+
+            <Route
+                path="/manageUser"
+                element={
+                    <ProtectedRoute>
+                        <ManageUserLayout />
+                    </ProtectedRoute>
+                }>
+                <Route
+                    path="online"
+                    element={
+                        <ProtectedRoute>
+                            <OnlineUserView />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="total"
+                    element={
+                        <ProtectedRoute>
+                            <TotalUserView />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="muted"
+                    element={
+                        <ProtectedRoute>
+                            <MutedUserView />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="blocked"
+                    element={
+                        <ProtectedRoute>
+                            <BlockedUserView />
+                        </ProtectedRoute>
+                    }
+                />
+            </Route>
 
             <Route path="/manageUser" element={<ManageUserLayout />}>
                 <Route path="online" element={<OnlineUserView />} />

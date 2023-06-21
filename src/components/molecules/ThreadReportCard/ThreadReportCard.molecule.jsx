@@ -63,12 +63,17 @@ function ThreadReportCard() {
                             {modalContent}
                         </p>
                         <div className="flex flex-col items-center gap-4">
-                            <button className="btn btn-primary text-[#AA1512] font-source-sans font-bold text-24">
+                            <button
+                                type="button"
+                                id="confirmmodalbutton"
+                                className="btn btn-primary text-[#AA1512] font-source-sans font-bold text-24">
                                 {modalTitle === "Setujui Laporan?"
                                     ? "Setuju"
                                     : "Menolak"}
                             </button>
                             <button
+                                type="button"
+                                id="cancelmodalbutton"
                                 className="btn font-source-sans font-bold text-24"
                                 onClick={handleModalClose}>
                                 Batal
