@@ -1,10 +1,14 @@
 import React from "react"
 import AcceptVector from "../../../assets/accept.svg"
 
-function AcceptButton() {
+function AcceptButton({ onClick }) {
     return (
         <div className="w-[60px] h-[67px]">
-            <button type="button" className="btn" id="buttonterima">
+            <button
+                type="button"
+                className="btn"
+                id="buttonterima"
+                onClick={onClick}>
                 <img
                     src={AcceptVector}
                     alt="Accept Logo"

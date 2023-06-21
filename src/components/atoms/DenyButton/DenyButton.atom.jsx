@@ -1,10 +1,14 @@
 import React from "react"
 import DenyVector from "../../../assets/deny.svg"
 
-function DenyButton() {
+function DenyButton({ onClick }) {
     return (
         <div className="w-[60px] h-[67px]">
-            <button type="button" className="btn" id="buttontolak">
+            <button
+                type="button"
+                className="btn"
+                id="buttontolak"
+                onClick={onClick}>
                 <img
                     src={DenyVector}
                     alt="Deny Logo"

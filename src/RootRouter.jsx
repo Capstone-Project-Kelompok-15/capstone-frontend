@@ -17,12 +17,7 @@ import {
     UbahProfile,
     ShowThread,
 } from "./views"
-import {
-    RootLayout,
-    ThreadLayout,
-    ManageUserLayout,
-    ReportThreadLayout,
-} from "./layout"
+import { RootLayout, ThreadLayout, ManageUserLayout } from "./layout"
 
 const rootRouter = createBrowserRouter(
     createRoutesFromElements(
@@ -42,9 +37,6 @@ const rootRouter = createBrowserRouter(
 
             <Route path="thread" element={<ThreadLayout />}>
                 <Route path="manage" element={<ManageThreadView />} />
-            </Route>
-
-            <Route path="/threads" element={<ReportThreadLayout />}>
                 <Route path="report" element={<ThreadReport />} />
             </Route>
         </Route>
