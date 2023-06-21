@@ -3,12 +3,12 @@ import ThreadPhoto from '../../../assets/Threadphoto.svg'
 
 function LihatThread() {
   return (
-    <div className='h-[514px] w-[1210px] bg-white mt-[20px] px-[15px] py-[30px]'>
+    <div className='h-[514px] bg-white mt-[20px] px-[15px] py-[30px]'>
         <div className='justify-center items-center bg-white'>
-          <h1 className='text-center font-source-sans font-bold bg-white text-[24px]'>UU Tenaga Kerja</h1>
+          <h1 className='text-center font-source-sans font-bold text-[24px]'>UU Tenaga Kerja</h1>
         </div>
         <div>
-          <p className='text-justify text-[16px] font-source-sans font-normal mt-[10px] ml-[30px] bg-white'>Saya mau ikut-ikutan menjawab, walaupun sudah telat, masih boleh kan?? Jujur, sampai sekarang saya masih belum tahu apa perbedaan UU Tenaga Kerja yang baru dan yang lama. 
+          <p className='text-justify text-[16px] font-source-sans font-normal mt-[10px] ml-[30px]'>Saya mau ikut-ikutan menjawab, walaupun sudah telat, masih boleh kan?? Jujur, sampai sekarang saya masih belum tahu apa perbedaan UU Tenaga Kerja yang baru dan yang lama. 
             Tetapi katanya sih, merugikan pekerja karena tidak ada jaminan kerja tetap, upah yang menurun, dan lain-lain yang katanya merugikan lah&hellip;. 
             Saya jujur belum melihat UU yang baru, dan malas juga membuang waktu saya &apos;hanya&apos; untuk melihatnya. Tetapi, ada beberapa hal yang ingin saya sampaikan. 
             Cerita ini, seperti biasa akan panjang, jadi siapkan kuaci atau kacang dan teh yah&hellip;.
@@ -20,9 +20,10 @@ function LihatThread() {
             
             </p>
         </div>
-        <div className='flex justify-center bg-white'>
+        <div className='flex justify-center'>
           <img src={ThreadPhoto} alt="" className='mt-[10px]'/>
         </div>
+
     </div>
   )
 }

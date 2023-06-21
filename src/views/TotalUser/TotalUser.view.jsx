@@ -6,7 +6,7 @@ function TotalUser() {
     const viewModel = TotalUserViewModel()
 
     return (
-        <div>
+        <div className='bg-[#f8f8f8]'>
 
             {
                 viewModel.totalUsers.map(user => (

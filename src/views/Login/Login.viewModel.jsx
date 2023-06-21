@@ -1,28 +1,30 @@
-import { useState } from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import { useNavigate } from "react-router-dom";
-import { useStore } from "../../config/zustand/store";
+import React, { useState } from "react"
+import { useFormik } from "formik"
+import * as Yup from "yup"
+import { Navigate, useNavigate } from "react-router-dom"
+import { useStore } from "../../config/zustand/store"
 
 function LoginViewModel() {
-	const navigate = useNavigate()
+    const navigate = useNavigate()
     const isLogin = useStore((state) => state.isLogin)
     const setLogin = useStore((state) => state.setLogin)
 
-	const [errorLogin, setErrorLogin] = useState(false)
-	const email = "admin@yahoo.com";
-	const password = "admin";
+    const [errorLogin, setErrorLogin] = useState(false)
 
-	const formik = useFormik({
-		initialValues: {
-			email: "",
-			password: "",
-		},
-		validationSchema: Yup.object().shape({
-			email: Yup.string().required("Tolong masukkan email"),
-			password: Yup.string().required("Tolong masukkan kata sandi"),
-		}),
-		onSubmit: (values) => {
+    const username = "Admin 1"
+    const email = "admin@yahoo.com"
+    const password = "admin"
+
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            password: "",
+        },
+        validationSchema: Yup.object().shape({
+            email: Yup.string().required("Tolong masukkan email"),
+            password: Yup.string().required("Tolong masukkan kata sandi"),
+        }),
+        onSubmit: (values) => {
             if (values.email === email && values.password === password) {
                 setLogin(true)
                 navigate("/")
@@ -40,15 +42,25 @@ function LoginViewModel() {
                 // }, 1500);
                 // console.log("error");
             }
-            formik.resetForm()
-            // Login(values.email, values.password);
-		},
-	});
 
-	return {
-		formik,
-		errorLogin,
-		isLogin
-	};
+            // formik.resetForm();
+        },
+    })
+    if (isLogin) {
+        return <Navigate to="/" />
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        formik.handleSubmit()
+    }
+    return {
+        formik,
+        navigate,
+        isLogin,
+        setLogin,
+        errorLogin,
+        handleSubmit
+    }
 }
-export default LoginViewModel;
+export default LoginViewModel

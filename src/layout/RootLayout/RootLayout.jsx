@@ -8,14 +8,16 @@ function RootLayout() {
     const handleExpand = useStore((state) => state.setIsExpand)
     const location = useLocation()
 
-    const excludedPaths = ["/login", "/landing"]
+
+    const excludedPaths = ["/login", "/landing", "/ubahprofil"]
     const isExcluded = excludedPaths.includes(location.pathname)
 
     return (
         <div>
             {!isExcluded && (
                 <>
-                    <Navbar bgNavbar="bgIsLoggedIn" loginNavbar="isLoggedIn" />
+
+                    <Navbar bgNavbar="bgIsLoggedIn" />
 
                     <Sidebar expand={isExpand} handleExpand={handleExpand} />
                 </>
