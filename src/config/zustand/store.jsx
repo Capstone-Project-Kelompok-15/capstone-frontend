@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools } from 'zustand/middleware'
 import { BlockUserSlice } from "./BlockUser/BlockUserSlice";
 import { MuteUserSlice } from "./MuteUser/MuteUserSlice";
 import { SearchSlice } from "./Search/SearchSlice";
@@ -29,4 +29,5 @@ export const useStore = create(devtools((...a) => ({
 	...DeleteThreadSlice(...a),
 	...ChartSlice(...a),
 	...KeluarModalSlice(...a)
+
 })));

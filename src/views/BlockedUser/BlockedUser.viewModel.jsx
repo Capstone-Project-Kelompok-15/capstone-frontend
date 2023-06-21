@@ -3,7 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const BlockUserViewModel = () => {
     const {
-        users,
+        userList,
         isExpand,
         handleBlockModal,
         isBlockModalClicked,
@@ -21,9 +21,9 @@ const BlockUserViewModel = () => {
         }
     })
 
-    const blockedUsers = users.filter(
-        user => user.block_status
-    )
+    // const blockedUsers = users.filter(
+    //     user => user.block_status
+    // )
 
 
     return {
@@ -33,7 +33,6 @@ const BlockUserViewModel = () => {
         handleMuteModal,
         formik,
         isExpand,
-        blockedUsers
     }
 
 }
