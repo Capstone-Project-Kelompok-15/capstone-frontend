@@ -3,7 +3,7 @@ import ThreadPhoto from '../../../assets/Threadphoto.svg'
 
 function LihatThread() {
   return (
-    <div className='h-[514px] w-[1210px] bg-white mt-[20px] px-[15px] py-[30px]'>
+    <div className='h-[514px] bg-white mt-[20px] px-[15px] py-[30px]'>
         <div className='justify-center items-center bg-white'>
           <h1 className='text-center font-source-sans font-bold text-[24px]'>UU Tenaga Kerja</h1>
         </div>
