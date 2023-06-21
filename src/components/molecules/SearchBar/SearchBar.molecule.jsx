@@ -44,7 +44,7 @@ function SearchBar({
                             </div>
                         </div>
                     </div>
-                </div>
+                
             )}
         </div>
     )
