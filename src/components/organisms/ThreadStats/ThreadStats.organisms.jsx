@@ -14,7 +14,6 @@ function ThreadStats(
             </div>
             <LaporanThread/>
             </div>
-            <LaporanThread />
         </div>
     )
 }
