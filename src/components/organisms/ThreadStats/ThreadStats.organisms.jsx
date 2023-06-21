@@ -14,8 +14,9 @@ function ThreadStats(
             </div>
             <LaporanThread/>
             </div>
+            <LaporanThread />
+        </div>
     )
 }
 
-export default ThreadStats;
-
+export default ThreadStats

@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 function LaporanThread() {
+
   return (
 <div>
       <Link to="/thread/manage">

@@ -1,10 +1,12 @@
 import React from "react"
-import { ThreadReportContent } from "../../components/organisms"
+import { ThreadReportList } from "../../components/organisms"
+import ThreadReportModel from "./ThreadReportModel.view"
 
 function ThreadReport() {
+    const viewModel = ThreadReportModel
     return (
-        <div className="bg-[#f8f8f8]">
-            <ThreadReportContent />
+        <div>
+            <ThreadReportList isExpand={viewModel.isExpand} />
         </div>
     )
 }

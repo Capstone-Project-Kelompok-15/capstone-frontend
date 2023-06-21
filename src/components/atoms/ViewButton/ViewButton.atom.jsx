@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Eye from "../../../assets/Eye.svg"
 
 function ViewButton() {
+
   return (
     <div className='w-[60px] h-[67px]'>
       <Link to="/show" id="linkview">
