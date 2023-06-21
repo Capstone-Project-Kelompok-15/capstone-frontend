@@ -1,19 +1,19 @@
-import React from 'react'
-import { DeleteSearchHistoryButton, SearchButton } from '../../atoms'
-import SearchHistory from '../SearchHistory/SearchHistory.molecule'
+import React from "react"
+import { DeleteSearchHistoryButton, SearchButton } from "../../atoms"
+import SearchHistory from "../SearchHistory/SearchHistory.molecule"
 
-function SearchBar(
-    {
-        heading,
-        isSearch,
-        handleSearch,
-        handleKeyPress,
-        formik,
-        isExpand,
-        handleDeleteSearchHistory,
-        searchHistories
-    }) {
+function SearchBar({
+    heading,
+    isSearch,
+    handleSearch,
+    handleKeyPress,
+    formik,
+    isExpand,
+    handleDeleteSearchHistory,
+    searchHistories,
+}) {
     return (
+
         <div className={isExpand ? 'flex mt-[16px] ml-[300px]' : 'flex justify-center mt-[16px]'}>
             {
                 isSearch ? (
@@ -44,10 +44,8 @@ function SearchBar(
                             </div>
                         </div>
                     </div>
-
-                )
-            }
-
+                
+            )}
         </div>
     )
 }
