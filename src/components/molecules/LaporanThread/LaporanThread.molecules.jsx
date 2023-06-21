@@ -1,6 +1,23 @@
 import React from "react"
+import { useLocation } from "react-router-dom"
 
 function LaporanThread() {
+    const location = useLocation()
+
+    let threadTotal = ""
+    if (location.pathname.startsWith("/thread/report")) {
+        threadTotal = "996"
+    } else {
+        threadTotal = "999"
+    }
+
+    let threadDetail = ""
+    if (location.pathname.startsWith("/thread/report")) {
+        threadDetail = "Jumlah Laporan Thread"
+    } else {
+        threadDetail = "Jumlah Thread"
+    }
+
     return (
         <div
             id="container_middle"
@@ -9,12 +26,12 @@ function LaporanThread() {
                 <p
                     id="jumlahthread"
                     className="text-center text-[16px] font-source-sans bg-white">
-                    999
+                    {threadTotal}
                 </p>
                 <p
                     id="keteranganthread"
                     className="text-center text-[16px] font-source-sans bg-white">
-                    Jumlah Thread
+                    {threadDetail}
                 </p>
             </div>
         </div>
