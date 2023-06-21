@@ -13,7 +13,6 @@ function ThreadStats(
            <TooltipButton/>
             </div>
             <LaporanThread/>
-            </div>
         </div>
     )
 }
