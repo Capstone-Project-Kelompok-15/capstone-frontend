@@ -1,9 +1,17 @@
-import React from 'react'
-import { UserList, Modal } from '../../components/organisms'
+import React, { useEffect } from 'react'
+import {
+    UserList,
+    Modal
+} from '../../components/organisms'
 import TotalUserViewModel from './TotalUser.viewModel'
 
 function TotalUser() {
     const viewModel = TotalUserViewModel()
+
+    useEffect(() => {
+        viewModel.getUsers()
+    }, [])
+
 
     return (
         <div>
@@ -12,11 +20,13 @@ function TotalUser() {
                 viewModel.totalUsers.map(user => (
                     <UserList
                         Name={user.name}
-                        handleBlockClick={viewModel.handleBlockModal}
-                        handleMuteClick={viewModel.handleMuteModal}
+                        handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+                        handleModalMute={() => viewModel.handleMuteOpen(user.id)}
                         isExpand={viewModel.isExpand}
                         Status="Aman"
-                        key={user.id} />
+                        key={user.id}
+                    />
+
                 ))
             }
 
@@ -28,9 +38,10 @@ function TotalUser() {
                         proceedMessage="Blokir"
                         cancelMessage="Batal"
                         muteModal={false}
-                        handleCancel={viewModel.handleBlockModal}
-                        handleProceed={viewModel.handleBlock}
-
+                        handleCancel={viewModel.handleBlockCancel}
+                        handleProceed={
+                            viewModel.handleBlockProceed
+                        }
                         idProceedButton="block-user"
                         idCancelButton="batal"
                     />
@@ -64,7 +75,7 @@ function TotalUser() {
                         confirmationMessage="Apakah Kamu Yakin Akan Mute User Ini?"
                         proceedMessage="Mute"
                         cancelMessage="Batal"
-                        handleCancel={viewModel.handleMuteModal}
+                        handleCancel={viewModel.handleMuteCancel}
                         handleProceed={viewModel.handleMute}
 
                         idProceedButton="mute-user"

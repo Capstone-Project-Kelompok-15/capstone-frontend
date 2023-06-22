@@ -7,9 +7,9 @@ function UserProfile(
         Status,
         isUserBlocked,
         isUserMuted,
-        handleMuteClick,
-        handleBlockClick,
-        isExpand
+        handleModalBlock,
+        handleModalMute,
+        isExpand,
     }) {
     const statusCondition = {
         "Aman": 'font-source-sans font-semibold text-[12px] text-[#30B221]',
@@ -30,14 +30,14 @@ function UserProfile(
                 isUserBlocked && (
                     <>
                         <Button
-                            handleClick={handleMuteClick}
+                            handleClick={handleModalMute}
                             buttonDesc="Mute Pengguna"
                             img="mute"
                             altImg="mute user"
                             id="mute-user" />
 
                         <Button
-                            handleClick={handleBlockClick}
+                            handleClick={handleModalBlock}
                             buttonDesc="Buka Blokir"
                             img="unblock"
                             altImg="unblock user"
@@ -52,14 +52,14 @@ function UserProfile(
                 isUserMuted && (
                     <>
                         <Button
-                            handleClick={handleMuteClick}
+                            handleClick={handleModalMute}
                             buttonDesc="Buka Mute"
                             img="unmute"
                             altImg="unmute user"
                             id="unmute-user" />
 
                         <Button
-                            handleClick={handleBlockClick}
+                            handleClick={handleModalBlock}
                             buttonDesc="Blokir User"
                             img="block"
                             altImg="block user"
@@ -72,14 +72,14 @@ function UserProfile(
                 !isUserBlocked && !isUserMuted && (
                     <>
                         <Button
-                            handleClick={handleMuteClick}
+                            handleClick={handleModalMute}
                             buttonDesc="Mute Pengguna"
                             img="mute"
                             altImg="mute user"
                             id="mute-user" />
 
                         <Button
-                            handleClick={handleBlockClick}
+                            handleClick={handleModalBlock}
                             buttonDesc="Blokir User"
                             img="block"
                             altImg="block user"
