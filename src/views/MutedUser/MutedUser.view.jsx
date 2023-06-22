@@ -7,7 +7,7 @@ function MutedUser() {
 
   return (
     <div>
-      {/* {
+      {
         viewModel.mutedUsers.map(user => (
           <UserList 
             Name={user.name}
@@ -19,7 +19,7 @@ function MutedUser() {
             key={user.id}
             />
         ))
-      } */}
+      }
       {
         viewModel.isMuteModalClicked && (
           <Modal

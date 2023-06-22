@@ -7,7 +7,7 @@ function OnlineUser() {
 
     return (
         <div>
-            {/* {
+            {
                 viewModel.onlineUsers.map(user => (
                     <UserList 
                         Name={user.name}
@@ -18,7 +18,7 @@ function OnlineUser() {
                         key={user.id}
                     />
                 ))
-            } */}
+            }
 
             {
                 viewModel.isBlockModalClicked && (

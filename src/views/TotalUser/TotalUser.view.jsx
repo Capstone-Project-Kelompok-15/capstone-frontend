@@ -5,17 +5,13 @@ import TotalUserViewModel from './TotalUser.viewModel'
 function TotalUser() {
     const viewModel = TotalUserViewModel()
 
-    useEffect(() => {
-        viewModel.fetchUsers(viewModel.accessToken)
-    }, [])
-
     return (
         <div className='bg-[#f8f8f8]'>
 
             {
-                viewModel.userList.map(user => (
+                viewModel.totalUsers.map(user => (
                     <UserList
-                        Name={user.username}
+                        Name={user.name}
                         handleBlockClick={viewModel.handleBlockModal}
                         handleMuteClick={viewModel.handleMuteModal}
                         isExpand={viewModel.isExpand}

@@ -13,7 +13,9 @@ function ThreadLayout() {
             <ThreadStats
             isExpand={viewModel.isExpand} />
             <SearchBar
-            isExpand={viewModel.isExpand} />
+            isExpand={viewModel.isExpand} 
+            heading="Cari &quot;Thread&quot;"
+             />
             <Outlet />
         </div>
     )

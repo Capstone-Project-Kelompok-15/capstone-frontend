@@ -3,6 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const ManageUserViewModel = () => {
     const {
+        users,
         setSearchHistory,
         isExpand,
         searchHistory,
@@ -33,12 +34,34 @@ const ManageUserViewModel = () => {
         deleteSearchHistory()
     }
 
+    const blockedUsers = users.filter(
+        user => user.block_status
+    ).length
+
+    const mutedUsers = users.filter(
+        user => user.mute_status && !user.block_status && !user.online_status
+    ).length
+
+    const onlineUsers = users.filter(
+        user => user.online_status && !user.block_status && !user.mute_status
+    ).length
+
+    const totalUsers = users.filter(
+        user => !user.block_status && !user.mute_status
+    ).length
+
+
+
     return {
         handleSearch,
         isSearch,
         formik,
         isExpand,
         handleKeyPress,
+        blockedUsers,
+        mutedUsers,
+        onlineUsers,
+        totalUsers,
         searchHistory,
         handleDelete
     }

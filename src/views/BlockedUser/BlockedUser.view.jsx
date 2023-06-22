@@ -7,7 +7,7 @@ function BlockedUser() {
 
     return (
         <div>
-            {/* {
+            {
                 viewModel.blockedUsers.map(user => (
                     <UserList
                         Name={user.name}
@@ -18,7 +18,7 @@ function BlockedUser() {
                         isUserBlocked={user.block_status}
                         key={user.id} />
                 ))
-            } */}
+            }
             {
                 viewModel.isBlockModalClicked && (
                     <Modal

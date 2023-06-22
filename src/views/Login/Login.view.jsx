@@ -5,7 +5,7 @@ import LoginViewModel from "./Login.viewModel"
 
 function Login() {
     const loginViewModel = LoginViewModel()
-    
+
     return (
         <div id="loginView">
             <div className="flex py-[17px] px-[80px] justify-between items-center">

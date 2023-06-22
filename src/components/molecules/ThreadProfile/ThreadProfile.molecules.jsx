@@ -15,22 +15,27 @@ function ThreadProfile() {
  
   return (
     <div>
-      {threads.map(thread => (
-        <div className='flex justify-between mt-4' key={thread.id}>
-          <div className='flex'>
-            <ThreadPicture />
-            <div className='mt-[10px] ml-[15px]'>
-              <h1 className='font-source-sans font-bold text-[12px]'>{thread.name}</h1>
-              <p className='font-source-sans font-normal text-[12px]'>{thread.desc}</p>
-
-            </div>
-          </div>
-          <div className='flex'>
-            <ViewButton />
-            <DeleteButton onClick={handleAcceptClick}/>
-          </div>
-        </div>
-      ))}
+      {threads.map((thread) => (
+                <div
+                    className="thread-card mt-4 flex h-16 items-center w-[1210px]"
+                    key={thread.id}>
+                    <div>
+                        <ThreadPicture />
+                    </div>
+                    <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
+                        <h6 className="font-source-sans font-bold text-[12px]">
+                            {thread.name}
+                        </h6>
+                        <p className="font-source-sans font-bold text-[12px] ">
+                            {thread.desc}
+                        </p>
+                    </div>
+                    <div className="flex">
+                        <ViewButton />
+                        <DeleteButton onClick={handleAcceptClick}/>
+                    </div>
+                </div>
+            ))}
 
        {showModal && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-30">

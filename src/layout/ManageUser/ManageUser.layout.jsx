@@ -12,9 +12,9 @@ function ManageUser() {
             <UserStats
                 isExpand={viewModel.isExpand}
                 heading="Manage User"
-                // mutedUsersCount={viewModel.mutedUsers}
-                // usersCount={viewModel.totalUsers}
-                // blockedUsersCount={viewModel.blockedUsers}
+                mutedUsersCount={viewModel.mutedUsers}
+                usersCount={viewModel.totalUsers}
+                blockedUsersCount={viewModel.blockedUsers}
                 onlineUsersCount={viewModel.totalUsers} />
             <SearchBar
                 heading="Cari &quot;Pengguna&quot;"
