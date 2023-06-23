@@ -44,7 +44,7 @@ function LoginViewModel() {
                 // console.log("error");
             }
             setLogin(true)
-            navigate('/')
+            return navigate('/')
 
             // formik.resetForm();
         },
