@@ -2,6 +2,7 @@ import React from "react"
 import { useLocation } from "react-router-dom"
 
 function LaporanThread() {
+
     const location = useLocation()
 
     let threadTotal = ""
@@ -34,6 +35,7 @@ function LaporanThread() {
                     {threadDetail}
                 </p>
             </div>
+
         </div>
     )
 }

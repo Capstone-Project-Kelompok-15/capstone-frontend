@@ -4,6 +4,7 @@ import ThreadReportModel from "./ThreadReportModel.view"
 
 function ThreadReport() {
     const viewModel = ThreadReportModel()
+
     return (
         <div>
             <ThreadReportList isExpand={viewModel.isExpand} />
