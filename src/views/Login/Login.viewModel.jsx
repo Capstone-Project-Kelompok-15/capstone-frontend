@@ -26,11 +26,11 @@ function LoginViewModel() {
             password: Yup.string().required("Tolong masukkan kata sandi"),
         }),
         onSubmit: (values) => {
-            if (values.email === email && values.password === password) {
-                setLogin(true)
-                navigate("/")
-                // setErrorLogin(false)
-            } else {
+            if (values.email !== email && values.password !== password) {
+                // setLogin(true)
+                // navigate("/")
+                // // setErrorLogin(false)
+            // } else {
                 // setErrorLogin(true);
                 formik.setFieldError("email", "Email yang anda masukkan salah")
                 formik.setFieldError(
@@ -43,6 +43,8 @@ function LoginViewModel() {
                 // }, 1500);
                 // console.log("error");
             }
+            setLogin(true)
+            navigate('/')
 
             // formik.resetForm();
         },
