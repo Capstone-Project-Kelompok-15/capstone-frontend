@@ -24,7 +24,7 @@ function Login() {
                 </div>
                 {/* Form Login */}
                 <div className="grid pt-[72px] place-content-center">
-			{loginViewModel.formik && (
+			
                     <form
                         id="loginForm"
                         onSubmit={loginViewModel.handleSubmit}>
@@ -34,7 +34,7 @@ function Login() {
                                 htmlFor="email">
                                 Alamat Email
                                 <div className="pt-3">
-					 
+					 {loginViewModel.formik && (
                                     <input
                                         type="email"
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
@@ -51,14 +51,14 @@ function Login() {
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
                                     />
-					
+					)}
 					
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
                                             <span
                                                 className="text-[#AA1512]"
                                                 id="errorEmail">
-                                                {loginViewModel.formik.touched
+                                                {loginViewModel.formik && loginViewModel.formik.touched
                                                     .email &&
                                                     loginViewModel.formik.errors
                                                         .email}
@@ -79,7 +79,7 @@ function Login() {
                                 htmlFor="password">
                                 Kata Sandi
                                 <div className="pt-3">
-					 
+					 {loginViewModel.formik && (
                                     <input
                                         type="password"
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
@@ -96,7 +96,7 @@ function Login() {
                                             loginViewModel.formik.handleBlur
                                         }
                                     />
-					
+					)}
 					
 					
                                     <div>
@@ -104,7 +104,7 @@ function Login() {
                                             <span
                                                 className="text-[#AA1512]"
                                                 id="errorPassword">
-                                                {loginViewModel.formik.touched
+                                                {loginViewModel.formik && loginViewModel.formik.touched
                                                     .password &&
                                                     loginViewModel.formik.errors
                                                         .password}
@@ -122,7 +122,7 @@ function Login() {
                             <ButtonMasuk />
                         </div>
                     </form>
-		)}
+		
                 </div>
             </div>
 
