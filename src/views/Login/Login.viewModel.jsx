@@ -47,9 +47,9 @@ function LoginViewModel() {
             // formik.resetForm();
         },
     })
-    // if (isLogin) {
-    //     return <Navigate to="/" />
-    // }
+    if (isLogin) {
+        return <Navigate to="/" />
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault()
