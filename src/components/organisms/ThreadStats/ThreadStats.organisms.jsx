@@ -14,7 +14,7 @@ function ThreadStats({ isExpand }) {
     }
 
     return (
-        <div className={isExpand ? "ml-[350px] " : "ml-[150px]"}>
+        <div className={isExpand ? "ml-[300px] " : "ml-[150px]"}>
             <div className="flex bg-[#F8F8F8]">
                 <h1 className="font-source-sans font-normal text-[20px] ">
                     {pageTitle}

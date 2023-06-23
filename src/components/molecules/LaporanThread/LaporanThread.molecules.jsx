@@ -21,7 +21,7 @@ function LaporanThread() {
     return (
         <div
             id="container_middle"
-            className="rounded-md mt-3 flex justify-center items-center h-24 w-[1210px]  bg-white">
+            className="rounded-md mt-3 flex justify-center items-center h-24 w-[1210px] bg-white shadow-lg rounded-[10px]">
             <div>
                 <p
                     id="jumlahthread"
