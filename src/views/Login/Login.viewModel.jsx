@@ -24,11 +24,11 @@ function LoginViewModel() {
             password: Yup.string().required("Tolong masukkan kata sandi"),
         }),
         onSubmit: (values) => {
-            if (values.email !== email && values.password !== password) {
-                // setLogin(true)
-                // navigate("/")
+            if (values.email === email && values.password === password) {
+                setLogin(true)
+                navigate("/")
                 // // setErrorLogin(false)
-            // } else {
+            } else {
                 // setErrorLogin(true);
                 formik.setFieldError("email", "Email yang anda masukkan salah")
                 formik.setFieldError(
@@ -41,8 +41,6 @@ function LoginViewModel() {
                 // }, 1500);
                 // console.log("error");
             }
-            setLogin(true)
-            navigate('/')
             
 
             // formik.resetForm();
@@ -52,22 +50,23 @@ function LoginViewModel() {
         return navigate('/')
     }
 
-     useEffect(() => {
-        if (isLogin) {
-             navigate("/")
-        }
-    }, [isLogin])
+    //  useEffect(() => {
+    //     if (isLogin) {
+    //          navigate("/")
+    //     }
+    // }, [isLogin])
     
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     formik.handleSubmit()
-    // }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        formik.handleSubmit()
+    }
    
     return {
         formik,
         navigate,
         isLogin,
-        setLogin
+        setLogin,
+        handleSubmit
     }
 }
 export default LoginViewModel
