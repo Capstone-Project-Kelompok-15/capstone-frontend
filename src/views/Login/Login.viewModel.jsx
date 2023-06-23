@@ -59,7 +59,7 @@ function LoginViewModel() {
     }
     useEffect(() => {
         if (isLogin) {
-            navigate("/")
+            return navigate("/")
         }
     }, [isLogin])
     return {
