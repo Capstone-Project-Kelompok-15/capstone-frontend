@@ -2,7 +2,6 @@ import React from "react"
 import { useNavigate } from "react-router-dom"
 import { useStore } from "../../config/zustand/store"
 import { BackButton, ButtonMasuk } from "../../components/atoms"
-import pp1 from "../../assets/pp1.png"
 import UbahProfileViewModel from "./UbahProfile.viewModel"
 import { Modal, Navbar, Sidebar } from "../../components/organisms"
 
@@ -55,24 +54,30 @@ function UbahProfile() {
                     ubahProfileViewModel.isExpand ? "ml-[300px]" : "ml-[150px]"
                 }`}>
                 <div>
-                    <div>
-                        <img
-                            src={pp1}
-                            alt=""
-                            className="rounded-full w-[127px] mx-auto"
-                        />
-                        <button
-                            className="grid place-content-center mx-auto"
-                            type="button">
-                            <h3 className="text-xl font-normal text-[#195FAA] pt-[7px]">
-                                Ubah Gambar Profil
-                            </h3>
-                        </button>
-                    </div>
                     <form
                         id="ubahProfileForm"
                         // onSubmit={ubahProfileViewModel.handleSubmit}
                     >
+                        <div>
+                            <img
+                                src={
+                                    ubahProfileViewModel.images[
+                                        ubahProfileViewModel.imageIndex
+                                    ]
+                                }
+                                alt="image"
+                                id="gambarprofil"
+                                className="rounded-full w-[127px] mx-auto"
+                            />
+                            <button
+                                className="grid place-content-center mx-auto"
+                                type="button"
+                                onClick={ubahProfileViewModel.handleImage}>
+                                <h3 className="text-xl font-normal text-[#195FAA] pt-[7px]">
+                                    Ubah Gambar Profil
+                                </h3>
+                            </button>
+                        </div>
                         <div className="grid pt-4 place-content-center">
                             <label htmlFor="username">
                                 Username Baru

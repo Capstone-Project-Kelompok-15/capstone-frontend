@@ -1,6 +1,10 @@
+import { useState } from "react"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 import { useStore } from "../../config/zustand/store"
+import pp1 from "../../assets/pp1.png"
+import pp2 from "../../assets/pp2.png"
+import pp3 from "../../assets/pp3.png"
 
 function UbahProfileViewModel() {
     const {
@@ -12,6 +16,9 @@ function UbahProfileViewModel() {
     } = useStore((state) => state)
     const simpanModalState = useStore((state) => state.isSimpanModalClicked)
     const handleSimpan = useStore((state) => state.setIsSimpanModalClicked)
+
+    const [imageIndex, setImageIndex] = useState(0)
+    const images = [pp1, pp2, pp3]
 
     const username = "admin1"
     const email = "admin@gmail.com"
@@ -67,6 +74,10 @@ function UbahProfileViewModel() {
         handleStateSimpan()
     }
 
+    const handleImage = () => {
+        setImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+    }
+
     console.log("simpan", simpanModalState)
     return {
         formik,
@@ -77,6 +88,9 @@ function UbahProfileViewModel() {
         handleSimpan,
         handleStateSimpan,
         handleSubmit,
+        imageIndex,
+        handleImage,
+        images,
     }
 }
 
