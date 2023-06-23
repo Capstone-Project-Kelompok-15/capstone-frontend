@@ -10,8 +10,6 @@ function LoginViewModel() {
     const isLogin = useStore((state) => state.isLogin)
     const setLogin = useStore((state) => state.setLogin)
 
-    const [errorLogin, setErrorLogin] = useState(false)
-
     const username = "Admin 1"
     const email = "admin@yahoo.com"
     const password = "admin"
@@ -44,30 +42,32 @@ function LoginViewModel() {
                 // console.log("error");
             }
             setLogin(true)
-            return navigate('/')
+            navigate('/')
+            
 
             // formik.resetForm();
         },
     })
-    // if (isLogin) {
-    //     return navigate('/')
-    // }
+    if (isLogin) {
+        return navigate('/')
+    }
 
+     useEffect(() => {
+        if (isLogin) {
+             navigate("/")
+        }
+    }, [isLogin])
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         formik.handleSubmit()
     }
-    useEffect(() => {
-        if (isLogin) {
-             return navigate("/")
-        }
-    }, [isLogin])
+   
     return {
         formik,
         navigate,
         isLogin,
         setLogin,
-        errorLogin,
         handleSubmit
     }
 }
