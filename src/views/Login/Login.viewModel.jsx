@@ -28,7 +28,8 @@ function LoginViewModel() {
         onSubmit: (values) => {
             if (values.email === email && values.password === password) {
                 setLogin(true)
-                return navigate("/")
+                navigate("/")
+                return
                 // setErrorLogin(false)
             } else {
                 // setErrorLogin(true);
