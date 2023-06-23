@@ -1,4 +1,4 @@
-//API
+// API
 // import axios from "axios"
 // import { persist } from "zustand/middleware"
 
@@ -38,7 +38,7 @@
 //     }
 // )
 
-//State
+// State
 export const AdminLogin = (set) => ({
     isLogin: false,
     setLogin: (state) => set(() => ({ isLogin: state })),

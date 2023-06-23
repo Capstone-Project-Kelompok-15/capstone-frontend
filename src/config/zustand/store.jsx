@@ -1,4 +1,5 @@
 import { create } from "zustand"
+import { devtools } from "zustand/middleware"
 import { BlockUserSlice } from "./BlockUser/BlockUserSlice"
 import { MuteUserSlice } from "./MuteUser/MuteUserSlice"
 import { SearchSlice } from "./Search/SearchSlice"
@@ -10,7 +11,6 @@ import { CardStatsSlice } from "./CardStats/CardStatsSlice"
 import { KeluarModalSlice } from "./KeluarModal/KeluarModalSlice"
 import { UbahProfile } from "./UbahProfile/UbahProfile"
 import { SimpanModalSlice } from "./SimpanModal/SimpanModalSlice"
-import { devtools } from "zustand/middleware"
 
 export const useStore = create(
     devtools((...a) => ({

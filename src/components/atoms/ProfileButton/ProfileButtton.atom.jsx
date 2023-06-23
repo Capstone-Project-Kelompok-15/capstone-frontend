@@ -1,10 +1,10 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import pp1 from "../../../assets/pp1.png"
-import LoginViewModel from "../../../views/Login/Login.viewModel"
+// import LoginViewModel from "../../../views/Login/Login.viewModel"
 
 function ProfileButtton() {
-    const loginViewModel = LoginViewModel()
+    // const loginViewModel = LoginViewModel()
     return (
         <Link to="/ubahprofil">
             <button

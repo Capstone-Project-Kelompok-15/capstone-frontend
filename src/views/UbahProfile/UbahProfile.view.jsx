@@ -1,10 +1,10 @@
 import React from "react"
+import { useNavigate } from "react-router-dom"
+import { useStore } from "../../config/zustand/store"
 import { BackButton, ButtonMasuk } from "../../components/atoms"
 import pp1 from "../../assets/pp1.png"
 import UbahProfileViewModel from "./UbahProfile.viewModel"
 import { Modal, Navbar, Sidebar } from "../../components/organisms"
-import { useStore } from "../../config/zustand/store"
-import { useNavigate } from "react-router-dom"
 
 function UbahProfile() {
     const ubahProfileViewModel = UbahProfileViewModel()

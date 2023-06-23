@@ -1,15 +1,12 @@
+import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
 import * as Yup from "yup"
-import { useNavigate } from "react-router-dom"
 import { useStore } from "../../config/zustand/store"
-import { useEffect } from "react"
 
 function LoginViewModel() {
-    //API
+    // API
     //     const navigate = useNavigate()
-
     //     const { fetchLogin, isAuthenticated } = useStore((state) => state)
-
     //     const formik = useFormik({
     //         initialValues: {
     //             name: "Admin 1",
@@ -54,12 +51,12 @@ function LoginViewModel() {
     //     }
     // }
 
-    //State
+    // State
     const navigate = useNavigate()
     const isLogin = useStore((state) => state.isLogin)
     const setLogin = useStore((state) => state.setLogin)
 
-    const username = "Admin 1"
+    // const username = "Admin 1"
     const email = "admin@yahoo.com"
     const password = "admin"
 
@@ -86,7 +83,7 @@ function LoginViewModel() {
                 )
             }
             if (isLogin) {
-                return navigate("/")
+                navigate("/")
             }
 
             // formik.resetForm();
