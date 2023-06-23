@@ -1,18 +1,31 @@
 import React from "react"
-import { BackButton, ButtonMasuk, TooltipButton } from "../../components/atoms"
+import { BackButton, ButtonMasuk } from "../../components/atoms"
 import pp from "../../assets/blank-pp.jpg"
 import UbahProfileViewModel from "./UbahProfile.viewModel"
-import { Navbar, Sidebar } from "../../components/organisms"
+import { Modal, Navbar, Sidebar } from "../../components/organisms"
 import { useStore } from "../../config/zustand/store"
+import { useNavigate } from "react-router-dom"
 
 function UbahProfile() {
     const ubahProfileViewModel = UbahProfileViewModel()
-    const isExpand = useStore((state) => state.isExpand)
-    const handleExpand = useStore((state) => state.setIsExpand)
+    const { isKeluarModalClicked, setIsKeluarModalClicked, logout } = useStore(
+        (state) => state
+    )
+    const navigate = useNavigate()
+    const handleLogout = () => {
+        logout()
+        setIsKeluarModalClicked()
+        navigate("/landing")
+    }
 
     return (
         <div className="bg-[#F8F8F8]" id="ubahProfileView">
-            <Navbar ubahNavbar="ubahProfil" />
+            <Navbar
+                ubahNavbar="ubahProfil"
+                onClick={() => {
+                    setIsKeluarModalClicked()
+                }}
+            />
             <Sidebar expand={isExpand} handleExpand={handleExpand} />
             <div
                 className={` transition-all duration-300 ${
