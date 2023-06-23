@@ -50,7 +50,8 @@ function Login() {
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
                                     />
-					
+					)}
+					{loginViewModel.formik && (
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
                                             <span
@@ -94,6 +95,8 @@ function Login() {
                                             loginViewModel.formik.handleBlur
                                         }
                                     />
+					)}
+					{loginViewModel.formik && (
 					
                                     <div>
                                         <small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
