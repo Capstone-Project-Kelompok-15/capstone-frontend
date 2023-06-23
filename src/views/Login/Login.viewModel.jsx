@@ -28,8 +28,8 @@ function LoginViewModel() {
         onSubmit: (values) => {
             if (values.email === email && values.password === password) {
                 setLogin(true)
-                navigate("/")
-                setErrorLogin(false)
+                return navigate("/")
+                // setErrorLogin(false)
             } else {
                 // setErrorLogin(true);
                 formik.setFieldError("email", "Email yang anda masukkan salah")
@@ -47,9 +47,9 @@ function LoginViewModel() {
             // formik.resetForm();
         },
     })
-    if (isLogin) {
-        return <Navigate to="/" />
-    }
+    // if (isLogin) {
+    //     return <Navigate to="/" />
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault()
