@@ -49,9 +49,9 @@ function LoginViewModel() {
             // formik.resetForm();
         },
     })
-    if (isLogin) {
-        return navigate('/')
-    }
+    // if (isLogin) {
+    //     return navigate('/')
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -59,7 +59,7 @@ function LoginViewModel() {
     }
     useEffect(() => {
         if (isLogin) {
-             navigate("/")
+             return navigate("/")
         }
     }, [isLogin])
     return {
