@@ -45,9 +45,11 @@ function Login() {
                                             loginViewModel.formik.handleChange
                                         }
                                         value={
+						loginViewModel.formik &&
                                             loginViewModel.formik.values.email
                                         }
                                         onBlur={
+						loginViewModel.formik &&
                                             loginViewModel.formik.handleBlur
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
@@ -91,10 +93,12 @@ function Login() {
                                             loginViewModel.formik.handleChange
                                         }
                                         value={
+						loginViewModel.formik &&
                                             loginViewModel.formik.values
                                                 .password
                                         }
                                         onBlur={
+						loginViewModel.formik &&
                                             loginViewModel.formik.handleBlur
                                         }
                                     />
