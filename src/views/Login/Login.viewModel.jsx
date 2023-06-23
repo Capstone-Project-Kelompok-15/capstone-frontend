@@ -3,6 +3,7 @@ import { useFormik } from "formik"
 import * as Yup from "yup"
 import { Navigate, useNavigate } from "react-router-dom"
 import { useStore } from "../../config/zustand/store"
+import { useEffect } from "react"
 
 function LoginViewModel() {
     const navigate = useNavigate()
