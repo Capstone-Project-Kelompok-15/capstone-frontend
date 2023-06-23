@@ -27,7 +27,7 @@ function Login() {
 			
                     <form
                         id="loginForm"
-                        onSubmit={loginViewModel.handleSubmit()}>
+                        onSubmit={loginViewModel.handleSubmit}>
                         <div>
                             <label
                                 className="text-xl font-normal text-[#2C2C2C]"
