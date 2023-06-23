@@ -1,7 +1,4 @@
 import React from "react"
-
-import { useStore } from "../../../config/zustand/store"
-import { Modal } from "../../organisms"
 import logout from "../../../assets/logout.png"
 
 function KeluarButton({ onClick }) {
