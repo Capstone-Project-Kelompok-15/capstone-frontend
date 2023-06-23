@@ -35,20 +35,15 @@ function LoginViewModel() {
                     "password",
                     "Kata sandi yang anda masukkan salah"
                 )
-                // toast.error("Email atau kata sandi yang anda masukkan salah")
-                // setTimeout(() => {
-                // 	setErrorLogin(false);
-                // }, 1500);
-                // console.log("error");
             }
-            
+             if (isLogin) {
+        return navigate('/')
+    }
 
             // formik.resetForm();
         },
     })
-    if (isLogin) {
-        return navigate('/')
-    }
+   
 
     //  useEffect(() => {
     //     if (isLogin) {
