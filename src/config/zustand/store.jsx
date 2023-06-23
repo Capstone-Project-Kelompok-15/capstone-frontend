@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { devtools } from 'zustand/middleware'
 import { BlockUserSlice } from "./BlockUser/BlockUserSlice";
 import { MuteUserSlice } from "./MuteUser/MuteUserSlice";
 import { SearchSlice } from "./Search/SearchSlice";
@@ -12,7 +12,8 @@ import { UsersSlice } from "./Users/UsersSlice";
 import { DeleteModalSlice } from "./DeleteModal/DeleteModalSlice";
 import { DeleteThreadSlice } from "./DeleteThread/DeleteThreadSlice";
 import { ChartSlice } from "./Chart/ChartSlice";
-import { KeluarModalSlice } from "./KeluarModal/KeluarModalSlice"
+import { KeluarModalSlice } from "./KeluarModal/KeluarModalSlice";
+import { ThreadsSlice } from "./Threads/ThreadsSlice"
 
 
 export const useStore = create(devtools((...a) => ({
@@ -28,5 +29,6 @@ export const useStore = create(devtools((...a) => ({
 	...DeleteModalSlice(...a),
 	...DeleteThreadSlice(...a),
 	...ChartSlice(...a),
-	...KeluarModalSlice(...a)
+	...KeluarModalSlice(...a),
+	...ThreadsSlice(...a),
 })));

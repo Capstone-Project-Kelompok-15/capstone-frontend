@@ -1,16 +1,16 @@
 import React from "react"
-import { ButtonMasuk, Logo } from "../../components/atoms"
+import { ButtonMasuk } from "../../components/atoms"
 import { Footer } from "../../components/molecules"
+import { Navbar } from "../../components/organisms"
 import LoginViewModel from "./Login.viewModel"
 
 function Login() {
     const loginViewModel = LoginViewModel()
-
+    
     return (
         <div id="loginView">
-            <div className="flex py-[17px] px-[80px] justify-between items-center">
-                <Logo textLogo="black" />
-            </div>
+            <Navbar />
+
             {/* FormLogin */}
             <div className="pt-14">
                 {/* Selamat Datang */}
@@ -26,7 +26,7 @@ function Login() {
                 <div className="grid pt-[72px] place-content-center">
                     <form
                         id="loginForm"
-                        onSubmit={loginViewModel.handleSubmit}>
+                        onSubmit={loginViewModel.formik.handleSubmit}>
                         <div>
                             <label
                                 className="text-xl font-normal text-[#2C2C2C]"

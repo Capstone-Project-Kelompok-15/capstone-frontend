@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import { DeleteButton, ThreadPicture, ViewButton } from '../../atoms';
-import threads from '../../../dummyData/ThreadList';
 
-function ThreadProfile() {
+function ThreadProfile(
+    {
+        isExpand,
+        threadList
+      }) {
   const [showModal, setShowModal] = useState(false)
 
     const handleAcceptClick = () => {
@@ -15,19 +18,19 @@ function ThreadProfile() {
  
   return (
     <div>
-      {threads.map((thread) => (
+      {threadList.map((thread) => (
                 <div
-                    className="thread-card mt-4 flex h-16 items-center w-[1210px]"
+                    className={isExpand ? "thread-card mt-4 flex h-16 items-center w-[1065px]" : "thread-card mt-4 flex h-16 items-center w-[1210px]"}
                     key={thread.id}>
                     <div>
                         <ThreadPicture />
                     </div>
                     <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
                         <h6 className="font-source-sans font-bold text-[12px]">
-                            {thread.name}
+                            {thread.title}
                         </h6>
-                        <p className="font-source-sans font-bold text-[12px] ">
-                            {thread.desc}
+                        <p className="font-source-sans font-normal text-[12px] ">
+                            {thread.content}
                         </p>
                     </div>
                     <div className="flex">

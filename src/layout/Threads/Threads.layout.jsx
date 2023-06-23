@@ -13,8 +13,14 @@ function ThreadLayout() {
             <ThreadStats
             isExpand={viewModel.isExpand} />
             <SearchBar
-            isExpand={viewModel.isExpand} 
             heading="Cari &quot;Thread&quot;"
+            isSearch={viewModel.isSearch}
+            handleSearch={viewModel.handleSearch}
+            isExpand={viewModel.isExpand}
+            formik={viewModel.formik}
+            handleKeyPress={viewModel.handleKeyPress}
+            searchHistories={viewModel.searchHistory}
+            handleDeleteSearchHistory={viewModel.handleDelete}
              />
             <Outlet />
         </div>

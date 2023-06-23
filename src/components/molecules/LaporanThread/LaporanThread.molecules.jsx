@@ -18,11 +18,10 @@ function LaporanThread({isExpand}) {
     } else {
         threadDetail = "Jumlah Thread"
     }
- console.log(isExpand);
     return (
         <div
             id="container_middle"
-            className={isExpand ? 'rounded-md mt-3 flex justify-center w-[1180px] items-center h-24  bg-white': 'rounded-md mt-3 flex justify-center w-[1210px] items-center h-24 bg-white'}>
+            className={isExpand ? 'rounded-md mt-3 flex justify-center w-[1065px] items-center h-24  bg-white': 'rounded-md mt-3 flex justify-center w-[1210px] items-center h-24 bg-white'}>
             <div>
                 <p
                     id="jumlahthread"

@@ -18,7 +18,7 @@ function UserProfile(
     }
 
     return (
-        <div className={isExpand ? 'w-[1190px] h-[69px] flex mt-[16px]' : 'w-[1210px] h-[69px] flex mt-[16px]'}>
+        <div className={isExpand ? 'w-[1065px] h-[69px] flex mt-[16px]' : 'w-[1210px] h-[69px] flex mt-[16px]'}>
             <ProfilePicture isUserBlocked={isUserBlocked} isUserMuted={isUserMuted} isExpand={isExpand} />
 
             <div className='w-[1009px] h-[34px] mt-[17.5px] mr-[14px]'>

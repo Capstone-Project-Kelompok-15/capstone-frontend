@@ -1,9 +1,9 @@
 import React from 'react';
 import ThreadPhoto from '../../../assets/Threadphoto.svg'
 
-function LihatThread() {
+function LihatThread({isExpand}) {
   return (
-    <div className='h-[514px] bg-white mt-[20px] px-[15px] py-[30px]'>
+    <div className={isExpand ? 'h-[514px] bg-white mt-[20px] px-[15px] py-[30px] w-[1180px]': 'h-[514px] bg-white mt-[20px] px-[15px] py-[30px] w-[1210px]'}>
         <div className='justify-center items-center bg-white'>
           <h1 className='text-center font-source-sans font-bold text-[24px]'>UU Tenaga Kerja</h1>
         </div>
