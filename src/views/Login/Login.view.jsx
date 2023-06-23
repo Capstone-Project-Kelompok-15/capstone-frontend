@@ -27,7 +27,7 @@ function Login() {
 			
                     <form
                         id="loginForm"
-                        onSubmit={loginViewModel.formik.handleSubmit}>
+                        onSubmit={loginViewModel.handleSubmit}>
                         <div>
                             <label
                                 className="text-xl font-normal text-[#2C2C2C]"
@@ -41,15 +41,15 @@ function Login() {
                                         id="email"
                                         name="email"
                                         onChange={
-						loginViewModel.formik && 
+						
                                             loginViewModel.formik.handleChange
                                         }
                                         value={
-						loginViewModel.formik &&
+						
                                             loginViewModel.formik.values.email
                                         }
                                         onBlur={
-						loginViewModel.formik &&
+						
                                             loginViewModel.formik.handleBlur
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
@@ -61,7 +61,7 @@ function Login() {
                                             <span
                                                 className="text-[#AA1512]"
                                                 id="errorEmail">
-                                                {loginViewModel.formik && loginViewModel.formik.touched
+                                                { loginViewModel.formik.touched
                                                     .email &&
                                                     loginViewModel.formik.errors
                                                         .email}
@@ -89,16 +89,16 @@ function Login() {
                                         id="password"
                                         name="password"
                                         onChange={
-						loginViewModel.formik && 
+						
                                             loginViewModel.formik.handleChange
                                         }
                                         value={
-						loginViewModel.formik &&
+						
                                             loginViewModel.formik.values
                                                 .password
                                         }
                                         onBlur={
-						loginViewModel.formik &&
+						
                                             loginViewModel.formik.handleBlur
                                         }
                                     />
@@ -110,7 +110,7 @@ function Login() {
                                             <span
                                                 className="text-[#AA1512]"
                                                 id="errorPassword">
-                                                {loginViewModel.formik && loginViewModel.formik.touched
+                                                {loginViewModel.formik.touched
                                                     .password &&
                                                     loginViewModel.formik.errors
                                                         .password}
