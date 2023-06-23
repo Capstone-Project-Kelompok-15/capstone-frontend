@@ -1,10 +1,9 @@
 import React from "react"
-import { KeluarButtonView } from "../../../views"
 import Logo from "../../atoms/Logo/Logo.atom"
-
+import { KeluarButton } from "../../atoms"
 import { NavHome } from "../../molecules"
 
-function Navbar({ bgNavbar, ubahNavbar }) {
+function Navbar({ bgNavbar, ubahNavbar, onClick }) {
     return (
         <div
             className={`${
@@ -12,7 +11,11 @@ function Navbar({ bgNavbar, ubahNavbar }) {
             } flex w-full py-[17px] pl-[80px] pr-[20px] justify-between items-center`}
             id="navbar">
             <Logo textLogo="black" />
-            {ubahNavbar === "ubahProfil" ? <KeluarButtonView /> : <NavHome />}
+            {ubahNavbar === "ubahProfil" ? (
+                <KeluarButton onClick={onClick} />
+            ) : (
+                <NavHome onClick={onClick} />
+            )}
         </div>
     )
 }

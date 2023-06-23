@@ -3,7 +3,18 @@ import * as Yup from "yup"
 import { useStore } from "../../config/zustand/store"
 
 function UbahProfileViewModel() {
-    const isExpand = useStore((state) => state.isExpand)
+    const {
+        setUbahProfil,
+        setErrorUbahProfil,
+        errorUbahProfil,
+        isExpand,
+        setIsExpand,
+    } = useStore((state) => state)
+    const simpanModalState = useStore((state) => state.isSimpanModalClicked)
+    const handleSimpan = useStore((state) => state.setIsSimpanModalClicked)
+
+    const username = "admin1"
+    const email = "admin@gmail.com"
 
     const formik = useFormik({
         initialValues: {
@@ -20,33 +31,52 @@ function UbahProfileViewModel() {
                 "Tolong Masukkan Konfirmasi Kata Sandi"
             ),
         }),
-        onsubmit: (values) => {
+        onSubmit: (values) => {
             console.log(values)
-
             if (values.password === values.passwordKonfirmasi) {
+                setUbahProfil(true)
+                setErrorUbahProfil(false)
                 console.log(values.password)
-            } else if ((values.password = !values.passwordKonfirmasi)) {
+                alert(JSON.stringify(values, null, 2))
+            }
+            if (values.password !== values.passwordKonfirmasi) {
                 formik.setFieldError(
-                    "passwordBaru",
+                    "password",
                     "Kata sandi yang anda masukkan tidak valid"
                 )
                 formik.setFieldError(
                     "passwordKonfirmasi",
                     "Kata sandi yang anda masukkan tidak valid"
                 )
-            } else if (values.username === username) {
-                formik.setFieldError("usernameBaru", "Username sudah digunakan")
-            } else {
-                formik.setFieldError(
-                    "emailBaru",
-                    "Email yang anda masukkan tidak valid"
-                )
+            }
+            if (values.username === username) {
+                formik.setFieldError("username", "Username sudah digunakan")
+            }
+            if (values.email === email) {
+                formik.setFieldError("email", "Email sudah digunakan")
             }
         },
     })
+
+    const handleStateSimpan = () => {
+        handleSimpan()
+    }
+
+    const handleSubmit = () => {
+        formik.handleSubmit()
+        handleStateSimpan()
+    }
+
+    console.log("simpan", simpanModalState)
     return {
         formik,
         isExpand,
+        setIsExpand,
+        errorUbahProfil,
+        simpanModalState,
+        handleSimpan,
+        handleStateSimpan,
+        handleSubmit,
     }
 }
 

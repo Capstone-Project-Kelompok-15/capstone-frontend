@@ -1,24 +1,24 @@
-import { useFormik } from "formik";
-import { useStore } from "../../config/zustand/store";
+import { useFormik } from "formik"
+import { useStore } from "../../config/zustand/store"
 
 const ManageUserViewModel = () => {
-    const handleSearch = useStore(state => state.setIsSearch)
-    const searchState = useStore(state => state.isSearch)
+    const handleSearch = useStore((state) => state.setIsSearch)
+    const searchState = useStore((state) => state.isSearch)
 
     const formik = useFormik({
         initialValues: {
-            searchValue: ''
+            searchValue: "",
         },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        }
+        onSubmit: (values) => {
+            alert(JSON.stringify(values, null, 2))
+        },
     })
 
     return {
         handleSearch,
         searchState,
-        formik
+        formik,
     }
 }
 
-export default ManageUserViewModel;
+export default ManageUserViewModel
