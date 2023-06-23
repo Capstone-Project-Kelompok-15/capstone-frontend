@@ -50,7 +50,7 @@ function LoginViewModel() {
         },
     })
     if (isLogin) {
-        return <Navigate to="/" />
+        return navigate('/')
     }
 
     const handleSubmit = (e) => {
@@ -59,7 +59,7 @@ function LoginViewModel() {
     }
     useEffect(() => {
         if (isLogin) {
-            return navigate("/")
+             navigate("/")
         }
     }, [isLogin])
     return {
