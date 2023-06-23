@@ -33,6 +33,7 @@ function Login() {
                                 htmlFor="email">
                                 Alamat Email
                                 <div className="pt-3">
+					 {loginViewModel.formik && (
                                     <input
                                         type="email"
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
@@ -49,6 +50,7 @@ function Login() {
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
                                     />
+					)}
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
                                             <span
@@ -74,6 +76,7 @@ function Login() {
                                 htmlFor="password">
                                 Kata Sandi
                                 <div className="pt-3">
+					 {loginViewModel.formik && (
                                     <input
                                         type="password"
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
@@ -90,6 +93,7 @@ function Login() {
                                             loginViewModel.formik.handleBlur
                                         }
                                     />
+					)}
                                     <div>
                                         <small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
                                             <span
