@@ -50,7 +50,7 @@ function Login() {
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
                                     />
-					)}
+					
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
                                             <span
@@ -67,6 +67,7 @@ function Login() {
                                             </span>
                                         </small>
                                     </div>
+					)}
                                 </div>
                             </label>
                         </div>
@@ -93,7 +94,7 @@ function Login() {
                                             loginViewModel.formik.handleBlur
                                         }
                                     />
-					)}
+					
                                     <div>
                                         <small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
                                             <span
@@ -109,6 +110,7 @@ function Login() {
                                             </span>
                                         </small>
                                     </div>
+					)}
                                 </div>
                             </label>
                         </div>
