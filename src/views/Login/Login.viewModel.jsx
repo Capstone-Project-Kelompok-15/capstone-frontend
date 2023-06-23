@@ -54,6 +54,11 @@ function LoginViewModel() {
         e.preventDefault()
         formik.handleSubmit()
     }
+    useEffect(() => {
+        if (isLogin) {
+            navigate("/")
+        }
+    }, [isLogin])
     return {
         formik,
         navigate,
