@@ -1,8 +1,7 @@
 import React from "react"
-import { Outlet, useLocation } from "react-router-dom"
-import { Modal, Navbar, Sidebar } from "../../components/organisms"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { useStore } from "../../config/zustand/store"
-import { useNavigate } from "react-router-dom"
+import { Modal, Navbar, Sidebar } from "../../components/organisms"
 
 function RootLayout() {
     const isExpand = useStore((state) => state.isExpand)
@@ -26,7 +25,6 @@ function RootLayout() {
         <div>
             {!isExcluded && (
                 <>
-
                     <Navbar
                         bgNavbar="bgIsLoggedIn"
                         onClick={() => {
@@ -45,7 +43,7 @@ function RootLayout() {
                             idCancelButton="batal"
                         />
                     )}
-                    
+
                     <Sidebar expand={isExpand} handleExpand={handleExpand} />
                 </>
             )}
