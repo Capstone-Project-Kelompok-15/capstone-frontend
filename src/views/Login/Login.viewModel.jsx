@@ -67,8 +67,7 @@ function LoginViewModel() {
         formik,
         navigate,
         isLogin,
-        setLogin,
-        handleSubmit
+        setLogin
     }
 }
 export default LoginViewModel
