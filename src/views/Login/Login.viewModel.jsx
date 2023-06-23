@@ -29,7 +29,6 @@ function LoginViewModel() {
             if (values.email === email && values.password === password) {
                 setLogin(true)
                 navigate("/")
-                return
                 // setErrorLogin(false)
             } else {
                 // setErrorLogin(true);
