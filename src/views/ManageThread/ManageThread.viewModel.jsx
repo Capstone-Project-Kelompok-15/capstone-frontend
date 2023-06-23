@@ -1,13 +1,23 @@
-import { useStore } from "../../config/zustand/store";
+import { useEffect } from "react"
+import { useStore } from "../../config/zustand/store"
 
 const ManageThreadViewModel = () => {
     const {
         isExpand,
-    } = useStore(state => state)
+
+        threadList,
+        accessToken,
+        fetchThreads,
+    } = useStore((state) => state)
+
+    useEffect(() => {
+        fetchThreads(accessToken)
+    }, [])
 
     return {
         isExpand,
+        threadList,
     }
-} 
+}
 
-export default ManageThreadViewModel;
+export default ManageThreadViewModel

@@ -20,13 +20,8 @@ function SearchBar({
                     : "flex justify-center mt-[16px]"
             }>
             {isSearch ? (
-                <div
-                    className={
-                        isExpand
-                            ? "w-[1180px] rounded-[12px] bg-[#FFFFFF] border border-[#012269]"
-                            : "w-[1210px] rounded-[12px] bg-[#FFFFFF] border border-[#012269]"
-                    }>
-                    <div className={isExpand ? "flex" : "flex gap-[12px]"}>
+                <div className="w-[1210px] rounded-[12px] bg-[#FFFFFF] border border-[#012269]">
+                    <div className="flex gap-[12px]">
                         <SearchButton handleSearch={handleSearch} />
                         <form
                             className="mt-[9px] mb-[9px]"
@@ -60,7 +55,7 @@ function SearchBar({
                 <div
                     className={
                         isExpand
-                            ? "w-[1180px] h-[36px] rounded-[12px] bg-[#0122691a]"
+                            ? "w-[1065px] h-[36px] rounded-[12px] bg-[#0122691a]"
                             : "w-[1210px] h-[36px] rounded-[12px] bg-[#0122691a]"
                     }>
                     <div className="flex gap-[12px]">
@@ -71,7 +66,7 @@ function SearchBar({
                             </p>
                         </div>
                     </div>
-
+                </div>
             )}
         </div>
     )

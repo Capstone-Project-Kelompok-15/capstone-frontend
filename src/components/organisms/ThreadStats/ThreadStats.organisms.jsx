@@ -14,14 +14,20 @@ function ThreadStats({ isExpand }) {
     }
 
     return (
-        <div className={isExpand ? "ml-[300px] " : "ml-[150px]"}>
+        <div className={isExpand ? "ml-[300px]" : "ml-[150px]"}>
             <div className="flex bg-[#F8F8F8]">
-                <h1 className="font-source-sans font-normal text-[20px] ">
+                <h1
+                    className={
+                        isExpand
+                            ? "font-source-sans font-semibold text-[20px] text-[#000000CC]"
+                            : "font-source-sans font-semibold text-[20px] text-[#000000CC] ml-3 mr-2.5"
+                    }>
                     {pageTitle}
                 </h1>
                 <TooltipButton />
             </div>
-            <LaporanThread />
+
+            <LaporanThread isExpand={isExpand} />
         </div>
     )
 }
