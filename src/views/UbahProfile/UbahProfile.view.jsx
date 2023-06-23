@@ -19,14 +19,31 @@ function UbahProfile() {
     }
 
     return (
-        <div className="bg-[#F8F8F8]" id="ubahProfileView">
+       <div className="bg-[#F8F8F8] min-h-screen" id="ubahProfileView">
             <Navbar
                 ubahNavbar="ubahProfil"
                 onClick={() => {
                     setIsKeluarModalClicked()
                 }}
             />
-            <Sidebar expand={isExpand} handleExpand={handleExpand} />
+            {isKeluarModalClicked && (
+                <Modal
+                    Message="Keluar?"
+                    confirmationMessage="Apakah Kamu Yakin Akan Keluar?"
+                    proceedMessage="Keluar"
+                    cancelMessage="Batal"
+                    handleCancel={() => setIsKeluarModalClicked()}
+                    handleProceed={() => handleLogout()}
+                    idProceedButton="keluar"
+                    idCancelButton="batal"
+                />
+            )}
+
+            <Sidebar
+                expand={ubahProfileViewModel.isExpand}
+                handleExpand={ubahProfileViewModel.setIsExpand}
+            />
+
             <div
                 className={` transition-all duration-300 ${
                     ubahProfileViewModel.isExpand ? "ml-[150px]" : ""
@@ -38,10 +55,7 @@ function UbahProfile() {
                     ubahProfileViewModel.isExpand ? "ml-[300px]" : "ml-[150px]"
                 }`}>
                 <div>
-                    <form
-                        id="ubahProfileForm"
-                        onSubmit={ubahProfileViewModel.formik.handleSubmit}>
-                        <div>
+                    <div>
                             <img
                                 src={pp}
                                 alt=""
