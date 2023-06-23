@@ -1,6 +1,6 @@
 import React from "react"
 import { BackButton, ButtonMasuk } from "../../components/atoms"
-import pp from "../../assets/pp.png"
+import pp from "../../assets/blank-pp.jpg"
 import UbahProfileViewModel from "./UbahProfile.viewModel"
 import { Modal, Navbar, Sidebar } from "../../components/organisms"
 import { useStore } from "../../config/zustand/store"
