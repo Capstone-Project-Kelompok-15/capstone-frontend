@@ -24,6 +24,7 @@ function Login() {
                 </div>
                 {/* Form Login */}
                 <div className="grid pt-[72px] place-content-center">
+			{loginViewModel.formik && (
                     <form
                         id="loginForm"
                         onSubmit={loginViewModel.handleSubmit}>
@@ -33,7 +34,7 @@ function Login() {
                                 htmlFor="email">
                                 Alamat Email
                                 <div className="pt-3">
-					 {loginViewModel.formik && (
+					 
                                     <input
                                         type="email"
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
@@ -50,8 +51,8 @@ function Login() {
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
                                     />
-					)}
-					{loginViewModel.formik && (
+					
+					
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
                                             <span
@@ -68,7 +69,7 @@ function Login() {
                                             </span>
                                         </small>
                                     </div>
-					)}
+					
                                 </div>
                             </label>
                         </div>
@@ -78,7 +79,7 @@ function Login() {
                                 htmlFor="password">
                                 Kata Sandi
                                 <div className="pt-3">
-					 {loginViewModel.formik && (
+					 
                                     <input
                                         type="password"
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
@@ -95,8 +96,8 @@ function Login() {
                                             loginViewModel.formik.handleBlur
                                         }
                                     />
-					)}
-					{loginViewModel.formik && (
+					
+					
 					
                                     <div>
                                         <small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
@@ -113,7 +114,7 @@ function Login() {
                                             </span>
                                         </small>
                                     </div>
-					)}
+					
                                 </div>
                             </label>
                         </div>
@@ -121,6 +122,7 @@ function Login() {
                             <ButtonMasuk />
                         </div>
                     </form>
+		)}
                 </div>
             </div>
 
