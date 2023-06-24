@@ -7,8 +7,8 @@ import {
     Tooltip,
     Legend,
 } from "chart.js"
-import { useStore } from "../../config/zustand/store"
 import { useEffect } from "react"
+import { useStore } from "../../config/zustand/store"
 
 const HomeViewModel = () => {
     ChartJS.register(
