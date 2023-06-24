@@ -1,6 +1,6 @@
-// import { persist } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 
-export const SearchSlice = (set) => ({
+export const SearchSlice = persist((set) => ({
     isSearch: false,
     searchHistory: [],
     searchResults: [],
@@ -32,4 +32,8 @@ export const SearchSlice = (set) => ({
             searchHistory: []
         }
     )),
-})
+}),
+    {
+        name: "searchHistory",
+        partialize: state => ({ searchHistory: state.searchHistory })
+    })
