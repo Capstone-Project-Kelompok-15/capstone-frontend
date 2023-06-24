@@ -9,6 +9,7 @@ import {
 } from "chart.js"
 import { useStore } from "../../config/zustand/store"
 import threads from "../../dummyData/ThreadList"
+import { useEffect } from "react"
 
 const HomeViewModel = () => {
     ChartJS.register(
@@ -69,21 +70,27 @@ const HomeViewModel = () => {
         "11",
         "12",
     ]
-    const Months = []
-    threads.forEach((thread) => {
-        const [month, , year] = thread.date.split("/")
-        if (Number(year) === 2023) {
-            Months[Number(month)] = (Months[Number(month)] || 0) + 1
-        }
+
+    const { fetchChartDate, chartDate } = useStore((state) => state)
+    useEffect(() => {
+        fetchChartDate()
+    }, [])
+    const filteredData = chartDate.filter((item) =>
+        item.createdAt.startsWith("2023")
+    )
+    const threadCountByMonth = Array(12).fill(0)
+    filteredData.forEach((item) => {
+        const month = new Date(item.createdAt).getMonth()
+        threadCountByMonth[month]++
     })
-    Months.shift()
+    console.log(threadCountByMonth)
 
     const data = {
         labels,
         datasets: [
             {
                 label: "Thread",
-                data: Months,
+                data: threadCountByMonth,
                 backgroundColor: "#5584D2",
             },
         ],

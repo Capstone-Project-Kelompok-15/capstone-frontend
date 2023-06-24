@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 function Sidebar({ expand, handleExpand }) {
     return (
         <div
-            className={`absolute top-[89px] ${
+            className={`fixed top-[89px] ${
                 expand ? "w-[231px] z-10" : "w-[83px]"
             } h-[80vh] bg-white rounded-tr-[20px] shadow-md drop-shadow-xl rounded-br-[20px] pt-[20px] px-[5px] flex flex-col gap-[10px] border-[1px] transition-all duration-100`}>
             <div
