@@ -1,38 +1,30 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
-import { useStore } from "../../config/zustand/store"
 import { BackButton, ButtonMasuk } from "../../components/atoms"
 import UbahProfileViewModel from "./UbahProfile.viewModel"
 import { Modal, Navbar, Sidebar } from "../../components/organisms"
 
 function UbahProfile() {
     const ubahProfileViewModel = UbahProfileViewModel()
-    const { isKeluarModalClicked, setIsKeluarModalClicked, logout } = useStore(
-        (state) => state
-    )
-    const navigate = useNavigate()
-    const handleLogout = () => {
-        logout()
-        setIsKeluarModalClicked()
-        navigate("/landing")
-    }
 
     return (
         <div className="bg-[#F8F8F8] min-h-screen" id="ubahProfileView">
             <Navbar
                 ubahNavbar="ubahProfil"
                 onClick={() => {
-                    setIsKeluarModalClicked()
+                    ubahProfileViewModel.setIsKeluarModalClicked()
                 }}
+                bgNavbar="bgIsLoggedIn"
             />
-            {isKeluarModalClicked && (
+            {ubahProfileViewModel.isKeluarModalClicked && (
                 <Modal
                     Message="Keluar?"
                     confirmationMessage="Apakah Kamu Yakin Akan Keluar?"
                     proceedMessage="Keluar"
                     cancelMessage="Batal"
-                    handleCancel={() => setIsKeluarModalClicked()}
-                    handleProceed={() => handleLogout()}
+                    handleCancel={() =>
+                        ubahProfileViewModel.setIsKeluarModalClicked()
+                    }
+                    handleProceed={() => ubahProfileViewModel.handleLogout()}
                     idProceedButton="keluar"
                     idCancelButton="batal"
                 />
@@ -73,12 +65,12 @@ function UbahProfile() {
                                 className="grid place-content-center mx-auto"
                                 type="button"
                                 onClick={ubahProfileViewModel.handleImage}>
-                                <h3 className="text-xl font-normal text-[#195FAA] pt-[7px]">
+                                <h3 className="text-xl font-normal text-[#195FAA] pt-[5px]">
                                     Ubah Gambar Profil
                                 </h3>
                             </button>
                         </div>
-                        <div className="grid pt-4 place-content-center">
+                        <div className="grid  place-content-center">
                             <label htmlFor="username">
                                 Username Baru
                                 <div>
@@ -116,7 +108,7 @@ function UbahProfile() {
                                 </div>
                             </label>
 
-                            <label className="pt-5" htmlFor="email">
+                            <label className="pt-2" htmlFor="email">
                                 Alamat Email Baru
                                 <div>
                                     <input
@@ -153,7 +145,7 @@ function UbahProfile() {
                                 </div>
                             </label>
 
-                            <label className="pt-5" htmlFor="password">
+                            <label className="pt-2" htmlFor="password">
                                 Kata Sandi Baru
                                 <div>
                                     <input
@@ -190,7 +182,7 @@ function UbahProfile() {
                             </label>
 
                             <label
-                                className="pt-5"
+                                className="pt-2"
                                 htmlFor="passwordKonfirmasi">
                                 Konfirmasi Kata Sandi Baru
                                 <div>
@@ -255,7 +247,8 @@ function UbahProfile() {
                                         }}
                                         idProceedButton="simpan"
                                         idCancelButton="batal"
-                                        textBlue
+                                        textBlue="blue"
+                                        textSimpan="simpan"
                                     />
                                 )}
                             </div>

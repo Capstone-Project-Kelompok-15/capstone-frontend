@@ -19,6 +19,8 @@ function UbahProfileViewModel() {
         logout,
         imageIndex,
         setImageIndex,
+        isKeluarModalClicked,
+        setIsKeluarModalClicked,
     } = useStore((state) => state)
     const simpanModalState = useStore((state) => state.isSimpanModalClicked)
     const handleSimpan = useStore((state) => state.setIsSimpanModalClicked)
@@ -74,6 +76,12 @@ function UbahProfileViewModel() {
         },
     })
 
+    const handleLogout = () => {
+        logout()
+        setIsKeluarModalClicked()
+        navigate("/landing")
+    }
+
     const handleStateSimpan = () => {
         handleSimpan()
     }
@@ -96,9 +104,12 @@ function UbahProfileViewModel() {
         handleSimpan,
         imageIndex,
         images,
+        isKeluarModalClicked,
+        setIsKeluarModalClicked,
         handleStateSimpan,
         handleSubmit,
         handleImage,
+        handleLogout,
     }
 }
 

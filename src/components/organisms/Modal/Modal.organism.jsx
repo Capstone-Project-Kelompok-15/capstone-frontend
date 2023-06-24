@@ -140,9 +140,11 @@ function Modal({
                                     onClick={handleProceed}
                                     id={idProceedButton}>
                                     <p
-                                        className={`font-source-sans font-bold text-[24px] text-[#AA1512] ${
-                                            textBlue && "text-[#195FAA]"
-                                        } mt-[18px]`}>
+                                        className={`font-source-sans font-bold text-[24px] mt-[18px] ${
+                                            textBlue === "blue"
+                                                ? "text-[#195FAA]"
+                                                : "text-[#AA1512]"
+                                        } `}>
                                         {proceedMessage}
                                     </p>
                                 </button>
