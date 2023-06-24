@@ -8,7 +8,6 @@ import {
     Legend,
 } from "chart.js"
 import { useStore } from "../../config/zustand/store"
-import threads from "../../dummyData/ThreadList"
 import { useEffect } from "react"
 
 const HomeViewModel = () => {
@@ -71,11 +70,12 @@ const HomeViewModel = () => {
         "12",
     ]
 
-    const { fetchChartDate, chartDate } = useStore((state) => state)
+    const { fetchChartThreads, chartThreads } = useStore((state) => state)
     useEffect(() => {
-        fetchChartDate()
+        fetchChartThreads()
     }, [])
-    const filteredData = chartDate.filter((item) =>
+
+    const filteredData = chartThreads.filter((item) =>
         item.createdAt.startsWith("2023")
     )
     const threadCountByMonth = Array(12).fill(0)
