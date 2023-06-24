@@ -9,7 +9,9 @@ function ViewThread(
   return (
     <div className={isExpand ? 'ml-[300px]' : 'ml-[150px]'}>
         <ReturnButton/>
-        <LihatThreadProfile/>
+        <LihatThreadProfile
+        threadList={threadList}
+        />
         <LihatThread 
         threadList={threadList}
         isExpand={isExpand}/>
