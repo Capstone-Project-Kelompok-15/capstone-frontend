@@ -10,6 +10,7 @@ function UserList(
         handleModalMute,
         handleModalBlock,
         isExpand,
+        MuteDuration
     }) {
     return (
         <div>
@@ -18,6 +19,7 @@ function UserList(
                     <UserProfile
                         Name={Name}
                         Status={Status}
+                        MuteDuration={MuteDuration}
                         isUserBlocked={isUserBlocked}
                         isUserMuted={isUserMuted}
                         handleModalMute={handleModalMute}

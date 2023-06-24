@@ -11,8 +11,8 @@ function BlockedUser() {
                 viewModel.blockedUsers.map(user => (
                     <UserList
                         Name={user.name}
-                        handleBlockClick={viewModel.handleBlockModal}
-                        handleMuteClick={viewModel.handleMuteModal}
+                        handleModalBlock={() => viewModel.handleUnblockOpen(user.id)}
+                        handleModalMute={() => viewModel.handleMuteOpen(user.id)}
                         isExpand={viewModel.isExpand}
                         Status="Terblokir"
                         isUserBlocked={user.block_status}
@@ -27,7 +27,8 @@ function BlockedUser() {
                         proceedMessage="Buka Blokir"
                         cancelMessage="Batal"
                         muteModal={false}
-                        handleCancel={viewModel.handleBlockModal}
+                        handleCancel={viewModel.handleUnblockCancel}
+                        handleProceed={viewModel.handleUnblockProceed}
                         idProceedButton="buka-blokir"
                         idCancelButton="batal" />
                 )
@@ -60,7 +61,8 @@ function BlockedUser() {
                         confirmationMessage="Apakah Kamu Yakin Akan Mute User Ini?"
                         proceedMessage="Mute"
                         cancelMessage="Batal"
-                        handleCancel={viewModel.handleMuteModal}
+                        handleCancel={viewModel.handleMuteCancel}
+                        handleProceed={viewModel.handleMute}
 
                         idProceedButton="mute-user"
                         idCancelButton="batal"

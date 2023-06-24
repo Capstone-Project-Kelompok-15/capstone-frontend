@@ -5,6 +5,7 @@ function UserProfile(
     {
         Name,
         Status,
+        MuteDuration,
         isUserBlocked,
         isUserMuted,
         handleModalBlock,
@@ -23,7 +24,7 @@ function UserProfile(
 
             <div className='w-[1009px] h-[34px] mt-[17.5px] mr-[14px]'>
                 <h1 className='font-source-sans font-semibold text-[12px]'>{Name}</h1>
-                <p className={statusCondition[Status]}>{Status}</p>
+                <p className={statusCondition[Status]}>{Status} {MuteDuration}</p>
             </div>
 
             {

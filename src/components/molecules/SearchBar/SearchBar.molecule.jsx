@@ -11,7 +11,8 @@ function SearchBar(
         formik,
         isExpand,
         handleDeleteSearchHistory,
-        searchHistories
+        searchHistories,
+        handleClick
     }) {
     return (
         <div className={isExpand ? 'flex mt-[16px] ml-[300px]' : 'flex justify-center mt-[16px]'}>
@@ -31,7 +32,7 @@ function SearchBar(
                         {
                             searchHistories &&
                             searchHistories.map((searchHistory, id) => (
-                                <SearchHistory searchHistory={searchHistory} key={id} />
+                                <SearchHistory searchHistory={searchHistory} key={id} handleClick={handleClick} />
                             ))
                         }
                     </div>

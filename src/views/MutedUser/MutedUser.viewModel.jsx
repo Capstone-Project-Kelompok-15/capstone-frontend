@@ -7,18 +7,66 @@ const MutedUserViewModel = () => {
         handleBlockModal,
         isBlockModalClicked,
         isMuteModalClicked,
-        handleMuteModal
+        handleMuteModal,
+        unmuteUser,
+        blockUser,
+        handleSelectUser,
+        selectedUser
     } = useStore(state => state)
 
     const mutedUsers = users.filter(
-        user => user.mute_status && !user.block_status && !user.online_status
+        user => user.mute_status
     )
 
+    const handleBlockOpen = (id) => {
+        handleBlockModal()
+        handleSelectUser(id)
+    }
+
+    const handleBlockCancel = () => {
+        handleBlockModal()
+        handleSelectUser(null)
+    }
+
+    const handleBlockProceed = () => {
+        blockUser(selectedUser)
+    }
+
+    const handleUnmuteOpen = (id) => {
+        handleMuteModal()
+        handleSelectUser(id)
+    }
+
+    const handleUnmuteCancel = () => {
+        handleMuteModal()
+        handleSelectUser(null)
+    }
+
+    const handleUnmuteProceed = () => {
+        unmuteUser(selectedUser)
+    }
+
+    const handleMuteDate = (date) => {
+        const currentDate = new Date()
+        const targetDate = new Date(date)
+    
+        const Diff = Math.floor((targetDate - currentDate) / (1000 * 60 * 60 * 24))
+        
+        const daysDiff = `${Diff} Hari`
+
+        return daysDiff
+    }
+    
     return {
-        handleBlockModal,
+        handleBlockOpen,
+        handleBlockCancel,
+        handleBlockProceed,
+        handleUnmuteOpen,
+        handleUnmuteCancel,
+        handleUnmuteProceed,
+        handleMuteDate,
         isBlockModalClicked,
         isMuteModalClicked,
-        handleMuteModal,
         isExpand,
         mutedUsers,
     }

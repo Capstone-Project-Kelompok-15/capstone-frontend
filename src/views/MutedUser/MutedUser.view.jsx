@@ -9,15 +9,16 @@ function MutedUser() {
     <div>
       {
         viewModel.mutedUsers.map(user => (
-          <UserList 
+          <UserList
             Name={user.name}
-            handleBlockClick={viewModel.handleBlockModal}
-            handleMuteClick={viewModel.handleMuteModal}
+            handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+            handleModalMute={() => viewModel.handleUnmuteOpen(user.id)}
             isExpand={viewModel.isExpand}
             isUserMuted={user.mute_status}
+            MuteDuration={viewModel.handleMuteDate(user.mute_duration)}
             Status="Muted"
             key={user.id}
-            />
+          />
         ))
       }
       {
@@ -27,7 +28,8 @@ function MutedUser() {
             confirmationMessage="Apakah Kamu Yakin Akan Membuka Mute User Ini?"
             proceedMessage="Buka Mute"
             cancelMessage="Batal"
-            handleCancel={viewModel.handleMuteModal}
+            handleProceed={viewModel.handleUnmuteProceed}
+            handleCancel={viewModel.handleUnmuteCancel}
             idProceedButton="unmute-user"
             idCancelButton="batal"
           />
@@ -41,7 +43,8 @@ function MutedUser() {
             confirmationMessage="Apakah Kamu Yakin Akan Memblokir User Ini?"
             proceedMessage="Blokir"
             cancelMessage="Batal"
-            handleCancel={viewModel.handleBlockModal}
+            handleCancel={viewModel.handleBlockCancel}
+            handleProceed={viewModel.handleBlockProceed}
             idProceedButton="block-user"
             idCancelButton="batal"
           />

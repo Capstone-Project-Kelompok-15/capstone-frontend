@@ -11,14 +11,15 @@ const TotalUserViewModel = () => {
         muteUser,
         handleMuteModal,
         blockUser,
-        getUsers,
         handleSelectUser,
-        selectedUser
+        selectedUser,
+        selectedUserMuteStatus,
+        unmuteUser
     } = useStore(state => state)
 
 
     const totalUsers = users.filter(
-        user => !user.block_status && !user.mute_status
+        user => !user.block_status
     )
 
     const handleBlockOpen = (id) => {
@@ -45,11 +46,20 @@ const TotalUserViewModel = () => {
         handleSelectUser(null)
     }
 
-    const handleDate = (days) => {
-        const currentDate = new Date()
-        const futureDate = new Date(currentDate.setDate(currentDate.getDate() + days)).toISOString()
-        return futureDate
+    const handleUnmuteProceed = () => {
+        unmuteUser(selectedUser)
     }
+
+    const handleDate = (days) => {
+        const currentDate = new Date();
+        const futureDate = new Date(currentDate.getTime() + days * 24 * 60 * 60 * 1000)
+
+        futureDate.setHours(0, 0, 0, 0);
+        
+        return futureDate.toISOString();
+    };
+
+
 
     const formik = useFormik({
         initialValues: {
@@ -60,6 +70,19 @@ const TotalUserViewModel = () => {
         }
     })
 
+    const handleMuteDate = (date) => {
+        const currentDate = new Date();
+        const targetDate = new Date(date);
+
+        currentDate.setHours(0, 0, 0, 0);
+        targetDate.setHours(0, 0, 0, 0);
+
+        const diff = Math.floor((targetDate - currentDate) / (1000 * 60 * 60 * 24));
+        const daysDiff = `${diff} Hari`;
+
+        return daysDiff;
+    };
+
     return {
         selectedUser,
         handleBlockOpen,
@@ -67,15 +90,14 @@ const TotalUserViewModel = () => {
         handleBlockProceed,
         handleMuteCancel,
         handleMuteOpen,
+        handleMuteDate,
+        handleUnmuteProceed,
         isBlockModalClicked,
         isMuteModalClicked,
-        handleMuteModal,
         formik,
         isExpand,
         totalUsers,
-        blockUser,
-        getUsers,
-        users
+        selectedUserMuteStatus
     }
 
 }

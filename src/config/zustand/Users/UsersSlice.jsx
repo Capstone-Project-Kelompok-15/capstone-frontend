@@ -1,8 +1,11 @@
 import axios from "axios"
 
-export const UsersSlice = set => ({
+const baseURL = 'https://64939c210da866a953668936.mockapi.io/users/Users'
+
+export const UsersSlice = (set, get) => ({
     users: [],
     selectedUser: null,
+    selectedUserMuteStatus: null,
     isBlockModalClicked: false,
     isMuteModalClicked: false,
     handleBlockModal: () => set(state => (
@@ -15,25 +18,30 @@ export const UsersSlice = set => ({
         })),
     getUsers: async () => {
         try {
-            const response = await axios.get('https://64939c210da866a953668936.mockapi.io/users/Users')
+            const response = await axios.get(baseURL)
             set({ users: response.data })
         } catch (error) {
             console.log(error);
         }
     },
     handleSelectUser: (id) => {
-        set({ selectedUser: id })
+        set(
+            {
+                selectedUser: id,
+                selectedUserMuteStatus: get().users.find(user => user.id === id).mute_status
+            }
+        )
     },
     blockUser: async (id) => {
         try {
-            const response = await axios.put(`https://64939c210da866a953668936.mockapi.io/users/Users/${id}`, {
+            const response = await axios.put(
+                `${baseURL}/${id}`, {
                 block_status: true
             })
 
             if (response.status === 200) {
-                const refetch = await axios.get('https://64939c210da866a953668936.mockapi.io/users/Users')
+                get().getUsers()
                 set({
-                    users: refetch.data,
                     isBlockModalClicked: false
                 })
             }
@@ -43,15 +51,50 @@ export const UsersSlice = set => ({
     },
     muteUser: async (id, duration) => {
         try {
-            const response = await axios.put(`https://64939c210da866a953668936.mockapi.io/users/Users/${id}`, {
+            const response = await axios.put(
+                `${baseURL}/${id}`, {
                 mute_duration: duration,
                 mute_status: true,
             })
 
             if (response.status === 200) {
-                const refetch = await axios.get('https://64939c210da866a953668936.mockapi.io/users/Users')
+                get().getUsers()
                 set({
-                    users: refetch.data,
+                    isMuteModalClicked: false
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    unblockUser: async (id) => {
+        try {
+            const response = await axios.put(
+                `${baseURL}/${id}`, {
+                block_status: false
+            })
+
+            if (response.status === 200) {
+                get().getUsers()
+                set({
+                    isBlockModalClicked: false
+                })
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    },
+    unmuteUser: async (id) => {
+        try {
+            const response = await axios.put(
+                `${baseURL}/${id}`, {
+                mute_duration: '',
+                mute_status: false,
+            })
+
+            if (response.status === 200) {
+                get().getUsers()
+                set({
                     isMuteModalClicked: false
                 })
             }
