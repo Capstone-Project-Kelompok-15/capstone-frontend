@@ -1,5 +1,5 @@
-import React from 'react'
-import x from '../../../assets/x-cross.svg'
+import React from "react"
+import x from "../../../assets/x-cross.svg"
 
 function DeleteSearchHistoryButton({ handleDeleteSearchHistory }) {
     return (

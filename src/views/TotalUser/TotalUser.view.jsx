@@ -1,21 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { UserList, Modal } from '../../components/organisms'
 import TotalUserViewModel from './TotalUser.viewModel'
 
 function TotalUser() {
     const viewModel = TotalUserViewModel()
 
-    useEffect(() => {
-        viewModel.fetchUsers(viewModel.accessToken)
-    }, [])
-
     return (
-        <div>
+        <div className='bg-[#f8f8f8]'>
 
             {
-                viewModel.userList.map(user => (
+                viewModel.totalUsers.map(user => (
                     <UserList
-                        Name={user.username}
+                        Name={user.name}
                         handleBlockClick={viewModel.handleBlockModal}
                         handleMuteClick={viewModel.handleMuteModal}
                         isExpand={viewModel.isExpand}

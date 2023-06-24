@@ -7,7 +7,7 @@ import {
 } from "../../atoms"
 import threads from "../../../dummyData/ThreadList"
 
-function ThreadReportCard() {
+function ThreadReportCard({isExpand}) {
     const [showModal, setShowModal] = useState(false)
     const [modalTitle, setModalTitle] = useState("")
     const [modalContent, setModalContent] = useState("")
@@ -32,7 +32,7 @@ function ThreadReportCard() {
         <div>
             {threads.map((thread) => (
                 <div
-                    className="thread-card mt-4 flex h-16 items-center w-[1210px]"
+                    className={isExpand ? "thread-card mt-4 flex h-16 items-center w-[1180px]": "thread-card mt-4 flex h-16 items-center w-[1210px]"}
                     key={thread.id}>
                     <div>
                         <ThreadPicture />

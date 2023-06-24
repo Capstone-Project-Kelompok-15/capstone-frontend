@@ -7,6 +7,7 @@ const ManageThreadViewModel = () => {
         threadList, 
         accessToken, 
         fetchThreads,
+        deletethread,
     } = useStore(state => state)
 
     useEffect(() => {
@@ -16,6 +17,7 @@ const ManageThreadViewModel = () => {
     return {
         isExpand,
         threadList,
+        deletethread,
     }
 } 
 

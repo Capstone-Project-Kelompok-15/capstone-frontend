@@ -1,16 +1,16 @@
 import React from "react"
-import { ButtonMasuk } from "../../components/atoms"
+import { ButtonMasuk, Logo } from "../../components/atoms"
 import { Footer } from "../../components/molecules"
-import { Navbar } from "../../components/organisms"
 import LoginViewModel from "./Login.viewModel"
 
 function Login() {
     const loginViewModel = LoginViewModel()
-    
+
     return (
         <div id="loginView">
-            <Navbar />
-
+            <div className="flex py-[17px] px-[80px] justify-between items-center">
+                <Logo textLogo="black" />
+            </div>
             {/* FormLogin */}
             <div className="pt-14">
                 {/* Selamat Datang */}
@@ -24,9 +24,7 @@ function Login() {
                 </div>
                 {/* Form Login */}
                 <div className="grid pt-[72px] place-content-center">
-                    <form
-                        id="loginForm"
-                        onSubmit={loginViewModel.formik.handleSubmit}>
+                    <form id="loginForm" onSubmit={loginViewModel.handleSubmit}>
                         <div>
                             <label
                                 className="text-xl font-normal text-[#2C2C2C]"
@@ -38,24 +36,27 @@ function Login() {
                                         className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
                                         id="email"
                                         name="email"
-                                        onChange={
-                                            loginViewModel.formik.handleChange
-                                        }
                                         value={
                                             loginViewModel.formik.values.email
+                                        }
+                                        onChange={
+                                            loginViewModel.formik &&
+                                            loginViewModel.formik.handleChange
                                         }
                                         onBlur={
                                             loginViewModel.formik.handleBlur
                                         }
                                         placeholder="e.g., lesliealexander@gmail.com"
                                     />
+
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
                                             <span
                                                 className="text-[#AA1512]"
                                                 id="errorEmail">
-                                                {loginViewModel.formik.touched
-                                                    .email &&
+                                                {loginViewModel.formik &&
+                                                    loginViewModel.formik
+                                                        .touched.email &&
                                                     loginViewModel.formik.errors
                                                         .email}
                                                 {/* ? "Tolong masukkan email"
@@ -74,22 +75,25 @@ function Login() {
                                 htmlFor="password">
                                 Kata Sandi
                                 <div className="pt-3">
-                                    <input
-                                        type="password"
-                                        className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
-                                        id="password"
-                                        name="password"
-                                        onChange={
-                                            loginViewModel.formik.handleChange
-                                        }
-                                        value={
-                                            loginViewModel.formik.values
-                                                .password
-                                        }
-                                        onBlur={
-                                            loginViewModel.formik.handleBlur
-                                        }
-                                    />
+                                    {loginViewModel.formik && (
+                                        <input
+                                            type="password"
+                                            className="border-[#BFBFBF80]/50 rounded-xl border-2 w-[509px] py-2 px-4"
+                                            id="password"
+                                            name="password"
+                                            onChange={
+                                                loginViewModel.formik
+                                                    .handleChange
+                                            }
+                                            value={
+                                                loginViewModel.formik.values
+                                                    .password
+                                            }
+                                            onBlur={
+                                                loginViewModel.formik.handleBlur
+                                            }
+                                        />
+                                    )}
                                     <div>
                                         <small className="py-1 text-base transition border-[#AA1512] text-slate-400 peer-invalid:text-pink-500">
                                             <span
@@ -99,9 +103,6 @@ function Login() {
                                                     .password &&
                                                     loginViewModel.formik.errors
                                                         .password}
-                                                {/* ? "Tolong masukkan kata sandi"
-												: ""}
-											{loginViewModel.errorLogin && "Kata sandi yang anda masukkan salah"} */}
                                             </span>
                                         </small>
                                     </div>
@@ -109,7 +110,7 @@ function Login() {
                             </label>
                         </div>
                         <div className="text-center pt-[46px] ">
-                            <ButtonMasuk />
+                            <ButtonMasuk type="submit" />
                         </div>
                     </form>
                 </div>

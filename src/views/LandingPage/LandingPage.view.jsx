@@ -10,7 +10,7 @@ function LandingPageView() {
                 <div className="flex py-[17px] px-[80px] justify-between items-center">
                     <Logo />
                     <Link to="/login">
-                        <ButtonMasuk />
+                        <ButtonMasuk type="button" />
                     </Link>
                 </div>
                 <Hero />

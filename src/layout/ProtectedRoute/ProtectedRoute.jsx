@@ -3,16 +3,16 @@ import { useEffect } from 'react';
 import { useStore } from '../../config/zustand/store'
 
 function ProtectedRoute({ children }) {
-    const isAuthenticated = useStore(state => state.isAuthenticated)
+    const isLogin = useStore((state) => state.isLogin)
     const navigate = useNavigate()
 
 
     useEffect(() => {
-        if (!isAuthenticated) {
+        if (!isLogin) {
             navigate('/login')
         }
 
-    }, [isAuthenticated])
+    }, [isLogin])
     return children
 }
 

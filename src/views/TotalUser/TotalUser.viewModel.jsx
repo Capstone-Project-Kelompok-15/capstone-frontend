@@ -3,7 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const TotalUserViewModel = () => {
     const {
-        userList,
+        users,
         isExpand,
         handleBlockModal,
         isBlockModalClicked,
@@ -11,6 +11,10 @@ const TotalUserViewModel = () => {
         handleMuteModal
     } = useStore(state => state)
 
+
+    const totalUsers = users.filter(
+        user => !user.block_status && !user.mute_status
+    )
 
     const formik = useFormik({
         initialValues: {
@@ -21,7 +25,13 @@ const TotalUserViewModel = () => {
         }
     })
 
-    const { fetchUsers, accessToken } = useStore(state => state)
+    const handleMute = () => {
+        alert("User Muted")
+    }
+
+    const handleBlock = () => {
+        alert("User Blocked")
+    }
 
     return {
         handleBlockModal,
@@ -30,10 +40,9 @@ const TotalUserViewModel = () => {
         handleMuteModal,
         formik,
         isExpand,
-        fetchUsers,
-        accessToken,
-        userList
-
+        totalUsers,
+        handleMute,
+        handleBlock
     }
 
 }
