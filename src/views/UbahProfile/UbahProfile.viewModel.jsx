@@ -69,7 +69,7 @@ function UbahProfileViewModel() {
                     values.password
                 )
                 logout()
-                navigate("/login")
+                navigate("/landing")
             }
         },
     })
