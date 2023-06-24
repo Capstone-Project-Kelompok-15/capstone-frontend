@@ -9,7 +9,7 @@ function ThreadList(
     deletethread,
   }) {
   return (
-    <div className={isExpand ? 'gap-[15px] ml-[300px]': 'gap-[15px] ml-[150px]'}>
+    <div className={isExpand ? 'gap-[15px] ml-[300px]': 'gap-[15px] ml-[155px]'}>
       <ThreadProfile 
       threadList={threadList}
       isExpand={isExpand}
