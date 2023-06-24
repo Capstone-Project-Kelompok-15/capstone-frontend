@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useFormik } from "formik";
 import { useStore } from "../../config/zustand/store";
 
@@ -8,7 +9,10 @@ const ThreadLayoutModel = () => {
         searchHistory,
         isSearch,
         handleSearch,
-        deleteSearchHistory
+        deleteSearchHistory,
+        fetchThread,
+        accessToken,
+        threadList,
     } = useStore(state => state)
 
 
@@ -29,6 +33,10 @@ const ThreadLayoutModel = () => {
 
     }
 
+    useEffect(() => {
+        fetchThread(accessToken)
+    }, [])
+
     const handleDelete = () => {
         deleteSearchHistory()
     }
@@ -40,7 +48,8 @@ const ThreadLayoutModel = () => {
         isExpand,
         handleKeyPress,
         searchHistory,
-        handleDelete
+        handleDelete,
+        threadList
     }
 }
 

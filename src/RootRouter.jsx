@@ -38,7 +38,7 @@ const rootRouter = createBrowserRouter(
             <Route path="login" element={<Login />} />
             <Route path="landing" element={<LandingPageView />} />
             <Route path="ubahprofil" element={<UbahProfile />} />
-            <Route path="show" element={<ShowThread />} />
+            <Route path="show/:id" element={<ShowThread />} />
 
             <Route
                 path="/manageUser"

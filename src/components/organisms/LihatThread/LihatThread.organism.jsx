@@ -3,13 +3,16 @@ import { LihatThread, LihatThreadProfile } from '../../molecules'
 import { ReturnButton} from '../../atoms'
 
 function ViewThread(
-  {isExpand,}
+  {isExpand,
+  threadList,}
 ) {
   return (
     <div className={isExpand ? 'ml-[300px]' : 'ml-[150px]'}>
         <ReturnButton/>
         <LihatThreadProfile/>
-        <LihatThread isExpand={isExpand}/>
+        <LihatThread 
+        threadList={threadList}
+        isExpand={isExpand}/>
     </div>
   )
 }

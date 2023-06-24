@@ -3,7 +3,9 @@ import { useLocation } from "react-router-dom"
 import { LaporanThread } from "../../molecules"
 import { TooltipButton } from "../../atoms"
 
-function ThreadStats({ isExpand }) {
+function ThreadStats({ isExpand,
+threadList,
+}) {
     const location = useLocation()
 
     let pageTitle = ""
@@ -21,7 +23,9 @@ function ThreadStats({ isExpand }) {
                 </h1>
                 <TooltipButton />
             </div>
-            <LaporanThread />
+            <LaporanThread isExpand={isExpand}
+            threadList={threadList}
+            />
         </div>
     )
 }

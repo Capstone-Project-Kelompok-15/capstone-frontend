@@ -11,7 +11,8 @@ function ThreadLayout() {
     return (
         <div className="bg-[#F8F8F8]">
             <ThreadStats
-            isExpand={viewModel.isExpand} />
+            isExpand={viewModel.isExpand}
+            threadList={viewModel.threadList} />
             <SearchBar
             heading="Cari &quot;Thread&quot;"
             isSearch={viewModel.isSearch}
