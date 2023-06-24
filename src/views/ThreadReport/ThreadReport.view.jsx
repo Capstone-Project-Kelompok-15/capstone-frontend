@@ -7,7 +7,10 @@ function ThreadReport() {
 
     return (
         <div>
-            <ThreadReportList isExpand={viewModel.isExpand} />
+            <ThreadReportList
+                isExpand={viewModel.isExpand}
+                getReport={viewModel.getReport}
+            />
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import { useStore } from "../../config/zustand/store"
 
 const ThreadReportModel = () => {
-    const { isExpand } = useStore((state) => state)
-    return { isExpand }
+    const { isExpand, getReport } = useStore((state) => state)
+    return { isExpand, getReport }
 }
 
 export default ThreadReportModel

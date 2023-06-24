@@ -1,19 +1,27 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import {
     AcceptButton,
     DenyButton,
     ViewButton,
     ThreadPicture,
 } from "../../atoms"
-import threads from "../../../dummyData/ThreadList"
+import { useStore } from "../../../config/zustand/store"
 
-function ThreadReportCard({ isExpand }) {
+function ThreadReportCard({ isExpand, getReport }) {
+    const { report, updateReport } = useStore((state) => state)
     const [showModal, setShowModal] = useState(false)
     const [modalTitle, setModalTitle] = useState("")
     const [modalContent, setModalContent] = useState("")
+    const [updatedData, setupdatedData] = useState()
 
-    const handleAcceptClick = () => {
+    useEffect(() => {
+        getReport()
+    }, [])
+
+    const handleAcceptClick = (thread) => {
         setShowModal(true)
+        console.log(thread)
+        setupdatedData(thread)
         setModalTitle("Setujui Laporan?")
         setModalContent("Apakah Kamu Yakin Akan Menyetujui Laporan Ini?")
     }
@@ -28,9 +36,17 @@ function ThreadReportCard({ isExpand }) {
         setShowModal(false)
     }
 
+    const handleUpdate = () => {
+        const newData = { ...updatedData, accept_status: true }
+        updateReport(newData.id, newData)
+        setShowModal(false)
+    }
+
+    console.log(report)
+
     return (
         <div>
-            {threads.map((thread) => (
+            {report?.map((thread) => (
                 <div
                     className={
                         isExpand
@@ -43,15 +59,17 @@ function ThreadReportCard({ isExpand }) {
                     </div>
                     <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
                         <h6 className="font-source-sans font-bold text-[12px]">
-                            {thread.name}
+                            {thread.title}
                         </h6>
                         <p className="font-source-sans font-bold text-[12px] text-[#AA1512]">
-                            #kekerasan
+                            {thread.tag}
                         </p>
                     </div>
                     <div className="flex">
                         <ViewButton />
-                        <AcceptButton onClick={handleAcceptClick} />
+                        <AcceptButton
+                            onClick={() => handleAcceptClick(thread)}
+                        />
                         <DenyButton onClick={handleDenyClick} />
                     </div>
                 </div>
@@ -68,6 +86,7 @@ function ThreadReportCard({ isExpand }) {
                         </p>
                         <div className="flex flex-col items-center gap-4">
                             <button
+                                onClick={handleUpdate}
                                 type="button"
                                 id="confirmmodalbutton"
                                 className="btn btn-primary text-2xl font-bold text-[#AA1512] ">
