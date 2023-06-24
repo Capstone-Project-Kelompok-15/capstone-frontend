@@ -5,13 +5,12 @@ import { persist } from "zustand/middleware"
 export const AdminLogin = persist(
     (set) => ({
         isAuthenticated: false,
-        // setIsAuth: (param) => set(() => ({ isAuthenticated: param })),
         accessToken: "",
+        dataAdmin: {},
         fetchLogin: async (email, password) => {
             try {
                 const res = await axios.post(
-                    "http://54.206.29.131:8000/login/admin",
-                    //    "https://capstone-production-c8c9.up.railway.app/login/admin",
+                    "https://capstone-production-c8c9.up.railway.app/login/admin",
                     {
                         email,
                         password,
@@ -19,8 +18,13 @@ export const AdminLogin = persist(
                 )
                 if (res.status === 200) {
                     set({
+                        dataAdmin: {
+                            id: res.data.user.id,
+                            name: res.data.user.name,
+                            email: res.data.user.email,
+                        },
                         isAuthenticated: true,
-                        accessToken: res.data.Admin.token,
+                        accessToken: res.data.user.token,
                     })
                 }
             } catch (error) {
@@ -29,6 +33,7 @@ export const AdminLogin = persist(
         },
         logout: () =>
             set(() => ({
+                dataAdmin: {},
                 isAuthenticated: false,
                 accessToken: "",
             })),

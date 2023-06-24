@@ -3,7 +3,7 @@ import Logo from "../../atoms/Logo/Logo.atom"
 import { KeluarButton } from "../../atoms"
 import { NavHome } from "../../molecules"
 
-function Navbar({ bgNavbar, ubahNavbar, onClick }) {
+function Navbar({ bgNavbar, ubahNavbar, onClick, dataAdmin, imageIndex }) {
     return (
         <div
             className={`${
@@ -14,7 +14,11 @@ function Navbar({ bgNavbar, ubahNavbar, onClick }) {
             {ubahNavbar === "ubahProfil" ? (
                 <KeluarButton onClick={onClick} />
             ) : (
-                <NavHome onClick={onClick} />
+                <NavHome
+                    onClick={onClick}
+                    dataAdmin={dataAdmin}
+                    imageIndex={imageIndex}
+                />
             )}
         </div>
     )

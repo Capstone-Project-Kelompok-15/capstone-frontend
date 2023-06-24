@@ -65,7 +65,7 @@ function UbahProfile() {
                                         ubahProfileViewModel.imageIndex
                                     ]
                                 }
-                                alt="image"
+                                alt=""
                                 id="gambarprofil"
                                 className="rounded-full w-[127px] mx-auto"
                             />
@@ -235,8 +235,8 @@ function UbahProfile() {
                                     <ButtonMasuk
                                         textButton="simpan"
                                         onClick={(e) => {
-                                            e.preventDefault(),
-                                                ubahProfileViewModel.handleSimpan()
+                                            e.preventDefault()
+                                            ubahProfileViewModel.handleSimpan()
                                         }}
                                     />
                                 </div>
@@ -250,8 +250,8 @@ function UbahProfile() {
                                             ubahProfileViewModel.handleStateSimpan
                                         }
                                         handleProceed={(e) => {
-                                            e.preventDefault(),
-                                                ubahProfileViewModel.handleSubmit()
+                                            e.preventDefault()
+                                            ubahProfileViewModel.handleSubmit()
                                         }}
                                         idProceedButton="simpan"
                                         idCancelButton="batal"

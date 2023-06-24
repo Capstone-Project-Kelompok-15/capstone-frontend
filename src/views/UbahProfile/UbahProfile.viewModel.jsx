@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
 import * as Yup from "yup"
 import { useStore } from "../../config/zustand/store"
@@ -13,15 +13,19 @@ function UbahProfileViewModel() {
         errorUbahProfil,
         isExpand,
         setIsExpand,
+        ubahProfileAdmin,
+        dataAdmin,
+        accessToken,
+        logout,
+        imageIndex,
+        setImageIndex,
     } = useStore((state) => state)
     const simpanModalState = useStore((state) => state.isSimpanModalClicked)
     const handleSimpan = useStore((state) => state.setIsSimpanModalClicked)
 
-    const [imageIndex, setImageIndex] = useState(0)
     const images = [pp1, pp2, pp3]
 
-    const username = "admin1"
-    const email = "admin@gmail.com"
+    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues: {
@@ -38,15 +42,14 @@ function UbahProfileViewModel() {
                 "Tolong Masukkan Konfirmasi Kata Sandi"
             ),
         }),
-        onSubmit: (values) => {
+        onSubmit: async (values) => {
             console.log(values)
-            if (values.password === values.passwordKonfirmasi) {
-                setUbahProfil(true)
-                setErrorUbahProfil(false)
-                console.log(values.password)
-                alert(JSON.stringify(values, null, 2))
+            if (values.username === dataAdmin.name) {
+                formik.setFieldError("username", "Username sudah digunakan")
             }
-            if (values.password !== values.passwordKonfirmasi) {
+            if (values.email === dataAdmin.email) {
+                formik.setFieldError("email", "Email sudah digunakan")
+            } else if (values.password !== values.passwordKonfirmasi) {
                 formik.setFieldError(
                     "password",
                     "Kata sandi yang anda masukkan tidak valid"
@@ -55,12 +58,18 @@ function UbahProfileViewModel() {
                     "passwordKonfirmasi",
                     "Kata sandi yang anda masukkan tidak valid"
                 )
-            }
-            if (values.username === username) {
-                formik.setFieldError("username", "Username sudah digunakan")
-            }
-            if (values.email === email) {
-                formik.setFieldError("email", "Email sudah digunakan")
+            } else {
+                setUbahProfil(true)
+                setErrorUbahProfil(false)
+                await ubahProfileAdmin(
+                    accessToken,
+                    dataAdmin.id,
+                    values.username,
+                    values.email,
+                    values.password
+                )
+                logout()
+                navigate("/login")
             }
         },
     })
@@ -75,10 +84,9 @@ function UbahProfileViewModel() {
     }
 
     const handleImage = () => {
-        setImageIndex((prevIndex) => (prevIndex + 1) % images.length)
+        setImageIndex(imageIndex < images.length - 1 ? imageIndex + 1 : 0)
     }
 
-    console.log("simpan", simpanModalState)
     return {
         formik,
         isExpand,
@@ -86,11 +94,11 @@ function UbahProfileViewModel() {
         errorUbahProfil,
         simpanModalState,
         handleSimpan,
+        imageIndex,
+        images,
         handleStateSimpan,
         handleSubmit,
-        imageIndex,
         handleImage,
-        images,
     }
 }
 

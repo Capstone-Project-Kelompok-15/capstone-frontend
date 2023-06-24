@@ -110,7 +110,7 @@ function Login() {
                             </label>
                         </div>
                         <div className="text-center pt-[46px] ">
-                            <ButtonMasuk type="submit" />
+                            <ButtonMasuk />
                         </div>
                     </form>
                 </div>

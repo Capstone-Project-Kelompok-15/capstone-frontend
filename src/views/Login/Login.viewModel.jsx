@@ -10,7 +10,6 @@ function LoginViewModel() {
     const { fetchLogin, isAuthenticated } = useStore((state) => state)
     const formik = useFormik({
         initialValues: {
-            name: "Admin 1",
             email: "",
             password: "",
         },
@@ -20,6 +19,7 @@ function LoginViewModel() {
         }),
         onSubmit: async (values) => {
             await fetchLogin(values.email, values.password)
+            console.log(values.email, values.password)
             if (isAuthenticated) {
                 navigate("/")
             }
