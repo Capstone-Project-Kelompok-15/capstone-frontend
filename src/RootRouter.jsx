@@ -5,21 +5,22 @@ import {
     Route,
 } from "react-router-dom"
 import {
+    BlockedUserView,
+    MutedUserView,
+    OnlineUserView,
+    TotalUserView,
     HomeView,
     ManageThreadView,
     Login,
     LandingPageView,
+    UbahProfile,
     ShowThread,
-    OnlineUserView,
-    TotalUserView,
-    MutedUserView,
-    BlockedUserView,
 } from "./views"
 import {
     RootLayout,
     ThreadLayout,
-    ProtectedRoute,
     ManageUserLayout,
+    ProtectedRoute,
 } from "./layout"
 
 const rootRouter = createBrowserRouter(
@@ -35,6 +36,7 @@ const rootRouter = createBrowserRouter(
             />
             <Route path="login" element={<Login />} />
             <Route path="landing" element={<LandingPageView />} />
+            <Route path="ubahprofil" element={<UbahProfile />} />
             <Route path="show/:id" element={<ShowThread />} />
 
             <Route

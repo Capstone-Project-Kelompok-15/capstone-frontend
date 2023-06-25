@@ -25,7 +25,7 @@ function LihatThread({ isExpand }) {
                 <div className="flex justify-center">
                     <img
                         src={state.thread_picture}
-                        alt="thread picture"
+                        alt="threadpicture"
                         className="mt-[10px] w-[350px] h-[215px]"
                     />
                 </div>

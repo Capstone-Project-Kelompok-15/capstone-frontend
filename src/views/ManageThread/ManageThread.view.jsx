@@ -45,16 +45,14 @@ function ManageThread() {
                   ))}
             {viewModel.isDeleteThread && (
                 <Modal
-                    Message={"Hapus Thread?"}
-                    confirmationMessage={
-                        "Apakah Kamu Yakin Akan Menghapus Thread Ini?"
-                    }
-                    proceedMessage={"Hapus"}
-                    cancelMessage={"Batal"}
+                    Message="Hapus Thread?"
+                    confirmationMessage="Apakah Kamu Yakin Akan Menghapus Thread Ini?"
+                    proceedMessage="Hapus"
+                    cancelMessage="Batal"
                     handleProceed={viewModel.handleDelete}
                     handleCancel={viewModel.handleDeleteCancel}
-                    idProceedButton={"hapusthread"}
-                    idCancelButton={"batal"}
+                    idProceedButton="hapusthread"
+                    idCancelButton="batal"
                 />
             )}
         </div>

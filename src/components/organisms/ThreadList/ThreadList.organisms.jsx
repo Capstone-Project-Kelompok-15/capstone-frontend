@@ -14,7 +14,7 @@ function ThreadList({ isExpand, thread, handleAcceptClick }) {
                 <div>
                     <img
                         src={thread.thread_picture}
-                        alt="thread picture"
+                        alt="threadpicture"
                         className="h-[50px] w-[50px] rounded-[100px]"
                     />
                 </div>

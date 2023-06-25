@@ -1,4 +1,3 @@
-// API
 import axios from "axios"
 import { persist } from "zustand/middleware"
 
@@ -42,13 +41,3 @@ export const AdminLogin = persist(
         name: "user-token",
     }
 )
-
-// State
-// export const AdminLogin = (set) => ({
-//     isLogin: false,
-//     setLogin: (state) => set(() => ({ isLogin: state })),
-//     logout: () =>
-//         set(() => ({
-//             isLogin: false,
-//         })),
-// })

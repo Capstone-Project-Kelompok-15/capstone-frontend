@@ -11,9 +11,13 @@ function RootLayout() {
     const excludedPaths = ["/login", "/landing", "/ubahprofil"]
     const isExcluded = excludedPaths.includes(location.pathname)
 
-    const { isKeluarModalClicked, setIsKeluarModalClicked, logout } = useStore(
-        (state) => state
-    )
+    const {
+        isKeluarModalClicked,
+        setIsKeluarModalClicked,
+        logout,
+        dataAdmin,
+        imageIndex,
+    } = useStore((state) => state)
     const navigate = useNavigate()
     const handleLogout = () => {
         logout()
@@ -22,7 +26,7 @@ function RootLayout() {
     }
 
     return (
-        <div className="bg-[#f8f8f8]">
+        <div>
             {!isExcluded && (
                 <>
                     <Navbar
@@ -30,6 +34,8 @@ function RootLayout() {
                         onClick={() => {
                             setIsKeluarModalClicked()
                         }}
+                        dataAdmin={dataAdmin}
+                        imageIndex={imageIndex}
                     />
                     {isKeluarModalClicked && (
                         <Modal
@@ -40,7 +46,7 @@ function RootLayout() {
                             handleCancel={() => setIsKeluarModalClicked()}
                             handleProceed={() => handleLogout()}
                             idProceedButton="keluar"
-                            idCancelButton="batal"
+                            idCancelButton="batalkeluar"
                         />
                     )}
 

@@ -1,4 +1,3 @@
-
 export { default as ButtonMasuk } from "./MasukButton/ButtonMasuk.atom"
 export { default as DeleteSearchHistoryButton } from "./DeleteSearchHistoryButton/DeleteSearchHistoryButton.atom"
 export { default as SearchButton } from "./SearchButton/SearchButton.atom"
@@ -11,3 +10,4 @@ export { default as ThreadPicture } from "./ThreadPicture/ThreadPicture.atom"
 export { default as TooltipButton } from "./TooltipButton/TooltipButton.atom"
 export { default as ProfilePicture } from "./ProfilePicture/ProfilePicture.atom"
 export { default as Button } from "./Button/Button.atom"
+export { default as BackButton } from "./BackButton/BackButton.atom"

@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react"
-import {
-    DeleteButton,
-    ViewButton,
-} from "../../atoms"
+import { DeleteButton, ViewButton } from "../../atoms"
 import { useStore } from "../../../config/zustand/store"
 
-function ThreadProfile({
-    isExpand,
-    getReport,
-}) {
-    const {deletethread, report}= useStore(state => state)
+function ThreadProfile({ isExpand, getReport }) {
+    const { deletethread, report } = useStore((state) => state)
 
     const [showModal, setShowModal] = useState(false)
     const [modalTitle, setModalTitle] = useState("")
@@ -40,10 +34,18 @@ function ThreadProfile({
         <div>
             {report.map((thread) => (
                 <div
-                    className={isExpand ? "thread-card mt-4 flex h-16 items-center w-[1180px]": "thread-card mt-4 flex h-16 items-center w-[1210px]"}
+                    className={
+                        isExpand
+                            ? "thread-card mt-4 flex h-16 items-center w-[1180px]"
+                            : "thread-card mt-4 flex h-16 items-center w-[1210px]"
+                    }
                     key={thread.id}>
                     <div>
-                        <img src={thread.thread_picture} alt="thread picture" className="h-[50px] w-[50px] rounded-[100px]"/>
+                        <img
+                            src={thread.thread_picture}
+                            alt="threadpicture"
+                            className="h-[50px] w-[50px] rounded-[100px]"
+                        />
                     </div>
                     <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
                         <h6 className="font-source-sans font-bold text-[12px]">
@@ -54,8 +56,10 @@ function ThreadProfile({
                         </p>
                     </div>
                     <div className="flex">
-                        <ViewButton report={thread}/>
-                        <DeleteButton onClick={() => handleAcceptClick (thread.id)} />
+                        <ViewButton report={thread} />
+                        <DeleteButton
+                            onClick={() => handleAcceptClick(thread.id)}
+                        />
                     </div>
                 </div>
             ))}
@@ -74,8 +78,7 @@ function ThreadProfile({
                                 type="button"
                                 id="confirmmodalbutton"
                                 className="btn btn-primary text-[#AA1512] font-source-sans font-bold text-24"
-                                onClick={handleDelete}
-                                >
+                                onClick={handleDelete}>
                                 Hapus
                             </button>
                             <button
@@ -94,4 +97,3 @@ function ThreadProfile({
 }
 
 export default ThreadProfile
-
