@@ -71,5 +71,4 @@ function MutedUser() {
     </div>
   )
 }
-
 export default MutedUser

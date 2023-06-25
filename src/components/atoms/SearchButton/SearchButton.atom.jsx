@@ -11,5 +11,4 @@ function SearchButton({ handleSearch }) {
         </button>
     )
 }
-
 export default SearchButton

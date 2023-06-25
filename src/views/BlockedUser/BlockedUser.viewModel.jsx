@@ -3,7 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const BlockUserViewModel = () => {
     const {
-        users,
+        userList,
         isExpand,
         handleBlockModal,
         isBlockModalClicked,
@@ -77,7 +77,7 @@ const BlockUserViewModel = () => {
         handleUnblockProceed,
         handleMuteOpen,
         handleMuteCancel,
-        searchResults
+        searchResults,
     }
 
 }

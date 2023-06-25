@@ -3,7 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const OnlineUserViewModel = () => {
     const {
-        users,
+        userList,
         isExpand,
         handleBlockModal,
         isBlockModalClicked,
@@ -62,7 +62,6 @@ const OnlineUserViewModel = () => {
             muteUser(selectedUser, handleDate(values.mute_duration))
         }
     })
-
 
     return {
         handleBlockOpen,

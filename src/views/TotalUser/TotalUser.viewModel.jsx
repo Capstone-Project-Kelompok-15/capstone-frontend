@@ -3,7 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const TotalUserViewModel = () => {
     const {
-        users,
+        userList,
         isExpand,
         handleBlockModal,
         isBlockModalClicked,
@@ -18,7 +18,7 @@ const TotalUserViewModel = () => {
         searchResults
     } = useStore(state => state)
 
-
+    
     const totalUsers = users.filter(
         user => !user.block_status
     )
@@ -85,7 +85,7 @@ const TotalUserViewModel = () => {
     };
 
     return {
-        selectedUser,
+       selectedUser,
         handleBlockOpen,
         handleBlockCancel,
         handleBlockProceed,

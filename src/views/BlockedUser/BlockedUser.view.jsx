@@ -37,6 +37,7 @@ function BlockedUser() {
                 )
 
             }
+
             {
                 viewModel.isBlockModalClicked && (
                     <Modal
@@ -92,5 +93,4 @@ function BlockedUser() {
         </div>
     )
 }
-
 export default BlockedUser

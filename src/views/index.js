@@ -4,3 +4,9 @@ export { default as TotalUserView } from './TotalUser/TotalUser.view'
 export { default as MutedUserView } from './MutedUser/MutedUser.view'
 export { default as BlockedUserView } from './BlockedUser/BlockedUser.view'
 export { default as HomeView } from './Home/Home.view'
+export { default as LandingPageView } from "./LandingPage/LandingPage.view";
+export { default as Login } from "./Login/Login.view";
+export { default as ManageThreadView } from './ManageThread/ManageThread.view'
+export { default as UbahProfile } from "./UbahProfile/UbahProfile.view";
+export { default as ShowThread } from './ShowThread/ShowThread.view';
+export { default as ThreadReport } from './ThreadReport/ThreadReport.view'

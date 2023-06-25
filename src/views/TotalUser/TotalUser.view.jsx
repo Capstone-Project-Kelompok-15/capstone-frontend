@@ -8,6 +8,10 @@ import TotalUserViewModel from './TotalUser.viewModel'
 function TotalUser() {
     const viewModel = TotalUserViewModel()
 
+    useEffect(() => {
+        viewModel.fetchUsers(viewModel.accessToken)
+    }, [])
+
     return (
         <div>
             {

@@ -21,7 +21,7 @@ function ManageUser() {
     }, [location.pathname])
     
     return (
-        <div>
+        <div className='bg-[#f8f8f8]'>
             <UserStats
                 isExpand={viewModel.isExpand}
                 heading="Manage User"
@@ -30,6 +30,7 @@ function ManageUser() {
                 blockedUsersCount={viewModel.blockedUsers}
                 onlineUsersCount={viewModel.onlineUsers}
             />
+                  
             <SearchBar
                 heading="Cari &quot;Pengguna&quot;"
                 isSearch={viewModel.isSearch}
