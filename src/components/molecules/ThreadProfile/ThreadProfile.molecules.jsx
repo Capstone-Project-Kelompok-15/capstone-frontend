@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import {
     DeleteButton,
     ViewButton,
@@ -7,13 +7,18 @@ import { useStore } from "../../../config/zustand/store"
 
 function ThreadProfile({
     isExpand,
-    threadList,
+    getthread,
 }) {
-    const {deletethread, accessToken}= useStore(state => state)
+    const {deletethread, threadList}= useStore(state => state)
+
     const [showModal, setShowModal] = useState(false)
     const [modalTitle, setModalTitle] = useState("")
     const [modalContent, setModalContent] = useState("")
     const [idDelete, setIdDelete] = useState(0)
+
+    useEffect(() => {
+        getthread()
+    }, [])
 
     const handleAcceptClick = (id) => {
         setShowModal(true)
@@ -23,7 +28,7 @@ function ThreadProfile({
     }
 
     const handleDelete = () => {
-        deletethread(accessToken, idDelete)
+        deletethread(idDelete)
         setShowModal(false)
     }
 
@@ -36,21 +41,21 @@ function ThreadProfile({
             {threadList.map((thread) => (
                 <div
                     className={isExpand ? "thread-card mt-4 flex h-16 items-center w-[1180px]": "thread-card mt-4 flex h-16 items-center w-[1210px]"}
-                    key={thread.ID}>
+                    key={thread.id}>
                     <div>
-                        <img src={thread.file} alt="thread picture" className="h-[50px] w-[50px] rounded-[100px]"/>
+                        <img src={thread.thread_picture} alt="thread picture" className="h-[50px] w-[50px] rounded-[100px]"/>
                     </div>
                     <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
                         <h6 className="font-source-sans font-bold text-[12px]">
                             {thread.title}
                         </h6>
                         <p className="font-source-sans font-normal text-[12px]">
-                            {thread.content}
+                            {thread.description}
                         </p>
                     </div>
                     <div className="flex">
                         <ViewButton threadList={thread}/>
-                        <DeleteButton onClick={() => handleAcceptClick (thread.ID)} />
+                        <DeleteButton onClick={() => handleAcceptClick (thread.id)} />
                     </div>
                 </div>
             ))}

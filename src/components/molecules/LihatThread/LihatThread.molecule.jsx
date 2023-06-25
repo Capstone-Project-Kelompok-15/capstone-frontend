@@ -14,11 +14,11 @@ function LihatThread({
           </div>
           <div>
             <p className='text-justify text-[16px] font-source-sans font-normal mt-[10px] ml-[30px]'>
-             {state.content}
+             {state.thread_paragraph}
               </p>
           </div>
           <div className='flex justify-center'>
-            <img src={state.file} alt="thread picture" className='mt-[10px] w-[350px] h-[215px]'/>
+            <img src={state.thread_picture} alt="thread picture" className='mt-[10px] w-[350px] h-[215px]'/>
             </div>
             </div>
     </div>

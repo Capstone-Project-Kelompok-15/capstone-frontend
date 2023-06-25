@@ -3,65 +3,28 @@ import axios from "axios"
 export const ThreadsSlice = (set, get) => ({
     threadList: [],
 
-    fetchThreads: async (token) => {
+    getthread: async () => {
         try {
-            const res = await axios.get(
-                "https://capstone-production-c8c9.up.railway.app/admin/threads",
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
+            const response = await axios.get(
+                "https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads"
             )
-
-            if (res.status === 200) {
-                set({
-                    threadList: res.data.data,
-                })
-            }
+            set({ threadList: response.data })
         } catch (error) {
             console.log(error)
         }
     },
 
-    fetchThread: async (token, title) => {
+    deletethread: async (id) => {
         try {
-            const res = await axios.get(
-                `https://capstone-production-c8c9.up.railway.app/threads?=${title}`,
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
+            const response = await axios.delete(
+                `https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads/${id}`,
             )
-
-            if (res.status === 200) {
-                console.log(res.data.thread)
+            if (response.status === 200) {
+                const refetch = await axios.get(
+                    "https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads"
+                )
                 set({
-                    threadList: res.data.thread,
-                })
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    },
-
-    deletethread: async (token, id) => {
-        try { 
-            const res = await axios.delete(
-            `https://capstone-production-c8c9.up.railway.app/admin/threads/${id}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            }
-        )
-
-            if (res.status === 200) {
-                get().fetchThreads()
-                console.log(res.data.thread)
-                set({
-                    threadList: res.data.thread,
+                    threadList: refetch.data,
                 })
             }
         } catch (error) {

@@ -3,9 +3,7 @@ import { useLocation } from "react-router-dom"
 import { LaporanThread } from "../../molecules"
 import { TooltipButton } from "../../atoms"
 
-function ThreadStats({ isExpand,
-threadList,
-}) {
+function ThreadStats({ isExpand }) {
     const location = useLocation()
 
     let pageTitle = ""
@@ -16,18 +14,20 @@ threadList,
     }
 
     return (
-        <div className={isExpand ? " ml-[300px] " : " ml-[155px] "}>
-            <div className="flex bg-[#F8F8F8] ">
-                <h1 className="font-source-sans font-normal text-[20px]">
+        <div className={isExpand ? "ml-[300px]" : "ml-[150px]"}>
+            <div className="flex items-center bg-[#F8F8F8]">
+                <h1
+                    className={
+                        isExpand
+                            ? "font-source-sans font-semibold text-[20px] text-[#000000CC] ml-3 mr-2.5"
+                            : "font-source-sans font-semibold text-[20px] text-[#000000CC] ml-3 mr-2.5"
+                    }>
                     {pageTitle}
                 </h1>
-                <div className="ml-[20px] mt-[7px]">
                 <TooltipButton />
-                </div>
             </div>
-            <LaporanThread isExpand={isExpand}
-            threadList={threadList}
-            />
+
+            <LaporanThread isExpand={isExpand} />
         </div>
     )
 }

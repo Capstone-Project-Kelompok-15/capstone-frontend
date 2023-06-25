@@ -5,13 +5,13 @@ import { ThreadProfile } from "../../molecules"
 function ThreadList(
   {
     isExpand,
-    threadList,
+    getthread,
     deletethread,
   }) {
   return (
     <div className={isExpand ? 'gap-[15px] ml-[300px]': 'gap-[15px] ml-[155px]'}>
       <ThreadProfile 
-      threadList={threadList}
+      getthread={getthread}
       isExpand={isExpand}
       deletethread={deletethread}
       />

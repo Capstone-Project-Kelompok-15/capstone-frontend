@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import { useFormik } from "formik";
-import { useStore } from "../../config/zustand/store";
+import { useFormik } from "formik"
+import { useStore } from "../../config/zustand/store"
 
 const ThreadLayoutModel = () => {
     const {
@@ -10,19 +9,15 @@ const ThreadLayoutModel = () => {
         isSearch,
         handleSearch,
         deleteSearchHistory,
-        fetchThread,
-        accessToken,
-        threadList,
-    } = useStore(state => state)
-
+    } = useStore((state) => state)
 
     const formik = useFormik({
         initialValues: {
-            searchValue: ''
+            searchValue: "",
         },
-        onSubmit: values => {
+        onSubmit: (values) => {
             setSearchHistory(values.searchValue)
-        }
+        },
     })
 
     const handleKeyPress = (e) => {
@@ -30,12 +25,7 @@ const ThreadLayoutModel = () => {
             e.preventDefault()
             formik.handleSubmit()
         }
-
     }
-
-    useEffect(() => {
-        fetchThread(accessToken)
-    }, [])
 
     const handleDelete = () => {
         deleteSearchHistory()
@@ -49,9 +39,9 @@ const ThreadLayoutModel = () => {
         handleKeyPress,
         searchHistory,
         handleDelete,
-        threadList
     }
 }
 
-export default ThreadLayoutModel;
+export default ThreadLayoutModel
+
 

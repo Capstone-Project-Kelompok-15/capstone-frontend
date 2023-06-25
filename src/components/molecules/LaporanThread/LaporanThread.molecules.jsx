@@ -1,16 +1,15 @@
 import React from "react"
 import { useLocation } from "react-router-dom"
+import { useStore } from "../../../config/zustand/store"
+import { list } from "postcss"
 
-function LaporanThread({
-    isExpand,
-    threadList,
-}) {
-
+function LaporanThread({ isExpand }) {
     const location = useLocation()
+    const { threadList } = useStore((state) => state)
 
     let threadTotal = ""
     if (location.pathname.startsWith("/thread/report")) {
-        threadTotal = "996"
+        threadTotal = filterData.length
     } else {
         threadTotal = threadList.length
     }
@@ -25,9 +24,11 @@ function LaporanThread({
     return (
         <div
             id="container_middle"
-            className= {isExpand 
-            ? "rounded-md mt-3 flex justify-center items-center h-24 w-[1180px] shadow-lg  bg-white" 
-            : "rounded-md mt-3 flex justify-center items-center h-24 w-[1210px] shadow-lg  bg-white"}>
+            className={
+                isExpand
+                    ? "rounded-md mt-6 flex justify-center w-[1060px] items-center h-24 bg-white shadow-lg rounded-[10px]"
+                    : "rounded-md mt-6 ml-[5px] flex justify-center w-[1210px] items-center h-24 bg-white shadow-lg rounded-[10px]"
+            }>
             <div>
                 <p
                     id="jumlahthread"
@@ -40,7 +41,6 @@ function LaporanThread({
                     {threadDetail}
                 </p>
             </div>
-
         </div>
     )
 }
