@@ -46,7 +46,7 @@ function RootLayout() {
                             handleCancel={() => setIsKeluarModalClicked()}
                             handleProceed={() => handleLogout()}
                             idProceedButton="keluar"
-                            idCancelButton="batal"
+                            idCancelButton="batalkeluar"
                         />
                     )}
 

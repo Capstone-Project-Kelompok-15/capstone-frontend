@@ -26,7 +26,7 @@ function UbahProfile() {
                     }
                     handleProceed={() => ubahProfileViewModel.handleLogout()}
                     idProceedButton="keluar"
-                    idCancelButton="batal"
+                    idCancelButton="batalkeluar"
                 />
             )}
 
@@ -247,7 +247,7 @@ function UbahProfile() {
                                             ubahProfileViewModel.handleSubmit()
                                         }}
                                         idProceedButton="simpan"
-                                        idCancelButton="batal"
+                                        idCancelButton="batalsimpan"
                                         textBlue="blue"
                                         textSimpan="simpan"
                                     />
