@@ -230,6 +230,7 @@ function UbahProfile() {
                                             e.preventDefault()
                                             ubahProfileViewModel.handleSimpan()
                                         }}
+                                        id="buttonsimpan"
                                     />
                                 </div>
                                 {ubahProfileViewModel.simpanModalState && (
