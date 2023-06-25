@@ -51,7 +51,8 @@ function UbahProfileViewModel() {
             }
             if (values.email === dataAdmin.email) {
                 formik.setFieldError("email", "Email sudah digunakan")
-            } else if (values.password !== values.passwordKonfirmasi) {
+            }
+            if (values.password !== values.passwordKonfirmasi) {
                 formik.setFieldError(
                     "password",
                     "Kata sandi yang anda masukkan tidak valid"
