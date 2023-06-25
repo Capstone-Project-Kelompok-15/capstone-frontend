@@ -3,7 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const OnlineUserViewModel = () => {
     const {
-        userList,
+        users,
         isExpand,
         handleBlockModal,
         isBlockModalClicked,

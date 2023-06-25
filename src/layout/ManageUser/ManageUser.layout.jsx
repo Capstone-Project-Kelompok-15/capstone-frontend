@@ -7,7 +7,7 @@ import ManageUserViewModel from './ManageUser.layout.viewModel'
 function ManageUser() {
     const viewModel = ManageUserViewModel()
     const location = useLocation()
-   
+
     useEffect(() => {
         viewModel.getUsers()
     }, [])
@@ -19,7 +19,7 @@ function ManageUser() {
     useEffect(() => {
         viewModel.emptySearchResults()
     }, [location.pathname])
-    
+
     return (
         <div className='bg-[#f8f8f8]'>
             <UserStats
@@ -30,7 +30,7 @@ function ManageUser() {
                 blockedUsersCount={viewModel.blockedUsers}
                 onlineUsersCount={viewModel.onlineUsers}
             />
-                  
+
             <SearchBar
                 heading="Cari &quot;Pengguna&quot;"
                 isSearch={viewModel.isSearch}
