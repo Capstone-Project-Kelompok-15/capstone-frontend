@@ -7,8 +7,7 @@ export const ChartSlice = (set) => ({
     fetchChartThreads: async () => {
         try {
             const res = await axios.get(
-                "https://64280eb4161067a83b060b8b.mockapi.io/thread"
-            )
+                "https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads")
             set({ chartThreads: res.data })
         } catch (error) {
             console.log(error)

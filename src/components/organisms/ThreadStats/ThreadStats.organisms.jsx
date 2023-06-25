@@ -21,7 +21,7 @@ function ThreadStats({ isExpand }) {
                         isExpand
                             ? "font-source-sans font-semibold text-[20px] text-[#000000CC] ml-3 mr-2.5"
                             : "font-source-sans font-semibold text-[20px] text-[#000000CC] ml-3 mr-2.5"
-                    }>
+                    } id={pageTitle === "Thread Report" ? "thread-report" : "manage-thread"}>
                     {pageTitle}
                 </h1>
                 <TooltipButton />

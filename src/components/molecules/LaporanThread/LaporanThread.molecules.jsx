@@ -7,8 +7,6 @@ function LaporanThread({ isExpand }) {
     const { report } = useStore((state) => state)
     const filterData = report.filter((list) => list.accept_status)
 
-    console.log(filterData);
-
     let threadTotal = ""
     if (location.pathname.startsWith("/thread/report")) {
         threadTotal = filterData.length

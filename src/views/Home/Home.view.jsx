@@ -16,7 +16,7 @@ function Home() {
                                 viewModel.isExpand ? "ml-24" : "-ml-10"
                             }`}>
                             <div className="flex gap-2 items-center mb-[30px]">
-                                <div className="text-xl font-semibold">
+                                <div className="text-xl font-semibold" id="homepage">
                                     Statistik 2023
                                 </div>
                                 <TooltipButton />

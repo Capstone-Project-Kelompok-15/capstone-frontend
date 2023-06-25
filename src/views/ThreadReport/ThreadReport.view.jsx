@@ -5,8 +5,6 @@ import ThreadReportModel from "./ThreadReportModel.view"
 function ThreadReport() {
     const viewModel = ThreadReportModel()
 
-    console.log(viewModel.filteredReport);
-
     return (
         <div>
             {

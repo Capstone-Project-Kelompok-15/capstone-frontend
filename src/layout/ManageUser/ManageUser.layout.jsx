@@ -29,6 +29,7 @@ function ManageUser() {
                 usersCount={viewModel.totalUsers}
                 blockedUsersCount={viewModel.blockedUsers}
                 onlineUsersCount={viewModel.onlineUsers}
+                pageID="manage-user"
             />
             <SearchBar
                 heading='Cari "Pengguna"'

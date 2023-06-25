@@ -9,6 +9,7 @@ function UserStats({
     usersCount,
     blockedUsersCount,
     mutedUsersCount,
+    pageID
 }) {
     return (
         <div>
@@ -18,7 +19,7 @@ function UserStats({
                         ? " ml-[300px] flex gap-3 items-center"
                         : "ml-[164px] flex gap-3 items-center"
                 }>
-                <p className="font-source-sans font-semibold text-[20px] text-[#000000CC]">
+                <p className="font-source-sans font-semibold text-[20px] text-[#000000CC]" id={pageID}>
                     {heading}
                 </p>
                 <TooltipButton />

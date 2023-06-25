@@ -19,12 +19,10 @@ function LoginViewModel() {
         }),
         onSubmit: async (values) => {
             await fetchLogin(values.email, values.password)
-            console.log(values.email, values.password)
             if (isAuthenticated) {
                 navigate("/")
             }
             if (!isAuthenticated) {
-                // setErrorLogin(true);
                 formik.setFieldError("email", "Email yang anda masukkan salah")
                 formik.setFieldError(
                     "password",
