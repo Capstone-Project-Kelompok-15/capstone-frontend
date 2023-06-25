@@ -37,27 +37,49 @@ const rootRouter = createBrowserRouter(
             <Route path="landing" element={<LandingPageView />} />
             <Route path="show/:id" element={<ShowThread />} />
 
-            <Route path="/manageUser" element={<ProtectedRoute>
-                <ManageUserLayout />
-            </ProtectedRoute>}>
-                <Route path="online" element={<ProtectedRoute>
-                    <OnlineUserView />
-                </ProtectedRoute>} />
-                <Route path="total" element={<ProtectedRoute>
-                    <TotalUserView />
-                </ProtectedRoute>} />
-                <Route path="muted" element={<ProtectedRoute>
-                    <MutedUserView />
-                </ProtectedRoute>} />
-                <Route path="blocked" element={<ProtectedRoute>
-                    <BlockedUserView />
-                </ProtectedRoute>} />
+            <Route
+                path="/manageUser"
+                element={
+                    <ProtectedRoute>
+                        <ManageUserLayout />
+                    </ProtectedRoute>
+                }>
+                <Route
+                    path="online"
+                    element={
+                        <ProtectedRoute>
+                            <OnlineUserView />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="total"
+                    element={
+                        <ProtectedRoute>
+                            <TotalUserView />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="muted"
+                    element={
+                        <ProtectedRoute>
+                            <MutedUserView />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="blocked"
+                    element={
+                        <ProtectedRoute>
+                            <BlockedUserView />
+                        </ProtectedRoute>
+                    }
+                />
             </Route>
-
 
             <Route path="thread" element={<ThreadLayout />}>
                 <Route path="manage" element={<ManageThreadView />} />
-
             </Route>
         </Route>
     )

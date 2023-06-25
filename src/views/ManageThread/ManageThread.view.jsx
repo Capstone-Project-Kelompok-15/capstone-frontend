@@ -53,7 +53,7 @@ function ManageThread() {
                     cancelMessage={"Batal"}
                     handleProceed={viewModel.handleDelete}
                     handleCancel={viewModel.handleDeleteCancel}
-                    idProceedButton={"hapus thread"}
+                    idProceedButton={"hapusthread"}
                     idCancelButton={"batal"}
                 />
             )}

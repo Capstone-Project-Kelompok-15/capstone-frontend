@@ -7,8 +7,8 @@ import {
     Tooltip,
     Legend,
 } from "chart.js"
+import { useEffect } from "react"
 import { useStore } from "../../config/zustand/store"
-import threads from "../../dummyData/ThreadList"
 
 const HomeViewModel = () => {
     ChartJS.register(
@@ -69,36 +69,60 @@ const HomeViewModel = () => {
         "11",
         "12",
     ]
-    const Months = []
-    threads.forEach((thread) => {
-        const [month, , year] = thread.date.split("/")
-        if (Number(year) === 2023) {
-            Months[Number(month)] = (Months[Number(month)] || 0) + 1
-        }
+
+    const {
+        fetchChartThreads,
+        chartThreads,
+        setChartExpand,
+        chartExpand,
+        isExpand,
+        getUsers,
+        users,
+        report,
+        getReport,
+    } = useStore((state) => state)
+
+    useEffect(() => {
+        fetchChartThreads()
+        getReport()
+    }, [])
+
+    const filteredData = chartThreads.filter((item) =>
+        item.createdAt.startsWith("2023")
+    )
+    const threadCountByMonth = Array(12).fill(0)
+    filteredData.forEach((item) => {
+        const month = new Date(item.createdAt).getMonth()
+        threadCountByMonth[month]++
     })
-    Months.shift()
 
     const data = {
         labels,
         datasets: [
             {
                 label: "Thread",
-                data: Months,
+                data: threadCountByMonth,
                 backgroundColor: "#5584D2",
             },
         ],
     }
+    useEffect(() => {
+        getUsers()
+    }, [])
+    const onlineUsers = users.filter(
+        (user) => user.online_status && !user.block_status && user.mute_status
+    ).length
 
-    const isExpand = useStore((state) => state.isExpand)
-    const chartExpand = useStore((state) => state.chartExpand)
-    const toggleChart = useStore((state) => state.setChartExpand)
-
+    const totalUsers = users.filter((user) => !user.block_status).length
     return {
         options,
         data,
         isExpand,
         chartExpand,
-        toggleChart,
+        setChartExpand,
+        onlineUsers,
+        totalUsers,
+        report,
     }
 }
 export default HomeViewModel

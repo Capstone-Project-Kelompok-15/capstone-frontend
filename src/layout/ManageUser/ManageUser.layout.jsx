@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { useLocation, Outlet } from 'react-router-dom'
-import { UserStats } from '../../components/organisms'
-import { SearchBar } from '../../components/molecules'
-import ManageUserViewModel from './ManageUser.layout.viewModel'
+import React, { useEffect } from "react"
+import { useLocation, Outlet } from "react-router-dom"
+import { UserStats } from "../../components/organisms"
+import { SearchBar } from "../../components/molecules"
+import ManageUserViewModel from "./ManageUser.layout.viewModel"
 
 function ManageUser() {
     const viewModel = ManageUserViewModel()
@@ -21,7 +21,7 @@ function ManageUser() {
     }, [location.pathname])
 
     return (
-        <div className='bg-[#f8f8f8] h-screen'>
+        <div className="bg-[#f8f8f8] min-h-screen">
             <UserStats
                 isExpand={viewModel.isExpand}
                 heading="Manage User"
@@ -31,7 +31,7 @@ function ManageUser() {
                 onlineUsersCount={viewModel.onlineUsers}
             />
             <SearchBar
-                heading="Cari &quot;Pengguna&quot;"
+                heading='Cari "Pengguna"'
                 isSearch={viewModel.isSearch}
                 handleSearch={viewModel.handleSearch}
                 isExpand={viewModel.isExpand}

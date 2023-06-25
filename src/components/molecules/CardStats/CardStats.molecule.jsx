@@ -6,10 +6,10 @@ function CardStats({ statsNumber, statsTitle, hover, Link, id }) {
         <div
             className="w-[280px] flex justify-center items-center bg-[#FFFFFF] shadow-lg rounded-[10px] cursor-pointer"
             id={id}>
-
             <div
-                className={`w-[260px] p-6 transition-all duration-300 ${hover && "hover:p-8"
-                    }`}>
+                className={`w-[260px] p-6 transition-all duration-300 ${
+                    hover && "hover:p-8"
+                }`}>
                 <NavLink
                     to={Link}
                     className={({ isActive }) =>

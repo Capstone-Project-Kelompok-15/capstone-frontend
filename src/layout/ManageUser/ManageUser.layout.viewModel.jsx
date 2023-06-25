@@ -1,5 +1,5 @@
-import { useFormik } from "formik";
-import { useStore } from "../../config/zustand/store";
+import { useFormik } from "formik"
+import { useStore } from "../../config/zustand/store"
 
 const ManageUserViewModel = () => {
     const {
@@ -18,45 +18,38 @@ const ManageUserViewModel = () => {
         handleOnlineUsersSearch,
         handleMutedUsersSearch,
         handleBlockedUsersSearch,
-    } = useStore(state => state)
+    } = useStore((state) => state)
 
-    const blockedUsers = users.filter(
-        user => user.block_status
-    ).length
+    const blockedUsers = users.filter((user) => user.block_status).length
 
-    const mutedUsers = users.filter(
-        user => user.mute_status
-    ).length
+    const mutedUsers = users.filter((user) => user.mute_status).length
 
     const onlineUsers = users.filter(
-        user => user.online_status && !user.block_status && user.mute_status
+        (user) => user.online_status && !user.block_status && user.mute_status
     ).length
 
-    const totalUsers = users.filter(
-        user =>
-            !user.block_status
-    ).length
+    const totalUsers = users.filter((user) => !user.block_status).length
 
     const formik = useFormik({
         initialValues: {
-            searchValue: ''
+            searchValue: "",
         },
-        onSubmit: values => {
+        onSubmit: (values) => {
             if (currentPageLocation === "/manageUser/total") {
-                handleTotalUsersSearch(values.searchValue);
+                handleTotalUsersSearch(values.searchValue)
             }
             if (currentPageLocation === "/manageUser/online") {
-                handleOnlineUsersSearch(values.searchValue);
+                handleOnlineUsersSearch(values.searchValue)
             }
             if (currentPageLocation === "/manageUser/muted") {
-                handleMutedUsersSearch(values.searchValue);
+                handleMutedUsersSearch(values.searchValue)
             }
             if (currentPageLocation === "/manageUser/blocked") {
-                handleBlockedUsersSearch(values.searchValue);
+                handleBlockedUsersSearch(values.searchValue)
             }
 
-            setSearchHistory(values.searchValue);
-        }
+            setSearchHistory(values.searchValue)
+        },
     })
 
     const handleKeyPress = (e) => {
@@ -64,7 +57,6 @@ const ManageUserViewModel = () => {
             e.preventDefault()
             formik.handleSubmit()
         }
-
     }
 
     const handleDelete = () => {
@@ -95,5 +87,4 @@ const ManageUserViewModel = () => {
     }
 }
 
-
-export default ManageUserViewModel;
+export default ManageUserViewModel

@@ -24,10 +24,10 @@ function Button({ img, altImg, buttonDesc, handleClick, id }) {
                     alt={altImg === "mute" ? "mute user" : "block user"}
                     className="ml-[24px] mt-[6px]"
                 />
+                <p className="w-[52px] h-[34px] font-source-sans font-normal text-[12px] text-center ml-[9px]">
+                    {buttonDesc}
+                </p>
             </button>
-            <p className="w-[52px] h-[34px] font-source-sans font-normal text-[12px] text-center ml-[9px]">
-                {buttonDesc}
-            </p>
         </div>
     )
 }
