@@ -1,4 +1,30 @@
-export const SearchSlice = set => ({
+import { persist } from "zustand/middleware";
+
+export const SearchSlice = persist((set) => ({
     isSearch: false,
-    handleSearch: () => set(state => ({ isSearch: !state.isSearch }))
-})
+    currentPageLocation: '',
+    searchHistory: [],
+    setLocation: (url) => {
+        set({ currentPageLocation: url })
+    },
+    handleSearch: () => set(state => (
+        {
+            isSearch: !state.isSearch
+        }
+    )),
+    setSearchHistory: (history) => set(state => {
+        const limitHistory = [history, ...state.searchHistory].slice(0, 3);
+        return {
+            searchHistory: limitHistory
+        };
+    }),
+    deleteSearchHistory: () => set(() => (
+        {
+            searchHistory: []
+        }
+    )),
+}),
+    {
+        name: "searchHistory",
+        partialize: state => ({ searchHistory: state.searchHistory })
+    })

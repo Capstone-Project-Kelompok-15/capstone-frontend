@@ -2,17 +2,18 @@ import React from "react"
 import { DeleteSearchHistoryButton, SearchButton } from "../../atoms"
 import SearchHistory from "../SearchHistory/SearchHistory.molecule"
 
-function SearchBar({
-    heading,
-    isSearch,
-    handleSearch,
-    handleKeyPress,
-    formik,
-    isExpand,
-    handleDeleteSearchHistory,
-    searchHistories,
-    handleClickSearchHistory,
-}) {
+function SearchBar(
+    {
+        heading,
+        isSearch,
+        handleSearch,
+        handleKeyPress,
+        formik,
+        isExpand,
+        handleDeleteSearchHistory,
+        searchHistories,
+        handleClickSearchHistory
+    }) {
     return (
 
         <div className={isExpand ? 'flex mt-[16px] ml-[300px]' : 'flex justify-center mt-[16px]'}>
@@ -32,7 +33,7 @@ function SearchBar({
                         {
                             searchHistories &&
                             searchHistories.map((searchHistory, id) => (
-                                <SearchHistory searchHistory={searchHistory} key={id} handleClick={() => handleClickSearchHistory(searchHistory)}/>
+                                <SearchHistory searchHistory={searchHistory} key={id} />
                             ))
                         }
                     </div>

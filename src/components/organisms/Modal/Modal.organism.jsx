@@ -27,76 +27,62 @@ function Modal({
     textBlue,
 }) {
     return (
-        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50">
-            {muteModal ? (
-                <div className="w-[469px] h-[484px] bg-[#FFFFFF] rounded-[22px]">
-                    <div className="w-[320px] h-[420px] text-center mt-[30px] ml-[75px]">
-                        <h1 className="font-bold font-source-sans text-[24px] text-[#2C2C2C]">
-                            {Message}
-                        </h1>
-                        <form
-                            onSubmit={formik.handleSubmit}
-                            className="mt-[38px]">
-                            <div className="flex justify-center ml-[40px]">
-                                <div>
-                                    <div className="w-[234px] h-[43px] flex">
-                                        <input
-                                            type="radio"
-                                            value={valueRadio1}
-                                            id={idRadio1}
-                                            name={radioName}
-                                            onChange={formik.handleChange}
-                                        />
-                                        <div>
-                                            <span className="font-source-sans text-[24px] ml-[10px]">
-                                                {radioMessage1}
-                                            </span>
+        <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50'>
+            {
+                muteModal ? (
+                    <div className='w-[469px] h-[484px] bg-[#FFFFFF] rounded-[22px]'>
+                        <div className='w-[320px] h-[420px] text-center mt-[30px] ml-[75px]'>
+                            <h1 className='font-bold font-source-sans text-[24px] text-[#2C2C2C]'>{Message}</h1>
+                            <form onSubmit={formik.handleSubmit} className='mt-[38px]'>
+                                <div className='flex justify-center ml-[40px]'>
+                                    <div>
+                                        <div className='w-[234px] h-[43px] flex'>
+                                            <input
+                                                type='radio'
+                                                value={valueRadio1}
+                                                id={idRadio1}
+                                                name={radioName}
+                                                onChange={formik.handleChange} />
+                                            <div>
+                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio1}>{radioMessage1}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="w-[234px] h-[43px] flex">
-                                        <input
-                                            type="radio"
-                                            value={valueRadio2}
-                                            id={idRadio2}
-                                            name={radioName}
-                                            onChange={formik.handleChange}
-                                        />
-                                        <div>
-                                            <span className="font-source-sans text-[24px] ml-[10px]">
-                                                {radioMessage2}
-                                            </span>
+                                        <div className='w-[234px] h-[43px] flex'>
+                                            <input
+                                                type='radio'
+                                                value={valueRadio2}
+                                                id={idRadio2}
+                                                name={radioName}
+                                                onChange={formik.handleChange} />
+                                            <div>
+                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage2}</span>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="w-[234px] h-[43px] flex">
-                                        <input
-                                            type="radio"
-                                            value={valueRadio3}
-                                            id={idRadio3}
-                                            name={radioName}
-                                            onChange={formik.handleChange}
-                                        />
-                                        <div>
-                                            <span className="font-source-sans text-[24px] ml-[10px]">
-                                                {radioMessage3}
-                                            </span>
+                                        <div className='w-[234px] h-[43px] flex'>
+                                            <input
+                                                type='radio'
+                                                value={valueRadio3}
+                                                id={idRadio3}
+                                                name={radioName}
+                                                onChange={formik.handleChange} />
+                                            <div>
+                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage3}</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="w-[234px] h-[43px] flex">
-                                        <input
-                                            type="radio"
-                                            value={valueRadio4}
-                                            id={idRadio4}
-                                            name={radioName}
-                                            onChange={formik.handleChange}
-                                        />
-                                        <div>
-                                            <span className="font-source-sans text-[24px] ml-[10px]">
-                                                {radioMessage4}
-                                            </span>
+                                        <div className='w-[234px] h-[43px] flex'>
+                                            <input
+                                                type='radio'
+                                                value={valueRadio4}
+                                                id={idRadio4}
+                                                name={radioName}
+                                                onChange={formik.handleChange} />
+                                            <div>
+                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage4}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
                             <p className="font-source-sans font-normal text-[17px] text-[#808080] mt-[18px]">
                                 {confirmationMessage}
