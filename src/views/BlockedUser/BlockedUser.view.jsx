@@ -17,7 +17,9 @@ function BlockedUser() {
                             isExpand={viewModel.isExpand}
                             Status="Terblokir"
                             isUserBlocked={user.block_status}
-                            key={user.id} />
+                            key={user.id}
+                            img={user.img_url}
+                        />
                     ))
                 ) : (
                     viewModel.blockedUsers.map(user => (
@@ -28,7 +30,9 @@ function BlockedUser() {
                             isExpand={viewModel.isExpand}
                             Status="Terblokir"
                             isUserBlocked={user.block_status}
-                            key={user.id} />
+                            key={user.id}
+                            img={user.img_url}
+                        />
                     ))
                 )
 

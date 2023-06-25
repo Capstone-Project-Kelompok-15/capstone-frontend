@@ -18,6 +18,7 @@ function MutedUser() {
               isUserMuted={user.mute_status}
               MuteDuration={viewModel.handleMuteDate(user.mute_duration)}
               Status="Muted"
+              img={user.img_url}
               key={user.id}
             />
           ))
@@ -31,6 +32,7 @@ function MutedUser() {
               isUserMuted={user.mute_status}
               MuteDuration={viewModel.handleMuteDate(user.mute_duration)}
               Status="Muted"
+              img={user.img_url}
               key={user.id}
             />
           ))

@@ -17,6 +17,7 @@ function OnlineUser() {
                             isExpand={viewModel.isExpand}
                             Status="Aman"
                             key={user.id}
+                            img={user.img_url}
                         />
                     ))
                 ) : (
@@ -28,6 +29,7 @@ function OnlineUser() {
                             isExpand={viewModel.isExpand}
                             Status="Aman"
                             key={user.id}
+                            img={user.img_url}
                         />
                     ))
                 )

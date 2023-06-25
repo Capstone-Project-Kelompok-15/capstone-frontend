@@ -11,6 +11,7 @@ function UserProfile(
         handleModalBlock,
         handleModalMute,
         isExpand,
+        img
     }) {
     const statusCondition = {
         "Aman": 'font-source-sans font-semibold text-[12px] text-[#30B221]',
@@ -20,7 +21,7 @@ function UserProfile(
 
     return (
         <div className={isExpand ? 'w-[1065px] h-[69px] flex mt-[16px]' : 'w-[1210px] h-[69px] flex mt-[16px]'}>
-            <ProfilePicture isUserBlocked={isUserBlocked} isUserMuted={isUserMuted} isExpand={isExpand} />
+            <ProfilePicture isUserBlocked={isUserBlocked} isUserMuted={isUserMuted} isExpand={isExpand} img={img} />
 
             <div className='w-[1009px] h-[34px] mt-[17.5px] mr-[14px]'>
                 <h1 className='font-source-sans font-semibold text-[12px]'>{Name}</h1>

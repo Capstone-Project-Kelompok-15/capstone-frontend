@@ -44,7 +44,7 @@ function Modal(
                                                 name={radioName}
                                                 onChange={formik.handleChange} />
                                             <div>
-                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage1}</span>
+                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio1}>{radioMessage1}</span>
                                             </div>
                                         </div>
                                         <div className='w-[234px] h-[43px] flex'>
@@ -55,7 +55,7 @@ function Modal(
                                                 name={radioName}
                                                 onChange={formik.handleChange} />
                                             <div>
-                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage2}</span>
+                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio2}>{radioMessage2}</span>
 
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@ function Modal(
                                                 name={radioName}
                                                 onChange={formik.handleChange} />
                                             <div>
-                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage3}</span>
+                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio3}>{radioMessage3}</span>
                                             </div>
                                         </div>
                                         <div className='w-[234px] h-[43px] flex'>
@@ -78,7 +78,7 @@ function Modal(
                                                 name={radioName}
                                                 onChange={formik.handleChange} />
                                             <div>
-                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage4}</span>
+                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio4}>{radioMessage4}</span>
                                             </div>
                                         </div>
                                     </div>

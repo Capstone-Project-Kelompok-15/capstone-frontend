@@ -24,6 +24,7 @@ function TotalUser() {
                                 user.mute_status ? 'Muted' : 'Aman'
                             }
                             key={user.id}
+                            img={user.img_url}
                         />
                     ))
                 ) : (
@@ -39,6 +40,7 @@ function TotalUser() {
                                 user.mute_status ? 'Muted' : 'Aman'
                             }
                             key={user.id}
+                            img={user.img_url}
                         />
 
                     ))

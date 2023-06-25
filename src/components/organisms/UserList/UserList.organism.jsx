@@ -10,7 +10,8 @@ function UserList(
         handleModalMute,
         handleModalBlock,
         isExpand,
-        MuteDuration
+        MuteDuration,
+        img
     }) {
     return (
         <div>
@@ -25,6 +26,7 @@ function UserList(
                         handleModalMute={handleModalMute}
                         handleModalBlock={handleModalBlock}
                         isExpand={isExpand}
+                        img={img}
                     />
                 </div>
             </div>
