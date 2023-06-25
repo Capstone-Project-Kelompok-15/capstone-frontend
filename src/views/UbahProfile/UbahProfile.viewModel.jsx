@@ -61,18 +61,24 @@ function UbahProfileViewModel() {
                     "passwordKonfirmasi",
                     "Kata sandi yang anda masukkan tidak valid"
                 )
-            } else {
-                setUbahProfil(true)
-                setErrorUbahProfil(false)
-                await ubahProfileAdmin(
-                    accessToken,
-                    dataAdmin.id,
-                    values.username,
-                    values.email,
-                    values.password
-                )
-                logout()
-                navigate("/landing")
+            }
+            if (
+                values.username !== dataAdmin.name &&
+                values.email !== dataAdmin.email
+            ) {
+                if (values.password === values.passwordKonfirmasi) {
+                    setUbahProfil(true)
+                    setErrorUbahProfil(false)
+                    await ubahProfileAdmin(
+                        accessToken,
+                        dataAdmin.id,
+                        values.username,
+                        values.email,
+                        values.password
+                    )
+                    logout()
+                    navigate("/landing")
+                }
             }
         },
     })
