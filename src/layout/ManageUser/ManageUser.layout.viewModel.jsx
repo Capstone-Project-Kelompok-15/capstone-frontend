@@ -3,6 +3,7 @@ import { useStore } from "../../config/zustand/store";
 
 const ManageUserViewModel = () => {
     const {
+        users,
         setSearchHistory,
         isExpand,
         searchHistory,
@@ -81,6 +82,10 @@ const ManageUserViewModel = () => {
         formik,
         isExpand,
         handleKeyPress,
+        blockedUsers,
+        mutedUsers,
+        onlineUsers,
+        totalUsers,
         searchHistory,
         handleDelete,
         setLocation,

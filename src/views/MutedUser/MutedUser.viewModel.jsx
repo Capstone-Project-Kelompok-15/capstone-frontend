@@ -2,7 +2,7 @@ import { useStore } from "../../config/zustand/store";
 
 const MutedUserViewModel = () => {
     const {
-        userList,
+        users,
         isExpand,
         handleBlockModal,
         isBlockModalClicked,
