@@ -7,18 +7,33 @@ function OnlineUser() {
 
     return (
         <div>
-            {/* {
-                viewModel.onlineUsers.map(user => (
-                    <UserList 
-                        Name={user.name}
-                        handleBlockClick={viewModel.handleBlockModal}
-                        handleMuteClick={viewModel.handleMuteModal}
-                        isExpand={viewModel.isExpand}
-                        Status="Aman"
-                        key={user.id}
-                    />
-                ))
-            } */}
+            {
+                viewModel.searchResults.length > 0 ? (
+                    viewModel.searchResults.map(user => (
+                        <UserList
+                            Name={user.name}
+                            handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+                            handleModalMute={() => viewModel.handleMuteOpen(user.id)}
+                            isExpand={viewModel.isExpand}
+                            Status="Aman"
+                            key={user.id}
+                            img={user.img_url}
+                        />
+                    ))
+                ) : (
+                    viewModel.onlineUsers.map(user => (
+                        <UserList
+                            Name={user.name}
+                            handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+                            handleModalMute={() => viewModel.handleMuteOpen(user.id)}
+                            isExpand={viewModel.isExpand}
+                            Status="Aman"
+                            key={user.id}
+                            img={user.img_url}
+                        />
+                    ))
+                )
+            }
 
             {
                 viewModel.isBlockModalClicked && (
@@ -28,7 +43,10 @@ function OnlineUser() {
                         proceedMessage="Blokir"
                         cancelMessage="Batal"
                         muteModal={false}
-                        handleCancel={viewModel.handleBlockModal}
+                        handleCancel={viewModel.handleBlockCancel}
+                        handleProceed={
+                            viewModel.handleBlockProceed
+                        }
                         idProceedButton="block-user"
                         idCancelButton="batal"
                     />
@@ -62,8 +80,8 @@ function OnlineUser() {
                         confirmationMessage="Apakah Kamu Yakin Akan Mute User Ini?"
                         proceedMessage="Mute"
                         cancelMessage="Batal"
-                        handleCancel={viewModel.handleMuteModal}
-
+                        handleCancel={viewModel.handleMuteCancel}
+                        handleProceed={viewModel.handleMute}
                         idProceedButton="mute-user"
                         idCancelButton="batal"
 

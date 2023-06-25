@@ -5,11 +5,13 @@ function UserProfile(
     {
         Name,
         Status,
+        MuteDuration,
         isUserBlocked,
         isUserMuted,
-        handleMuteClick,
-        handleBlockClick,
-        isExpand
+        handleModalBlock,
+        handleModalMute,
+        isExpand,
+        img
     }) {
     const statusCondition = {
         "Aman": 'font-source-sans font-semibold text-[12px] text-[#30B221]',
@@ -19,25 +21,25 @@ function UserProfile(
 
     return (
         <div className={isExpand ? 'w-[1065px] h-[69px] flex mt-[16px]' : 'w-[1210px] h-[69px] flex mt-[16px]'}>
-            <ProfilePicture isUserBlocked={isUserBlocked} isUserMuted={isUserMuted} isExpand={isExpand} />
+            <ProfilePicture isUserBlocked={isUserBlocked} isUserMuted={isUserMuted} isExpand={isExpand} img={img} />
 
             <div className='w-[1009px] h-[34px] mt-[17.5px] mr-[14px]'>
                 <h1 className='font-source-sans font-semibold text-[12px]'>{Name}</h1>
-                <p className={statusCondition[Status]}>{Status}</p>
+                <p className={statusCondition[Status]}>{Status} {MuteDuration}</p>
             </div>
 
             {
                 isUserBlocked && (
                     <>
                         <Button
-                            handleClick={handleMuteClick}
+                            handleClick={handleModalMute}
                             buttonDesc="Mute Pengguna"
                             img="mute"
                             altImg="mute user"
                             id="mute-user" />
 
                         <Button
-                            handleClick={handleBlockClick}
+                            handleClick={handleModalBlock}
                             buttonDesc="Buka Blokir"
                             img="unblock"
                             altImg="unblock user"
@@ -52,14 +54,14 @@ function UserProfile(
                 isUserMuted && (
                     <>
                         <Button
-                            handleClick={handleMuteClick}
+                            handleClick={handleModalMute}
                             buttonDesc="Buka Mute"
                             img="unmute"
                             altImg="unmute user"
                             id="unmute-user" />
 
                         <Button
-                            handleClick={handleBlockClick}
+                            handleClick={handleModalBlock}
                             buttonDesc="Blokir User"
                             img="block"
                             altImg="block user"
@@ -72,14 +74,14 @@ function UserProfile(
                 !isUserBlocked && !isUserMuted && (
                     <>
                         <Button
-                            handleClick={handleMuteClick}
+                            handleClick={handleModalMute}
                             buttonDesc="Mute Pengguna"
                             img="mute"
                             altImg="mute user"
                             id="mute-user" />
 
                         <Button
-                            handleClick={handleBlockClick}
+                            handleClick={handleModalBlock}
                             buttonDesc="Blokir User"
                             img="block"
                             altImg="block user"

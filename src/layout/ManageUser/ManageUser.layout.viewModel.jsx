@@ -8,16 +8,53 @@ const ManageUserViewModel = () => {
         searchHistory,
         isSearch,
         handleSearch,
-        deleteSearchHistory
+        deleteSearchHistory,
+        getUsers,
+        setLocation,
+        currentPageLocation,
+        emptySearchResults,
+        handleTotalUsersSearch,
+        handleOnlineUsersSearch,
+        handleMutedUsersSearch,
+        handleBlockedUsersSearch,
     } = useStore(state => state)
 
+    const blockedUsers = users.filter(
+        user => user.block_status
+    ).length
+
+    const mutedUsers = users.filter(
+        user => user.mute_status
+    ).length
+
+    const onlineUsers = users.filter(
+        user => user.online_status && !user.block_status && user.mute_status
+    ).length
+
+    const totalUsers = users.filter(
+        user =>
+            !user.block_status
+    ).length
 
     const formik = useFormik({
         initialValues: {
             searchValue: ''
         },
         onSubmit: values => {
-            setSearchHistory(values.searchValue)
+            if (currentPageLocation === "/manageUser/total") {
+                handleTotalUsersSearch(values.searchValue);
+            }
+            if (currentPageLocation === "/manageUser/online") {
+                handleOnlineUsersSearch(values.searchValue);
+            }
+            if (currentPageLocation === "/manageUser/muted") {
+                handleMutedUsersSearch(values.searchValue);
+            }
+            if (currentPageLocation === "/manageUser/blocked") {
+                handleBlockedUsersSearch(values.searchValue);
+            }
+
+            setSearchHistory(values.searchValue);
         }
     })
 
@@ -33,15 +70,25 @@ const ManageUserViewModel = () => {
         deleteSearchHistory()
     }
 
+    const handleClickSearchHistory = (searchValue) => {
+        formik.setFieldValue("searchValue", searchValue)
+    }
+
     return {
         handleSearch,
+        getUsers,
         isSearch,
         formik,
         isExpand,
         handleKeyPress,
         searchHistory,
-        handleDelete
+        handleDelete,
+        setLocation,
+        emptySearchResults,
+        handleClickSearchHistory,
+        currentPageLocation,
     }
 }
+
 
 export default ManageUserViewModel;
