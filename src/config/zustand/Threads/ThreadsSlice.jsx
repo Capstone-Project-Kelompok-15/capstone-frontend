@@ -1,23 +1,26 @@
 import axios from "axios"
 
-export const ThreadsSlice = (set) => ({
+export const ThreadsSlice = (set, get) => ({
     threadList: [],
 
-    deletethread: async (token, id) => {
-        console.log(token,id)
-        try { 
-            await axios.delete(
-            `https://capstone-production-c8c9.up.railway.app/admin/threads/${id}`,
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
+    fetchThreads: async (token) => {
+        try {
+            const res = await axios.get(
+                "https://capstone-production-c8c9.up.railway.app/admin/threads",
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            )
+
+            if (res.status === 200) {
+                set({
+                    threadList: res.data.data,
+                })
             }
-        )
-            
         } catch (error) {
             console.log(error)
-            
         }
     },
 
@@ -43,25 +46,27 @@ export const ThreadsSlice = (set) => ({
         }
     },
 
-    fetchThreads: async (token) => {
-        try {
-            const res = await axios.get(
-                "https://capstone-production-c8c9.up.railway.app/admin/threads",
-                {
-                    headers: {
-                        Authorization: `Bearer ${token}`,
-                    },
-                }
-            )
+    deletethread: async (token, id) => {
+        try { 
+            const res = await axios.delete(
+            `https://capstone-production-c8c9.up.railway.app/admin/threads/${id}`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }
+        )
 
             if (res.status === 200) {
-                console.log(res.data.data)
+                get().fetchThreads()
+                console.log(res.data.thread)
                 set({
-                    threadList: res.data.data,
+                    threadList: res.data.thread,
                 })
             }
         } catch (error) {
             console.log(error)
         }
     },
+    
 })

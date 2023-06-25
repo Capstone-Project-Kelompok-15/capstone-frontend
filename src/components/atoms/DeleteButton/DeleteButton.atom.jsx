@@ -8,14 +8,15 @@ function DeleteButton({onClick}) {
     }
   }
 
-  return (
-    <div className='w-[60px] h-[67px]'>
-      <button id='buttonhapus' className='btn' type='button' onClick={() => handleClick()}>
-      <img src={Trash} alt="Trash Logo" id='TrashLogo'  className='ml-[18px] mt-[4px]'/>
-      <p className='font-source-sans font-normal text-[12px] text-center ml-[2px] mt-[3px]'> Hapus Thread </p>
-      </button>
-    </div>
-  )
+    return (
+        <div className='w-[60px] h-[69px]'>
+          <button id='buttonhapus' className='btn' type='button' onClick={() => handleClick()}>
+          <img src={Trash} alt="Trash Logo" id='TrashLogo'  className='ml-[24px] mt-[6px]'/>
+          <p className='w-[52px] h-[34px] font-source-sans font-normal text-[12px] text-center ml-[9px]'> Hapus Thread </p>
+          </button>
+        </div>
+        
+    )
 }
 
 export default DeleteButton

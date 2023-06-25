@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import {
     DeleteButton,
     ViewButton,
-    ThreadPicture,
 } from "../../atoms"
 import { useStore } from "../../../config/zustand/store"
 

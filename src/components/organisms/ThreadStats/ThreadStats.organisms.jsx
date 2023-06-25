@@ -16,7 +16,7 @@ threadList,
     }
 
     return (
-        <div className={isExpand ? "ml-[300px] " : "ml-[155px]"}>
+        <div className={isExpand ? " ml-[300px] " : " ml-[155px] "}>
             <div className="flex bg-[#F8F8F8] ">
                 <h1 className="font-source-sans font-normal text-[20px]">
                     {pageTitle}

@@ -25,7 +25,9 @@ function LaporanThread({
     return (
         <div
             id="container_middle"
-            className= {isExpand ? "rounded-md mt-3 flex justify-center items-center h-24 w-[1180px]  bg-white" : "rounded-md mt-3 flex justify-center items-center h-24 w-[1210px]  bg-white"}>
+            className= {isExpand 
+            ? "rounded-md mt-3 flex justify-center items-center h-24 w-[1180px] shadow-lg  bg-white" 
+            : "rounded-md mt-3 flex justify-center items-center h-24 w-[1210px] shadow-lg  bg-white"}>
             <div>
                 <p
                     id="jumlahthread"
