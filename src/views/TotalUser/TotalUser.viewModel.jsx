@@ -18,50 +18,6 @@ const TotalUserViewModel = () => {
         searchResults
     } = useStore(state => state)
 
-    
-    const totalUsers = users.filter(
-        user => !user.block_status
-    )
-
-    const handleBlockOpen = (id) => {
-        handleBlockModal()
-        handleSelectUser(id)
-    }
-
-    const handleBlockCancel = () => {
-        handleBlockModal()
-        handleSelectUser(null)
-    }
-
-    const handleBlockProceed = () => {
-        blockUser(selectedUser)
-    }
-
-    const handleMuteOpen = (id) => {
-        handleMuteModal()
-        handleSelectUser(id)
-    }
-
-    const handleMuteCancel = () => {
-        handleMuteModal()
-        handleSelectUser(null)
-    }
-
-    const handleUnmuteProceed = () => {
-        unmuteUser(selectedUser)
-    }
-
-    const handleDate = (days) => {
-        const currentDate = new Date();
-        const futureDate = new Date(currentDate.getTime() + days * 24 * 60 * 60 * 1000)
-
-        futureDate.setHours(0, 0, 0, 0);
-        
-        return futureDate.toISOString();
-    };
-
-
-
     const totalUsers = users.filter(
         user => !user.block_status
     )
