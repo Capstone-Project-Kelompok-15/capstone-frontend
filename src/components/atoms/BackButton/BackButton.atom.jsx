@@ -11,7 +11,9 @@ function BackButton() {
                     alt="back"
                     className="mr-[14.5px] ml-[153px] "
                 />
-                <h3 className="text-xl font-semibold">Ubah Profil</h3>
+                <h3 className="text-xl font-semibold" id="ubahProfilText">
+                    Ubah Profil
+                </h3>
             </button>
         </Link>
     )
