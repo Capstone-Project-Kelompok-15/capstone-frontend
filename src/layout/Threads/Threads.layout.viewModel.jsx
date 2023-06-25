@@ -10,6 +10,7 @@ const ThreadLayoutModel = () => {
         handleSearch,
         deleteSearchHistory,
         emptySearchResults,
+        handleThreadSearch,
     } = useStore((state) => state)
 
     const formik = useFormik({
@@ -17,6 +18,7 @@ const ThreadLayoutModel = () => {
             searchValue: "",
         },
         onSubmit: (values) => {
+            handleThreadSearch(values.searchValue)
             setSearchHistory(values.searchValue)
         },
     })

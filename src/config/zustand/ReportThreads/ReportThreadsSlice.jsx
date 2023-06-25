@@ -2,7 +2,7 @@ import axios from "axios"
 
 export const ReportThreadsSlice = (set, get) => ({
     report: [],
-    searchResults: [],
+    threadResults: [],
 
     getReport: async () => {
         try {
@@ -61,6 +61,6 @@ export const ReportThreadsSlice = (set, get) => ({
             item.title.toLowerCase().includes(searchValue.toLowerCase())
         );
 
-        set({ searchResults: filteredResults });
+        set({ threadResults: filteredResults });
     }
 })

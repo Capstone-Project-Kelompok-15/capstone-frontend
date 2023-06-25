@@ -5,12 +5,14 @@ const ManageThreadViewModel = () => {
         isExpand,
         getReport,
         deletethread,
+        threadResults,
     } = useStore(state => state)
 
     return {
         isExpand,
         getReport,
         deletethread,
+        threadResults,
     }
 } 
 

@@ -5,6 +5,6 @@ export { default as Chart } from "./Chart/Chart.organism"
 export { default as HomeStats } from "./HomeStats/HomeStats.organism"
 export { default as Modal } from "./Modal/Modal.organism"
 export { default as ThreadStats } from "./ThreadStats/ThreadStats.organisms"
-
+export { default as UserStats } from "./UserStats/UserStats.organism"
 export { default as ViewThread } from "./LihatThread/LihatThread.organism"
-
+export { default as UserList } from "./UserList/UserList.organism"

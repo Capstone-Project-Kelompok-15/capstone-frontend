@@ -22,7 +22,7 @@ function RootLayout() {
     }
 
     return (
-        <div>
+        <div className="bg-[#f8f8f8]">
             {!isExcluded && (
                 <>
                     <Navbar
