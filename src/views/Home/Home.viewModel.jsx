@@ -70,7 +70,14 @@ const HomeViewModel = () => {
         "12",
     ]
 
-    const { fetchChartThreads, chartThreads } = useStore((state) => state)
+    const {
+        fetchChartThreads,
+        chartThreads,
+        setChartExpand,
+        chartExpand,
+        isExpand,
+    } = useStore((state) => state)
+
     useEffect(() => {
         fetchChartThreads()
     }, [])
@@ -83,7 +90,6 @@ const HomeViewModel = () => {
         const month = new Date(item.createdAt).getMonth()
         threadCountByMonth[month]++
     })
-    console.log(threadCountByMonth)
 
     const data = {
         labels,
@@ -96,16 +102,12 @@ const HomeViewModel = () => {
         ],
     }
 
-    const isExpand = useStore((state) => state.isExpand)
-    const chartExpand = useStore((state) => state.chartExpand)
-    const toggleChart = useStore((state) => state.setChartExpand)
-
     return {
         options,
         data,
         isExpand,
         chartExpand,
-        toggleChart,
+        setChartExpand,
     }
 }
 export default HomeViewModel
