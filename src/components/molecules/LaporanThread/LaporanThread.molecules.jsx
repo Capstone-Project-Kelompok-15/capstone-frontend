@@ -27,7 +27,7 @@ function LaporanThread({ isExpand }) {
             className={
                 isExpand
                     ? "rounded-md mt-6 flex justify-center w-[1060px] items-center h-24 bg-white shadow-lg rounded-[10px]"
-                    : "rounded-md mt-6 ml-3 flex justify-center w-[1210px] items-center h-24 bg-white shadow-lg rounded-[10px]"
+                    : "rounded-md mt-6 ml-[5px] flex justify-center w-[1210px] items-center h-24 bg-white shadow-lg rounded-[10px]"
             }>
             <div>
                 <p

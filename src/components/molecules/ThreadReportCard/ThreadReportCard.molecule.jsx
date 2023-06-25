@@ -1,33 +1,39 @@
 import React, { useEffect, useState } from "react"
-import {
-    AcceptButton,
-    DenyButton,
-    ViewButton,
-    ThreadPicture,
-} from "../../atoms"
+import { AcceptButton, DenyButton, ViewButton } from "../../atoms"
 import { useStore } from "../../../config/zustand/store"
 
 function ThreadReportCard({ isExpand, getReport }) {
     const { report, updateReport } = useStore((state) => state)
+
     const [showModal, setShowModal] = useState(false)
     const [modalTitle, setModalTitle] = useState("")
     const [modalContent, setModalContent] = useState("")
-    const [updatedData, setupdatedData] = useState()
+    const [updatedData, setupdatedData] = useState(null)
 
     useEffect(() => {
         getReport()
     }, [])
 
     const handleAcceptClick = (thread) => {
+        const updatedThread = {
+            ...thread,
+            accept_status: true,
+            deny_status: false,
+        }
         setShowModal(true)
-        console.log(thread)
-        setupdatedData(thread)
+        setupdatedData(updatedThread)
         setModalTitle("Setujui Laporan?")
         setModalContent("Apakah Kamu Yakin Akan Menyetujui Laporan Ini?")
     }
 
-    const handleDenyClick = () => {
+    const handleDenyClick = (thread) => {
+        const updatedThread = {
+            ...thread,
+            accept_status: false,
+            deny_status: true,
+        }
         setShowModal(true)
+        setupdatedData(updatedThread)
         setModalTitle("Tolak Laporan?")
         setModalContent("Apakah Kamu Yakin Akan Menolak Laporan Ini?")
     }
@@ -37,16 +43,23 @@ function ThreadReportCard({ isExpand, getReport }) {
     }
 
     const handleUpdate = () => {
-        const newData = { ...updatedData, accept_status: true }
-        updateReport(newData.id, newData)
-        setShowModal(false)
+        if (updatedData) {
+            const newData = { ...updatedData }
+            updateReport(newData.id, newData)
+            setShowModal(false)
+        }
     }
 
-    console.log(report)
+    const filteredReport = report.filter(
+        (thread) =>
+            !thread.accept_status &&
+            !thread.deny_status &&
+            (!updatedData || thread.id !== updatedData.id)
+    )
 
     return (
         <div>
-            {report?.map((thread) => (
+            {filteredReport.map((thread) => (
                 <div
                     className={
                         isExpand
@@ -55,7 +68,11 @@ function ThreadReportCard({ isExpand, getReport }) {
                     }
                     key={thread.id}>
                     <div>
-                        <ThreadPicture />
+                        <img
+                            src={thread.thread_picture}
+                            alt="thread picture"
+                            className="h-[50px] w-[50px] rounded-[100px]"
+                        />
                     </div>
                     <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
                         <h6 className="font-source-sans font-bold text-[12px]">
@@ -70,7 +87,7 @@ function ThreadReportCard({ isExpand, getReport }) {
                         <AcceptButton
                             onClick={() => handleAcceptClick(thread)}
                         />
-                        <DenyButton onClick={handleDenyClick} />
+                        <DenyButton onClick={() => handleDenyClick(thread)} />
                     </div>
                 </div>
             ))}

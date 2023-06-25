@@ -3,7 +3,7 @@ import AcceptVector from "../../../assets/accept.svg"
 
 function AcceptButton({ onClick }) {
     return (
-        <div className="w-[60px] h-[67px]">
+        <div className="w-[60px] h-[69px]">
             <button
                 type="button"
                 className="btn"
@@ -13,9 +13,9 @@ function AcceptButton({ onClick }) {
                     src={AcceptVector}
                     alt="Accept Logo"
                     id="AcceptLogo"
-                    className="ml-[18px] mt-[2px]"
+                    className="ml-[24px] mt-[6px] mb-[8px]"
                 />
-                <p className="font-source-sans font-normal text-[12px] text-center ml-[2px] mt-[11px]">
+                <p className="w-[52px] h-[34px] font-source-sans font-normal text-[12px] text-center ml-[9px]">
                     Setujui Laporan
                 </p>
             </button>
