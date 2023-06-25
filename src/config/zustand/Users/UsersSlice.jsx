@@ -4,6 +4,7 @@ const baseURL = 'https://64939c210da866a953668936.mockapi.io/users/Users'
 
 export const UsersSlice = (set, get) => ({
     users: [],
+    searchResults: [],
     selectedUser: null,
     selectedUserMuteStatus: null,
     isBlockModalClicked: false,
@@ -101,5 +102,36 @@ export const UsersSlice = (set, get) => ({
         } catch (error) {
             console.log(error);
         }
+    },
+    emptySearchResults: () => set(() => ({
+        searchResults: []
+    })),
+    handleTotalUsersSearch: (searchValue) => {
+        const filteredResults = get().users.filter((user) =>
+            user.name.toLowerCase().includes(searchValue.toLowerCase()) && !user.block_status
+        );
+
+        set({ searchResults: filteredResults });
+    },
+    handleOnlineUsersSearch: (searchValue) => {
+        const filteredResults = get().users.filter((user) =>
+            user.name.toLowerCase().includes(searchValue.toLowerCase()) && user.online_status && !user.block_status && user.mute_status
+        );
+
+        set({ searchResults: filteredResults });
+    },
+    handleMutedUsersSearch: (searchValue) => {
+        const filteredResults = get().users.filter((user) =>
+            user.name.toLowerCase().includes(searchValue.toLowerCase()) && user.mute_status
+        );
+
+        set({ searchResults: filteredResults });
+    },
+    handleBlockedUsersSearch: (searchValue) => {
+        const filteredResults = get().users.filter((user) =>
+            user.name.toLowerCase().includes(searchValue.toLowerCase()) && user.block_status
+        );
+
+        set({ searchResults: filteredResults });
     }
 })

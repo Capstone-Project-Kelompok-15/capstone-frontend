@@ -5,20 +5,32 @@ import OnlineUserViewModel from './OnlineUser.viewModel'
 function OnlineUser() {
     const viewModel = OnlineUserViewModel()
 
-    console.log(viewModel.onlineUsers);
     return (
         <div>
             {
-                viewModel.onlineUsers.map(user => (
-                    <UserList 
-                        Name={user.name}
-                        handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
-                        handleModalMute={() => viewModel.handleMuteOpen(user.id)}
-                        isExpand={viewModel.isExpand}
-                        Status="Aman"
-                        key={user.id}
-                    />
-                ))
+                viewModel.searchResults.length > 0 ? (
+                    viewModel.searchResults.map(user => (
+                        <UserList
+                            Name={user.name}
+                            handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+                            handleModalMute={() => viewModel.handleMuteOpen(user.id)}
+                            isExpand={viewModel.isExpand}
+                            Status="Aman"
+                            key={user.id}
+                        />
+                    ))
+                ) : (
+                    viewModel.onlineUsers.map(user => (
+                        <UserList
+                            Name={user.name}
+                            handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+                            handleModalMute={() => viewModel.handleMuteOpen(user.id)}
+                            isExpand={viewModel.isExpand}
+                            Status="Aman"
+                            key={user.id}
+                        />
+                    ))
+                )
             }
 
             {

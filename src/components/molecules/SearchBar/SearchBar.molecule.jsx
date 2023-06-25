@@ -12,7 +12,7 @@ function SearchBar(
         isExpand,
         handleDeleteSearchHistory,
         searchHistories,
-        handleClick
+        handleClickSearchHistory
     }) {
     return (
         <div className={isExpand ? 'flex mt-[16px] ml-[300px]' : 'flex justify-center mt-[16px]'}>
@@ -22,7 +22,7 @@ function SearchBar(
                         <div className='flex gap-[12px]'>
                             <SearchButton handleSearch={handleSearch} />
                             <form className='mt-[9px] mb-[9px]' onKeyPress={handleKeyPress}>
-                                <input type='text' name="searchValue" className='focus:outline-none' value={formik.searchValue} onChange={formik.handleChange} />
+                                <input type='text' name="searchValue" className='focus:outline-none' value={formik.values.searchValue} onChange={formik.handleChange} />
                             </form>
                             <DeleteSearchHistoryButton handleDeleteSearchHistory={handleDeleteSearchHistory} />
                         </div>
@@ -32,7 +32,7 @@ function SearchBar(
                         {
                             searchHistories &&
                             searchHistories.map((searchHistory, id) => (
-                                <SearchHistory searchHistory={searchHistory} key={id} handleClick={handleClick} />
+                                <SearchHistory searchHistory={searchHistory} key={id} handleClick={() => handleClickSearchHistory(searchHistory)} />
                             ))
                         }
                     </div>

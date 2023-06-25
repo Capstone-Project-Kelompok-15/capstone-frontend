@@ -12,7 +12,8 @@ const BlockUserViewModel = () => {
         muteUser,
         selectedUser,
         handleSelectUser,
-        unblockUser
+        unblockUser,
+        searchResults
     } = useStore(state => state)
 
     const handleUnblockOpen = (id) => {
@@ -75,7 +76,8 @@ const BlockUserViewModel = () => {
         handleUnblockCancel,
         handleUnblockProceed,
         handleMuteOpen,
-        handleMuteCancel
+        handleMuteCancel,
+        searchResults
     }
 
 }

@@ -8,18 +8,34 @@ function MutedUser() {
   return (
     <div>
       {
-        viewModel.mutedUsers.map(user => (
-          <UserList
-            Name={user.name}
-            handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
-            handleModalMute={() => viewModel.handleUnmuteOpen(user.id)}
-            isExpand={viewModel.isExpand}
-            isUserMuted={user.mute_status}
-            MuteDuration={viewModel.handleMuteDate(user.mute_duration)}
-            Status="Muted"
-            key={user.id}
-          />
-        ))
+        viewModel.searchResults.length > 0 ? (
+          viewModel.searchResults.map(user => (
+            <UserList
+              Name={user.name}
+              handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+              handleModalMute={() => viewModel.handleUnmuteOpen(user.id)}
+              isExpand={viewModel.isExpand}
+              isUserMuted={user.mute_status}
+              MuteDuration={viewModel.handleMuteDate(user.mute_duration)}
+              Status="Muted"
+              key={user.id}
+            />
+          ))
+        ) : (
+          viewModel.mutedUsers.map(user => (
+            <UserList
+              Name={user.name}
+              handleModalBlock={() => viewModel.handleBlockOpen(user.id)}
+              handleModalMute={() => viewModel.handleUnmuteOpen(user.id)}
+              isExpand={viewModel.isExpand}
+              isUserMuted={user.mute_status}
+              MuteDuration={viewModel.handleMuteDate(user.mute_duration)}
+              Status="Muted"
+              key={user.id}
+            />
+          ))
+        )
+
       }
       {
         viewModel.isMuteModalClicked && (

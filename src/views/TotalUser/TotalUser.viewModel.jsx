@@ -14,7 +14,8 @@ const TotalUserViewModel = () => {
         handleSelectUser,
         selectedUser,
         selectedUserMuteStatus,
-        unmuteUser
+        unmuteUser,
+        searchResults
     } = useStore(state => state)
 
 
@@ -97,7 +98,8 @@ const TotalUserViewModel = () => {
         formik,
         isExpand,
         totalUsers,
-        selectedUserMuteStatus
+        selectedUserMuteStatus,
+        searchResults
     }
 
 }

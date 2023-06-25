@@ -12,7 +12,8 @@ const OnlineUserViewModel = () => {
         handleMuteModal,
         blockUser,
         handleSelectUser,
-        selectedUser
+        selectedUser,
+        searchResults
     } = useStore(state => state)
 
     const onlineUsers = users.filter(
@@ -73,7 +74,8 @@ const OnlineUserViewModel = () => {
         isMuteModalClicked,
         formik,
         isExpand,
-        onlineUsers
+        onlineUsers,
+        searchResults
     }
 
 }

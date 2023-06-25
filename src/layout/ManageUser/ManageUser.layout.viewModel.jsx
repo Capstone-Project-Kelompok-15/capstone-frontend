@@ -11,10 +11,13 @@ const ManageUserViewModel = () => {
         handleSearch,
         deleteSearchHistory,
         getUsers,
-        setSearchResults,
         setLocation,
-        location,
+        currentPageLocation,
         emptySearchResults,
+        handleTotalUsersSearch,
+        handleOnlineUsersSearch,
+        handleMutedUsersSearch,
+        handleBlockedUsersSearch,
     } = useStore(state => state)
 
     const blockedUsers = users.filter(
@@ -22,7 +25,7 @@ const ManageUserViewModel = () => {
     ).length
 
     const mutedUsers = users.filter(
-        user => user.mute_status && !user.block_status
+        user => user.mute_status
     ).length
 
     const onlineUsers = users.filter(
@@ -34,43 +37,25 @@ const ManageUserViewModel = () => {
             !user.block_status
     ).length
 
-    const handleUsersSearch = (searchValue) => {
-        if (location === "/manageUser/total") {
-            const filteredTotalUsers = users.filter(user =>
-                user.name.toLowerCase() === searchValue.toLowerCase() && !user.block_status
-            );
-            setSearchResults(filteredTotalUsers);
-        }
-
-        if (location === "/manageUser/online") {
-            const filteredOnlineUsers = users.filter(user =>
-                user.name.toLowerCase() === searchValue.toLowerCase() && user.online_status && !user.block_status && user.mute_status
-            );
-            setSearchResults(filteredOnlineUsers);
-        }
-
-        if (location === "/manageUser/muted") {
-            const filteredMutedUsers = users.filter(user =>
-                user.name.toLowerCase() === searchValue.toLowerCase() && user.mute_status && !user.block_status
-            );
-            setSearchResults(filteredMutedUsers);
-        }
-
-        if (location === "/manageUser/blocked") {
-            const filteredBlockedUsers = users.filter(user =>
-                user.name.toLowerCase() === searchValue.toLowerCase() && user.block_status
-            );
-            setSearchResults(filteredBlockedUsers);
-        }
-    };
-
     const formik = useFormik({
         initialValues: {
             searchValue: ''
         },
         onSubmit: values => {
-            handleUsersSearch(values.searchValue)
-            setSearchHistory(values.searchValue)
+            if (currentPageLocation === "/manageUser/total") {
+                handleTotalUsersSearch(values.searchValue);
+            }
+            if (currentPageLocation === "/manageUser/online") {
+                handleOnlineUsersSearch(values.searchValue);
+            }
+            if (currentPageLocation === "/manageUser/muted") {
+                handleMutedUsersSearch(values.searchValue);
+            }
+            if (currentPageLocation === "/manageUser/blocked") {
+                handleBlockedUsersSearch(values.searchValue);
+            }
+
+            setSearchHistory(values.searchValue);
         }
     })
 
@@ -84,6 +69,10 @@ const ManageUserViewModel = () => {
 
     const handleDelete = () => {
         deleteSearchHistory()
+    }
+
+    const handleClickSearchHistory = (searchValue) => {
+        formik.setFieldValue("searchValue", searchValue)
     }
 
     return {
@@ -101,6 +90,8 @@ const ManageUserViewModel = () => {
         handleDelete,
         setLocation,
         emptySearchResults,
+        handleClickSearchHistory,
+        currentPageLocation,
     }
 }
 

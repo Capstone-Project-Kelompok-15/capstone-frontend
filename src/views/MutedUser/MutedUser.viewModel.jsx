@@ -11,7 +11,8 @@ const MutedUserViewModel = () => {
         unmuteUser,
         blockUser,
         handleSelectUser,
-        selectedUser
+        selectedUser,
+        searchResults
     } = useStore(state => state)
 
     const mutedUsers = users.filter(
@@ -69,6 +70,7 @@ const MutedUserViewModel = () => {
         isMuteModalClicked,
         isExpand,
         mutedUsers,
+        searchResults
     }
 
 }

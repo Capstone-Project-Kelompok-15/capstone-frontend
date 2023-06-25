@@ -2,20 +2,11 @@ import { persist } from "zustand/middleware";
 
 export const SearchSlice = persist((set) => ({
     isSearch: false,
+    currentPageLocation: '',
     searchHistory: [],
-    searchResults: [],
-    location: '',
     setLocation: (url) => {
-        set({ location: url })
+        set({ currentPageLocation: url })
     },
-    emptySearchResults: () => set(() => ({
-        searchResults: []
-    })),
-    setSearchResults: results => set((state) => ({
-        searchResults: [
-            results, ...state.searchResults
-        ]
-    })),
     handleSearch: () => set(state => (
         {
             isSearch: !state.isSearch

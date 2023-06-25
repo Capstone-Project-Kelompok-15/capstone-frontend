@@ -7,7 +7,7 @@ import ManageUserViewModel from './ManageUser.layout.viewModel'
 function ManageUser() {
     const viewModel = ManageUserViewModel()
     const location = useLocation()
-
+   
     useEffect(() => {
         viewModel.getUsers()
     }, [])
@@ -19,7 +19,7 @@ function ManageUser() {
     useEffect(() => {
         viewModel.emptySearchResults()
     }, [location.pathname])
-
+    
     return (
         <div>
             <UserStats
@@ -39,6 +39,7 @@ function ManageUser() {
                 handleKeyPress={viewModel.handleKeyPress}
                 searchHistories={viewModel.searchHistory}
                 handleDeleteSearchHistory={viewModel.handleDelete}
+                handleClickSearchHistory={viewModel.handleClickSearchHistory}
             />
 
             <Outlet />

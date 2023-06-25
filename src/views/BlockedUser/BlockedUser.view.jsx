@@ -8,16 +8,30 @@ function BlockedUser() {
     return (
         <div>
             {
-                viewModel.blockedUsers.map(user => (
-                    <UserList
-                        Name={user.name}
-                        handleModalBlock={() => viewModel.handleUnblockOpen(user.id)}
-                        handleModalMute={() => viewModel.handleMuteOpen(user.id)}
-                        isExpand={viewModel.isExpand}
-                        Status="Terblokir"
-                        isUserBlocked={user.block_status}
-                        key={user.id} />
-                ))
+                viewModel.searchResults.length > 0 ? (
+                    viewModel.searchResults.map(user => (
+                        <UserList
+                            Name={user.name}
+                            handleModalBlock={() => viewModel.handleUnblockOpen(user.id)}
+                            handleModalMute={() => viewModel.handleMuteOpen(user.id)}
+                            isExpand={viewModel.isExpand}
+                            Status="Terblokir"
+                            isUserBlocked={user.block_status}
+                            key={user.id} />
+                    ))
+                ) : (
+                    viewModel.blockedUsers.map(user => (
+                        <UserList
+                            Name={user.name}
+                            handleModalBlock={() => viewModel.handleUnblockOpen(user.id)}
+                            handleModalMute={() => viewModel.handleMuteOpen(user.id)}
+                            isExpand={viewModel.isExpand}
+                            Status="Terblokir"
+                            isUserBlocked={user.block_status}
+                            key={user.id} />
+                    ))
+                )
+
             }
             {
                 viewModel.isBlockModalClicked && (
