@@ -114,6 +114,7 @@ const HomeViewModel = () => {
     ).length
 
     const totalUsers = users.filter((user) => !user.block_status).length
+    const threadReport = report.filter((list) => list.accept_status === true)
     return {
         options,
         data,
@@ -123,6 +124,7 @@ const HomeViewModel = () => {
         onlineUsers,
         totalUsers,
         report,
+        threadReport,
     }
 }
 export default HomeViewModel

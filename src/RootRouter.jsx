@@ -13,6 +13,7 @@ import {
     ManageThreadView,
     Login,
     LandingPageView,
+    ThreadReport,
     UbahProfile,
     ShowThread,
 } from "./views"
@@ -39,52 +40,18 @@ const rootRouter = createBrowserRouter(
             <Route path="ubahprofil" element={<UbahProfile />} />
             <Route path="show/:id" element={<ShowThread />} />
 
-            <Route
-                path="/manageUser"
-                element={
-                    <ProtectedRoute>
-                        <ManageUserLayout />
-                    </ProtectedRoute>
-                }>
-                <Route
-                    path="online"
-                    element={
-                        <ProtectedRoute>
-                            <OnlineUserView />
-                        </ProtectedRoute>
-                    }
-                />
-                <Route
-                    path="total"
-                    element={
-                        <ProtectedRoute>
-                            <TotalUserView />
-                        </ProtectedRoute>
-                    }
-                />
-                <Route
-                    path="muted"
-                    element={
-                        <ProtectedRoute>
-                            <MutedUserView />
-                        </ProtectedRoute>
-                    }
-                />
-                <Route
-                    path="blocked"
-                    element={
-                        <ProtectedRoute>
-                            <BlockedUserView />
-                        </ProtectedRoute>
-                    }
-                />
+            <Route path="/manageUser" element={<ManageUserLayout />}>
+                <Route path="online" element={<OnlineUserView />} />
+                <Route path="total" element={<TotalUserView />} />
+                <Route path="muted" element={<MutedUserView />} />
+                <Route path="blocked" element={<BlockedUserView />} />
             </Route>
 
             <Route path="thread" element={<ThreadLayout />}>
                 <Route path="manage" element={<ManageThreadView />} />
+                <Route path="report" element={<ThreadReport />} />
             </Route>
         </Route>
     )
 )
-
 export default rootRouter

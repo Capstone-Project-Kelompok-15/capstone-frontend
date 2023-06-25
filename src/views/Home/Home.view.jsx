@@ -37,6 +37,9 @@ function Home() {
                                     onlineUsers={viewModel.onlineUsers}
                                     totalUsers={viewModel.totalUsers}
                                     totalThread={viewModel.report.length}
+                                    totalThreadReport={
+                                        viewModel.threadReport.length
+                                    }
                                 />
                             </div>
                         </div>

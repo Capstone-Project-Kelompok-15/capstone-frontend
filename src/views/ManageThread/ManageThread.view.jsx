@@ -4,7 +4,6 @@ import ManageThreadViewModel from "./ManageThread.viewModel"
 
 function ManageThread() {
     const viewModel = ManageThreadViewModel()
-
     return (
         <div
             className={

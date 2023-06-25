@@ -85,7 +85,6 @@ function BlockedUser() {
 
                         idProceedButton="mute-user"
                         idCancelButton="batal"
-
                     />
                 )
             }

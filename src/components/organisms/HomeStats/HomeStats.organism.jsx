@@ -1,7 +1,12 @@
 import React from "react"
 import { CardStats } from "../../molecules"
 
-function HomeStats({ onlineUsers, totalUsers, totalThread }) {
+function HomeStats({
+    onlineUsers,
+    totalUsers,
+    totalThread,
+    totalThreadReport,
+}) {
     return (
         <div>
             <div className="w-full flex justify-between items-center">
@@ -27,7 +32,7 @@ function HomeStats({ onlineUsers, totalUsers, totalThread }) {
                     id="home-thread"
                 />
                 <CardStats
-                    statsNumber={9999}
+                    statsNumber={totalThreadReport}
                     statsTitle="Thread Yang Dilaporkan"
                     Link="/thread/report"
                     hover
