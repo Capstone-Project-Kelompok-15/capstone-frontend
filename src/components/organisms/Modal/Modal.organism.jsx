@@ -1,31 +1,31 @@
-import React from 'react'
+import React from "react"
 
-function Modal(
-    {
-        Message,
-        confirmationMessage,
-        proceedMessage,
-        cancelMessage,
-        handleProceed,
-        handleCancel,
-        muteModal,
-        formik,
-        idRadio1,
-        idRadio2,
-        idRadio3,
-        idRadio4,
-        radioName,
-        valueRadio1,
-        valueRadio2,
-        valueRadio3,
-        valueRadio4,
-        radioMessage1,
-        radioMessage2,
-        radioMessage3,
-        radioMessage4,
-        idProceedButton,
-        idCancelButton,
-    }) {
+function Modal({
+    Message,
+    confirmationMessage,
+    proceedMessage,
+    cancelMessage,
+    handleProceed,
+    handleCancel,
+    muteModal,
+    formik,
+    idRadio1,
+    idRadio2,
+    idRadio3,
+    idRadio4,
+    radioName,
+    valueRadio1,
+    valueRadio2,
+    valueRadio3,
+    valueRadio4,
+    radioMessage1,
+    radioMessage2,
+    radioMessage3,
+    radioMessage4,
+    idProceedButton,
+    idCancelButton,
+    textBlue,
+}) {
     return (
         <div className='fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50'>
             {
@@ -55,7 +55,7 @@ function Modal(
                                                 name={radioName}
                                                 onChange={formik.handleChange} />
                                             <div>
-                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio2}>{radioMessage2}</span>
+                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage2}</span>
 
                                             </div>
                                         </div>
@@ -67,7 +67,7 @@ function Modal(
                                                 name={radioName}
                                                 onChange={formik.handleChange} />
                                             <div>
-                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio3}>{radioMessage3}</span>
+                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage3}</span>
                                             </div>
                                         </div>
                                         <div className='w-[234px] h-[43px] flex'>
@@ -78,50 +78,76 @@ function Modal(
                                                 name={radioName}
                                                 onChange={formik.handleChange} />
                                             <div>
-                                                <span className='font-source-sans text-[24px] ml-[10px]' htmlFor={idRadio4}>{radioMessage4}</span>
+                                                <span className='font-source-sans text-[24px] ml-[10px]'>{radioMessage4}</span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-
-                                <p className='font-source-sans font-normal text-[17px] text-[#808080] mt-[18px]'>{confirmationMessage}</p>
-                                <div>
-                                    <button type='submit' onClick={handleProceed} id={idProceedButton}>
-                                        <p className='font-source-sans font-bold text-[24px] text-[#AA1512] mt-[18px]'>{proceedMessage}</p>
-                                    </button>
-                                </div>
-                                <div>
-                                    <button type='button' onClick={handleCancel} id={idProceedButton}>
-                                        <p className='font-source sans font-bold text-[24px] mt-[18px] text-[#2C2C2C]'>{cancelMessage}</p>
-                                    </button>
-                                </div>
-                            </form>
+                            <p className="font-source-sans font-normal text-[17px] text-[#808080] mt-[18px]">
+                                {confirmationMessage}
+                            </p>
+                            <div>
+                                <button
+                                    type="submit"
+                                    onClick={handleProceed}
+                                    id={idProceedButton}>
+                                    <p className="font-source-sans font-bold text-[24px] text-[#AA1512] mt-[18px]">
+                                        {proceedMessage}
+                                    </p>
+                                </button>
+                            </div>
+                            <div>
+                                <button
+                                    type="button"
+                                    onClick={handleCancel}
+                                    id={idProceedButton}>
+                                    <p className="font-source sans font-bold text-[24px] mt-[18px] text-[#2C2C2C]">
+                                        {cancelMessage}
+                                    </p>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            ) : (
+                <div className="w-[469px] h-[244px] bg-[#FFFFFF] rounded-[22px]">
+                    <div className="w-[366px] h-[184px] text-center ml-[50px] mt-[30px]">
+                        <h1 className="font-bold font-source-sans text-[24px] text-[#2C2C2C]">
+                            {Message}
+                        </h1>
+                        <p className="font-source-sans font-normal text-[17px] text-[#808080] mt-[18px]">
+                            {confirmationMessage}
+                        </p>
+                        <div>
+                            <div>
+                                <button
+                                    type="button"
+                                    onClick={handleProceed}
+                                    id={idProceedButton}>
+                                    <p
+                                        className={`font-source-sans font-bold text-[24px] text-[#AA1512] ${
+                                            textBlue && "text-[#195FAA]"
+                                        } mt-[18px]`}>
+                                        {proceedMessage}
+                                    </p>
+                                </button>
+                            </div>
+                            <div>
+                                <button
+                                    type="button"
+                                    onClick={handleCancel}
+                                    id={idCancelButton}>
+                                    <p className="font-source sans font-bold text-[24px] mt-[18px] text-[#2C2C2C]">
+                                        {cancelMessage}
+                                    </p>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                ) : (
-                    <div className='w-[469px] h-[244px] bg-[#FFFFFF] rounded-[22px]'>
-                        <div className='w-[366px] h-[184px] text-center ml-[50px] mt-[30px]'>
-                            <h1 className='font-bold font-source-sans text-[24px] text-[#2C2C2C]'>{Message}</h1>
-                            <p className='font-source-sans font-normal text-[17px] text-[#808080] mt-[18px]'>{confirmationMessage}</p>
-                            <div>
-                                <div>
-                                    <button type='button' onClick={handleProceed} id={idProceedButton}>
-                                        <p className='font-source-sans font-bold text-[24px] text-[#AA1512] mt-[18px]'>{proceedMessage}</p>
-                                    </button>
-                                </div>
-                                <div>
-                                    <button type='button' onClick={handleCancel} id={idCancelButton}>
-                                        <p className='font-source sans font-bold text-[24px] mt-[18px] text-[#2C2C2C]'>{cancelMessage}</p>
-                                    </button>
-                                </div>
-                            </div>
-                        </div >
-                    </div >
-                )
-            }
-
-        </div >
+                </div>
+            )}
+        </div>
     )
 }
 

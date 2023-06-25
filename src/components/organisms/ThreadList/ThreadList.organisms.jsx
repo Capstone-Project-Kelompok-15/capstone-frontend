@@ -1,12 +1,23 @@
 import React from "react"
 import { ThreadProfile } from "../../molecules"
 
-function ThreadList() {
+
+function ThreadList(
+  {
+    isExpand,
+    getReport,
+    deletethread,
+  }) {
   return (
-    <div className='gap-[15px]'>
-      <ThreadProfile />
+    <div className={isExpand ? 'gap-[15px] ml-[300px]': 'gap-[15px] ml-[155px]'}>
+      <ThreadProfile 
+      getReport={getReport}
+      isExpand={isExpand}
+      deletethread={deletethread}
+      />
     </div>
   )
 }
 
 export default ThreadList
+

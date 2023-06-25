@@ -1,18 +1,35 @@
 import React from "react"
+import { useLocation } from "react-router-dom"
 import { LaporanThread } from "../../molecules"
 import { TooltipButton } from "../../atoms"
 
-function ThreadStats() {
+function ThreadStats({ isExpand }) {
+    const location = useLocation()
+
+    let pageTitle = ""
+    if (location.pathname.startsWith("/thread/report")) {
+        pageTitle = "Thread Report"
+    } else {
+        pageTitle = "Manage Thread"
+    }
+
     return (
-        <div>
-            <div className='flex'>
-           <h1 className='font-source-sans font-normal text-[20px] '>Manage Thread</h1>
-           <TooltipButton/>
+        <div className={isExpand ? "ml-[300px]" : "ml-[150px]"}>
+            <div className="flex items-center bg-[#F8F8F8]">
+                <h1
+                    className={
+                        isExpand
+                            ? "font-source-sans font-semibold text-[20px] text-[#000000CC] ml-3 mr-2.5"
+                            : "font-source-sans font-semibold text-[20px] text-[#000000CC] ml-3 mr-2.5"
+                    }>
+                    {pageTitle}
+                </h1>
+                <TooltipButton />
             </div>
-            <LaporanThread/>
-            </div>
+
+            <LaporanThread isExpand={isExpand} />
+        </div>
     )
 }
 
-export default ThreadStats;
-
+export default ThreadStats
