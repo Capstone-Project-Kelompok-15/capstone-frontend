@@ -11,6 +11,8 @@ const ThreadLayoutModel = () => {
         deleteSearchHistory,
         emptySearchResults,
         handleThreadsSearch,
+        setLocation,
+        currentPageLocation
     } = useStore((state) => state)
 
     const formik = useFormik({
@@ -18,7 +20,13 @@ const ThreadLayoutModel = () => {
             searchValue: "",
         },
         onSubmit: (values) => {
-            handleThreadsSearch(values.searchValue)
+            if (currentPageLocation === "/thread/manage") {
+                handleThreadsSearch(values.searchValue)
+            }
+
+            if (currentPageLocation === "/thread/report") {
+                handleThreadsSearch(values.searchValue)
+            }
             setSearchHistory(values.searchValue)
         },
     })
@@ -47,6 +55,7 @@ const ThreadLayoutModel = () => {
         handleDelete,
         handleClickSearchHistory,
         emptySearchResults,
+        setLocation
     }
 }
 

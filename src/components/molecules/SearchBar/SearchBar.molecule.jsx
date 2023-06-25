@@ -36,7 +36,7 @@ function SearchBar({
                                 type="text"
                                 name="searchValue"
                                 className="focus:outline-none"
-                                value={formik.searchValue}
+                                value={formik.values.searchValue}
                                 onChange={formik.handleChange}
                             />
                         </form>

@@ -4,6 +4,8 @@ export const ReportThreadsSlice = (set, get) => ({
     report: [],
     threadResults: [],
     isDeleteThread: false,
+    isAcceptThreadModal: false,
+    isDenyThreadModal: false,
     selectedThread: null,
     getReport: async () => {
         try {
@@ -16,18 +18,19 @@ export const ReportThreadsSlice = (set, get) => ({
         }
     },
 
-    updateReport: async (id, status) => {
+    acceptReport: async (id) => {
         try {
             const response = await axios.put(
                 `https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads/${id}`,
-                status
+                {
+                    accept_status: true,
+                    pending_status: false,
+                }
             )
             if (response.status === 200) {
-                const refetch = await axios.get(
-                    "https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads"
-                )
+                get().getReport()
                 set({
-                    report: refetch.data,
+                    isAcceptThreadModal: false,
                 })
             }
         } catch (error) {
@@ -35,6 +38,25 @@ export const ReportThreadsSlice = (set, get) => ({
         }
     },
 
+    denyReport: async (id) => {
+        try {
+            const response = await axios.put(
+                `https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads/${id}`,
+                {
+                    deny_status: true,
+                    pending_status: false,
+                }
+            )
+            if (response.status === 200) {
+                get().getReport()
+                set({
+                    isDenyThreadModal: false,
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        }
+    },
     deletethread: async (id) => {
         try {
             const response = await axios.delete(
@@ -64,6 +86,13 @@ export const ReportThreadsSlice = (set, get) => ({
 
         set({ threadResults: filteredResults })
     },
+    handleThreadReportSearch: (searchValue) => {
+        const filteredResults = get().report.filter((item) =>
+            item.title.toLowerCase().includes(searchValue.toLowerCase()) && !item.accept_status &&
+            !item.deny_status
+        )
+        set({ threadResults: filteredResults })
+    },
     handleDeleteThread: () =>
         set((state) => ({
             isDeleteThread: !state.isDeleteThread,
@@ -73,4 +102,8 @@ export const ReportThreadsSlice = (set, get) => ({
             selectedThread: id,
         })
     },
+    handleAcceptThread: () =>
+        set((state) => ({ isAcceptThreadModal: !state.isAcceptThreadModal })),
+    handleDenyThread: () =>
+        set((state) => ({ isDenyThreadModal: !state.isDenyThreadModal })),
 })

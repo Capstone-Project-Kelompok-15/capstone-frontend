@@ -9,6 +9,10 @@ function ThreadLayout() {
     const location = useLocation()
 
     useEffect(() => {
+        viewModel.setLocation(location.pathname)
+    }, [location.pathname])
+
+    useEffect(() => {
         viewModel.emptySearchResults()
     }, [location.pathname])
 

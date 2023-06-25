@@ -9,45 +9,45 @@ function TotalUser() {
         <div>
             {viewModel.searchResults.length > 0
                 ? viewModel.searchResults.map((user) => (
-                      <UserList
-                          Name={user.name}
-                          handleModalBlock={() =>
-                              viewModel.handleBlockOpen(user.id)
-                          }
-                          handleModalMute={() =>
-                              viewModel.handleMuteOpen(user.id)
-                          }
-                          isExpand={viewModel.isExpand}
-                          MuteDuration={
-                              user.mute_duration &&
-                              viewModel.handleMuteDate(user.mute_duration)
-                          }
-                          isUserMuted={user.mute_status}
-                          Status={user.mute_status ? "Muted" : "Aman"}
-                          key={user.id}
-                          img={user.img_url}
-                      />
-                  ))
+                    <UserList
+                        Name={user.name}
+                        handleModalBlock={() =>
+                            viewModel.handleBlockOpen(user.id)
+                        }
+                        handleModalMute={() =>
+                            viewModel.handleMuteOpen(user.id)
+                        }
+                        isExpand={viewModel.isExpand}
+                        MuteDuration={
+                            user.mute_duration &&
+                            viewModel.handleMuteDate(user.mute_duration)
+                        }
+                        isUserMuted={user.mute_status}
+                        Status={user.mute_status ? "Muted" : "Aman"}
+                        key={user.id}
+                        img={user.img_url}
+                    />
+                ))
                 : viewModel.totalUsers.map((user) => (
-                      <UserList
-                          Name={user.name}
-                          handleModalBlock={() =>
-                              viewModel.handleBlockOpen(user.id)
-                          }
-                          handleModalMute={() =>
-                              viewModel.handleMuteOpen(user.id)
-                          }
-                          isExpand={viewModel.isExpand}
-                          MuteDuration={
-                              user.mute_duration &&
-                              viewModel.handleMuteDate(user.mute_duration)
-                          }
-                          isUserMuted={user.mute_status}
-                          Status={user.mute_status ? "Muted" : "Aman"}
-                          key={user.id}
-                          img={user.img_url}
-                      />
-                  ))}
+                    <UserList
+                        Name={user.name}
+                        handleModalBlock={() =>
+                            viewModel.handleBlockOpen(user.id)
+                        }
+                        handleModalMute={() =>
+                            viewModel.handleMuteOpen(user.id)
+                        }
+                        isExpand={viewModel.isExpand}
+                        MuteDuration={
+                            user.mute_duration &&
+                            viewModel.handleMuteDate(user.mute_duration)
+                        }
+                        isUserMuted={user.mute_status}
+                        Status={user.mute_status ? "Muted" : "Aman"}
+                        key={user.id}
+                        img={user.img_url}
+                    />
+                ))}
 
             {viewModel.isBlockModalClicked && (
                 <Modal

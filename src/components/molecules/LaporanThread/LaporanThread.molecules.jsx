@@ -5,7 +5,9 @@ import { useStore } from "../../../config/zustand/store"
 function LaporanThread({ isExpand }) {
     const location = useLocation()
     const { report } = useStore((state) => state)
-    const filterData = report.filter((list) => list.accept_status === true)
+    const filterData = report.filter((list) => list.accept_status)
+
+    console.log(filterData);
 
     let threadTotal = ""
     if (location.pathname.startsWith("/thread/report")) {
