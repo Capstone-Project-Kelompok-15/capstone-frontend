@@ -3,13 +3,13 @@ import { useStore } from "../../config/zustand/store";
 const ManageThreadViewModel = () => {
     const {
         isExpand,
-        getthread,
+        getReport,
         deletethread,
     } = useStore(state => state)
 
     return {
         isExpand,
-        getthread,
+        getReport,
         deletethread,
     }
 } 

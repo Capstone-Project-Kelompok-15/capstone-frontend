@@ -7,9 +7,9 @@ import { useStore } from "../../../config/zustand/store"
 
 function ThreadProfile({
     isExpand,
-    getthread,
+    getReport,
 }) {
-    const {deletethread, threadList}= useStore(state => state)
+    const {deletethread, report}= useStore(state => state)
 
     const [showModal, setShowModal] = useState(false)
     const [modalTitle, setModalTitle] = useState("")
@@ -17,7 +17,7 @@ function ThreadProfile({
     const [idDelete, setIdDelete] = useState(0)
 
     useEffect(() => {
-        getthread()
+        getReport()
     }, [])
 
     const handleAcceptClick = (id) => {
@@ -38,7 +38,7 @@ function ThreadProfile({
 
     return (
         <div>
-            {threadList.map((thread) => (
+            {report.map((thread) => (
                 <div
                     className={isExpand ? "thread-card mt-4 flex h-16 items-center w-[1180px]": "thread-card mt-4 flex h-16 items-center w-[1210px]"}
                     key={thread.id}>
@@ -54,7 +54,7 @@ function ThreadProfile({
                         </p>
                     </div>
                     <div className="flex">
-                        <ViewButton threadList={thread}/>
+                        <ViewButton report={thread}/>
                         <DeleteButton onClick={() => handleAcceptClick (thread.id)} />
                     </div>
                 </div>

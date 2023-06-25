@@ -1,17 +1,17 @@
 import React from "react"
 import { useLocation } from "react-router-dom"
 import { useStore } from "../../../config/zustand/store"
-import { list } from "postcss"
 
 function LaporanThread({ isExpand }) {
     const location = useLocation()
-    const { threadList } = useStore((state) => state)
+    const { report } = useStore((state) => state)
+    const filterData = report.filter((list) => list.accept_status === true)
 
     let threadTotal = ""
     if (location.pathname.startsWith("/thread/report")) {
         threadTotal = filterData.length
     } else {
-        threadTotal = threadList.length
+        threadTotal = report.length
     }
 
     let threadDetail = ""

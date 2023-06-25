@@ -6,7 +6,7 @@ import { AdminLogin } from "./Login/AdminLogin"
 import { SearchSlice } from "./Search/SearchSlice"
 import { SearchHistorySlice } from "./SearchHistory/SearchHistorySlice"
 import { SidebarSlice } from "./Sidebar/SidebarSlice"
-import { ThreadsSlice } from "./Threads/ThreadsSlice"
+import { ReportThreadsSlice } from "./ReportThreads/ReportThreadsSlice"
 
 export const useStore = create(
     devtools((...a) => ({
@@ -16,6 +16,6 @@ export const useStore = create(
         ...SearchSlice(...a),
         ...SearchHistorySlice(...a),
         ...SidebarSlice(...a),
-        ...ThreadsSlice(...a),
+        ...ReportThreadsSlice(...a),
     }))
 )

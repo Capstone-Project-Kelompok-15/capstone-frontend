@@ -8,7 +8,7 @@ function ManageThread() {
     return (
         <div className='bg-[#F8F8F8]'>
             <ThreadList 
-            getthread={viewModel.getthread}
+            getReport={viewModel.getReport}
             isExpand={viewModel.isExpand}
             deletethread={viewModel.deletethread}/>
         </div>
