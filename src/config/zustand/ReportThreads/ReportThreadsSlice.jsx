@@ -1,7 +1,8 @@
 import axios from "axios"
 
-export const ReportThreadsSlice = (set) => ({
+export const ReportThreadsSlice = (set, get) => ({
     report: [],
+    searchResults: [],
 
     getReport: async () => {
         try {
@@ -50,4 +51,16 @@ export const ReportThreadsSlice = (set) => ({
             console.log(error)
         }
     },
+
+    emptySearchResults: () => set(() => ({
+        searchResults: []
+    })),
+    
+    handleThreadsSearch: (searchValue) => {
+        const filteredResults = get().report.filter((item) =>
+            item.title.toLowerCase().includes(searchValue.toLowerCase())
+        );
+
+        set({ searchResults: filteredResults });
+    }
 })

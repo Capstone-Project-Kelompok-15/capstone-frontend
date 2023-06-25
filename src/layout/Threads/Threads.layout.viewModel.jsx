@@ -9,6 +9,7 @@ const ThreadLayoutModel = () => {
         isSearch,
         handleSearch,
         deleteSearchHistory,
+        emptySearchResults,
     } = useStore((state) => state)
 
     const formik = useFormik({
@@ -30,6 +31,9 @@ const ThreadLayoutModel = () => {
     const handleDelete = () => {
         deleteSearchHistory()
     }
+    const handleClickSearchHistory = (searchValue) => {
+        formik.setFieldValue("searchValue", searchValue)
+    }
 
     return {
         handleSearch,
@@ -39,6 +43,8 @@ const ThreadLayoutModel = () => {
         handleKeyPress,
         searchHistory,
         handleDelete,
+        handleClickSearchHistory,
+        emptySearchResults,
     }
 }
 
