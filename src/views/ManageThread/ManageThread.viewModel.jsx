@@ -1,19 +1,48 @@
-import { useStore } from "../../config/zustand/store";
+import { useEffect, useState } from "react"
+import { useStore } from "../../config/zustand/store"
 
 const ManageThreadViewModel = () => {
     const {
         isExpand,
         getReport,
+        report,
         deletethread,
         threadResults,
-    } = useStore(state => state)
+        isDeleteThread,
+        handleDeleteThread,
+        handleSelectThread,
+        selectedThread,
+    } = useStore((state) => state)
 
+    useEffect(() => {
+        getReport()
+    }, [])
+
+    const handleAcceptClick = (id) => {
+        handleSelectThread(id)
+        handleDeleteThread()
+    }
+
+    const handleDelete = () => {
+        deletethread(selectedThread)
+    }
+    const handleDeleteCancel = () => {
+        handleDeleteThread()
+    }
     return {
         isExpand,
         getReport,
+        report,
         deletethread,
         threadResults,
-    }
-} 
 
-export default ManageThreadViewModel;
+        handleAcceptClick,
+        handleDelete,
+
+        isDeleteThread,
+        handleDeleteThread,
+        handleDeleteCancel,
+    }
+}
+
+export default ManageThreadViewModel
