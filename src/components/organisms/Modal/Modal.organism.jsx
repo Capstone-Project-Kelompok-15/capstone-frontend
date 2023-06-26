@@ -36,8 +36,8 @@ function Modal({
                         </h1>
                         <form
                             onSubmit={formik.handleSubmit}
-                            className="h-[424px] mt-[18px]">
-                            <div className="w-[254px] h-[222px] flex justify-center p-2.5">
+                            className="mt-[18px]">
+                            <div className="w-[254px] h-[190px] flex justify-center pr-2.5 pl-[30px] pt-2.5 pb-2.5">
                                 <div>
                                     <div className="flex">
                                         <input

@@ -12,14 +12,13 @@ function Home() {
                 <div className="container mx-auto px-20">
                     <div className="grid grid-cols-12 gap-1 pt-[10px]">
                         <div
-                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${
-                                viewModel.isExpand ? "ml-24" : "-ml-10"
-                            }`}>
+                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${viewModel.isExpand ? "ml-24" : "-ml-10"
+                                }`}>
                             <div className="flex gap-2 items-center mb-[30px]">
                                 <div className="text-xl font-semibold" id="homepage">
                                     Statistik 2023
                                 </div>
-                                <TooltipButton />
+                                <TooltipButton time={viewModel.lastUpdatedTime} />
                             </div>
                             <div className="bg-white rounded-2xl p-10 shadow-lg">
                                 <Chart

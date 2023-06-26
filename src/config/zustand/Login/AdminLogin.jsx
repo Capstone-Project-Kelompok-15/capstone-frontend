@@ -1,6 +1,8 @@
 import axios from "axios"
 import { persist } from "zustand/middleware"
 
+const baseURL = 'https://capstone-production-c8c9.up.railway.app'
+
 export const AdminLogin = persist(
     (set) => ({
         isAuthenticated: false,
@@ -9,7 +11,7 @@ export const AdminLogin = persist(
         fetchLogin: async (email, password) => {
             try {
                 const res = await axios.post(
-                    "https://capstone-production-c8c9.up.railway.app/login/admin",
+                    `${baseURL}/login/admin`,
                     {
                         email,
                         password,
@@ -39,5 +41,9 @@ export const AdminLogin = persist(
     }),
     {
         name: "user-token",
+        partialize: (state) => ({
+            accessToken: state.accessToken,
+            isAuthenticated: state.isAuthenticated,
+        })
     }
 )

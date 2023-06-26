@@ -12,7 +12,8 @@ const ThreadLayoutModel = () => {
         emptySearchResults,
         handleThreadsSearch,
         setLocation,
-        currentPageLocation
+        currentPageLocation,
+        lastUpdatedTime,
     } = useStore((state) => state)
 
     const formik = useFormik({
@@ -55,7 +56,8 @@ const ThreadLayoutModel = () => {
         handleDelete,
         handleClickSearchHistory,
         emptySearchResults,
-        setLocation
+        setLocation,
+        lastUpdatedTime,
     }
 }
 

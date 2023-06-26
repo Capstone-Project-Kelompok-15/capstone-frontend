@@ -22,10 +22,9 @@ function ThreadLayout() {
                 <div className="container mx-auto px-20">
                     <div className="grid grid-cols-12 gap-1 pt-[10px]">
                         <div
-                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${
-                                viewModel.isExpand ? "ml-24" : "-ml-10"
-                            }`}>
-                            <ThreadStats isExpand={viewModel.isExpand} />
+                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${viewModel.isExpand ? "ml-24" : "-ml-10"
+                                }`}>
+                            <ThreadStats isExpand={viewModel.isExpand} time={viewModel.lastUpdatedTime} />
                             <SearchBar
                                 heading='Cari "Thread"'
                                 isSearch={viewModel.isSearch}

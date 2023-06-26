@@ -10,6 +10,7 @@ function UserStats({
     blockedUsersCount,
     mutedUsersCount,
     pageID,
+    time
 }) {
     return (
         <div>
@@ -19,7 +20,7 @@ function UserStats({
                     id={pageID}>
                     {heading}
                 </p>
-                <TooltipButton />
+                <TooltipButton time={time} />
             </div>
 
             <div className="flex justify-between mt-[21px] w-full">

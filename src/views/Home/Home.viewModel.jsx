@@ -80,6 +80,7 @@ const HomeViewModel = () => {
         users,
         report,
         getReport,
+        lastUpdatedTime
     } = useStore((state) => state)
 
     useEffect(() => {
@@ -125,6 +126,7 @@ const HomeViewModel = () => {
         totalUsers,
         report,
         threadReport,
+        lastUpdatedTime
     }
 }
 export default HomeViewModel

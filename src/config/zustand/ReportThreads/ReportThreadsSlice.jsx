@@ -1,5 +1,7 @@
 import axios from "axios"
 
+const baseURL = 'https://6496d10f83d4c69925a32241.mockapi.io/api/capstone'
+
 export const ReportThreadsSlice = (set, get) => ({
     report: [],
     threadResults: [],
@@ -10,7 +12,7 @@ export const ReportThreadsSlice = (set, get) => ({
     getReport: async () => {
         try {
             const response = await axios.get(
-                "https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads"
+                `${baseURL}/threads`
             )
             set({ report: response.data })
         } catch (error) {
@@ -21,7 +23,7 @@ export const ReportThreadsSlice = (set, get) => ({
     acceptReport: async (id) => {
         try {
             const response = await axios.put(
-                `https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads/${id}`,
+                `${baseURL}/threads/${id}`,
                 {
                     accept_status: true,
                     pending_status: false,
@@ -41,7 +43,7 @@ export const ReportThreadsSlice = (set, get) => ({
     denyReport: async (id) => {
         try {
             const response = await axios.put(
-                `https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads/${id}`,
+                `${baseURL}/threads/${id}`,
                 {
                     deny_status: true,
                     pending_status: false,
@@ -60,7 +62,7 @@ export const ReportThreadsSlice = (set, get) => ({
     deletethread: async (id) => {
         try {
             const response = await axios.delete(
-                `https://6496d10f83d4c69925a32241.mockapi.io/api/capstone/threads/${id}`
+                `${baseURL}/threads/${id}`
             )
             if (response.status === 200) {
                 get().getReport()

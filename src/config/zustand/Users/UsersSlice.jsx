@@ -1,6 +1,10 @@
 import axios from "axios"
 
+// mockAPI URL
 const baseURL = 'https://64939c210da866a953668936.mockapi.io/users/Users'
+
+// BE TEAM URL 
+const BE_URL = 'https://capstone-production-c8c9.up.railway.app/admin'
 
 export const UsersSlice = (set, get) => ({
     users: [],
@@ -9,6 +13,7 @@ export const UsersSlice = (set, get) => ({
     selectedUserMuteStatus: null,
     isBlockModalClicked: false,
     isMuteModalClicked: false,
+    lastUpdatedTime: null,
     handleBlockModal: () => set(state => (
         {
             isBlockModalClicked: !state.isBlockModalClicked
@@ -18,9 +23,27 @@ export const UsersSlice = (set, get) => ({
             isMuteModalClicked: !state.isMuteModalClicked
         })),
     getUsers: async () => {
+        // BASE URL config
+        // const persistedState = JSON.parse(localStorage.getItem('user-token'))
+        // const { accessToken } = persistedState.state
+        const currentDate = new Date();
+        const timeOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
+        const formattedTime = currentDate.toLocaleTimeString(undefined, timeOptions);
+
         try {
-            const response = await axios.get(baseURL)
-            set({ users: response.data })
+            // const response = await axios.get(BE_URL, {
+            //     headers: {
+            //         Authorization: `Bearer ${accessToken}`
+            //     }
+            // })
+
+            const response = await axios.get(baseURL, {
+            })
+
+            set({
+                users: response.data,
+                lastUpdatedTime: formattedTime
+            })
         } catch (error) {
             console.log(error);
         }
@@ -133,5 +156,5 @@ export const UsersSlice = (set, get) => ({
         );
 
         set({ searchResults: filteredResults });
-    }
+    },
 })

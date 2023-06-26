@@ -18,7 +18,8 @@ const ManageUserViewModel = () => {
         handleBlockedUsersSearch,
         handleFocus,
         handleBlur,
-        isFocused
+        isFocused,
+        lastUpdatedTime,
     } = useStore((state) => state)
 
     const blockedUsers = users.filter((user) => user.block_status).length
@@ -70,13 +71,10 @@ const ManageUserViewModel = () => {
 
     const handleOnFocus = () => {
         handleFocus()
-        console.log("focus");
     }
-
 
     const handleOnBlur = () => {
         handleBlur()
-        console.log("blur");
     }
 
 
@@ -97,7 +95,8 @@ const ManageUserViewModel = () => {
         handleClickSearchHistory,
         currentPageLocation,
         handleOnFocus,
-        handleOnBlur
+        handleOnBlur,
+        lastUpdatedTime,
     }
 }
 
