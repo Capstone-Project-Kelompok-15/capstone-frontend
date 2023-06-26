@@ -47,7 +47,7 @@ function OnlineUser() {
                         handleProceed={
                             viewModel.handleBlockProceed
                         }
-                        idProceedButton="block-user"
+                        idProceedButton="modal-block-user"
                         idCancelButton="batal"
                     />
                 )
@@ -82,7 +82,7 @@ function OnlineUser() {
                         cancelMessage="Batal"
                         handleCancel={viewModel.handleMuteCancel}
                         handleProceed={viewModel.handleMute}
-                        idProceedButton="mute-user"
+                        idProceedButton="modal-mute-user"
                         idCancelButton="batal"
 
                     />

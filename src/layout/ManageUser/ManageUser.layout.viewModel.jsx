@@ -7,8 +7,6 @@ const ManageUserViewModel = () => {
         setSearchHistory,
         isExpand,
         searchHistory,
-        isSearch,
-        handleSearch,
         deleteSearchHistory,
         getUsers,
         setLocation,
@@ -18,6 +16,9 @@ const ManageUserViewModel = () => {
         handleOnlineUsersSearch,
         handleMutedUsersSearch,
         handleBlockedUsersSearch,
+        handleFocus,
+        handleBlur,
+        isFocused
     } = useStore((state) => state)
 
     const blockedUsers = users.filter((user) => user.block_status).length
@@ -67,12 +68,23 @@ const ManageUserViewModel = () => {
         formik.setFieldValue("searchValue", searchValue)
     }
 
+    const handleOnFocus = () => {
+        handleFocus()
+        console.log("focus");
+    }
+
+
+    const handleOnBlur = () => {
+        handleBlur()
+        console.log("blur");
+    }
+
+
     return {
-        handleSearch,
         getUsers,
-        isSearch,
         formik,
         isExpand,
+        isFocused,
         handleKeyPress,
         blockedUsers,
         mutedUsers,
@@ -84,6 +96,8 @@ const ManageUserViewModel = () => {
         emptySearchResults,
         handleClickSearchHistory,
         currentPageLocation,
+        handleOnFocus,
+        handleOnBlur
     }
 }
 

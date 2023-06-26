@@ -34,9 +34,11 @@ function ManageUser() {
             <SearchBar
                 heading='Cari "Pengguna"'
                 isSearch={viewModel.isSearch}
-                handleSearch={viewModel.handleSearch}
-                isExpand={viewModel.isExpand}
+                handleSearch={viewModel.handleOnFocus}
+                isFocused={viewModel.isFocused}
                 formik={viewModel.formik}
+                handleOnFocus={viewModel.handleOnFocus}
+                handleOnBlur={viewModel.handleOnBlur}
                 handleKeyPress={viewModel.handleKeyPress}
                 searchHistories={viewModel.searchHistory}
                 handleDeleteSearchHistory={viewModel.handleDelete}

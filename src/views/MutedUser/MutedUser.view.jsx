@@ -48,7 +48,7 @@ function MutedUser() {
                         cancelMessage="Batal"
                         handleProceed={viewModel.handleUnmuteProceed}
                         handleCancel={viewModel.handleUnmuteCancel}
-                        idProceedButton="unmute-user"
+                        idProceedButton="modal-unmute-user"
                         idCancelButton="batal"
                     />
                 )
@@ -63,7 +63,7 @@ function MutedUser() {
                         cancelMessage="Batal"
                         handleCancel={viewModel.handleBlockCancel}
                         handleProceed={viewModel.handleBlockProceed}
-                        idProceedButton="block-user"
+                        idProceedButton="modal-block-user"
                         idCancelButton="batal"
                     />
                 )

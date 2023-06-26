@@ -48,7 +48,7 @@ function BlockedUser() {
                         muteModal={false}
                         handleCancel={viewModel.handleUnblockCancel}
                         handleProceed={viewModel.handleUnblockProceed}
-                        idProceedButton="buka-blokir"
+                        idProceedButton="modal-unblock-user"
                         idCancelButton="batal" />
                 )
             }
@@ -83,7 +83,7 @@ function BlockedUser() {
                         handleCancel={viewModel.handleMuteCancel}
                         handleProceed={viewModel.handleMute}
 
-                        idProceedButton="mute-user"
+                        idProceedButton="modal-mute-user"
                         idCancelButton="batal"
                     />
                 )

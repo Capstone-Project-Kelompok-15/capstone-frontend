@@ -5,7 +5,7 @@ function DeleteSearchHistoryButton({ handleDeleteSearchHistory }) {
     return (
         <button
             type="button"
-            className="mr-[16px] ml-[930px]"
+            className="mr-[16px]"
             onClick={handleDeleteSearchHistory}>
             <img src={x} alt="delete history" />
         </button>
