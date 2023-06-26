@@ -22,8 +22,8 @@ function UserProfile({
         <div
             className={
                 isExpand
-                    ? "w-[1180px] h-[69px] flex mt-[16px]"
-                    : "w-[1210px] h-[69px] flex mt-[16px]"
+                    ? "w-full h-[69px] flex mt-[16px]"
+                    : "w-full h-[69px] flex mt-[16px]"
             }>
             <ProfilePicture
                 isUserBlocked={isUserBlocked}
@@ -32,7 +32,7 @@ function UserProfile({
                 img={img}
             />
 
-            <div className="w-[1009px] h-[34px] mt-[17.5px] mr-[14px]">
+            <div className="w-full h-[34px] mt-[17.5px] mr-[14px]">
                 <h1 className="font-source-sans font-semibold text-[12px]">
                     {Name}
                 </h1>

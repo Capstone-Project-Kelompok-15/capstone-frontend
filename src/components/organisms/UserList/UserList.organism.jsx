@@ -1,22 +1,21 @@
-import React from 'react'
-import { UserProfile } from '../../molecules'
+import React from "react"
+import { UserProfile } from "../../molecules"
 
-function UserList(
-    {
-        Name,
-        Status,
-        isUserBlocked,
-        isUserMuted,
-        handleModalMute,
-        handleModalBlock,
-        isExpand,
-        MuteDuration,
-        img
-    }) {
+function UserList({
+    Name,
+    Status,
+    isUserBlocked,
+    isUserMuted,
+    handleModalMute,
+    handleModalBlock,
+    isExpand,
+    MuteDuration,
+    img,
+}) {
     return (
         <div>
-            <div className={isExpand ? 'flex ml-[300px]' : 'flex justify-center'}>
-                <div className='grid gap-[27.5px]'>
+            <div className="w-full">
+                <div className="grid gap-[27.5px]">
                     <UserProfile
                         Name={Name}
                         Status={Status}
@@ -30,7 +29,6 @@ function UserList(
                     />
                 </div>
             </div>
-
         </div>
     )
 }

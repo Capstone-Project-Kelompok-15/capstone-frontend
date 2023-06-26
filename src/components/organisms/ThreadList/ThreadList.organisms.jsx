@@ -4,13 +4,7 @@ import { DeleteButton, ViewButton } from "../../atoms"
 function ThreadList({ isExpand, thread, handleAcceptClick }) {
     return (
         <div>
-            <div
-                className={
-                    isExpand
-                        ? "thread-card mt-4 flex h-16 items-center w-[1180px]"
-                        : "thread-card mt-4 flex h-16 items-center w-[1210px]"
-                }
-                key={thread.id}>
+            <div className="mt-4 flex h-16 items-center w-full" key={thread.id}>
                 <div>
                     <img
                         src={thread.thread_picture}

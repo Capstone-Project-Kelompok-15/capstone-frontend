@@ -5,17 +5,11 @@ function ThreadReportCard({
     isExpand,
     handleAcceptClick,
     handleDenyClick,
-    thread
+    thread,
 }) {
     return (
         <div>
-            <div
-                className={
-                    isExpand
-                        ? "thread-card mt-3 ml-3 flex h-16 items-center w-[1180px]"
-                        : "thread-card mt-3 ml-3 flex h-16 items-center w-[1210px]"
-                }
-            >
+            <div className="thread-card mt-3  flex h-16 items-center w-full">
                 <div>
                     <img
                         src={thread.thread_picture}
@@ -33,9 +27,7 @@ function ThreadReportCard({
                 </div>
                 <div className="flex">
                     <ViewButton report={thread} />
-                    <AcceptButton
-                        onClick={() => handleAcceptClick(thread)}
-                    />
+                    <AcceptButton onClick={() => handleAcceptClick(thread)} />
                     <DenyButton onClick={() => handleDenyClick(thread.id)} />
                 </div>
             </div>

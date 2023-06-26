@@ -18,19 +18,34 @@ function ThreadLayout() {
 
     return (
         <div className="bg-[#F8F8F8]">
-            <ThreadStats isExpand={viewModel.isExpand} />
-            <SearchBar
-                heading='Cari "Thread"'
-                isSearch={viewModel.isSearch}
-                handleSearch={viewModel.handleSearch}
-                isExpand={viewModel.isExpand}
-                formik={viewModel.formik}
-                handleKeyPress={viewModel.handleKeyPress}
-                searchHistories={viewModel.searchHistory}
-                handleDeleteSearchHistory={viewModel.handleDelete}
-                handleClickSearchHistory={viewModel.handleClickSearchHistory}
-            />
-            <Outlet />
+            <div className="w-full">
+                <div className="container mx-auto px-20">
+                    <div className="grid grid-cols-12 gap-1 pt-[10px]">
+                        <div
+                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${
+                                viewModel.isExpand ? "ml-24" : "-ml-10"
+                            }`}>
+                            <ThreadStats isExpand={viewModel.isExpand} />
+                            <SearchBar
+                                heading='Cari "Thread"'
+                                isSearch={viewModel.isSearch}
+                                handleSearch={viewModel.handleSearch}
+                                isExpand={viewModel.isExpand}
+                                formik={viewModel.formik}
+                                handleKeyPress={viewModel.handleKeyPress}
+                                searchHistories={viewModel.searchHistory}
+                                handleDeleteSearchHistory={
+                                    viewModel.handleDelete
+                                }
+                                handleClickSearchHistory={
+                                    viewModel.handleClickSearchHistory
+                                }
+                            />
+                            <Outlet />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

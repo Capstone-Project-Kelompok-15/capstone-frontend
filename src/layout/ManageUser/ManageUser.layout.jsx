@@ -22,30 +22,45 @@ function ManageUser() {
 
     return (
         <div className="bg-[#f8f8f8] min-h-screen">
-            <UserStats
-                isExpand={viewModel.isExpand}
-                heading="Manage User"
-                mutedUsersCount={viewModel.mutedUsers}
-                usersCount={viewModel.totalUsers}
-                blockedUsersCount={viewModel.blockedUsers}
-                onlineUsersCount={viewModel.onlineUsers}
-                pageID="manage-user"
-            />
-            <SearchBar
-                heading='Cari "Pengguna"'
-                isSearch={viewModel.isSearch}
-                handleSearch={viewModel.handleOnFocus}
-                isFocused={viewModel.isFocused}
-                formik={viewModel.formik}
-                handleOnFocus={viewModel.handleOnFocus}
-                handleOnBlur={viewModel.handleOnBlur}
-                handleKeyPress={viewModel.handleKeyPress}
-                searchHistories={viewModel.searchHistory}
-                handleDeleteSearchHistory={viewModel.handleDelete}
-                handleClickSearchHistory={viewModel.handleClickSearchHistory}
-            />
+            <div className="w-full">
+                <div className="container mx-auto px-20">
+                    <div className="grid grid-cols-12 gap-1 pt-[10px]">
+                        <div
+                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${
+                                viewModel.isExpand ? "ml-24" : "-ml-10"
+                            }`}>
+                            <UserStats
+                                isExpand={viewModel.isExpand}
+                                heading="Manage User"
+                                mutedUsersCount={viewModel.mutedUsers}
+                                usersCount={viewModel.totalUsers}
+                                blockedUsersCount={viewModel.blockedUsers}
+                                onlineUsersCount={viewModel.onlineUsers}
+                                pageID="manage-user"
+                            />
+                            <SearchBar
+                                heading='Cari "Pengguna"'
+                                isSearch={viewModel.isSearch}
+                                handleSearch={viewModel.handleOnFocus}
+                                isFocused={viewModel.isFocused}
+                                formik={viewModel.formik}
+                                handleOnFocus={viewModel.handleOnFocus}
+                                handleOnBlur={viewModel.handleOnBlur}
+                                handleKeyPress={viewModel.handleKeyPress}
+                                searchHistories={viewModel.searchHistory}
+                                handleDeleteSearchHistory={
+                                    viewModel.handleDelete
+                                }
+                                handleClickSearchHistory={
+                                    viewModel.handleClickSearchHistory
+                                }
+                            />
 
-            <Outlet />
+                            <Outlet />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

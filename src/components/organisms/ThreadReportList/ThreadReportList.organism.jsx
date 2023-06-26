@@ -5,11 +5,11 @@ function ThreadReportList({
     isExpand,
     handleAcceptClick,
     handleDenyClick,
-    thread
+    thread,
 }) {
     return (
         <div>
-            <div className={isExpand ? "gap-[15px] ml-[300px]" : "ml-[150px]"}>
+            <div>
                 <ThreadReportCard
                     isExpand={isExpand}
                     handleAcceptClick={handleAcceptClick}

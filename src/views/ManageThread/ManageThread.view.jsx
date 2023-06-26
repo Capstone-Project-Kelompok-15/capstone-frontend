@@ -5,33 +5,28 @@ import ManageThreadViewModel from "./ManageThread.viewModel"
 function ManageThread() {
     const viewModel = ManageThreadViewModel()
     return (
-        <div
-            className={
-                viewModel.isExpand
-                    ? "gap-[15px] ml-[300px]"
-                    : "gap-[15px] ml-[155px]"
-            }>
+        <div>
             {viewModel.threadResults.length > 0
                 ? viewModel.threadResults.map((thread) => (
-                    <ThreadList
-                        key={thread.id}
-                        isExpand={viewModel.isExpand}
-                        thread={thread}
-                        handleAcceptClick={() =>
-                            viewModel.handleAcceptClick(thread.id)
-                        }
-                    />
-                ))
+                      <ThreadList
+                          key={thread.id}
+                          isExpand={viewModel.isExpand}
+                          thread={thread}
+                          handleAcceptClick={() =>
+                              viewModel.handleAcceptClick(thread.id)
+                          }
+                      />
+                  ))
                 : viewModel.report.map((thread) => (
-                    <ThreadList
-                        key={thread.id}
-                        isExpand={viewModel.isExpand}
-                        thread={thread}
-                        handleAcceptClick={() =>
-                            viewModel.handleAcceptClick(thread.id)
-                        }
-                    />
-                ))}
+                      <ThreadList
+                          key={thread.id}
+                          isExpand={viewModel.isExpand}
+                          thread={thread}
+                          handleAcceptClick={() =>
+                              viewModel.handleAcceptClick(thread.id)
+                          }
+                      />
+                  ))}
             {viewModel.isDeleteThread && (
                 <Modal
                     Message="Hapus Thread?"
