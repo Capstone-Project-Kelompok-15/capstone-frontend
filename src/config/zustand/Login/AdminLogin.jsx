@@ -1,7 +1,7 @@
 import axios from "axios"
 import { persist } from "zustand/middleware"
 
-const baseURL = 'https://capstone-production-c8c9.up.railway.app'
+const baseURL = "https://capstone-production-c8c9.up.railway.app"
 
 export const AdminLogin = persist(
     (set) => ({
@@ -10,13 +10,10 @@ export const AdminLogin = persist(
         dataAdmin: {},
         fetchLogin: async (email, password) => {
             try {
-                const res = await axios.post(
-                    `${baseURL}/login/admin`,
-                    {
-                        email,
-                        password,
-                    }
-                )
+                const res = await axios.post(`${baseURL}/login/admin`, {
+                    email,
+                    password,
+                })
                 if (res.status === 200) {
                     set({
                         dataAdmin: {
@@ -44,6 +41,7 @@ export const AdminLogin = persist(
         partialize: (state) => ({
             accessToken: state.accessToken,
             isAuthenticated: state.isAuthenticated,
-        })
+            dataAdmin: state.dataAdmin,
+        }),
     }
 )

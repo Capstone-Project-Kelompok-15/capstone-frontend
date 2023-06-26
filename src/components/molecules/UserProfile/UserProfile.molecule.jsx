@@ -19,12 +19,7 @@ function UserProfile({
     }
 
     return (
-        <div
-            className={
-                isExpand
-                    ? "w-full h-[69px] flex mt-[16px]"
-                    : "w-full h-[69px] flex mt-[16px]"
-            }>
+        <div className="w-full h-[69px] flex mt-[16px]">
             <ProfilePicture
                 isUserBlocked={isUserBlocked}
                 isUserMuted={isUserMuted}

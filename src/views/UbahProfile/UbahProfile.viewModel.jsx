@@ -109,64 +109,6 @@ function UbahProfileViewModel() {
             }
         },
     })
-    // onSubmit: async (values) => {
-    //     console.log(values)
-    //     if (values.username === dataAdmin.name) {
-    //         formik.setFieldError("username", "Username sudah digunakan")
-    //     }
-    //     if (values.username !== dataAdmin.name) {
-    //         setUbahProfil(true)
-    //         setErrorUbahProfil(false)
-    //         await ubahProfileAdmin(
-    //             accessToken,
-    //             dataAdmin.id,
-    //             values.username,
-    //             dataAdmin.email,
-    //             dataAdmin.password
-    //         )
-    //         navigate("/landing")
-    //     }
-    //     if (values.email === dataAdmin.email) {
-    //         formik.setFieldError("email", "Email sudah digunakan")
-    //     }
-    //     if (values.email !== dataAdmin.email) {
-    //         setUbahProfil(true)
-    //         setErrorUbahProfil(false)
-    //         await ubahProfileAdmin(
-    //             accessToken,
-    //             dataAdmin.id,
-    //             dataAdmin.username,
-    //             values.email,
-    //             dataAdmin.password
-    //         )
-    //         navigate("/landing")
-    //     }
-
-    //     if (values.password !== values.passwordKonfirmasi) {
-    //         formik.setFieldError(
-    //             "password",
-    //             "Kata sandi yang anda masukkan tidak valid"
-    //         )
-    //         formik.setFieldError(
-    //             "passwordKonfirmasi",
-    //             "Kata sandi yang anda masukkan tidak valid"
-    //         )
-    //     }
-    //     if (values.password === values.passwordKonfirmasi) {
-    //         setUbahProfil(true)
-    //         setErrorUbahProfil(false)
-    //         await ubahProfileAdmin(
-    //             accessToken,
-    //             dataAdmin.id,
-    //             dataAdmin.username,
-    //             dataAdmin.email,
-    //             values.password
-    //         )
-    //         logout()
-    //         navigate("/landing")
-    //     }
-    // },
-
     const handleLogout = () => {
         logout()
         setIsKeluarModalClicked()
@@ -201,6 +143,7 @@ function UbahProfileViewModel() {
         handleSubmit,
         handleImage,
         handleLogout,
+        dataAdmin,
     }
 }
 

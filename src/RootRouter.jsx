@@ -37,17 +37,43 @@ const rootRouter = createBrowserRouter(
             />
             <Route path="login" element={<Login />} />
             <Route path="landing" element={<LandingPageView />} />
-            <Route path="ubahprofil" element={<UbahProfile />} />
-            <Route path="show/:id" element={<ShowThread />} />
+            <Route
+                path="ubahprofil"
+                element={
+                    <ProtectedRoute>
+                        <UbahProfile />
+                    </ProtectedRoute>
+                }
+            />
+            <Route
+                path="show/:id"
+                element={
+                    <ProtectedRoute>
+                        <ShowThread />
+                    </ProtectedRoute>
+                }
+            />
 
-            <Route path="/manageUser" element={<ManageUserLayout />}>
+            <Route
+                path="/manageUser"
+                element={
+                    <ProtectedRoute>
+                        <ManageUserLayout />
+                    </ProtectedRoute>
+                }>
                 <Route path="online" element={<OnlineUserView />} />
                 <Route path="total" element={<TotalUserView />} />
                 <Route path="muted" element={<MutedUserView />} />
                 <Route path="blocked" element={<BlockedUserView />} />
             </Route>
 
-            <Route path="thread" element={<ThreadLayout />}>
+            <Route
+                path="thread"
+                element={
+                    <ProtectedRoute>
+                        <ThreadLayout />
+                    </ProtectedRoute>
+                }>
                 <Route path="manage" element={<ManageThreadView />} />
                 <Route path="report" element={<ThreadReport />} />
             </Route>
