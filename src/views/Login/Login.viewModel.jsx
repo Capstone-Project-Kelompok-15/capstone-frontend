@@ -22,9 +22,9 @@ function LoginViewModel() {
             console.log(values.email, values.password)
             if (isAuthenticated) {
                 navigate("/")
+                return
             }
             if (!isAuthenticated) {
-                // setErrorLogin(true);
                 formik.setFieldError("email", "Email yang anda masukkan salah")
                 formik.setFieldError(
                     "password",

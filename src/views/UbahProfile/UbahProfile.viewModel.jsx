@@ -39,10 +39,12 @@ function UbahProfileViewModel() {
         validationSchema: Yup.object().shape({
             username: Yup.string().required("Tolong Masukkan Username"),
             email: Yup.string().required("Tolong Masukkan Email"),
-            password: Yup.string().required("Tolong Masukkan Kata Sandi"),
-            passwordKonfirmasi: Yup.string().required(
-                "Tolong Masukkan Konfirmasi Kata Sandi"
-            ),
+            password: Yup.string()
+                .min(8)
+                .required("Tolong Masukkan Kata Sandi"),
+            passwordKonfirmasi: Yup.string()
+                .min(8)
+                .required("Tolong Masukkan Konfirmasi Kata Sandi"),
         }),
         onSubmit: async (values) => {
             console.log(values)
