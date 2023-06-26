@@ -1,20 +1,25 @@
-import { create } from "zustand";
-import { BlockUserSlice } from "./BlockUser/BlockUserSlice";
-import { MuteUserSlice } from "./MuteUser/MuteUserSlice";
-import { SearchSlice } from "./Search/SearchSlice";
-import { BlockModalSlice } from "./BlockModal/BlockModalSlice";
-import { MuteModalSlice } from "./MuteModal/MuteModalSlice";
-import { SidebarSlice } from "./Sidebar/SidebarSlice";
-import { AdminLogin } from "./Login/AdminLogin";
-import { CardStatsSlice } from "./CardStats/CardStatsSlice";
+import { create } from "zustand"
+import { devtools } from "zustand/middleware"
+import { SidebarSlice } from "./Sidebar/SidebarSlice"
+import { UsersSlice } from "./Users/UsersSlice"
+import { ReportThreadsSlice } from "./ReportThreads/ReportThreadsSlice"
+import { ChartSlice } from "./Chart/ChartSlice"
+import { KeluarModalSlice } from "./KeluarModal/KeluarModalSlice"
+import { UbahProfile } from "./UbahProfile/UbahProfile"
+import { SimpanModalSlice } from "./SimpanModal/SimpanModalSlice"
+import { AdminLogin } from "./Login/AdminLogin"
+import { SearchSlice } from "./Search/SearchSlice"
 
-export const useStore = create((...a) => ({
-	...BlockUserSlice(...a),
-	...MuteUserSlice(...a),
-	...SearchSlice(...a),
-	...BlockModalSlice(...a),
-	...MuteModalSlice(...a),
-	...SidebarSlice(...a),
-	...AdminLogin(...a),
-	...CardStatsSlice(...a),
-}));
+export const useStore = create(
+    devtools((...a) => ({
+        ...AdminLogin(...a),
+        ...SearchSlice(...a),
+        ...ChartSlice(...a),
+        ...SidebarSlice(...a),
+        ...UsersSlice(...a),
+        ...ReportThreadsSlice(...a),
+        ...KeluarModalSlice(...a),
+        ...UbahProfile(...a),
+        ...SimpanModalSlice(...a),
+    }))
+)

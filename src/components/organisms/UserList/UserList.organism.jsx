@@ -1,15 +1,36 @@
-import React from 'react'
-import { UserProfile } from '../../molecules'
+import React from "react"
+import { UserProfile } from "../../molecules"
 
-function Users({ Name, Status, isUserBlocked, isUserMuted }) {
+function UserList({
+    Name,
+    Status,
+    isUserBlocked,
+    isUserMuted,
+    handleModalMute,
+    handleModalBlock,
+    isExpand,
+    MuteDuration,
+    img,
+}) {
     return (
-        <div className='flex justify-center'>
-            <div className='grid gap-[27.5px]'>
-                <UserProfile Name={Name} Status={Status} isUserBlocked={isUserBlocked} isUserMuted={isUserMuted} />
+        <div>
+            <div className="w-full">
+                <div className="grid gap-[27.5px]">
+                    <UserProfile
+                        Name={Name}
+                        Status={Status}
+                        MuteDuration={MuteDuration}
+                        isUserBlocked={isUserBlocked}
+                        isUserMuted={isUserMuted}
+                        handleModalMute={handleModalMute}
+                        handleModalBlock={handleModalBlock}
+                        isExpand={isExpand}
+                        img={img}
+                    />
+                </div>
             </div>
-
         </div>
     )
 }
 
-export default Users
+export default UserList

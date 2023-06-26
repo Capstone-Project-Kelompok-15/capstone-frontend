@@ -1,13 +1,20 @@
-import React from 'react'
-import avatar from '../../../assets/avatar.svg'
-import aman from '../../../assets/aman.svg'
-import notAman from '../../../assets/notAman.svg'
+import React from "react"
+import aman from "../../../assets/aman.svg"
+import notAman from "../../../assets/notAman.svg"
 
-function ProfilePicture({ isBlocked }) {
+function ProfilePicture({ isUserBlocked, isUserMuted, img }) {
     return (
-        <div className='w-[49.43px] h-[50px] mt-[8.5px] mr-[11.57px]'>
-            <img src={avatar} alt='profile' />
-            <img src={isBlocked ? notAman : aman} alt='aman' className='absolute left-[195px]' />
+        <div className="w-[60px] h-[50px] mt-[8.5px] mr-[11.57px] relative">
+            <img
+                src={img}
+                alt="profile"
+                className="h-[49px] w-[50px] rounded-[100px]"
+            />
+            <img
+                src={isUserBlocked || isUserMuted ? notAman : aman}
+                alt="aman"
+                className="absolute bottom-0 -right-1"
+            />
         </div>
     )
 }

@@ -1,19 +1,40 @@
-import React from "react";
-import Logo from "../../atoms/Logo/Logo.atom";
+import React from "react"
+import Logo from "../../atoms/Logo/Logo.atom"
+import { KeluarButton } from "../../atoms"
+import { NavHome } from "../../molecules"
 
-import { NavHome } from "../../molecules";
-
-function Navbar({ bgNavbar, loginNavbar }) {
-	return (
-		<div
-			className={`${
-				bgNavbar === "bgIsLoggedIn" ? "bg-[#F8F8F8]" : "bg-transparent"
-			} flex min-w-screen py-[17px] pl-[80px] pr-[20px] justify-between items-center`}
-			id="navbar">
-			<Logo textLogo="black" />
-			{loginNavbar === "isLoggedIn" ? <NavHome /> : <div />}
-		</div>
-	);
+function Navbar({ bgNavbar, ubahNavbar, onClick, dataAdmin, imageIndex }) {
+    return (
+        <div>
+            <div
+                className={`${
+                    bgNavbar === "bgIsLoggedIn"
+                        ? "bg-[#F8F8F8]"
+                        : "bg-transparent"
+                } flex w-full py-[17px] pl-[80px] pr-[20px] justify-between items-center fixed z-10`}
+                id="navbar">
+                <Logo textLogo="black" />
+                {ubahNavbar === "ubahProfil" ? (
+                    <div className="pt-[3px]">
+                        <KeluarButton onClick={onClick} />
+                    </div>
+                ) : (
+                    <NavHome
+                        onClick={onClick}
+                        dataAdmin={dataAdmin}
+                        imageIndex={imageIndex}
+                    />
+                )}
+            </div>
+            <div
+                className={`pt-[90px] ${
+                    bgNavbar === "bgIsLoggedIn"
+                        ? "bg-[#F8F8F8]"
+                        : "bg-transparent"
+                }`}
+            />
+        </div>
+    )
 }
 
-export default Navbar;
+export default Navbar

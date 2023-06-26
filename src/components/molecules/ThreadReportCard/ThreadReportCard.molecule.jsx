@@ -1,27 +1,36 @@
 import React from "react"
 import { AcceptButton, DenyButton, ViewButton } from "../../atoms"
-import AvatarImage from "../../../assets/avatar.svg"
 
-function ThreadReportCard() {
+function ThreadReportCard({
+    isExpand,
+    handleAcceptClick,
+    handleDenyClick,
+    thread,
+}) {
     return (
         <div>
-            <section className="thread-card mt-4 flex h-16 items-center">
+            <div className="thread-card mt-3  flex h-16 items-center w-full">
                 <div>
-                    <img src={AvatarImage} alt="" />
+                    <img
+                        src={thread.thread_picture}
+                        alt="threadpicture"
+                        className="h-[50px] w-[50px] rounded-[100px]"
+                    />
                 </div>
-                <div className="card-detail mx-3.5 flex-1">
-                    <h6>UU Tenaga Kerja</h6>
-                    <p>
-                        Saya mau ikut-ikutan menjawab, walaupun sudah telat,
-                        masih boleh kan??
+                <div className="font-source-sans font-bold text-[12px] mx-3.5 flex-1">
+                    <h6 className="font-source-sans font-bold text-[12px]">
+                        {thread.title}
+                    </h6>
+                    <p className="font-source-sans font-bold text-[12px] text-[#AA1512]">
+                        {thread.tag}
                     </p>
                 </div>
                 <div className="flex">
-                    <ViewButton />
-                    <AcceptButton />
-                    <DenyButton />
+                    <ViewButton report={thread} />
+                    <AcceptButton onClick={() => handleAcceptClick(thread)} />
+                    <DenyButton onClick={() => handleDenyClick(thread.id)} />
                 </div>
-            </section>
+            </div>
         </div>
     )
 }

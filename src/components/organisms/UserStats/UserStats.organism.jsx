@@ -1,21 +1,57 @@
-import React from 'react'
-import { CardStats } from '../../molecules'
-import { useStore } from '../../../config/zustand/store'
+import React from "react"
+import { CardStats } from "../../molecules"
+import { TooltipButton } from "../../atoms"
 
-function UserStats() {
-    const totalUsers = useStore(state => state.totalUsers)
-    const totalOnlineUsers = useStore(state => state.totalOnlineUsers)
-    const totalBlockedUsers = useStore(state => state.totalBlockedUsers)
-    const totalMutedUsers = useStore(state => state.totalMutedUsers)
-
+function UserStats({
+    isExpand,
+    heading,
+    onlineUsersCount,
+    usersCount,
+    blockedUsersCount,
+    mutedUsersCount,
+    pageID,
+    time
+}) {
     return (
         <div>
-            <p className='font-source-sans font-semibold text-[20px] ml-[164px] text-[#000000CC]'>Manage User</p>
-            <div className='flex justify-center gap-[30px] mt-[21px]'>
-                <CardStats statsNumber={totalUsers} statsTitle="Jumlah Pengguna" Link="/manageUser/total" id="jumlah-pengguna" />
-                <CardStats statsNumber={totalOnlineUsers} statsTitle="Pengguna Online" Link="/manageUser/online" id="pengguna-online" />
-                <CardStats statsNumber={totalBlockedUsers} statsTitle="Jumlah Pengguna yang diblokir" Link="/manageUser/blocked" id="pengguna-diblokir" />
-                <CardStats statsNumber={totalMutedUsers} statsTitle="Jumlah Pengguna yang dimute" Link="/manageUser/muted" id="pengguna-dimute" />
+            <div className="flex items-center gap-3">
+                <p
+                    className="font-source-sans font-semibold text-[20px] text-[#000000CC]"
+                    id={pageID}>
+                    {heading}
+                </p>
+                <TooltipButton time={time} />
+            </div>
+
+            <div className="flex justify-between mt-[21px] w-full">
+                <CardStats
+                    statsNumber={usersCount}
+                    statsTitle="Jumlah Pengguna"
+                    Link="/manageUser/total"
+                    id="total-users"
+                    isExpand={isExpand}
+                />
+                <CardStats
+                    statsNumber={onlineUsersCount}
+                    statsTitle="Pengguna Online"
+                    Link="/manageUser/online"
+                    id="online-users"
+                    isExpand={isExpand}
+                />
+                <CardStats
+                    statsNumber={blockedUsersCount}
+                    statsTitle="Jumlah Pengguna yang diblokir"
+                    Link="/manageUser/blocked"
+                    id="blocked-users"
+                    isExpand={isExpand}
+                />
+                <CardStats
+                    statsNumber={mutedUsersCount}
+                    statsTitle="Jumlah Pengguna yang dimute"
+                    Link="/manageUser/muted"
+                    id="muted-users"
+                    isExpand={isExpand}
+                />
             </div>
         </div>
     )

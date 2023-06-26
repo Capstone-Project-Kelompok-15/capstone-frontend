@@ -1,23 +1,38 @@
 import React from "react"
+import { useLocation } from "react-router-dom"
 import { LaporanThread } from "../../molecules"
 import { TooltipButton } from "../../atoms"
 
-function ThreadStats() {
+function ThreadStats({ isExpand, time }) {
+    const location = useLocation()
+
+    let pageTitle = ""
+    if (location.pathname.startsWith("/thread/report")) {
+        pageTitle = "Thread Report"
+    } else {
+        pageTitle = "Manage Thread"
+    }
+
     return (
         <div>
-            <div className="w-full ">
-                <div className="container mx-auto px-20">
-                    <div className="grid grid-cols-12 gap-1 pt-[10px]">
-                        <div className="col-end-13 col-span-11">
-                            <div className="flex gap-2 items-center">
-                                <h3>Manage Thread</h3>
-                                <TooltipButton />
-                            </div>
-                            <LaporanThread />
-                        </div>
-                    </div>
-                </div>
+            <div className="flex items-center bg-[#F8F8F8]">
+                <h1
+                    className={
+                        isExpand
+                            ? "font-source-sans font-semibold text-[20px] text-[#000000CC] mr-2.5"
+                            : "font-source-sans font-semibold text-[20px] text-[#000000CC] mr-2.5"
+                    }
+                    id={
+                        pageTitle === "Thread Report"
+                            ? "thread-report"
+                            : "manage-thread"
+                    }>
+                    {pageTitle}
+                </h1>
+                <TooltipButton time={time} />
             </div>
+
+            <LaporanThread isExpand={isExpand} />
         </div>
     )
 }
