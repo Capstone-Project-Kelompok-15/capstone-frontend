@@ -17,20 +17,26 @@ function ThreadLayout() {
     }, [location.pathname])
 
     return (
-        <div className="bg-[#F8F8F8]">
+        <div className="bg-[#F8F8F8] min-h-screen">
             <div className="w-full">
                 <div className="container mx-auto px-20">
                     <div className="grid grid-cols-12 gap-1 pt-[10px]">
                         <div
-                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${viewModel.isExpand ? "ml-24" : "-ml-10"
-                                }`}>
-                            <ThreadStats isExpand={viewModel.isExpand} time={viewModel.lastUpdatedTime} />
+                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${
+                                viewModel.isExpand ? "ml-24" : "-ml-10"
+                            }`}>
+                            <ThreadStats
+                                isExpand={viewModel.isExpand}
+                                time={viewModel.lastUpdatedTime}
+                            />
                             <SearchBar
                                 heading='Cari "Thread"'
                                 isSearch={viewModel.isSearch}
                                 handleSearch={viewModel.handleSearch}
-                                isExpand={viewModel.isExpand}
+                                isFocused={viewModel.isFocused}
                                 formik={viewModel.formik}
+                                handleOnFocus={viewModel.handleOnFocus}
+                                handleOnBlur={viewModel.handleOnBlur}
                                 handleKeyPress={viewModel.handleKeyPress}
                                 searchHistories={viewModel.searchHistory}
                                 handleDeleteSearchHistory={

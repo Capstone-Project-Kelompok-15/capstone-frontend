@@ -13,7 +13,10 @@ export const SearchSlice = (set) => ({
     setSearchHistory: (history) =>
         set((state) => {
             if (history) {
-                const limitHistory = [history, ...state.searchHistory].slice(0, 3)
+                const limitHistory = [history, ...state.searchHistory].slice(
+                    0,
+                    3
+                )
                 return {
                     searchHistory: limitHistory,
                 }

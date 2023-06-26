@@ -20,15 +20,15 @@ function ManageUser() {
         viewModel.emptySearchResults()
     }, [location.pathname])
 
-
     return (
         <div className="bg-[#f8f8f8] min-h-screen">
             <div className="w-full">
                 <div className="container mx-auto px-20">
                     <div className="grid grid-cols-12 gap-1 pt-[10px]">
                         <div
-                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${viewModel.isExpand ? "ml-24" : "-ml-10"
-                                }`}>
+                            className={`col-end-13 col-span-11 transition-all duration-200 ease-out  ${
+                                viewModel.isExpand ? "ml-24" : "-ml-10"
+                            }`}>
                             <UserStats
                                 isExpand={viewModel.isExpand}
                                 heading="Manage User"
@@ -42,7 +42,7 @@ function ManageUser() {
                             <SearchBar
                                 heading='Cari "Pengguna"'
                                 isSearch={viewModel.isSearch}
-                                handleSearch={viewModel.handleOnFocus}
+                                handleSearch={viewModel.handleSearch}
                                 isFocused={viewModel.isFocused}
                                 formik={viewModel.formik}
                                 handleOnFocus={viewModel.handleOnFocus}

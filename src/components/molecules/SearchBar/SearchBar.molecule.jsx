@@ -18,12 +18,7 @@ function SearchBar({
     return (
         <div className="w-full mt-[16px]">
             {isFocused ? (
-                <div
-                    className={
-                        isExpand
-                            ? "w-full rounded-[12px] bg-[#FFFFFF] border border-[#012269]"
-                            : "w-full rounded-[12px] bg-[#FFFFFF] border border-[#012269]"
-                    }>
+                <div className="w-full rounded-[12px] bg-[#FFFFFF] border border-[#012269]">
                     <div className={isExpand ? "flex" : "flex gap-[12px]"}>
                         <SearchButton handleSearch={handleSearch} />
                         <div className="w-full flex justify-between">
