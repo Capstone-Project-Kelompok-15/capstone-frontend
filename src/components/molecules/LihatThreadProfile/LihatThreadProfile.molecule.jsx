@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom"
 
 function LihatThread() {
     const { state } = useLocation()
-
+    
     const lastPostedTime = new Date(state.createdAt)
     const currentTime = new Date();
 
