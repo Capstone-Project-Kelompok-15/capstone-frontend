@@ -21,6 +21,7 @@ function LoginViewModel() {
             await fetchLogin(values.email, values.password)
             if (isAuthenticated) {
                 navigate("/")
+                return
             }
             if (!isAuthenticated) {
                 formik.setFieldError("email", "Email yang anda masukkan salah")

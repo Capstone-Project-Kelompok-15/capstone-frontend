@@ -64,6 +64,7 @@ function UbahProfile() {
                             <button
                                 className="grid place-content-center mx-auto"
                                 type="button"
+                                id="buttonUbahGambarProfil"
                                 onClick={ubahProfileViewModel.handleImage}>
                                 <h3 className="text-xl font-normal text-[#195FAA] pt-[5px]">
                                     Ubah Gambar Profil
@@ -230,7 +231,7 @@ function UbahProfile() {
                                             e.preventDefault()
                                             ubahProfileViewModel.handleSimpan()
                                         }}
-                                        id="buttonsimpan"
+                                        id="buttonsimpan "
                                     />
                                 </div>
                                 {ubahProfileViewModel.simpanModalState && (

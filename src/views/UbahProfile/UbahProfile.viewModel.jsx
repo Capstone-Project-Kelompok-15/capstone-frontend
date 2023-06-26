@@ -39,11 +39,38 @@ function UbahProfileViewModel() {
         validationSchema: Yup.object().shape({
             username: Yup.string().required("Tolong Masukkan Username"),
             email: Yup.string().required("Tolong Masukkan Email"),
-            password: Yup.string().required("Tolong Masukkan Kata Sandi"),
-            passwordKonfirmasi: Yup.string().required(
-                "Tolong Masukkan Konfirmasi Kata Sandi"
-            ),
+            password: Yup.string()
+                .min(8)
+                .required("Tolong Masukkan Kata Sandi"),
+            passwordKonfirmasi: Yup.string()
+                .min(8)
+                .required("Tolong Masukkan Konfirmasi Kata Sandi"),
+            // .test(
+            //     "konfirmasiPassword",
+            //     "Kata sandi yang anda masukkan tidak valid",
+            //     function (value) {
+            //         const { password } = this.parent
+            //         return !password || password === value
+            //     }
+            // ),
         }),
+        // password: Yup.string().min(8).required(),
+        // passwordKonfirmasi: Yup.string().required(),
+        // passwordKonfirmasi: Yup.string()
+        //     .when("password", {
+        //         is: (password) => password && password.length > 0,
+        //         then: Yup.string().required(
+        //             "Konfirmasi kata sandi harus diisi"
+        //         ),
+        //     })
+        //     .test(
+        //         "konfirmasiPassword",
+        //         "Password tidak sesuai",
+        //         function (value) {
+        //             const { password } = this.parent
+        //             return !password || password === value
+        //         }
+        //     ),
         onSubmit: async (values) => {
             console.log(values)
             if (values.username === dataAdmin.name) {
@@ -61,21 +88,84 @@ function UbahProfileViewModel() {
                     "passwordKonfirmasi",
                     "Kata sandi yang anda masukkan tidak valid"
                 )
-            } else {
-                setUbahProfil(true)
-                setErrorUbahProfil(false)
-                await ubahProfileAdmin(
-                    accessToken,
-                    dataAdmin.id,
-                    values.username,
-                    values.email,
-                    values.password
-                )
-                logout()
-                navigate("/landing")
+            }
+            if (
+                values.username !== dataAdmin.name &&
+                values.email !== dataAdmin.email
+            ) {
+                if (values.password === values.passwordKonfirmasi) {
+                    setUbahProfil(true)
+                    setErrorUbahProfil(false)
+                    await ubahProfileAdmin(
+                        accessToken,
+                        dataAdmin.id,
+                        values.username,
+                        values.email,
+                        values.password
+                    )
+                    logout()
+                    navigate("/landing")
+                }
             }
         },
     })
+    // onSubmit: async (values) => {
+    //     console.log(values)
+    //     if (values.username === dataAdmin.name) {
+    //         formik.setFieldError("username", "Username sudah digunakan")
+    //     }
+    //     if (values.username !== dataAdmin.name) {
+    //         setUbahProfil(true)
+    //         setErrorUbahProfil(false)
+    //         await ubahProfileAdmin(
+    //             accessToken,
+    //             dataAdmin.id,
+    //             values.username,
+    //             dataAdmin.email,
+    //             dataAdmin.password
+    //         )
+    //         navigate("/landing")
+    //     }
+    //     if (values.email === dataAdmin.email) {
+    //         formik.setFieldError("email", "Email sudah digunakan")
+    //     }
+    //     if (values.email !== dataAdmin.email) {
+    //         setUbahProfil(true)
+    //         setErrorUbahProfil(false)
+    //         await ubahProfileAdmin(
+    //             accessToken,
+    //             dataAdmin.id,
+    //             dataAdmin.username,
+    //             values.email,
+    //             dataAdmin.password
+    //         )
+    //         navigate("/landing")
+    //     }
+
+    //     if (values.password !== values.passwordKonfirmasi) {
+    //         formik.setFieldError(
+    //             "password",
+    //             "Kata sandi yang anda masukkan tidak valid"
+    //         )
+    //         formik.setFieldError(
+    //             "passwordKonfirmasi",
+    //             "Kata sandi yang anda masukkan tidak valid"
+    //         )
+    //     }
+    //     if (values.password === values.passwordKonfirmasi) {
+    //         setUbahProfil(true)
+    //         setErrorUbahProfil(false)
+    //         await ubahProfileAdmin(
+    //             accessToken,
+    //             dataAdmin.id,
+    //             dataAdmin.username,
+    //             dataAdmin.email,
+    //             values.password
+    //         )
+    //         logout()
+    //         navigate("/landing")
+    //     }
+    // },
 
     const handleLogout = () => {
         logout()
