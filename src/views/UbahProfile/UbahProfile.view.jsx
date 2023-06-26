@@ -93,7 +93,6 @@ function UbahProfile() {
                                             ubahProfileViewModel.formik
                                                 .handleBlur
                                         }
-                                        defaultValue=""
                                     />
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
@@ -131,7 +130,6 @@ function UbahProfile() {
                                             ubahProfileViewModel.formik
                                                 .handleBlur
                                         }
-                                        defaultValue=""
                                     />
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
@@ -168,7 +166,6 @@ function UbahProfile() {
                                             ubahProfileViewModel.formik
                                                 .handleBlur
                                         }
-                                        defaultValue=""
                                     />
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">
@@ -207,7 +204,6 @@ function UbahProfile() {
                                             ubahProfileViewModel.formik
                                                 .handleBlur
                                         }
-                                        defaultValue=""
                                     />
                                     <div>
                                         <small className="py-1 text-base font- transition text-slate-400 peer-invalid:text-pink-500">

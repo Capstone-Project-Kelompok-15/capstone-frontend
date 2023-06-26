@@ -37,14 +37,10 @@ function UbahProfileViewModel() {
             passwordKonfirmasi: "",
         },
         validationSchema: Yup.object().shape({
-            username: Yup.string().required("Tolong Masukkan Username"),
-            email: Yup.string().required("Tolong Masukkan Email"),
-            password: Yup.string()
-                .min(8)
-                .required("Tolong Masukkan Kata Sandi"),
-            passwordKonfirmasi: Yup.string()
-                .min(8)
-                .required("Tolong Masukkan Konfirmasi Kata Sandi"),
+            username: Yup.string().required(""),
+            email: Yup.string().required(""),
+            password: Yup.string().min(8).required(""),
+            passwordKonfirmasi: Yup.string().min(8).required(""),
         }),
         onSubmit: async (values) => {
             console.log(values)
