@@ -14,6 +14,7 @@ const OnlineUserViewModel = () => {
         handleSelectUser,
         selectedUserMuteStatus,
         selectedUser,
+        unmuteUser,
         searchResults
     } = useStore(state => state)
 
@@ -45,12 +46,16 @@ const OnlineUserViewModel = () => {
         handleSelectUser(null)
     }
 
+    const handleUnmuteProceed = () => {
+        unmuteUser(selectedUser)
+    }
+
     const handleDate = (days) => {
         const currentDate = new Date();
         const futureDate = new Date(currentDate.getTime() + days * 24 * 60 * 60 * 1000)
 
         futureDate.setHours(0, 0, 0, 0);
-        
+
         return futureDate.toISOString();
     };
 
@@ -90,7 +95,8 @@ const OnlineUserViewModel = () => {
         onlineUsers,
         searchResults,
         handleMuteDate,
-        selectedUserMuteStatus
+        selectedUserMuteStatus,
+        handleUnmuteProceed
     }
 
 }
