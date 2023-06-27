@@ -1,7 +1,7 @@
 import React from "react"
 import { DeleteButton, ViewButton } from "../../atoms"
 
-function ThreadList({ isExpand, thread, handleAcceptClick }) {
+function ThreadList({ thread, handleAcceptClick }) {
     return (
         <div>
             <div className="mt-4 flex h-16 items-center w-full" key={thread.id}>

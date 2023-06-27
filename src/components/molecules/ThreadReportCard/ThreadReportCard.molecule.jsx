@@ -2,7 +2,6 @@ import React from "react"
 import { AcceptButton, DenyButton, ViewButton } from "../../atoms"
 
 function ThreadReportCard({
-    isExpand,
     handleAcceptClick,
     handleDenyClick,
     thread,

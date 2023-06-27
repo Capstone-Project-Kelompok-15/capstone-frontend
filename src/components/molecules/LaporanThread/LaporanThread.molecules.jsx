@@ -2,7 +2,7 @@ import React from "react"
 import { useLocation } from "react-router-dom"
 import { useStore } from "../../../config/zustand/store"
 
-function LaporanThread({ isExpand }) {
+function LaporanThread() {
     const location = useLocation()
     const { report } = useStore((state) => state)
     const filterData = report.filter((list) => list.accept_status)

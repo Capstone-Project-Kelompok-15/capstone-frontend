@@ -45,34 +45,8 @@ function UbahProfileViewModel() {
             passwordKonfirmasi: Yup.string()
                 .min(8)
                 .required("Tolong Masukkan Konfirmasi Kata Sandi"),
-            // .test(
-            //     "konfirmasiPassword",
-            //     "Kata sandi yang anda masukkan tidak valid",
-            //     function (value) {
-            //         const { password } = this.parent
-            //         return !password || password === value
-            //     }
-            // ),
         }),
-        // password: Yup.string().min(8).required(),
-        // passwordKonfirmasi: Yup.string().required(),
-        // passwordKonfirmasi: Yup.string()
-        //     .when("password", {
-        //         is: (password) => password && password.length > 0,
-        //         then: Yup.string().required(
-        //             "Konfirmasi kata sandi harus diisi"
-        //         ),
-        //     })
-        //     .test(
-        //         "konfirmasiPassword",
-        //         "Password tidak sesuai",
-        //         function (value) {
-        //             const { password } = this.parent
-        //             return !password || password === value
-        //         }
-        //     ),
         onSubmit: async (values) => {
-            console.log(values)
             if (values.username === dataAdmin.name) {
                 formik.setFieldError("username", "Username sudah digunakan")
             }
