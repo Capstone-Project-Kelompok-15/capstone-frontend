@@ -37,16 +37,16 @@ const ManageUserViewModel = () => {
             searchValue: "",
         },
         onSubmit: (values) => {
-            if (currentPageLocation === "/manageuser/total") {
+            if (currentPageLocation === "/manage-user/total") {
                 handleTotalUsersSearch(values.searchValue)
             }
-            if (currentPageLocation === "/manageuser/online") {
+            if (currentPageLocation === "/manage-user/online") {
                 handleOnlineUsersSearch(values.searchValue)
             }
-            if (currentPageLocation === "/manageuser/muted") {
+            if (currentPageLocation === "/manage-user/muted") {
                 handleMutedUsersSearch(values.searchValue)
             }
-            if (currentPageLocation === "/manageuser/blocked") {
+            if (currentPageLocation === "/manage-user/blocked") {
                 handleBlockedUsersSearch(values.searchValue)
             }
 

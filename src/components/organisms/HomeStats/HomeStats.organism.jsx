@@ -13,14 +13,14 @@ function HomeStats({
                 <CardStats
                     statsNumber={totalUsers}
                     statsTitle="Jumlah Pengguna"
-                    Link="/manageUser/total"
+                    Link="/manage-user/total"
                     hover
                     id="home-total"
                 />
                 <CardStats
                     statsNumber={onlineUsers}
                     statsTitle="Pengguna Online"
-                    Link="/manageUser/online"
+                    Link="/manage-user/online"
                     hover
                     id="home-online"
                 />

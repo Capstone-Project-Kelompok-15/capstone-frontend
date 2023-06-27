@@ -27,28 +27,28 @@ function UserStats({
                 <CardStats
                     statsNumber={usersCount}
                     statsTitle="Jumlah Pengguna"
-                    Link="/manageUser/total"
+                    Link="/manage-user/total"
                     id="total-users"
                     isExpand={isExpand}
                 />
                 <CardStats
                     statsNumber={onlineUsersCount}
                     statsTitle="Pengguna Online"
-                    Link="/manageUser/online"
+                    Link="/manage-user/online"
                     id="online-users"
                     isExpand={isExpand}
                 />
                 <CardStats
                     statsNumber={blockedUsersCount}
                     statsTitle="Jumlah Pengguna yang diblokir"
-                    Link="/manageUser/blocked"
+                    Link="/manage-user/blocked"
                     id="blocked-users"
                     isExpand={isExpand}
                 />
                 <CardStats
                     statsNumber={mutedUsersCount}
                     statsTitle="Jumlah Pengguna yang dimute"
-                    Link="/manageUser/muted"
+                    Link="/manage-user/muted"
                     id="muted-users"
                     isExpand={isExpand}
                 />
