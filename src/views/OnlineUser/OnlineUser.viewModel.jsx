@@ -12,6 +12,7 @@ const OnlineUserViewModel = () => {
         handleMuteModal,
         blockUser,
         handleSelectUser,
+        selectedUserMuteStatus,
         selectedUser,
         searchResults
     } = useStore(state => state)
@@ -88,7 +89,8 @@ const OnlineUserViewModel = () => {
         isExpand,
         onlineUsers,
         searchResults,
-        handleMuteDate
+        handleMuteDate,
+        selectedUserMuteStatus
     }
 
 }

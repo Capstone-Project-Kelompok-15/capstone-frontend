@@ -55,41 +55,45 @@ function OnlineUser() {
                 )
             }
 
-            {
-                viewModel.isMuteModalClicked && (
+            {viewModel.isMuteModalClicked &&
+                (viewModel.selectedUserMuteStatus ? (
+                    <Modal
+                        Message="Buka Mute User?"
+                        confirmationMessage="Apakah Kamu Yakin Akan Membuka Mute User Ini?"
+                        proceedMessage="Buka Mute"
+                        cancelMessage="Batal"
+                        handleProceed={viewModel.handleUnmuteProceed}
+                        handleCancel={viewModel.handleMuteCancel}
+                        idProceedButton="modal-unmute-user"
+                        idCancelButton="batal"
+                    />
+                ) : (
                     <Modal
                         formik={viewModel.formik}
                         muteModal
                         Message="Mute User?"
-
                         radioName="mute_duration"
                         valueRadio1={1}
                         idRadio1="1Hari"
                         radioMessage1="Mute 1 Hari"
-
                         valueRadio2={7}
                         idRadio2="7Hari"
                         radioMessage2="Mute 7 Hari"
-
                         valueRadio3={30}
                         idRadio3="30Hari"
                         radioMessage3="Mute 1 Bulan"
-
                         valueRadio4={365}
                         idRadio4="365Hari"
                         radioMessage4="Mute 1 Tahun"
-
                         confirmationMessage="Apakah Kamu Yakin Akan Mute User Ini?"
                         proceedMessage="Mute"
                         cancelMessage="Batal"
                         handleCancel={viewModel.handleMuteCancel}
-                        handleProceed={viewModel.handleMute}
+                        handleProceed={viewModel.formik.handleSubmit}
                         idProceedButton="modal-mute-user"
                         idCancelButton="batal"
-
                     />
-                )
-            }
+                ))}
 
 
         </div>
