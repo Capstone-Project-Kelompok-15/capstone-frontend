@@ -17,7 +17,7 @@ const OnlineUserViewModel = () => {
     } = useStore(state => state)
 
     const onlineUsers = users.filter(
-        user => user.online_status && !user.block_status && user.mute_status
+        user => user.online_status && !user.block_status
     )
 
     const handleBlockOpen = (id) => {
@@ -63,6 +63,19 @@ const OnlineUserViewModel = () => {
         }
     })
 
+    const handleMuteDate = (date) => {
+        const currentDate = new Date();
+        const targetDate = new Date(date);
+
+        currentDate.setHours(0, 0, 0, 0);
+        targetDate.setHours(0, 0, 0, 0);
+
+        const diff = Math.floor((targetDate - currentDate) / (1000 * 60 * 60 * 24));
+        const daysDiff = `${diff} Hari`;
+
+        return daysDiff;
+    };
+
     return {
         handleBlockOpen,
         handleBlockCancel,
@@ -74,7 +87,8 @@ const OnlineUserViewModel = () => {
         formik,
         isExpand,
         onlineUsers,
-        searchResults
+        searchResults,
+        handleMuteDate
     }
 
 }

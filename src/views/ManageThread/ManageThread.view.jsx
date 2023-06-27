@@ -8,25 +8,25 @@ function ManageThread() {
         <div>
             {viewModel.threadResults.length > 0
                 ? viewModel.threadResults.map((thread) => (
-                      <ThreadList
-                          key={thread.id}
-                          isExpand={viewModel.isExpand}
-                          thread={thread}
-                          handleAcceptClick={() =>
-                              viewModel.handleAcceptClick(thread.id)
-                          }
-                      />
-                  ))
+                    <ThreadList
+                        key={thread.id}
+                        isExpand={viewModel.isExpand}
+                        thread={thread}
+                        handleAcceptClick={() =>
+                            viewModel.handleAcceptClick(thread.id)
+                        }
+                    />
+                ))
                 : viewModel.report.map((thread) => (
-                      <ThreadList
-                          key={thread.id}
-                          isExpand={viewModel.isExpand}
-                          thread={thread}
-                          handleAcceptClick={() =>
-                              viewModel.handleAcceptClick(thread.id)
-                          }
-                      />
-                  ))}
+                    <ThreadList
+                        key={thread.id}
+                        isExpand={viewModel.isExpand}
+                        thread={thread}
+                        handleAcceptClick={() =>
+                            viewModel.handleAcceptClick(thread.id)
+                        }
+                    />
+                ))}
             {viewModel.isDeleteThread && (
                 <Modal
                     Message="Hapus Thread?"

@@ -32,7 +32,7 @@ function ThreadLayout() {
                             <SearchBar
                                 heading='Cari "Thread"'
                                 isSearch={viewModel.isSearch}
-                                handleSearch={viewModel.handleSearch}
+                                handleSearch={viewModel.handleOnFocus}
                                 isFocused={viewModel.isFocused}
                                 formik={viewModel.formik}
                                 handleOnFocus={viewModel.handleOnFocus}

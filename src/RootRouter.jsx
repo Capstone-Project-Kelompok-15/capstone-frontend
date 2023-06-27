@@ -55,7 +55,7 @@ const rootRouter = createBrowserRouter(
             />
 
             <Route
-                path="/manageUser"
+                path="/manageuser"
                 element={
                     <ProtectedRoute>
                         <ManageUserLayout />

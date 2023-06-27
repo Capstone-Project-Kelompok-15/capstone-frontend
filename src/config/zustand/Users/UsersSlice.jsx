@@ -3,8 +3,9 @@ import axios from "axios"
 // mockAPI URL
 const baseURL = 'https://64939c210da866a953668936.mockapi.io/users/Users'
 
-// BE TEAM URL 
+/* BE TEAM URL 
 const BE_URL = 'https://capstone-production-c8c9.up.railway.app/admin'
+*/
 
 export const UsersSlice = (set, get) => ({
     users: [],
@@ -23,20 +24,22 @@ export const UsersSlice = (set, get) => ({
             isMuteModalClicked: !state.isMuteModalClicked
         })),
     getUsers: async () => {
-        // BASE URL config
-        // const persistedState = JSON.parse(localStorage.getItem('user-token'))
-        // const { accessToken } = persistedState.state
+        /*
+        BE URL config
+        const persistedState = JSON.parse(localStorage.getItem('user-token'))
+        const { accessToken } = persistedState.state
+        const response = await axios.get(BE_URL, {
+        headers: {
+        Authorization: `Bearer ${accessToken}`
+        }
+        })
+         */
+
         const currentDate = new Date();
         const timeOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
         const formattedTime = currentDate.toLocaleTimeString(undefined, timeOptions);
 
         try {
-            // const response = await axios.get(BE_URL, {
-            //     headers: {
-            //         Authorization: `Bearer ${accessToken}`
-            //     }
-            // })
-
             const response = await axios.get(baseURL, {
             })
 
@@ -138,7 +141,7 @@ export const UsersSlice = (set, get) => ({
     },
     handleOnlineUsersSearch: (searchValue) => {
         const filteredResults = get().users.filter((user) =>
-            user.name.toLowerCase().includes(searchValue.toLowerCase()) && user.online_status && !user.block_status && user.mute_status
+            user.name.toLowerCase().includes(searchValue.toLowerCase()) && user.online_status && !user.block_status
         );
 
         set({ searchResults: filteredResults });

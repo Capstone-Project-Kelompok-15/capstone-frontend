@@ -27,7 +27,7 @@ const ManageUserViewModel = () => {
     const mutedUsers = users.filter((user) => user.mute_status).length
 
     const onlineUsers = users.filter(
-        (user) => user.online_status && !user.block_status && user.mute_status
+        (user) => user.online_status && !user.block_status
     ).length
 
     const totalUsers = users.filter((user) => !user.block_status).length
@@ -37,16 +37,16 @@ const ManageUserViewModel = () => {
             searchValue: "",
         },
         onSubmit: (values) => {
-            if (currentPageLocation === "/manageUser/total") {
+            if (currentPageLocation === "/manageuser/total") {
                 handleTotalUsersSearch(values.searchValue)
             }
-            if (currentPageLocation === "/manageUser/online") {
+            if (currentPageLocation === "/manageuser/online") {
                 handleOnlineUsersSearch(values.searchValue)
             }
-            if (currentPageLocation === "/manageUser/muted") {
+            if (currentPageLocation === "/manageuser/muted") {
                 handleMutedUsersSearch(values.searchValue)
             }
-            if (currentPageLocation === "/manageUser/blocked") {
+            if (currentPageLocation === "/manageuser/blocked") {
                 handleBlockedUsersSearch(values.searchValue)
             }
 
