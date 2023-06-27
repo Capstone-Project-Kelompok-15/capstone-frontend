@@ -32,5 +32,6 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'no-plusplus': 'off',
     'no-console': 'off',
+    'no-alert': 'off',
   },
 };
